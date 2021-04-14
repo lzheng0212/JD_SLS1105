@@ -1,0 +1,93 @@
+/* Navigation C */
+.navigationBar {
+    position: fixed;
+    width: 1920px;
+    height: 80px;
+    left: 0px;
+    background: #1A3133;
+}
+
+
+
+/* tabs */
+.tabRoulette  {
+    position: fixed;
+    width: 750px;
+    height: 60px;
+    left: 260px;
+    top: 12px;
+}
+
+
+.tab {
+    position: flex;
+    width: 130px;
+    height: 60px;
+    top: 10px;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    /* Gray 4 */
+    color: #BDBDBD;
+}
+
+
+.orgRoulette {
+
+    position: absolute;
+    width: 345px;
+    height: 60px;
+    right: 300px;
+    top: 10px;
+}
+/* Rectangle 2 */
+
+
+.donateButton {
+/* Donate */
+
+   /* Donate Button */
+
+    position: fixed;
+    width: 150px;
+    height: 50px;
+    right: 100px;
+    top: 20px;
+    background: #AE4646;
+    border-radius: 6px;
+}
+
+
+/* Donate */
+.donateButton .text {
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    left: calc(75% - 150px/2);
+    top: calc(55% - 50px/2);
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #e2dfdf;
+
+
+}
+
+
+
