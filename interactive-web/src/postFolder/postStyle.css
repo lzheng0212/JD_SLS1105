@@ -1,0 +1,61 @@
+div h1.headerTitle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+}
+
+div.Header {
+  padding-top: 5px;
+  width: auto;
+  height: auto;
+}
+
+img.greenFieldImage {
+  width: 50px;
+}
+
+section {
+  display: grid;
+  margin: 10px;
+  justify-content: center;
+  color: black;
+  grid-auto-flow: auto;
+}
+
+section div.row {
+  display: flex;
+  margin: 10px;
+  padding: 10px;
+  /*border: 1px solid black;*/
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+section div div {
+  width: 515px;
+  height: 518px;
+  margin: 5px;
+  text-align: left;
+  border: 1px solid pink;
+  background-color: white;
+}
+
+section div.r1c1 {
+  margin-right: 5%;
+}
+
+section div.r1c2 {
+  margin-right: 5%;
+}
+
+button.showMorebtn {
+  color: #9988ee;
+  font-size: large;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 30px;
+  border: none;
+  background-color: #e8d6d6;
+}
