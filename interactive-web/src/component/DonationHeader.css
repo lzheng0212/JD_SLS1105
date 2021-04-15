@@ -1,0 +1,30 @@
+.DonationHeaderPic {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    top: 120px;
+}
+
+.Pic {
+    position: absolute;
+    left: 40%;
+}
+
+.Header {
+    position: absolute;
+    left: 10%;
+    top: 150px;
+    align-items: center;
+    text-align: center;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 80px;
+    /* or 133% */
+
+    letter-spacing: -0.015em;
+
+    color: #000000;
+}

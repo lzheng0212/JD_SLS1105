@@ -1,0 +1,225 @@
+.Body {
+    width: 100%;
+
+}
+.Header1 {
+    position: absolute;
+    width: 1200px;
+    height: 100px;
+    left: 680px;
+    top: 800px;
+    
+    /* Hero H1 */
+    
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 56px;
+    line-height: 80px;
+    /* or 143% */
+    
+    letter-spacing: -0.015em;
+    
+    color: #000000;
+    
+}
+
+.Button {
+    position: absolute;
+    width: 275px;
+    height: 191px;
+    left: 588px;
+    top: 1092px;
+    
+    background: rgba(157, 176, 148, 0.73);
+    border-radius: 20px;
+
+}
+
+.Button1 {
+    position: absolute;
+    width: 275px;
+    height: 191px;
+    left: 931px;
+    top: 1092px;
+
+    background: rgba(157, 176, 148, 0.73);
+    border-radius: 20px;
+}
+
+.Button2 {
+    position: absolute;
+    width: 275px;
+    height: 191px;
+    left: 1274px;
+    top: 1092px;
+
+    background: rgba(157, 176, 148, 0.73);
+    border-radius: 20px;
+}
+
+.Button3 {
+    position: absolute;
+    width: 275px;
+    height: 191px;
+    left: 765px;
+    top: 1342px;
+
+    background: rgba(157, 176, 148, 0.73);
+    border-radius: 20px;
+}
+
+.Button4 {
+    position: absolute;
+    width: 275px;
+    height: 191px;
+    left: 1128px;
+    top: 1342px;
+
+    background: rgba(157, 176, 148, 0.73);
+    border-radius: 20px;
+}
+
+.ButtonAmount {
+    position: absolute;
+    /* width: 246px;
+    height: 115px; */
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-size: 40px;
+    line-height: 56px;
+    /* or 140% */
+    
+    display: flex;
+    text-align: center;
+    letter-spacing: -0.015em;
+    
+    color: #000000;
+}
+
+
+.Select {
+    position: absolute;
+    width: 963px;
+    height: 109px;
+    left: 820px;
+    top: 1675.58px;
+
+    /* Hero H1 */
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 56px;
+    line-height: 80px;
+    /* or 143% */
+
+    letter-spacing: -0.015em;
+
+    color: #000000;
+}
+
+.payButton {
+    position: absolute;
+    width: 185px;
+    height: 185px;
+    left: 353px;
+    top: 1900px;
+
+    background: #1D5A37;
+    border-radius: 100px;
+}
+
+.payButton1 {
+    position: absolute;
+    width: 182px;
+    height: 182px;
+    left: 650px;
+    top: 1900px;
+
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 100px;
+}
+
+.payButton2 {
+    position: absolute;
+    width: 182px;
+    height: 182px;
+    left: 945px;
+    top: 1900px;
+
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 100px;
+}
+
+.payButton3 {
+    position: absolute;
+    width: 182px;
+    height: 182px;
+    left: 1250px;
+    top: 1900px;
+
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 100px;
+}
+
+.payButton4 {
+    position: absolute;
+    width: 182px;
+    height: 182px;
+    left: 1550px;
+    top: 1900px;
+
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 100px;
+}
+
+.payAmount {
+    position: absolute;
+    width: 177px;
+    height: 117px;
+    left: 45px;
+    top: 10px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 80px;
+    /* or 200% */
+
+    letter-spacing: -0.015em;
+
+
+    color: #FFFFFF;
+}
+
+.externalPay {
+    position: absolute;
+    width: 657px;
+    height: 89px;
+    left: 700px;
+    top: 2300px;
+
+    background: #000000;
+    border-radius: 20px;
+}
+
+.payText {
+    position: absolute;
+    width: 657px;
+    height: 89px;
+    left: 80px;
+    top: -30px;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 80px;
+    /* or 200% */
+
+    letter-spacing: -0.015em;
+
+    color: #FFFFFF;
+}
