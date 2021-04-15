@@ -16,6 +16,9 @@ export default function PostSection() {
   		    </div>
 
             <section id="postSection"> 
+                <div class="row"> 
+                    <input type="text" placeholder="Search for a post..."></input>
+                </div>
 
                 <div class="row">
                     <div class="r1c1"> 
