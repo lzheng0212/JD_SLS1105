@@ -4,6 +4,7 @@ import sunset from './postImages/sunset.jpg';
 import apples from './postImages/apples.jpg';
 import wheat from './postImages/wheat.jpg';
 import './postStyle.css';
+import Footer from '../component/Footer';
 
 
 export default function PostSection() {
@@ -82,7 +83,6 @@ export default function PostSection() {
                     <button class="showMorebtn"> Show more </button>
                 </div>
             </section>
-
         </>
         
     )

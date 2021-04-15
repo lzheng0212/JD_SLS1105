@@ -1,7 +1,7 @@
 /* Navigation C */
 .navigationBar {
-    position: fixed;
-    width: 1920px;
+    position: sticky;
+    width: 100%;
     height: 80px;
     left: 0px;
     background: #1A3133;
@@ -42,8 +42,8 @@
 
 .orgRoulette {
 
-    position: absolute;
-    width: 345px;
+    position: fixed;
+    width: 100px;
     height: 60px;
     right: 300px;
     top: 10px;

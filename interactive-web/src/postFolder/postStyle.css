@@ -1,8 +1,8 @@
 div h1.headerTitle {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  text-align: center;
+  left: 40%;
+  top: 40%;
+  font-size: 80px;
 }
 
 div.Header {
