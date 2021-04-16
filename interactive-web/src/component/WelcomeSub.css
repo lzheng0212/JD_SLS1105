@@ -26,7 +26,7 @@
     height: auto;
     width: 500px;
     display: flex;
-    z-index: -1;
+    
     padding-top: 50px;
     flex-direction: row;
     align-items: center;
@@ -37,6 +37,7 @@
 .welcomeSub-container .buttons-container but {
     display: flex;
     padding: 10px;
+    z-index: auto;
 }
 
 .welcomeSub-container .seperator {

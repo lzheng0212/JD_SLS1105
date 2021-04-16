@@ -1,5 +1,6 @@
 /* Navigation C */
 .navigationBar {
+<<<<<<< HEAD
   z-index: 10;
   position: fixed;
   width: 100%;
@@ -8,6 +9,16 @@
   left: 0px;
   top: 0px;
   align-items: center;
+=======
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background: #1A3133;
+    left: 0px;
+    top: 0px;
+    align-items: center;
+    z-index: 1;
+>>>>>>> 9619156cdc8c00ab90b970147364c8b82ddac2aa
 }
 
 /* tabs */

@@ -11,13 +11,17 @@ function Posts() {
       
             <PostItem
               src={postIMG}
-              text='What is regenerative landuse'
+              title='Post Title'
+              description = 'description'
+              date='post date'
               label='Adventure'
               path='/services'
             />
             <PostItem
               src={postIMG}
-              text='Travel through the Islands of Bali in a Private Cruise'
+              title='Post Title'
+              description = 'description'
+              date='post date'
               label='Luxury'
               path='/services'
             />
@@ -25,19 +29,25 @@ function Posts() {
     
             <PostItem
               src={postIMG}
-              text='Set Sail in the Atlantic Ocean visiting Uncharted Waters'
+              title='Post Title'
+              description = 'description'
+              date='post date'
               label='Mystery'
               path='/services'
             />
             <PostItem
               src={postIMG}
-              text='Experience Football on Top of the Himilayan Mountains'
+              title='Post Title'
+              description = 'description'
+              date='post date'
               label='Adventure'
               path='/products'
             />
             <PostItem
               src={postIMG}
-              text='Ride through the Sahara Desert on a guided camel tour'
+              title='Post Title'
+              description = 'description'
+              date='post date'
               label='Adrenaline'
               path='/sign-up'
             />
