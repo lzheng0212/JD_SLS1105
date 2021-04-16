@@ -5,9 +5,11 @@
 .btn {
   padding: 8px 20px;
   border-radius: 2px;
+  display: flex;
   outline: none;
   border: none;
   cursor: pointer;
+  z-index: -1;
 }
 
 .btn--primary {
@@ -23,6 +25,7 @@
   padding: 8px 20px;
   border: 1px solid var(--primary);
   transition: all 0.3s ease-out;
+  z-index: -1;
   
 }
 
@@ -33,6 +36,7 @@
   border: 1px solid var(--primary);
   color: #fff;
   opacity: 0.8;
+  z-index: -1;
 }
 
 .btn--medium {
