@@ -6,10 +6,13 @@ import Posts from '../component/Posts';
 
 function Home() {
     return (
-        <>
-            <WelcomeSection />
-            <WelcomeSub />
-            <Posts />
+        <> 
+            <div className='home'>
+                <WelcomeSection />
+                <WelcomeSub />
+                <Posts />
+                
+            </div>
             <Footer />
         </>
     );

@@ -1,12 +1,13 @@
 .posts {
-    padding: 4rem;
+    padding: 0px;
     background: #fff;
+    justify-content: center;
 
   }
   
   h1 {
-    text-align: left;
-    padding-left: 100px;
+
+    
     /* Latest Post */
 
     font-family: Montserrat;
@@ -15,10 +16,10 @@
     font-size: 45px;
     line-height: 55px;
     display: flex;
-    align-items: center;
-    text-align: center;
-
+    justify-content: left;
+    padding-left: 50px;
     color: #000000;
+
 
 
   }
@@ -27,9 +28,11 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    margin-left: 50px;
+
+    justify-content: center;
     top: 20px;
     z-index: -1;
+
   }
   
 
@@ -37,9 +40,10 @@
   .posts__item {
     display: flex;
     width: 300px;
-    padding-left: 50px;
+    padding: 20px;
     border-radius: 10px;
     padding-bottom: 40px;
+
   }
   
   .posts__item__link {
@@ -132,7 +136,25 @@
     letter-spacing: -0.015em;
 
     color: #000000;
+  }
 
+  .posts__button {
+    display: flex;
+
+    width: 100%;
+    justify-content: right;
+    z-index: -1;
+    padding-bottom: 40px;
+  }
+
+  .posts__line {
+      /* Line 2 */
+
+    width: 1563px;
+    height: 0px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    border: 10px solid rgba(157, 176, 148, 0.73);
 
   }
   

@@ -31,9 +31,9 @@
 
 .btn--round {
   /* Rectangle 5 */
-  background-color: #D10C0C;
+  background-color: #b40e0e;
   border-radius: 50px;
-  border: 1px solid var(--primary);
+
   color: #fff;
   opacity: 0.8;
   z-index: -1;
@@ -41,11 +41,11 @@
 
 .btn--black {
   /* Rectangle 5 */
-  background-color: #0000006c;
+  background-color: #000000b2;
   border-radius: 50px;
   border: 1px solid var(--primary);
   color: #fff;
-  opacity: 0.8;
+  opacity: 0.7;
   z-index: -1;
 }
 
