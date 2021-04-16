@@ -1,16 +1,16 @@
-import React from 'react';
-import PostSection from './postFolder/postSection';
+
+import './App.css';
 import NavigationBar from './component/NavigationBar';
 import Footer from './component/Footer';
+import DonationHeader from './component/DonationHeader';
+import DonationPage from './pages/DonationPage';
 
 function App() {
   return (
-    //can swap our my <PostSection/> for whatever page you want to test
     <div className = "main">
-      <NavigationBar></NavigationBar>
-      <PostSection/>
-      <Footer/>
+      <DonationPage></DonationPage>
     </div>
+    
   );
 }
 

@@ -1,156 +1,167 @@
 .footer {
-  height: 300px;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  background: rgba(2, 12, 6, 0.78);
+    height: 300px;
+    position: absolute;
+    width: 100%;
+    bottom: -200px;
+    background: rgba(2, 12, 6, 0.78);
 }
 
-/* row block */
-.footer .block {
-  /* Auto Layout */
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding-left: 80px;
 
-  position: absolute;
-  width: 609px;
-  height: 334px;
-  left: 126px;
-  top: 0px;
+/* row block */
+.footer .block{
+/* Auto Layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-left: 5%;
+
+    position: absolute;
+    width: 50%;
+    height: 100%;
+
 }
 
 /* List */
 
 .list {
-  /* Auto Layout */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
+/* Auto Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
 
-  position: static;
-  width: 153px;
-  height: 334px;
-  left: 0px;
-  top: 0px;
+    position: static;
+    width: 20%;
 
-  /* Inside Auto Layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  margin: 0px 30px;
+
+
+/* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 20px;
 }
 
+
 .list .title {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 20px;
 
-  position: static;
-  width: 122px;
-  height: 30px;
-  left: 0px;
-  top: 100px;
+    position: static;
+    /* width: 122px; */
+    height: 50px;
+    left: 0px;
+    top: 100px;
 
-  /* Inside Auto Layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  margin: 20px 0px;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 20px 0px;
+
 }
 
 /* Fingertipe */
 .list .title .text {
-  position: static;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 22px;
-  line-height: 10px;
-  /* identical to box height, or 136% */
-  letter-spacing: 0.1px;
+    position: static;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 10px;
+    /* identical to box height, or 136% */
+    letter-spacing: 0.1px;
 
-  /* light text */
-  color: #ffffff;
+    /* light text */
+    color: #FFFFFF;
 
-  /* Inside Auto Layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  margin: 0px 10px;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 10px;
+
 }
 
-.list .linklist {
-  /* Links */
+.list .linklist{
+    /* Links */
 
-  /* Auto Layout */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
+    /* Auto Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
 
-  position: relative;
-  width: 85px;
-  height: 153px;
+    position: relative;
+    width: 105px;
+    height: 153px;
 
-  /* Inside Auto Layout */
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-  margin: 0px 12px;
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 12PX;
+
+ 
 }
 
 .linklist .linkbox {
-  display: flex;
-  flex-direction: row;
-  flex-flow: wrap;
-  align-items: center;
-  padding: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    align-items: center;
+    padding: 0px;
+    
+    position: static;
+    /* width: 70px; */
+    height: 24px;
+    left: 0px;
+    top: 0px;
 
-  position: static;
-  width: 70px;
-  height: 24px;
-  left: 0px;
-  top: 0px;
 
-  /* Inside Auto Layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  margin: 0px 0px;
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 0px;
+    
 }
+
 
 .linkbox li {
-  /* Home */
+/* Home */
 
-  position: static;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
-  list-style: none;
-  padding-bottom: 15px;
+    position: static;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    list-style: none;
+    padding-bottom: 15px;
 
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 16px;
-  line-height: 24px;
-  /* identical to box height, or 150% */
-  letter-spacing: 0.2px;
+    font-family: Montserrat;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    letter-spacing: 0.2px;
 
-  /* light text */
-  color: #ffffff;
+    /* light text */
+    color: #ffffff;
 }
-.linkbox li a {
-  color: inherit;
-  text-decoration: none;
-  opacity: 0.8;
-}
+    .linkbox li a {
+    color:inherit;
+    text-decoration:none;
+    opacity:0.8;
+  }
+  
+  .linkbox li a:hover {
+    opacity:1;
+  }
 
-.linkbox li a:hover {
-  opacity: 1;
-}
+
