@@ -39,6 +39,16 @@
   z-index: -1;
 }
 
+.btn--black {
+  /* Rectangle 5 */
+  background-color: #0000006c;
+  border-radius: 50px;
+  border: 1px solid var(--primary);
+  color: #fff;
+  opacity: 0.8;
+  z-index: -1;
+}
+
 .btn--medium {
   padding: 8px 20px;
   font-size: 18px;
