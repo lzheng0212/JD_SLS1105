@@ -14,7 +14,9 @@ function postItem(props) {
                         />
                     </figure>
                     <div className='posts__item__info'>
-                        <h5 className='posts__item__title'>{props.text}</h5>
+                        <h5 className='posts__item__title'>{props.title}</h5>
+                        <h5 className='posts__item__text'>{props.description}</h5>
+                        <h5 className='posts__item__text'>{props.date}</h5>
                     </div>
                 </Link>
             </li>

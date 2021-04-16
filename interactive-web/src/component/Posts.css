@@ -27,7 +27,7 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    left: 260px;
+    margin-left: 50px;
     top: 20px;
     z-index: -1;
   }
@@ -39,6 +39,7 @@
     width: 300px;
     padding-left: 50px;
     border-radius: 10px;
+    padding-bottom: 40px;
   }
   
   .posts__item__link {
@@ -95,6 +96,8 @@
   
   .posts__item__info {
     padding: 20px 30px 30px;
+    display: flex;
+    flex-direction: column;
   }
   
   .posts__item__title {
@@ -112,6 +115,24 @@
     color: #000000;
 
     transform: rotate(0.46deg);
+
+  }
+
+  .posts__item__text {
+      /* description */
+
+    font-family: Marcellus;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #000000;
+
 
   }
   
