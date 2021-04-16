@@ -29,7 +29,7 @@ function NavigationBar() {
     <div className="navigationBar">
       <Logo></Logo>
       <div className="tabRoulette">
-        <Link to='post' className="tab">
+        <Link to='/post' className="tab">
           Posts
         </Link>
         <element className="tab">
@@ -56,11 +56,11 @@ function NavigationBar() {
       <div className='orgRoulette'>
         <element className="tab">
           <p>
-            About Us
+          <Link to='/home'>About Us</Link>
               </p>
         </element>
         <element className="donateButton-container">
-          {button && <Button buttonStyle='btn--outline' buttonSize="btn--large">Donate</Button>}
+          {button && <Button buttonStyle='btn--outline' buttonSize="btn--large"><Link to='/donate'>Donate</Link></Button>}
         </element>
       </div>
     </div>
