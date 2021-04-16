@@ -12,12 +12,12 @@ function Footer() {
                     </element>
                 </element>
                 <element className = "linklist">
-                    <element className = "linkbox">
+                    
                         <li><a href = "www.youtube.com">Home</a></li>
                         <li><a href = "www.youtube.com">Map</a></li>
                         <li><a href = "www.youtube.com">Timeline</a></li>
                         <li><a href = "www.youtube.com">Donate</a></li>
-                    </element>
+                    
                 </element>
             </element>
 
@@ -28,11 +28,11 @@ function Footer() {
                     </element>
                 </element>
                 <element className = "linklist">
-                    <element className = "linkbox">
+                    
                         <li><a href = "www.youtube.com">FAQ</a></li>
                         <li><a href = "www.youtube.com">Event</a></li>
                         <li><a href = "www.youtube.com">News</a></li>
-                    </element>
+                    
                 </element>
             </element>
 
@@ -44,10 +44,10 @@ function Footer() {
                     </element>
                 </element>
                 <element className = "linklist">
-                    <element className = "linkbox">
+                    
                         <li><a href = "www.youtube.com">About Us</a></li>
                         <li><a href = "www.youtube.com">Contact Us</a></li>
-                    </element>
+                    
                 </element>
             </element>
         </element>
