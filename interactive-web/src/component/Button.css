@@ -24,6 +24,14 @@
   transition: all 0.3s ease-out;
 }
 
+
+.btn--round {
+  /* Rectangle 5 */
+  background-color: var(--primary);
+  border-radius: 50px;
+  border: 1px solid var(--primary);
+}
+
 .btn--medium {
   padding: 8px 20px;
   font-size: 18px;
