@@ -10,9 +10,11 @@ import Footer from '../component/Footer';
 export default function PostSection() {
     return (
         <>
-            <div class="Header">
+            <br></br>
+            <br></br>
+            <div class="ImageSection">
                 <h1 class="headerTitle">Post Section</h1>
-                <img id="greenFieldImage" src={greenField} alt="green field" width="100%" height="800px"/>
+                <img id="greenFieldImage" src={greenField} alt="green field"/>
   		    </div>
 
             <section id="postSection"> 
@@ -86,7 +88,7 @@ export default function PostSection() {
                     <button class="showMorebtn"> Show more </button>
                 </div>
             </section>
+            <Footer/>
         </>
-        
     )
 }
