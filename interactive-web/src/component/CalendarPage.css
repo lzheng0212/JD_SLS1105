@@ -4,6 +4,7 @@
 .event-cont {
  display: block;
  margin-top: 7%;
+ margin-left: 12%;
  
 }
 
@@ -14,7 +15,8 @@ body {
 .header {
   display: flex;
   margin-top: auto;
-  margin-bottom: 3%;
+  margin-top: 2%;
+  margin-bottom: 4%;
   justify-items: left;
   align-content: space-between;
 }
@@ -50,6 +52,9 @@ body {
     margin-bottom: 2%;
     display: flex;
     align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 15px;
 }
 
 .btn-container {

@@ -87,8 +87,8 @@ const CalendarPage = () => {
                     <div style={{ marginLeft: 10, marginBottom: 50 }}> Category: Educational</div>
                 </div>
 
-                <div className="shadowbox">
-                    <div className="rectangle" />
+                <div className="shadowbox" style={{marginBottom:'4%'}}>
+                    <div className="rectangle"/>
                     <div className='btn-container'>
                     <ind>{button && <Button buttonStyle='btn--primary' buttonSize="btn--small"><Link to='/' style={{ color: 'white', textDecoration: 'none' }}>Previous Month</Link></Button>}</ind>
                         <ind>{button && <Button buttonStyle='btn--primary' buttonSize="btn--small"><Link to='/' style={{ color: 'white', textDecoration: 'none' }}>Next Month</Link></Button>}</ind>
