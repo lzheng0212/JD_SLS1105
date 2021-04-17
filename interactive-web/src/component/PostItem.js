@@ -24,9 +24,7 @@ function postItem(props) {
     )
 }
 
-postItem.propTypes = {
 
-}
 
 export default postItem
 

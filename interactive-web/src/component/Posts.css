@@ -1,8 +1,11 @@
 .posts {
-    padding: 0px;
-    background: #fff;
-    justify-content: center;
 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    object-fit: contain;
+    justify-content: center;
   }
   
   h1 {
@@ -17,7 +20,7 @@
     line-height: 55px;
     display: flex;
     justify-content: left;
-    padding-left: 50px;
+    padding-left: 5%;
     color: #000000;
 
 
@@ -140,11 +143,11 @@
 
   .posts__button {
     display: flex;
-
     width: 100%;
     justify-content: right;
     z-index: -1;
     padding-bottom: 40px;
+    padding-right: 6%;
   }
 
   .posts__line {
@@ -154,6 +157,8 @@
     height: 0px;
     margin-top: 50px;
     margin-bottom: 100px;
+    justify-self: center;
+    align-self: center;
     border: 10px solid rgba(157, 176, 148, 0.73);
 
   }
