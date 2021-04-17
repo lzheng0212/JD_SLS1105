@@ -1,0 +1,60 @@
+/* Navigation C */
+.navigationBar {
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background: #1a3133;
+  left: 0px;
+  top: 0px;
+  align-items: center;
+}
+
+/* tabs */
+.tabRoulette {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  left: 260px;
+  top: 20px;
+}
+
+.tab {
+  position: flex;
+  width: 100px;
+  /* height: 60px; */
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 25px;
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  /* Gray 4 */
+  color: #bdbdbd;
+}
+
+.orgRoulette {
+  position: fixed;
+  width: 100px;
+  right: 300px;
+  top: 20px;
+}
+/* Rectangle 2 */
+
+.donateButton-container {
+  /* Donate */
+
+  /* Donate Button */
+
+  position: fixed;
+  width: 150px;
+  height: 50px;
+  top: 5px;
+  right: 100px;
+  background: #ae4646;
+  border-radius: 6px;
+}

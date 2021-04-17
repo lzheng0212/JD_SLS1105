@@ -1,0 +1,14 @@
+.logo {
+    position: fixed;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    object-fit: cover;
+    left: 40px;
+}
+
+.logo > img {
+        width: 250px;
+        height: auto;
+        position: fixed;
+} 
