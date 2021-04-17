@@ -14,24 +14,29 @@ h1.h1top {
   text-align: center;
 }
 
+div.ourTeam {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  align-items: center;
+}
+
+img {
+  position: relative;
+}
+
 div.stuffCol2 {
-  border: none;
+  align-items: center;
+  text-align: center;
   width: fit-content;
   height: min-content;
   margin-right: 100px;
 }
 
 div.stuffCol1 {
-  border: none;
   width: fit-content;
   height: min-content;
   margin-right: 100px;
-}
-
-div.stuffCol3 {
-  border: none;
-  width: fit-content;
-  height: min-content;
 }
 
 hr.horizontalLine {
@@ -45,10 +50,11 @@ hr.horizontalLine {
 div div.stuffRow {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   align-items: left;
   justify-content: left;
   margin-bottom: 50px;
+  text-align: center;
+  margin-left: 30%;
 }
 div.stuffRow div {
   background-color: white;
