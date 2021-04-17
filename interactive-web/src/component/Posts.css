@@ -34,7 +34,7 @@
 
     justify-content: center;
     top: 20px;
-    z-index: -1;
+
 
   }
   
@@ -145,14 +145,12 @@
     display: flex;
     width: 100%;
     justify-content: right;
-    z-index: -1;
     padding-bottom: 40px;
     padding-right: 6%;
   }
 
   .posts__line {
       /* Line 2 */
-
     width: 1563px;
     height: 0px;
     margin-top: 50px;

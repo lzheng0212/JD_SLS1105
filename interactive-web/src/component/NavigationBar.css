@@ -50,21 +50,10 @@
 
   /* Donate Button */
 
-<<<<<<< HEAD
-    position: fixed;
-    width: 150px;
-    height: 50px;
-    top: 5px;
-    right: 100px;
- 
-    border-radius: 6px;
-=======
   position: fixed;
   width: 150px;
   height: 50px;
   top: 5px;
   right: 100px;
-  background: #ae4646;
   border-radius: 6px;
->>>>>>> 8a55539aa787ebfe84731e47503c55e18d83c2be
 }

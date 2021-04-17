@@ -1,0 +1,83 @@
+
+
+.container {
+  
+  height: 100vh;
+  width: 100%;
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  object-fit: contain;
+  z-index: -1;
+}
+.opening-container {
+  background: url('../assets/greenField.jpg') center center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60%;
+}
+
+.opening-container > h1 {
+  
+  font-family: Marcellus;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100px;
+  line-height: 125px;
+  align-items: center;
+  justify-self: center;
+  text-align: center;
+  letter-spacing: -0.015em;
+
+  color: #FFFDFD;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transform: rotate(0.46deg);
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+.post-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  width: 50%;
+  padding: 20px;
+  background-color: #e8d6d6;
+  border-radius: 30px;
+  font-size: 20px;
+  border: none;
+  
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  padding: 70px;
+}
+
+.footer-container {
+  display: block;
+  width: 100%;
+  
+}
+
