@@ -8,7 +8,8 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import NavigationBar from './component/NavigationBar';
 import Home from './pages/Home';
 import PostSection from './pages/postSection';
-import aboutUsPage from './aboutUsPage/aboutUsPage';
+import aboutUsPage from './pages/aboutUsPage';
+import FullCalendarPage from './pages/FullCalendarPage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path='/post' exact component={PostSection}/>
           <Route path='/donate' exact component={DonationPage}/>
           <Route path='/aboutUs' exact component={aboutUsPage}/>
+          <Route path='/events' exact component={FullCalendarPage}/>
         </Switch>
       </Router>
     </>

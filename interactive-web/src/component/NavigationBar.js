@@ -47,7 +47,7 @@ function NavigationBar() {
         </element>
         <element className="tab">
           <p>
-            Events
+          <Link to='/events' style={{color: '#bdbdbd', textDecoration:'none'}}>Events</Link>
           </p>
         </element>
         <element className="tab">
