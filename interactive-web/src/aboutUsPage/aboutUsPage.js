@@ -12,7 +12,7 @@ export default function PostSection() {
             </div>
             <div class="ourTeam">
                 <section class="stuff">
-                    <div class="stuffRow">
+                    {/* <div class="stuffRow"> */}
                         <div class="stuffCol1">
                             <img class="stuffImage" src={stuffImage} alt="Stuff Image"/>
                             <h2>Name/Description</h2>
@@ -25,8 +25,8 @@ export default function PostSection() {
                             <img class="stuffImage" src={stuffImage} alt="Stuff Image"/>
                             <h2>Name/Description</h2>
                         </div>
-                    </div>
-                    <div class="stuffRow">
+                    {/* </div> */}
+                    {/* <div class="stuffRow"> */}
                         <div class="stuffCol1">
                             <img class="stuffImage" src={stuffImage} alt="Stuff Image"/>
                             <h2>Name/Description</h2>
@@ -39,7 +39,7 @@ export default function PostSection() {
                             <img class="stuffImage" src={stuffImage} alt="Stuff Image"/>
                             <h2>Name/Description</h2>
                         </div>
-                    </div>
+                    {/* </div> */}
                 </section>
             </div>
             <hr class="horizontalLine"></hr>

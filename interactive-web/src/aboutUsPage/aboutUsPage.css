@@ -21,6 +21,16 @@ div.ourTeam {
   align-items: center;
 }
 
+section.stuff {
+  /*this aligns the images*/
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin-left: 15%;
+}
+
 img {
   position: relative;
 }
@@ -54,10 +64,10 @@ div div.stuffRow {
   justify-content: left;
   margin-bottom: 50px;
   text-align: center;
-  margin-left: 30%;
 }
 div.stuffRow div {
   background-color: white;
+  text-align: center;
 }
 
 img.stuffImage {
