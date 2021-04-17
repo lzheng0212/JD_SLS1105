@@ -1,40 +1,93 @@
-div h1.stuffHeader {
-    position: absolute;
-    left: 35%;
-    top: 10%;
-    font-size: 80px;
+* {
+  font-family: Marcellus;
+  line-height: 20px;
 }
-div.ourTeam {
-    position: relative;
-    margin-top: 16px;
-    padding-top: 5px;
-    width: auto;
+
+div.top {
+  margin-top: 5%;
+  width: 100%;
+  height: 80px;
+  text-align: center;
 }
+h1.h1top {
+  display: inline;
+  text-align: center;
+}
+
+div.stuffCol2 {
+  border: none;
+  width: fit-content;
+  height: min-content;
+  margin-right: 100px;
+}
+
+div.stuffCol1 {
+  border: none;
+  width: fit-content;
+  height: min-content;
+  margin-right: 100px;
+}
+
+div.stuffCol3 {
+  border: none;
+  width: fit-content;
+  height: min-content;
+}
+
+hr.horizontalLine {
+  border: 4px solid rgba(157, 176, 148, 0.73);
+  background-color: rgba(157, 176, 148, 0.73);
+  width: 80%;
+  margin-left: 10%;
+  border-radius: 50px;
+}
+
 div div.stuffRow {
-    display: flex;
-    margin: 10px;
-    padding: 10px;
-    /*border: 1px solid black;*/
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: left;
+  justify-content: left;
+  margin-bottom: 50px;
 }
 div.stuffRow div {
-    margin: 5px;
-    text-align: left;
-    background-color: white;
+  background-color: white;
 }
 
 img.stuffImage {
-    position: relative;
-    width: 250px;
-    height: 250px;
-    z-index: 1;
+  width: 250px;
+  height: 250px;
+  z-index: 1;
 }
-section {
-    display: grid;
-    margin: 10px;
-    justify-content: center;
-    color: black;
-    grid-auto-flow: auto;
+
+div.AMV {
+  margin: 20px 20px 20px 15%;
+  border: 2px solid black;
+  box-shadow: 5px 10px #888888;
+  width: 70%;
+}
+div.AMV h1 {
+  margin-left: 2%;
+  margin-top: 40px;
+}
+
+div.AMV p {
+  margin-left: 12%;
+  margin-bottom: 40px;
+  width: 73%;
+}
+
+div.contactUs {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+div.contactUs h2 {
+  margin: 10px 0px 10px 0px;
+}
+
+div.contactUs h3 {
+  margin: 10px 0px 10px 0px;
 }
