@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './WelcomeBottom.css';
 import EventItem from './eventItem';
 import { Button } from './Button';
+import InteractiveMap from './InteractiveMap';
 
 
 
@@ -51,7 +52,11 @@ function WelcomBottom() {
                     </section>
                 </div>
                 <div id="col-2">
-                    <h1>This is another half of a page</h1>
+                    <h1 style={{paddingBottom:'30px'}}>Hovering Your Mouse over the Map!</h1>
+                    <InteractiveMap></InteractiveMap>
+                    <section className='section_button'>
+                        {button && <Button buttonStyle='btn--black' buttonSize="btn--large">Interactive Map</Button>}
+                    </section>
                 </div>
             </section>
         </>
