@@ -25,6 +25,7 @@ function WelcomeSub() {
                 <but>{button && <Button buttonStyle='btn--round' buttonSize="btn--large">Join Us</Button>}</but>
             </div>
             <div className='seperator'></div>
+        
         </div>
     )
 }

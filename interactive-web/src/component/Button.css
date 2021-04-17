@@ -1,5 +1,5 @@
 :root {
-  --primary: #fff;
+  --primary: rgb(20, 26, 23);
 }
 
 .btn {
@@ -14,8 +14,9 @@
 
 .btn--primary {
   background-color: var(--primary);
-  color: #242424;
+  color: #ffffff;
   border: 1px solid var(--primary);
+  border-radius: 20px;
   opacity: 0.8;
 }
 
@@ -31,12 +32,42 @@
 
 .btn--round {
   /* Rectangle 5 */
-  background-color: #D10C0C;
+  background-color: #b40e0e;
   border-radius: 50px;
-  border: 1px solid var(--primary);
+
   color: #fff;
   opacity: 0.8;
   z-index: -1;
+}
+
+.btn--black {
+  /* Rectangle 5 */
+  background-color: #000000b2;
+  border-radius: 50px;
+  border: 1px solid var(--primary);
+  color: #fff;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.btn--donate {
+  width: 275px;
+  height: 191px;
+  color: #242424;
+
+  opacity: 0.8;
+  background-color: rgba(157, 176, 148, 0.73);
+  border-radius: 20px;
+}
+
+.btn--circle {
+  width: 185px;
+  height: 185px;
+  background-color: #1D5A37;
+  color: #fff;
+  border-radius: 100px;
+  opacity: 0.8;
+
 }
 
 .btn--medium {
@@ -50,8 +81,14 @@
   font-weight: 600;
 }
 
+.btn--huge {
+  padding: 70px 45px;
+  font-size: 35px;
+  font-weight: 600;
+}
 .btn--large:hover,
-.btn--medium:hover {
+.btn--medium:hover,
+.btn--huge:hover {
   transition: all 0.3s ease-out;
   opacity: 1;
 

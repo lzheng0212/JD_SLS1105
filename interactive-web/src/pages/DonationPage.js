@@ -7,13 +7,16 @@ import Footer from '../component/Footer';
 
 function DonationPageComponent() {
     return (
-        <div className = "Component">
-            
+        <>
+        <div className = "donation">
+            <NavigationBar></NavigationBar>
             <DonationHeader></DonationHeader>
             <DonationGrid></DonationGrid>
-            <NavigationBar></NavigationBar>
-            <Footer></Footer>
+            
+            
         </div>
+        <Footer></Footer>
+        </>
     );
 }
 

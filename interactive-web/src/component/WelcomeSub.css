@@ -40,7 +40,7 @@
     z-index: auto;
 }
 
-.welcomeSub-container .seperator {
+ .seperator {
     /* Line 1 */
 
     display: flex;
@@ -53,3 +53,4 @@
     border: 10px solid rgba(157, 176, 148, 0.73);
 
 }
+

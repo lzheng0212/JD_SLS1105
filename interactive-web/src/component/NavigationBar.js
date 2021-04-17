@@ -27,9 +27,12 @@ function NavigationBar() {
 
   return (
     <div className="navigationBar">
-      <Link to='/home'><Logo></Logo></Link>
+      <Link to='/home' style={{color: '#bdbdbd', textDecoration:'none'}}>
+      <Logo></Logo>
+        </Link>
+      
       <div className="tabRoulette">
-        <Link to='/post' className="tab">
+        <Link to='/post' style={{color: '#bdbdbd', textDecoration:'none'}} className="tab">
           Posts
         </Link>
         <element className="tab">
@@ -56,11 +59,15 @@ function NavigationBar() {
       <div className='orgRoulette'>
         <element className="tab">
           <p>
+<<<<<<< HEAD
           <Link to='/aboutUs'>About Us</Link>
+=======
+          <Link to='/home' style={{color: '#bdbdbd', textDecoration:'none'}}>About Us</Link>
+>>>>>>> 8230c20f90794a67f70f507ed6b5e1449d831860
               </p>
         </element>
         <element className="donateButton-container">
-          {button && <Button buttonStyle='btn--outline' buttonSize="btn--large"><Link to='/donate'>Donate</Link></Button>}
+          {button && <Button buttonStyle='btn--round' buttonSize="btn--large"><Link to='/donate' style={{color: 'white', textDecoration:'none'}}>Donate</Link></Button>}
         </element>
       </div>
     </div>

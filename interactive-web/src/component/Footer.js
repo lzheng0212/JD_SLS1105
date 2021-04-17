@@ -13,10 +13,10 @@ function Footer() {
                 </element>
                 <element className = "linklist">
                     
-                        <li><a href = "www.youtube.com">Home</a></li>
-                        <li><a href = "www.youtube.com">Map</a></li>
-                        <li><a href = "www.youtube.com">Timeline</a></li>
-                        <li><a href = "www.youtube.com">Donate</a></li>
+                        <li><a href='/home'>Home</a></li>
+                        <li><a href='/'>Map</a></li>
+                        <li><a href='/'>Timeline</a></li>
+                        <li><a href='/donate'>Donate</a></li>
                     
                 </element>
             </element>
