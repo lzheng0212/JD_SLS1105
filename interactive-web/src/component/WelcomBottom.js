@@ -22,8 +22,8 @@ function WelcomBottom() {
 
     return (
         <>
-            <section class="container">
-                <section id="col-1">
+            <section class="bottom-container">
+                <div id="col-1">
                     <EventItem
                         title='Final Presentation'
                         date='April 18th, 2021'
@@ -49,10 +49,10 @@ function WelcomBottom() {
                     <section className='section_button'>
                         {button && <Button buttonStyle='btn--black' buttonSize="btn--large">More Events</Button>}
                     </section>
-                </section>
-                <section id="col-2">
+                </div>
+                <div id="col-2">
                     <h1>This is another half of a page</h1>
-                </section>
+                </div>
             </section>
         </>
     )

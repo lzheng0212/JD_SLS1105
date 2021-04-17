@@ -71,7 +71,7 @@ function Posts() {
             </div>
 
             <div className='posts__button'>
-                {button && <Button buttonStyle='btn--black' buttonSize="btn--large">Read More Posts</Button>}
+                {button && <Button buttonStyle='btn--black' buttonSize="btn--large" path='/post'>Read More Posts</Button>}
             </div>
 
             <div className='posts__line'></div>

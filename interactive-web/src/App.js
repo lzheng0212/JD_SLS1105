@@ -15,7 +15,7 @@ function App() {
       <Router>
         <NavigationBar />
         <Switch>
-       
+        <Route path='/' exact component={Home}/>
         <Route path='/home' exact component={Home}/>
           <Route path='/post' exact component={PostSection}/>
           <Route path='/donate' exact component={DonationPage}/>
