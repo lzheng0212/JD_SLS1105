@@ -59,7 +59,7 @@ function NavigationBar() {
       <div className='orgRoulette'>
         <element className="tab">
           <p>
-          <Link to='/home' style={{color: '#bdbdbd', textDecoration:'none'}}>About Us</Link>
+          <Link to='/aboutUs' style={{color: '#bdbdbd', textDecoration:'none'}}>About Us</Link>
               </p>
         </element>
         <element className="donateButton-container">
