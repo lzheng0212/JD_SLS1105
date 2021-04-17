@@ -1,30 +1,34 @@
-.DonationHeaderPic {
-    position: absolute;
+.donate-container {
+    background: url('../assets/Hero.png') center center/cover no-repeat;
     width: 100%;
-    left: 0px;
-    top: 120px;
-}
-
-.Pic {
-    position: absolute;
-    left: 40%;
-}
-
-.Header {
-    position: absolute;
-    left: 10%;
-    top: 150px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    text-align: center;
+    object-fit: contain;
+    z-index: -1;
+}
 
-    font-family: Montserrat;
+.donate-container > h1 {
+    /* Institute of Education and Regenerative Communities */
+
+    width: 1194px;
+    height: 408.11px;
+    margin-top: 300px;
+    margin-left: 0px;;
+
+
+    font-family: Marcellus;
     font-style: normal;
-    font-weight: bold;
-    font-size: 48px;
-    line-height: 80px;
-    /* or 133% */
-
+    font-weight: 800;
+    font-size: 100px;
+    line-height: 125px;
+    display: flex;
+    align-items: center;
     letter-spacing: -0.015em;
 
-    color: #000000;
+    color: #ffffff;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 }
+

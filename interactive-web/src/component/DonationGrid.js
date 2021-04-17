@@ -1,103 +1,60 @@
+import React, { useState, useEffect } from 'react';
+
+import { Button } from './Button';
 import './DonationGrid.css';
 
 function DonationGrid() {
+    const [button, setButton] = useState(true);
+    const showButton = () => {
+        if (window.innerWidth <= 960) {
+            setButton(false);
+        } else {
+            setButton(true);
+        }
+    };
+
+    useEffect(() => {
+        showButton();
+    }, []);
+
     return (
-        <div className = 'Body'>
-            <div className = "Header1">
+        <div className='Body'>
+            <div className="Header1">
                 <p>
                     Your donation will provide...
                 </p>
             </div>
-           
-            <div className = 'Button'>
-                <element className = 'ButtonAmount'>
-                    <p>
-                        $50 means that...
-                    </p>
-                </element>
-            </div>
-            <div className = 'Button1'>
-                <element className = 'ButtonAmount'>
-                    <p>
-                        $150 means that...
-                    </p>
-                </element>
-               
-            </div>
-            <div className = 'Button2'>
-                <element className = 'ButtonAmount'>
-                    <p>
-                        $250 means that...
-                    </p>
-                </element>
-                
-            </div>
-            <div className = 'Button3'>
-                <element className = 'ButtonAmount'>
-                    <p>
-                        $500 means that...
-                    </p>
-                </element>
-                
-            </div>
-            <div className = 'Button4'>
-                <element className = 'ButtonAmount'>
-                    <p>
-                        $1000 means that...
-                    </p>
-                </element>
+
+            <div className='button-wrapper'>
+                <btn1>{button && <Button buttonStyle='btn--donate' buttonSize="btn--large"><p style={{ fontSize: '35px' }}>$50 means that...</p></Button>}</btn1>
+                <btn1>{button && <Button buttonStyle='btn--donate' buttonSize="btn--large"><p style={{ fontSize: '33px' }}>$150 means that...</p></Button>}</btn1>
+                <btn1>{button && <Button buttonStyle='btn--donate' buttonSize="btn--large"><p style={{ fontSize: '33px' }}>$250 means that...</p></Button>}</btn1>
+                <btn1>{button && <Button buttonStyle='btn--donate' buttonSize="btn--large"><p style={{ fontSize: '33px' }}>$500 means that...</p></Button>}</btn1>
+                <btn1>{button && <Button buttonStyle='btn--donate' buttonSize="btn--large"><p style={{ fontSize: '33px' }}>$1000 means that...</p></Button>}</btn1>
             </div>
 
-            <div className = 'Select'>
+            <div className="Header1">
                 <p>
-                    Select a Amount
+                Select a Amount
                 </p>
             </div>
-            <div className = 'payButton'>
-                <element className = 'payAmount'>
-                    <p>
-                        $50
-                    </p>
-                </element>
-            </div>
-            <div className = 'payButton1'>
-                <element className = 'payAmount'>
-                    <p>
-                        $150
-                    </p>
-                </element>
-            </div>
-            <div className = 'payButton2'>
-                <element className = 'payAmount'>
-                    <p>
-                        $250
-                    </p>
-                </element>
-            </div>
-            <div className = 'payButton3'>
-                <element className = 'payAmount'>
-                    <p>
-                        $500
-                    </p>
-                </element>
-            </div>
-            <div className = 'payButton4'>
-                <element className = 'payAmount'>
-                    <p>
-                        $1000
-                    </p>
-                </element>
+           
+            <div className='button-wrapper'>
+                <btn2>{button && <Button buttonStyle='btn--circle' buttonSize="btn--huge"><p >$50</p></Button>}</btn2>
+                <btn2>{button && <Button buttonStyle='btn--circle' buttonSize="btn--huge"><p >$150</p></Button>}</btn2>
+                <btn2>{button && <Button buttonStyle='btn--circle' buttonSize="btn--huge"><p >$250</p></Button>}</btn2>
+                <btn2>{button && <Button buttonStyle='btn--circle' buttonSize="btn--huge"><p >$500</p></Button>}</btn2>
+                <btn2>{button && <Button buttonStyle='btn--circle' buttonSize="btn--huge"><p >$1000</p></Button>}</btn2>
+                
             </div>
 
-            <div className = 'externalPay'>
-                <element className = 'payText'>
-                    <p>
-                        Third-party Payment Link
-                    </p>
-                </element>
+            
+
+            <div className='payment'>
+            {button && <Button buttonStyle='btn--primary' buttonSize="btn--large"><p style={{ fontSize: '30px' }}>Third Party Payment Link</p></Button>}
             </div>
         </div>
-);
+    );
 }
 
 export default DonationGrid;
