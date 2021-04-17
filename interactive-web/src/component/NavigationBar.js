@@ -27,7 +27,7 @@ function NavigationBar() {
 
   return (
     <div className="navigationBar">
-      <Logo></Logo>
+      <Link to='/home'><Logo></Logo></Link>
       <div className="tabRoulette">
         <Link to='/post' className="tab">
           Posts
@@ -56,7 +56,7 @@ function NavigationBar() {
       <div className='orgRoulette'>
         <element className="tab">
           <p>
-          <Link to='/home'>About Us</Link>
+          <Link to='/aboutUs'>About Us</Link>
               </p>
         </element>
         <element className="donateButton-container">

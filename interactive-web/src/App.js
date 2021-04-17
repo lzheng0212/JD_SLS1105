@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import NavigationBar from './component/NavigationBar';
 import Home from './pages/Home';
 import PostSection from './postFolder/postSection';
+import aboutUsPage from './aboutUsPage/aboutUsPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/home' exact component={Home}/>
           <Route path='/post' exact component={PostSection}/>
           <Route path='/donate' exact component={DonationPage}/>
+          <Route path='/aboutUs' exact component={aboutUsPage}/>
         </Switch>
       </Router>
     </>

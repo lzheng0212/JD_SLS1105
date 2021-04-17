@@ -1,0 +1,40 @@
+div h1.stuffHeader {
+    position: absolute;
+    left: 35%;
+    top: 10%;
+    font-size: 80px;
+}
+div.ourTeam {
+    position: relative;
+    margin-top: 16px;
+    padding-top: 5px;
+    width: auto;
+}
+div div.stuffRow {
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    /*border: 1px solid black;*/
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+div.stuffRow div {
+    margin: 5px;
+    text-align: left;
+    background-color: white;
+}
+
+img.stuffImage {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    z-index: 1;
+}
+section {
+    display: grid;
+    margin: 10px;
+    justify-content: center;
+    color: black;
+    grid-auto-flow: auto;
+}
