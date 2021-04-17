@@ -10,9 +10,11 @@ import Footer from '../component/Footer';
 export default function PostSection() {
     return (
         <>
-            <div class="Header">
+            <br></br>
+            <br></br>
+            <div class="ImageSection">
                 <h1 class="headerTitle">Post Section</h1>
-                <img id="greenFieldImage" src={greenField} alt="green field" width="100%" height="800px"/>
+                <img id="greenFieldImage" src={greenField} alt="green field"/>
   		    </div>
 
             <section id="postSection"> 
@@ -22,19 +24,19 @@ export default function PostSection() {
 
                 <div class="row">
                     <div class="r1c1"> 
-                        <img id="sunsetPost" src={sunset} width="515px" height="320px"/>
+                        <img id="sunsetPost" src={sunset} alt="sunset Image"/>
                         <h2> Title of post </h2>
                         <p> Date posted </p>
                         <p>Description</p>
                     </div>
                     <div class="r1c2"> 
-                        <img id="sunsetPost" src={apples} width="515px" height="320px"/>
+                        <img id="sunsetPost" src={apples} alt="Apples"/>
                         <h2> Title of post </h2>
                         <p> Date posted </p>
                         <p>Description</p>
                     </div>
                     <div class="r1c3"> 
-                        <img id="sunsetPost" src={wheat} width="515px" height="320px"/>
+                        <img id="sunsetPost" src={wheat} alt="wheat"/>
                         <h2> Title of post </h2>
                         <p> Date posted </p>
                         <p>Description</p>
@@ -43,19 +45,19 @@ export default function PostSection() {
                 
                 <div class="row">
                     <div class="r1c1"> 
-                        <img id="sunsetPost" src={apples} width="515px" height="320px"/>
+                        <img id="sunsetPost" src={apples} alt="Apples"/>
                         <h2> Title of post </h2>
                         <p> Date posted </p>
                         <p>Description</p>
                     </div>
                     <div class="r1c2"> 
-                        <img id="sunsetPost" src={sunset} width="515px" height="320px"/>
+                        <img id="sunsetPost" src={sunset} alt="sunset Image"/>
                         <h2> Title of post </h2>
                         <p> Date posted </p>
                         <p>Description</p>
                     </div>
                     <div class="r1c3"> 
-                        <img id="sunsetPost" src={wheat} width="515px" height="320px"/>
+                        <img id="sunsetPost" src={wheat} alt="wheat"/>
                         <h2> Title of post </h2>
                         <p> Date posted </p>
                         <p>Description</p>
@@ -63,19 +65,19 @@ export default function PostSection() {
                 </div>
                 <div class="row">
                     <div class="r1c1"> 
-                        <img id="sunsetPost" src={wheat} width="515px" height="320px"/>
+                        <img id="sunsetPost" src={wheat} alt="wheat"/>
                         <h2> Title of post </h2>
                         <p> Date posted </p>
                         <p>Description</p>
                     </div>
                     <div class="r1c2"> 
-                        <img id="sunsetPost" src={apples} width="515px" height="320px"/>
+                        <img id="sunsetPost" src={apples} alt="Apples"/>
                         <h2> Title of post </h2>
                         <p> Date posted </p>
                         <p>Description</p>
                     </div>
                     <div class="r1c3"> 
-                        <img id="sunsetPost" src={sunset} width="515px" height="320px"/>
+                        <img id="sunsetPost" src={sunset} alt="sunset Image"/>
                         <h2> Title of post </h2>
                         <p> Date posted </p>
                         <p>Description</p>
@@ -86,7 +88,7 @@ export default function PostSection() {
                     <button class="showMorebtn"> Show more </button>
                 </div>
             </section>
+            <Footer/>
         </>
-        
     )
 }
