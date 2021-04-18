@@ -7,7 +7,6 @@ import './postStyle.css';
 import Footer from '../component/Footer';
 import PostItem from '../component/PostItem';
 import '../component/Posts.css';
-import { Link } from 'react-router-dom';
 
 
 export default function PostSection() {
@@ -172,7 +171,7 @@ export default function PostSection() {
                 </div>
 
                 <div class="button-container">
-                    {button && <Button buttonStyle='btn--black' buttonSize="btn--large"><Link to='/' style={{color: 'white', textDecoration:'none'}}>More</Link></Button>}
+                    {button && <Button buttonStyle='btn--black' buttonSize="btn--large">More</Button>}
                 </div>
 
                 <div className='footer-container'>

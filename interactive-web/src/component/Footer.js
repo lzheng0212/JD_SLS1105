@@ -30,8 +30,8 @@ function Footer() {
                 <element className = "linklist">
                     
                         <li><a href = "www.youtube.com">FAQ</a></li>
-                        <li><a href = "www.youtube.com">Event</a></li>
-                        <li><a href = "www.youtube.com">News</a></li>
+                        <li><a href = "/events">Event</a></li>
+                        <li><a href = "/post">News</a></li>
                     
                 </element>
             </element>
@@ -45,7 +45,7 @@ function Footer() {
                 </element>
                 <element className = "linklist">
                     
-                        <li><a href = "www.youtube.com">About Us</a></li>
+                        <li><a href = "/aboutUs">About Us</a></li>
                         <li><a href = "www.youtube.com">Contact Us</a></li>
                     
                 </element>

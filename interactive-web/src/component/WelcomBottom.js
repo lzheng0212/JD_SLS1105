@@ -48,7 +48,7 @@ function WelcomBottom() {
                     </EventItem>
 
                     <section className='section_button'>
-                        {button && <Button buttonStyle='btn--black' buttonSize="btn--large">More Events</Button>}
+                        {button && <Button buttonStyle='btn--black' buttonSize="btn--large" path='/events'>More Events</Button>}
                     </section>
                 </div>
                 <div id="col-2">

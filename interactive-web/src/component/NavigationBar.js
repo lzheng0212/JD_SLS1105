@@ -63,7 +63,7 @@ function NavigationBar() {
               </p>
         </element>
         <element className="donateButton-container">
-          {button && <Button buttonStyle='btn--round' buttonSize="btn--large"><Link to='/donate' style={{color: 'white', textDecoration:'none'}}>Donate</Link></Button>}
+          {button && <Button buttonStyle='btn--round' buttonSize="btn--large" path='/donate'>Donate</Button>}
         </element>
       </div>
     </div>

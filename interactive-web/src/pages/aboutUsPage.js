@@ -14,29 +14,29 @@ export default function PostSection() {
                 <section class="stuff">
                     {/* <div class="stuffRow"> */}
                         <div class="stuffCol1">
-                            <img class="stuffImage" src={stuffImage} alt="Stuff Image"/>
+                            <img class="stuffImage" src={stuffImage} alt="Stuff"/>
                             <h2>Name/Description</h2>
                         </div>
                         <div class="stuffCol2">
-                            <img class="stuffImage" src={stuffImage} alt="Stuff Image"/>
+                            <img class="stuffImage" src={stuffImage} alt="Stuff"/>
                             <h2>Name/Description</h2>
                         </div>
                         <div class="stuffCol3">
-                            <img class="stuffImage" src={stuffImage} alt="Stuff Image"/>
+                            <img class="stuffImage" src={stuffImage} alt="Stuff"/>
                             <h2>Name/Description</h2>
                         </div>
                     {/* </div> */}
                     {/* <div class="stuffRow"> */}
                         <div class="stuffCol1">
-                            <img class="stuffImage" src={stuffImage} alt="Stuff Image"/>
+                            <img class="stuffImage" src={stuffImage} alt="Stuff"/>
                             <h2>Name/Description</h2>
                         </div>
                         <div class="stuffCol2">
-                            <img class="stuffImage" src={stuffImage} alt="Stuff Image"/>
+                            <img class="stuffImage" src={stuffImage} alt="Stuff"/>
                             <h2>Name/Description</h2>
                         </div>
                         <div class="stuffCol3">
-                            <img class="stuffImage" src={stuffImage} alt="Stuff Image"/>
+                            <img class="stuffImage" src={stuffImage} alt="Stuff"/>
                             <h2>Name/Description</h2>
                         </div>
                     {/* </div> */}

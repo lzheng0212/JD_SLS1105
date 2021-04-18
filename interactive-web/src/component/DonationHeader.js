@@ -1,5 +1,4 @@
 import './DonationHeader.css';
-import heroIMG from "../assets/Hero.png";
 
 function DonationHeader() {
     return (
