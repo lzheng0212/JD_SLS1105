@@ -8,19 +8,10 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import NavigationBar from './component/NavigationBar';
 import Home from './pages/Home';
 import PostSection from './pages/postSection';
-<<<<<<< HEAD
-import aboutUsPage from './pages/aboutUsPage';
-import FullCalendarPage from './pages/FullCalendarPage';
-import CreatePostPage from './pages/CreatePostPage';
 import React, { useState, useEffect } from "react";
-import firebase from "./firebase";
-=======
-import React, { useState, useEffect } from "react";
-import firebase from "./firebase";
 import aboutUsPage from './pages/aboutUsPage';
 import FullCalendarPage from './pages/FullCalendarPage';
 import SpecificPost from './pages/specifcPost';
->>>>>>> Ricky
 
 function App() {
 
@@ -35,11 +26,7 @@ function App() {
           <Route path='/donate' exact component={DonationPage}/>
           <Route path='/aboutUs' exact component={aboutUsPage}/>
           <Route path='/events' exact component={FullCalendarPage}/>
-<<<<<<< HEAD
-          <Route path='/create' exact component={CreatePostPage}/>
-=======
           <Route path='/specificPost' exact component={SpecificPost}/>
->>>>>>> Ricky
         </Switch>
       </Router>
     </>
