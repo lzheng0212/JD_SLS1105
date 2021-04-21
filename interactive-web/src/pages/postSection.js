@@ -7,7 +7,6 @@ import './postStyle.css';
 import Footer from '../component/Footer';
 import PostItem from '../component/PostItem';
 import '../component/Posts.css';
-import { Link } from 'react-router-dom';
 
 
 export default function PostSection() {
@@ -27,8 +26,14 @@ export default function PostSection() {
     return (
         <>
             <div className='container'>
+
                 <div class="opening-container">
-                    <h1 >Post Section</h1>
+                    <div className='create_post-container'>
+                        {button && <Button buttonStyle='btn--primary' buttonSize="btn--large">Create Post</Button>}
+                    </div>
+                    <h1>Post Section</h1>
+
+
                 </div>
 
                 <div className='search-container'>
@@ -172,7 +177,7 @@ export default function PostSection() {
                 </div>
 
                 <div class="button-container">
-                    {button && <Button buttonStyle='btn--black' buttonSize="btn--large"><Link to='/' style={{color: 'white', textDecoration:'none'}}>More</Link></Button>}
+                    {button && <Button buttonStyle='btn--black' buttonSize="btn--large">More</Button>}
                 </div>
 
                 <div className='footer-container'>

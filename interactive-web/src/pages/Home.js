@@ -15,8 +15,6 @@ function Home() {
                 <WelcomeSub />
                 <Posts />
                 <WelcomeBottom />
-    
-                
             </div>
             <Footer />
         </>

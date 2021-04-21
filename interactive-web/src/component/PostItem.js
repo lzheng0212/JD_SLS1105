@@ -9,7 +9,7 @@ function postItem(props) {
                     <figure className='posts__item__pic-wrap' data-category={props.label}>
                         <img
                             className='posts__item__img'
-                            alt='Post Image'
+                            alt='Post'
                             src={props.src}
                         />
                     </figure>

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Button.css';
-import { Link } from 'react-router-dom';
+
 
 const STYLES = ['btn--primary', 'btn--outline', 'btn--round', 'btn--black', 'btn--donate', 'btn--circle'];
 
@@ -24,7 +24,7 @@ export const Button = ({
 
 
   return (
-    <Link to={path} className='btn-mobile' style={{textDecoration: 'none'}}>
+    <a href={path} className='btn-mobile' style={{textDecoration: 'none'}}>
       <button
         className={`btn ${checkButtonStyle} ${checkButtonSize}`}
         onClick={onClick}
@@ -33,6 +33,6 @@ export const Button = ({
       >
         {children}
       </button>
-    </Link>
+    </a>
   );
 };

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './NavigationBar.css';
 import './Logo.css';
 import Logo from './Logo';
-import { Link } from 'react-router-dom';
+
 import { Button } from './Button';
 
 
@@ -27,14 +27,14 @@ function NavigationBar() {
 
   return (
     <div className="navigationBar">
-      <Link to='/home' style={{color: '#bdbdbd', textDecoration:'none'}}>
-      <Logo></Logo>
-        </Link>
+      <a href = "/home"><Logo></Logo></a>
+      
+        
       
       <div className="tabRoulette">
-        <Link to='/post' style={{color: '#bdbdbd', textDecoration:'none'}} className="tab">
+        <a href='/post' style={{color: '#bdbdbd', textDecoration:'none'}} className="tab">
           Posts
-        </Link>
+        </a>
         <element className="tab">
           <p>
             Map
@@ -47,7 +47,7 @@ function NavigationBar() {
         </element>
         <element className="tab">
           <p>
-            Events
+          <a href='/events' style={{color: '#bdbdbd', textDecoration:'none'}}>Events</a>
           </p>
         </element>
         <element className="tab">
@@ -59,11 +59,11 @@ function NavigationBar() {
       <div className='orgRoulette'>
         <element className="tab">
           <p>
-          <Link to='/aboutUs' style={{color: '#bdbdbd', textDecoration:'none'}}>About Us</Link>
+          <a href='/aboutUs' style={{color: '#bdbdbd', textDecoration:'none'}}>About Us</a>
               </p>
         </element>
         <element className="donateButton-container">
-          {button && <Button buttonStyle='btn--round' buttonSize="btn--large"><Link to='/donate' style={{color: 'white', textDecoration:'none'}}>Donate</Link></Button>}
+          {button && <Button buttonStyle='btn--round' buttonSize="btn--large" path='/donate'>Donate</Button>}
         </element>
       </div>
     </div>

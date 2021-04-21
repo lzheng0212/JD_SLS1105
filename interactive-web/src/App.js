@@ -8,9 +8,14 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import NavigationBar from './component/NavigationBar';
 import Home from './pages/Home';
 import PostSection from './pages/postSection';
+<<<<<<< HEAD
 import aboutUsPage from './aboutUsPage/aboutUsPage';
 import React, { useState, useEffect } from "react";
 import firebase from "./firebase";
+=======
+import aboutUsPage from './pages/aboutUsPage';
+import FullCalendarPage from './pages/FullCalendarPage';
+>>>>>>> 4c6bfed36932fb314f84ad8c64b1f60f2f1dc9fd
 
 function App() {
   const [schools, setSchools] = useState([]);
@@ -48,6 +53,7 @@ function App() {
           <Route path='/post' exact component={PostSection}/>
           <Route path='/donate' exact component={DonationPage}/>
           <Route path='/aboutUs' exact component={aboutUsPage}/>
+          <Route path='/events' exact component={FullCalendarPage}/>
         </Switch>
       </Router>
     <div>

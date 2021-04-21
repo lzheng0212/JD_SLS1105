@@ -5,6 +5,7 @@
   height: 100vh;
   width: 100%;
   display: block;
+  margin-top: 60px;
   flex-direction: column;
   align-items: center;
   object-fit: contain;
@@ -13,24 +14,29 @@
 .opening-container {
   background: url('../assets/greenField.jpg') center center/cover no-repeat;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   width: 100%;
+  justify-content: center;
+  align-items: center;
   height: 60%;
 }
 
-.opening-container > h1 {
-  
+.create_post-container {
+ 
+display: flex;
+align-self: right;
+}
+
+.opening-container h1 {
+  display: flex;
   font-family: Marcellus;
   font-style: normal;
   font-weight: normal;
   font-size: 100px;
   line-height: 125px;
-  align-items: center;
-  justify-self: center;
   text-align: center;
   letter-spacing: -0.015em;
-
+  
   color: #FFFDFD;
 
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

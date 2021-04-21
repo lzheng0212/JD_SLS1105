@@ -12,8 +12,11 @@
   }
   
   #col-2 {
-    background-color: orange;
+    
+    display: flex;
+      flex-direction: column;
     flex: 1;
+        padding: 20px;
   }
   .section_button {
     display: flex;

@@ -4,21 +4,26 @@
 }
 
 div.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 5%;
   width: 100%;
   height: 80px;
   text-align: center;
 }
 h1.h1top {
-  display: inline;
+  display: flex;
+  justify-content: center;
   text-align: center;
 }
 
 div.ourTeam {
-  position: relative;
+  display: flex;
   width: 100%;
   height: 700px;
   align-items: center;
+  justify-content: center;
 }
 
 section.stuff {
@@ -52,6 +57,8 @@ div.stuffCol1 {
 hr.horizontalLine {
   border: 4px solid rgba(157, 176, 148, 0.73);
   background-color: rgba(157, 176, 148, 0.73);
+  margin-top: 5%;
+  margin-bottom: 5%;
   width: 80%;
   margin-left: 10%;
   border-radius: 50px;
@@ -96,8 +103,9 @@ div.AMV p {
 div.contactUs {
   text-align: center;
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 5%;
   font-size: 20px;
+  
 }
 
 div.contactUs h2 {
