@@ -50,7 +50,7 @@ export default function PostSection() {
                         description='description'
                         date='post date'
                         label='Adventure'
-                        path='/services'
+                        path='/specificPost'
                     />
                     <PostItem
                         src={apples}
@@ -58,7 +58,7 @@ export default function PostSection() {
                         description='description'
                         date='post date'
                         label='Luxury'
-                        path='/services'
+                        path='/specificPost'
                     />
 
 
@@ -68,7 +68,7 @@ export default function PostSection() {
                         description='description'
                         date='post date'
                         label='Mystery'
-                        path='/services'
+                        path='/specificPost'
                     />
                     <PostItem
                         src={sunset}
@@ -76,7 +76,7 @@ export default function PostSection() {
                         description='description'
                         date='post date'
                         label='Adventure'
-                        path='/services'
+                        path='/specificPost'
                     />
                     <PostItem
                         src={apples}
@@ -84,7 +84,7 @@ export default function PostSection() {
                         description='description'
                         date='post date'
                         label='Luxury'
-                        path='/services'
+                        path='/specificPost'
                     />
 
 
@@ -94,7 +94,7 @@ export default function PostSection() {
                         description='description'
                         date='post date'
                         label='Mystery'
-                        path='/services'
+                        path='/specificPost'
                     />
                     <PostItem
                         src={sunset}
@@ -102,7 +102,7 @@ export default function PostSection() {
                         description='description'
                         date='post date'
                         label='Adventure'
-                        path='/services'
+                        path='/specificPost'
                     />
                     <PostItem
                         src={apples}
@@ -110,7 +110,7 @@ export default function PostSection() {
                         description='description'
                         date='post date'
                         label='Luxury'
-                        path='/services'
+                        path='/specificPost'
                     />
 
 
@@ -120,7 +120,7 @@ export default function PostSection() {
                         description='description'
                         date='post date'
                         label='Mystery'
-                        path='/services'
+                        path='/specificPost'
                     />
                     <PostItem
                         src={sunset}
@@ -128,7 +128,7 @@ export default function PostSection() {
                         description='description'
                         date='post date'
                         label='Adventure'
-                        path='/services'
+                        path='/specificPost'
                     />
                     <PostItem
                         src={apples}
@@ -136,7 +136,7 @@ export default function PostSection() {
                         description='description'
                         date='post date'
                         label='Luxury'
-                        path='/services'
+                        path='/specificPost'
                     />
 
 
@@ -146,7 +146,7 @@ export default function PostSection() {
                         description='description'
                         date='post date'
                         label='Mystery'
-                        path='/services'
+                        path='/specificPost'
                     />
                     <PostItem
                         src={sunset}
@@ -154,7 +154,7 @@ export default function PostSection() {
                         description='description'
                         date='post date'
                         label='Adventure'
-                        path='/services'
+                        path='/specificPost'
                     />
                     <PostItem
                         src={apples}
@@ -162,7 +162,7 @@ export default function PostSection() {
                         description='description'
                         date='post date'
                         label='Luxury'
-                        path='/services'
+                        path='/specificPost'
                     />
 
 
@@ -172,7 +172,7 @@ export default function PostSection() {
                         description='description'
                         date='post date'
                         label='Mystery'
-                        path='/services'
+                        path='/specificPost'
                     />
                 </div>
 
