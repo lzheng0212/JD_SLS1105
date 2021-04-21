@@ -32,7 +32,7 @@ function Posts() {
                     description='description'
                     date='post date'
                     label='Adventure'
-                    path='/services'
+                    path='/specificPost'
                 />
                 <PostItem
                     src={postIMG}
@@ -40,7 +40,7 @@ function Posts() {
                     description='description'
                     date='post date'
                     label='Luxury'
-                    path='/services'
+                    path='/specificPost'
                 />
 
 
@@ -50,7 +50,7 @@ function Posts() {
                     description='description'
                     date='post date'
                     label='Mystery'
-                    path='/services'
+                    path='/specificPost'
                 />
                 <PostItem
                     src={postIMG}

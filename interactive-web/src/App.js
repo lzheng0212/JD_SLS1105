@@ -8,61 +8,40 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import NavigationBar from './component/NavigationBar';
 import Home from './pages/Home';
 import PostSection from './pages/postSection';
+<<<<<<< HEAD
 import aboutUsPage from './pages/aboutUsPage';
 import FullCalendarPage from './pages/FullCalendarPage';
 import CreatePostPage from './pages/CreatePostPage';
 import React, { useState, useEffect } from "react";
 import firebase from "./firebase";
+=======
+import React, { useState, useEffect } from "react";
+import firebase from "./firebase";
+import aboutUsPage from './pages/aboutUsPage';
+import FullCalendarPage from './pages/FullCalendarPage';
+import SpecificPost from './pages/specifcPost';
+>>>>>>> Ricky
 
 function App() {
-  const [schools, setSchools] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  const ref = firebase.firestore().collection("schools");
-
-  function getSchools() {
-    setLoading(true);
-    ref.onSnapshot((querySnapshot) => {
-      const items = [];
-      querySnapshot.forEach((doc) => {
-        items.push(doc.data());
-      });
-      setSchools(items);
-      setLoading(false);
-    });
-  }
-
-  useEffect(() => {
-    getSchools();
-  }, []);
-
-  if (loading) {
-    return <h1>Loading.... </h1>;
-  }
 
   return (
     <>
       <Router>
         <NavigationBar />
         <Switch>
-        <Route path='/' exact component={Home}/>
-        <Route path='/home' exact component={Home}/>
+          <Route path='/' exact component={Home}/>
+          <Route path='/home' exact component={Home}/>
           <Route path='/post' exact component={PostSection}/>
           <Route path='/donate' exact component={DonationPage}/>
           <Route path='/aboutUs' exact component={aboutUsPage}/>
           <Route path='/events' exact component={FullCalendarPage}/>
+<<<<<<< HEAD
           <Route path='/create' exact component={CreatePostPage}/>
+=======
+          <Route path='/specificPost' exact component={SpecificPost}/>
+>>>>>>> Ricky
         </Switch>
       </Router>
-    <div>
-      <h1>Schools</h1>
-      {schools.map((school) => (
-        <div key={school.id}>
-          <h2>{school.title}</h2>
-          <p>{school.desc}</p>
-        </div>
-      ))}
-    </div>
     </>
     
   );
