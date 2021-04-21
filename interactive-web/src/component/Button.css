@@ -1,5 +1,5 @@
 :root {
-  --primary: rgb(20, 26, 23);
+  --primary: rgb(40, 71, 52);
 }
 
 .btn {
@@ -44,7 +44,7 @@
   /* Rectangle 5 */
   background-color: #000000b2;
   border-radius: 50px;
-  border: 1px solid var(--primary);
+  
   color: #fff;
   opacity: 0.7;
   z-index: -1;

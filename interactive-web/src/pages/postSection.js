@@ -26,8 +26,14 @@ export default function PostSection() {
     return (
         <>
             <div className='container'>
+
                 <div class="opening-container">
-                    <h1 >Post Section</h1>
+                    <div className='create_post-container'>
+                        {button && <Button buttonStyle='btn--primary' buttonSize="btn--large">Create Post</Button>}
+                    </div>
+                    <h1>Post Section</h1>
+
+
                 </div>
 
                 <div className='search-container'>
