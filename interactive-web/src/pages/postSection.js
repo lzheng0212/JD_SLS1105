@@ -29,7 +29,7 @@ export default function PostSection() {
 
                 <div class="opening-container">
                     <div className='create_post-container'>
-                        {button && <Button buttonStyle='btn--primary' buttonSize="btn--large">Create Post</Button>}
+                        {button && <Button buttonStyle='btn--primary' buttonSize="btn--large" path='./create'>Create Post</Button>}
                     </div>
                     <h1>Post Section</h1>
 

@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import PostSection from './pages/postSection';
 import aboutUsPage from './pages/aboutUsPage';
 import FullCalendarPage from './pages/FullCalendarPage';
+import CreatePostPage from './pages/CreatePostPage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path='/donate' exact component={DonationPage}/>
           <Route path='/aboutUs' exact component={aboutUsPage}/>
           <Route path='/events' exact component={FullCalendarPage}/>
+          <Route path='/create' exact component={CreatePostPage}/>
         </Switch>
       </Router>
     </>
