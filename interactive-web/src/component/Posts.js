@@ -32,17 +32,14 @@ function Posts() {
             <div className='posts__container'>
                 { docs && docs.map(doc => (
                     <PostItem
-                    src={doc.url}
-                    title='Post Title'
-                    description='description'
-                    date='post date'
-                    label='Adventure'
-                    path='/specificPost'
-                />
-<<<<<<< HEAD
+                        src={doc.url}
+                        title='Post Title'
+                        description='description'
+                        date='post date'
+                        label='Adventure'
+                        path='/specificPost'
+                    />
                 ))}
-                
-=======
                 <PostItem
                     src={postIMG}
                     title='Post Title'
@@ -77,7 +74,6 @@ function Posts() {
                     label='Adrenaline'
                     path='/sign-up'
                 />
->>>>>>> 8d619fae88abe33d3841dd15e1d61ad9a426f4cd
             </div>
 
             <div className='posts__button'>
