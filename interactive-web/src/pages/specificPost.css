@@ -1,0 +1,18 @@
+* {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+div.body {
+  min-height: 600px;
+  margin: 0 10% 0 10%;
+}
+
+div.titleSection h4 {
+  margin-left: 120px;
+}
+
+div.titleSection {
+  height: 100px;
+  text-align: left;
+  margin-left: 50px;
+}

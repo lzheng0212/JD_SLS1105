@@ -1,35 +1,45 @@
 import React, { useState, useEffect } from "react";
 import { projectFirestore } from "../firebase/config";
 import useFirestore from '../hooks/useFirestore';
+import Footer from '../component/Footer';
+import './specificPost.css';
 
 //rfc
 //Collection on database must have a field named "createdAt"
 
 export default function SpecifcPost() {
 
-    const { docs } = useFirestore("schools");
+    const { docs } = useFirestore("testPost");
     //docs right now is an array of 1 element.
     //in that 1 element it has all its attributes and can be accessed
     //using .(name of attribute)
     // console.log(docs[0].url);
-    // console.log(docs);
+    //console.log(docs[1]);
     return (
         <>
-            <div>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+
+            <div class="titleSection">
                 {docs.map((doc) => (
                     <>
-                        <h1>{doc.postTitle}</h1>
-                        <p>Content!</p>
-                        <p>{doc.url}</p>
+                        <h1>{doc.nameOfPost}</h1>
+                        <h4>{doc.date}</h4>
+                        <p>{doc.createdAt}</p>
                     </>
                 ))}
-
             </div>
+
+            <div class="body">
+                {docs.map((doc) => (
+                    <>
+                        <p>{doc.postContent}</p>
+                    </>
+                ))}
+            </div>
+            <Footer/>
         </>
     );
 }
