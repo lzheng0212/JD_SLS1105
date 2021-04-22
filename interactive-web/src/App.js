@@ -8,8 +8,10 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import NavigationBar from './component/NavigationBar';
 import Home from './pages/Home';
 import PostSection from './pages/postSection';
+import React, { useState, useEffect } from "react";
 import aboutUsPage from './pages/aboutUsPage';
 import FullCalendarPage from './pages/FullCalendarPage';
+<<<<<<< HEAD
 import CreatePostPage from './pages/CreatePostPage';
 //import React, { useState, useEffect } from "react";
 //import projectFirestore from "./firebase/config";
@@ -39,21 +41,27 @@ function App() {
   // if (loading) {
   //   return <h1>Loading.... </h1>;
   // }
+=======
+import SpecificPost from './pages/specifcPost';
+
+function App() {
+>>>>>>> 8d619fae88abe33d3841dd15e1d61ad9a426f4cd
 
   return (
     <>
       <Router>
         <NavigationBar />
         <Switch>
-        <Route path='/' exact component={Home}/>
-        <Route path='/home' exact component={Home}/>
+          <Route path='/' exact component={Home}/>
+          <Route path='/home' exact component={Home}/>
           <Route path='/post' exact component={PostSection}/>
           <Route path='/donate' exact component={DonationPage}/>
           <Route path='/aboutUs' exact component={aboutUsPage}/>
           <Route path='/events' exact component={FullCalendarPage}/>
-          <Route path='/create' exact component={CreatePostPage}/>
+          <Route path='/specificPost' exact component={SpecificPost}/>
         </Switch>
       </Router>
+<<<<<<< HEAD
     {/* <div>
       <h1>Schools</h1>
       {schools.map((school) => (
@@ -63,6 +71,8 @@ function App() {
         </div>
       ))}
     </div> */}
+=======
+>>>>>>> 8d619fae88abe33d3841dd15e1d61ad9a426f4cd
     </>
     
   );

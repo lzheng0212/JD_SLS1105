@@ -51,15 +51,18 @@ export default function PostSection() {
 
                 { docs && docs.map(doc => (
                     <PostItem
+<<<<<<< HEAD
                     src={doc.url}
                     title='Post Title'
                     description='description'
                     date='post date'
                     label='Adventure'
-                    path='/services'
+                    path='/specificPost'
                 />
                 ))}
                     
+=======
+>>>>>>> 8d619fae88abe33d3841dd15e1d61ad9a426f4cd
                 </div>
 
                 <div className="button-container">

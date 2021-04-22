@@ -37,10 +37,47 @@ function Posts() {
                     description='description'
                     date='post date'
                     label='Adventure'
-                    path='/services'
+                    path='/specificPost'
                 />
+<<<<<<< HEAD
                 ))}
                 
+=======
+                <PostItem
+                    src={postIMG}
+                    title='Post Title'
+                    description='description'
+                    date='post date'
+                    label='Luxury'
+                    path='/specificPost'
+                />
+
+
+                <PostItem
+                    src={postIMG}
+                    title='Post Title'
+                    description='description'
+                    date='post date'
+                    label='Mystery'
+                    path='/specificPost'
+                />
+                <PostItem
+                    src={postIMG}
+                    title='Post Title'
+                    description='description'
+                    date='post date'
+                    label='Adventure'
+                    path='/products'
+                />
+                <PostItem
+                    src={postIMG}
+                    title='Post Title'
+                    description='description'
+                    date='post date'
+                    label='Adrenaline'
+                    path='/sign-up'
+                />
+>>>>>>> 8d619fae88abe33d3841dd15e1d61ad9a426f4cd
             </div>
 
             <div className='posts__button'>

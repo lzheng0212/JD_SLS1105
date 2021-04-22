@@ -1,12 +1,13 @@
-import React from 'react'
+// import React from 'react'
 import './aboutUsPage.css';
 import stuffImage from '../assets/stuffImage.png';
 import Footer from '../component/Footer';
 
 export default function PostSection() {
+
     return (
         <>
-            
+          
             <div class="top">
                  <h1 class="h1top">Our team</h1>
             </div>
