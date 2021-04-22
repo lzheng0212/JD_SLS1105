@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import firebase from "../firebase";
+import { projectFirestore } from "../firebase/config";
 
 //rfc
 
@@ -8,7 +8,7 @@ export default function SpecifcPost() {
     const [schools, setSchools] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    const ref = firebase.firestore().collection("schools");
+    const ref = projectFirestore.collection("schools");
 
     function getSchools() {
         setLoading(true);

@@ -24,7 +24,7 @@ export default function PostSection() {
         showButton();
     }, []);
 
-    const { docs } = useFirestore('images');
+    const { docs } = useFirestore('posts');
     console.log(docs);
 
 
@@ -51,18 +51,15 @@ export default function PostSection() {
 
                 { docs && docs.map(doc => (
                     <PostItem
-<<<<<<< HEAD
+
                     src={doc.url}
-                    title='Post Title'
-                    description='description'
-                    date='post date'
-                    label='Adventure'
-                    path='/specificPost'
+                    title={doc.title}
+                    description={doc.desc}
+                    date='04.30.2021'
+                    label={doc.cat}
                 />
                 ))}
                     
-=======
->>>>>>> 8d619fae88abe33d3841dd15e1d61ad9a426f4cd
                 </div>
 
                 <div className="button-container">

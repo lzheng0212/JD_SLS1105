@@ -1,5 +1,6 @@
 :root{
-    --primary: #efb6b2;
+    --primary: #0d3821;
+    --error: #ff4a4a;
   }
 .progress-bar{
     height: 5px;
