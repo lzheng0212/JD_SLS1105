@@ -12,6 +12,7 @@ const useFirestore = (collection) => {
                 snap.forEach(doc => {
                     documents.push({ ...doc.data(), title: doc.postTitle, desc: doc.postDesc, cat: doc.postCategory, createdAt: doc.createdAt})
                 });
+                
                 setDocs(documents);
             });
 

@@ -51,12 +51,12 @@ export default function PostSection() {
 
                 { docs && docs.map(doc => (
                     <PostItem
-
                     src={doc.url}
-                    title={doc.title}
-                    description={doc.desc}
-                    date='04.30.2021'
-                    label={doc.cat}
+                    title={doc.postTitle}
+                    description={doc.postDesc}
+                    date={doc.createdAt}
+                    label={doc.postCategory}
+                    path='/specificPost'
                 />
                 ))}
                     
