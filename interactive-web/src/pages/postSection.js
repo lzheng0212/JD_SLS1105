@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '../component/Button';
-import sunset from '../assets/sunset.jpg';
-import apples from '../assets/apples.jpg';
-import wheat from '../assets/wheat.jpg';
+// import sunset from '../assets/sunset.jpg';
+// import apples from '../assets/apples.jpg';
+// import wheat from '../assets/wheat.jpg';
 import './postStyle.css';
 import Footer from '../component/Footer';
 import PostItem from '../component/PostItem';
 import '../component/Posts.css';
+import useFirestore from '../hooks/useFirestore';
 
 
 export default function PostSection() {
@@ -23,11 +24,15 @@ export default function PostSection() {
         showButton();
     }, []);
 
+    const { docs } = useFirestore('images');
+    console.log(docs);
+
+
     return (
         <>
             <div className='container'>
 
-                <div class="opening-container">
+                <div className="opening-container">
                     <div className='create_post-container'>
                         {button && <Button buttonStyle='btn--primary' buttonSize="btn--large" path='./create'>Create Post</Button>}
                     </div>
@@ -44,139 +49,20 @@ export default function PostSection() {
 
                 <div className='post-container'>
 
+                { docs && docs.map(doc => (
                     <PostItem
-                        src={sunset}
-                        title='Post Title'
-                        description='description'
-                        date='post date'
-                        label='Adventure'
-                        path='/services'
-                    />
-                    <PostItem
-                        src={apples}
-                        title='Post Title'
-                        description='description'
-                        date='post date'
-                        label='Luxury'
-                        path='/services'
-                    />
-
-
-                    <PostItem
-                        src={wheat}
-                        title='Post Title'
-                        description='description'
-                        date='post date'
-                        label='Mystery'
-                        path='/services'
-                    />
-                    <PostItem
-                        src={sunset}
-                        title='Post Title'
-                        description='description'
-                        date='post date'
-                        label='Adventure'
-                        path='/services'
-                    />
-                    <PostItem
-                        src={apples}
-                        title='Post Title'
-                        description='description'
-                        date='post date'
-                        label='Luxury'
-                        path='/services'
-                    />
-
-
-                    <PostItem
-                        src={wheat}
-                        title='Post Title'
-                        description='description'
-                        date='post date'
-                        label='Mystery'
-                        path='/services'
-                    />
-                    <PostItem
-                        src={sunset}
-                        title='Post Title'
-                        description='description'
-                        date='post date'
-                        label='Adventure'
-                        path='/services'
-                    />
-                    <PostItem
-                        src={apples}
-                        title='Post Title'
-                        description='description'
-                        date='post date'
-                        label='Luxury'
-                        path='/services'
-                    />
-
-
-                    <PostItem
-                        src={wheat}
-                        title='Post Title'
-                        description='description'
-                        date='post date'
-                        label='Mystery'
-                        path='/services'
-                    />
-                    <PostItem
-                        src={sunset}
-                        title='Post Title'
-                        description='description'
-                        date='post date'
-                        label='Adventure'
-                        path='/services'
-                    />
-                    <PostItem
-                        src={apples}
-                        title='Post Title'
-                        description='description'
-                        date='post date'
-                        label='Luxury'
-                        path='/services'
-                    />
-
-
-                    <PostItem
-                        src={wheat}
-                        title='Post Title'
-                        description='description'
-                        date='post date'
-                        label='Mystery'
-                        path='/services'
-                    />
-                    <PostItem
-                        src={sunset}
-                        title='Post Title'
-                        description='description'
-                        date='post date'
-                        label='Adventure'
-                        path='/services'
-                    />
-                    <PostItem
-                        src={apples}
-                        title='Post Title'
-                        description='description'
-                        date='post date'
-                        label='Luxury'
-                        path='/services'
-                    />
-
-
-                    <PostItem
-                        src={wheat}
-                        title='Post Title'
-                        description='description'
-                        date='post date'
-                        label='Mystery'
-                        path='/services'
-                    />
+                    src={doc.url}
+                    title='Post Title'
+                    description='description'
+                    date='post date'
+                    label='Adventure'
+                    path='/services'
+                />
+                ))}
+                    
                 </div>
 
-                <div class="button-container">
+                <div className="button-container">
                     {button && <Button buttonStyle='btn--black' buttonSize="btn--large">More</Button>}
                 </div>
 

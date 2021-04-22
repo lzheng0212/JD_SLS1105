@@ -3,6 +3,7 @@ import './Posts.css';
 import PostItem from './PostItem';
 import postIMG from '../assets/apples.jpg';
 import { Button } from './Button';
+import useFirestore from '../hooks/useFirestore';
 
 
 function Posts() {
@@ -15,59 +16,31 @@ function Posts() {
             setButton(true);
         }
     };
-
     useEffect(() => {
         showButton();
     }, []);
+
+    const { docs } = useFirestore('images');
+    console.log(docs);
+
+
 
 
     return (
         <div className='posts'>
             <h1>Latest Posts</h1>
             <div className='posts__container'>
-
-                <PostItem
-                    src={postIMG}
+                { docs && docs.map(doc => (
+                    <PostItem
+                    src={doc.url}
                     title='Post Title'
                     description='description'
                     date='post date'
                     label='Adventure'
                     path='/services'
                 />
-                <PostItem
-                    src={postIMG}
-                    title='Post Title'
-                    description='description'
-                    date='post date'
-                    label='Luxury'
-                    path='/services'
-                />
-
-
-                <PostItem
-                    src={postIMG}
-                    title='Post Title'
-                    description='description'
-                    date='post date'
-                    label='Mystery'
-                    path='/services'
-                />
-                <PostItem
-                    src={postIMG}
-                    title='Post Title'
-                    description='description'
-                    date='post date'
-                    label='Adventure'
-                    path='/products'
-                />
-                <PostItem
-                    src={postIMG}
-                    title='Post Title'
-                    description='description'
-                    date='post date'
-                    label='Adrenaline'
-                    path='/sign-up'
-                />
+                ))}
+                
             </div>
 
             <div className='posts__button'>
