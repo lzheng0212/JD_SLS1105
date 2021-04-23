@@ -24,8 +24,6 @@ function Posts() {
     console.log(docs);
 
 
-
-
     return (
         <div className='posts'>
             <h1>Latest Posts</h1>
@@ -42,6 +40,7 @@ function Posts() {
                 ))}
                 
             </div>
+
 
             <div className='posts__button'>
                 {button && <Button buttonStyle='btn--black' buttonSize="btn--large" path='/post'>Read More Posts</Button>}
