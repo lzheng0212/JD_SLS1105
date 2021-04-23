@@ -11,10 +11,7 @@ const UploadForm = () => {
     const [title, setTitle] = useState("");
     const [desc, setDesc] = useState("");
     const [cat, setCat] = useState("");
-    const [url, setUrl] = useState(null);
 
-    const [loader, setLoader] = useState(false);
-    const createdAt = timestamp();
 
 
 

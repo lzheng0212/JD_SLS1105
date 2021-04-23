@@ -1,6 +1,7 @@
 .posts__item {
     display: flex;
     width: 300px;
+    max-height: 500px;
     padding: 20px;
     border-radius: 10px;
     padding-bottom: 40px;
