@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './PostItem.css';
+import ReactHtmlParser from 'react-html-parser';
 
-function postItem(props) {
+function PostItem(props) {
+
     return (
         <div>
-            
             <li className='posts__item'>
                 <Link className='posts__item__link' to={props.path}>
                     <figure className='posts__item__pic-wrap' data-category={props.label}>
@@ -16,8 +17,8 @@ function postItem(props) {
                         />
                     </figure>
                     <div className='posts__item__info'>
-                        <h5 className='posts__item__title'>{props.title.substring(0, 250)}</h5>
-                        <h5 className='posts__item__text'>{props.description.substring(0, 100)}</h5>
+                        <h5 id="postContent" className='posts__item__title'>{props.title}</h5>
+                        <h5 className='posts__item__text'>{ReactHtmlParser(props.description)}</h5>
                         <h5 className='posts__item__text'>{props.date}</h5>
                     </div>
                 </Link>
@@ -28,5 +29,5 @@ function postItem(props) {
 
 
 
-export default postItem
+export default PostItem
 

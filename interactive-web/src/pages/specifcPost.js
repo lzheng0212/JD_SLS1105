@@ -1,7 +1,8 @@
-import React from "react";
-import useFirestore from '../hooks/useFirestore';
+import React, { useState, useEffect } from "react";
+import { projectFirestore } from "../firebase/config";
 import Footer from '../component/Footer';
 import './specificPost.css';
+import ReactHtmlParser from 'react-html-parser';
 
 //rfc
 //Collection on database must have a field named "createdAt"
@@ -15,7 +16,7 @@ export default function SpecifcPost() {
         lineHeight: '30px',
         fontWeight: '500'
     };
-    
+
     const category = {
         margin: '20px',
         marginLeft: '80px',
@@ -23,42 +24,43 @@ export default function SpecifcPost() {
         fontSize: '20px',
         lineHeight: '30px',
         fontWeight: '500',
-        fontStyle:'italic'
+        fontStyle: 'italic'
     }
+    const [docs, setDocs] = useState();
+    const [loaded, setLoaded] = useState(false);
+    useEffect(() => {
+        projectFirestore.collection("testPost").get().then((snapshot) => {
+            setDocs(snapshot.docs)
+            setLoaded(true)
+        })
+    }, [])
 
-    const { docs } = useFirestore("testPost");
-    //docs right now is an array of 1 element.
-    //in that 1 element it has all its attributes and can be accessed
-    //using .(name of attribute)
-    // console.log(docs[0].url);
-    //console.log(docs[1]);
+    if (!loaded) {
+        return (
+            <>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <p>LOADING</p>
+            </>
+        )
+    } else {
+        console.log(docs[0].data())
+    }
     return (
         <>
             <br></br>
             <br></br>
             <br></br>
             <br></br>
-
-            <div class="titleSection">
-                {docs.map((doc) => (
-                    <>
-                        <h1>{doc.nameOfPost}</h1>
-                        <h4>{doc.date}</h4>
-                        <p>{doc.createdAt}</p>
-                    </>
-                ))}
-            </div>
-
-            <div class="body">
-                {docs.map((doc) => (
-                    <>
-                        <p>{doc.postContent}</p>
-                    </>
-                ))}
-            </div>
-            <Footer/>
+            <p id="specificPostBody"></p>
+            <p>{docs[0].data().title}</p>
+            <p>{docs[0].data().author}</p>
+            <p>{ReactHtmlParser(docs[0].data().content)}</p>
+            <Footer />
         </>
-        
+
     );
 
 }
