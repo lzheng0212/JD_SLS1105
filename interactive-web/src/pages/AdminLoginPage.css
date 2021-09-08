@@ -1,0 +1,23 @@
+.admin-h1 {
+    color: green;
+}
+.admin-Container {
+    padding: 15px;
+    width: 400px;
+}
+  
+.admin-label {
+    margin-bottom: 20px;
+    margin-right: 5px;
+}
+  
+.admin-button {
+    background-color: green;
+}
+.admin-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
