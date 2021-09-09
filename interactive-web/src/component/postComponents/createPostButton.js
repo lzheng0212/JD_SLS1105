@@ -11,7 +11,6 @@ function CreatePostButton() {
                     path='./create'>
                     Create Post</Button>
             </div>
-            <h1>Post Section</h1>
         </div>
     )
 }

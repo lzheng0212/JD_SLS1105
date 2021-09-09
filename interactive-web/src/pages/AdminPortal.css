@@ -3,3 +3,9 @@
     left: 50%;
     top: 50%;
 }
+
+.post_create {
+    position: absolute;
+    left: 10%;
+    top: 20%;
+}
