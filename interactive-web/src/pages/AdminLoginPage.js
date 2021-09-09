@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './AdminLoginPage.css'
 
 import {projectAuth} from '../firebase/config';
+import AdminPortal from './AdminPortal';
 
 function AdminLoginPage() {
 
@@ -16,6 +17,7 @@ function AdminLoginPage() {
         console.log("You have signed in")
         console.log(email, password)
         document.getElementById("error").innerHTML = "You have signed in"
+        window.location.assign('/adminPortal') //need to revise
         // ...
         })
         .catch((error) => {

@@ -14,6 +14,7 @@ import FullCalendarPage from './pages/FullCalendarPage';
 import CreatePostPage from './pages/CreatePostPage';
 import SpecificPost from './pages/specifcPost';
 import AdminLoginPage from './pages/AdminLoginPage';
+import AdminPortal from './pages/AdminPortal';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
           <Route path='/donate' exact component={DonationPage}/>
           <Route path='/aboutUs' exact component={aboutUsPage}/>
           <Route path='/adminLogin' exact component={AdminLoginPage}/>
+          <Route path='/adminPortal' exact component={AdminPortal}/>
           <Route path='/events' exact component={FullCalendarPage}/>
           <Route path='/create' exact component={CreatePostPage}/>
           <Route path='/specificPost' exact component={SpecificPost}/>
