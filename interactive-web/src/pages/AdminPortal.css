@@ -1,11 +1,18 @@
 .portal_h1 {
     position: absolute;
-    left: 50%;
-    top: 50%;
+    padding-left: 10%;
+    padding-right: 10%;
+    top: 12%;
 }
 
-.post_create {
-    position: absolute;
-    left: 10%;
-    top: 20%;
+.button-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex: 4;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    justify-content: left;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 15%;
 }

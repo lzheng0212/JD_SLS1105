@@ -5,10 +5,8 @@ function AdminPortal() {
     return (
         <div>
             <h1 className='portal_h1'>Admin Portal</h1>
-            <div className='button_grid'>
-                <div className='post_create'>
-                    <CreatePostButton/>
-                </div>
+            <div className='button-wrapper'>
+                <CreatePostButton/>
             </div>
         </div>
     );
