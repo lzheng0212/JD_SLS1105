@@ -1,54 +1,54 @@
-import React, { useState, useEffect } from 'react';
-import './postStyle.css';
-import Footer from '../component/Footer';
-import PostItem from '../component/PostItem';
-import '../component/Posts.css';
-import { projectFirestore } from '../firebase/config';
-import CreatePostButton from '../component/postComponents/createPostButton';
-import PostSearchContainer from '../component/postComponents/postSearchContainer';
-import PostMoreButton from '../component/postComponents/PostMoreButton';
+import React, { useState, useEffect } from "react";
+import "./postStyle.css";
+import Footer from "../component/Footer";
+import PostItem from "../component/PostItem";
+import "../component/Posts.css";
+import useFirestore from "../hooks/useFirestore";
+import PostSearchContainer from "../component/postComponents/postSearchContainer";
+import PostMoreButton from "../component/postComponents/PostMoreButton";
 
 export default function PostSection() {
-    const [button, setButton] = useState(true);
-    const [docs, setDocs] = useState();
-    const showButton = () => {
-        if (window.innerWidth <= 960) {
-            setButton(false);
-        } else {
-            setButton(true);
-        }
-    };
+  const [button, setButton] = useState(true);
+  //const [docs, setDocs] = useState();
+  const showButton = () => {
+    if (window.innerWidth <= 960) {
+      setButton(false);
+    } else {
+      setButton(true);
+    }
+  };
 
-    useEffect(() => {
-        showButton();
-    }, []);
+  useEffect(() => {
+    showButton();
+  }, []);
 
-    useEffect(() => {
-        projectFirestore.collection("posts").get().then((snapshot) => {
-            setDocs(snapshot.docs)
-        })
-    }, [])
+  // useEffect(() => {
+  //     projectFirestore.collection("posts").get().then((snapshot) => {
+  //         setDocs(snapshot.docs)
+  //     })
+  // }, [])
+  const { docs } = useFirestore("posts");
 
-    return (
-        <>
-            <div className='container'>
-                <CreatePostButton />
-                <PostSearchContainer />
-                <div className='post-container'>
-                    {docs && docs.map(doc => (
-                        <PostItem
-                            src={doc.data().coverImage}
-                            title={doc.data().title}
-                            description={doc.data().content}
-                            date={doc.data().createdAt}
-                            label={doc.data().postCategory}
-                            path='/specificPost'
-                        />
-                    ))}
-                </div>
-                <PostMoreButton />
-                <Footer />
-            </div>
-        </>
-    )
+  return (
+    <>
+      <div className="container">
+        <PostSearchContainer />
+        <div className="post-container">
+          {docs &&
+            docs.map((doc) => (
+              <PostItem
+                src={doc.coverImage}
+                title={doc.title}
+                description={doc.content}
+                date={doc.createdAt}
+                label={doc.postCategory}
+                path="/specificPost"
+              />
+            ))}
+        </div>
+        <PostMoreButton />
+        <Footer />
+      </div>
+    </>
+  );
 }

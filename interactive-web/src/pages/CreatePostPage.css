@@ -11,7 +11,7 @@
   background: var(--primary);
   margin-top: 20px;
 }
-form {
+postForm {
   margin: 30px auto 10px;
   padding: 100px;
   text-align: center;
@@ -19,12 +19,12 @@ form {
   flex-direction: column;
   justify-content: center;
 }
-label input {
+postForm label input {
   height: 0;
   width: 0;
   opacity: 0;
 }
-label {
+postForm label {
   display: block;
   width: 30px;
   height: 30px;
@@ -38,7 +38,7 @@ label {
   font-size: 24px;
   text-align: center;
 }
-label:hover {
+postForm label:hover {
   background: var(--primary);
   color: white;
   cursor: pointer;

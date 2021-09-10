@@ -5,8 +5,13 @@ import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
 import { Button } from "../component/Button";
+import ProgressBar from "../component/ProgressBar";
 
-import { projectStorage, projectFirestore } from "../firebase/config";
+import {
+  projectStorage,
+  projectFirestore,
+  timestamp,
+} from "../firebase/config";
 
 // Resources: https://github.com/zenoamaro/react-quill
 // License is also in the link above for react-quill
@@ -39,26 +44,31 @@ function CreatePostPage() {
     "image",
   ];
 
-  const [fileURL, setFileURL] = useState();
+  const [fileURL, setFileURL] = useState(null);
   const sendPost = async (e) => {
     const postTitle = document.getElementById("postTitle").value;
     const authorName = document.getElementById("postAuthor").value;
     console.log(fileURL);
     var data = {
       author: authorName,
-      createdAt: "date created",
+      createdAt: timestamp(),
       postCategory: "Quill Editor",
       title: postTitle,
       coverImage: fileURL,
       content: content,
     };
     console.log(data);
-    var docu = (document.getElementById("randomBody").innerHTML = content);
+    document.getElementById("postAuthor").value = "";
+    document.getElementById("postTitle").value = "";
+    setContent("");
+    setFile(null);
+    setFileURL(null);
     projectFirestore.collection("posts").add(data);
   };
 
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
+  const [progress, setProgress] = useState(0);
 
   const handleChange = async (e) => {
     let selected = e.target.files[0];
@@ -70,8 +80,20 @@ function CreatePostPage() {
       setError("");
       const storageRef = projectStorage.ref();
       const fileRef = storageRef.child(selected.name);
-      await fileRef.put(selected);
-      setFileURL(await fileRef.getDownloadURL());
+      fileRef.put(file).on(
+        "state_changed",
+        (snap) => {
+          let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
+          setProgress(percentage);
+        },
+        (err) => {
+          setError(err);
+        },
+        async () => {
+          const url = await fileRef.getDownloadURL();
+          setFileURL(url);
+        }
+      );
     } else {
       setFile(null);
       setError("Please select an image file of format (png or jpeg)");
@@ -79,7 +101,7 @@ function CreatePostPage() {
   };
 
   return (
-    <form>
+    <postForm>
       <h3>Title</h3>
       <input
         placeholder="Title"
@@ -105,6 +127,7 @@ function CreatePostPage() {
       <div className="output">
         {error && <div className="error"> {error} </div>}
         {file && <div> {file.name} </div>}
+        {file && <ProgressBar progress={progress}></ProgressBar>}
       </div>
       <div class="ql-editor" id="editor-container">
         <ReactQuill
@@ -124,9 +147,8 @@ function CreatePostPage() {
             Post
           </Button>
         </div>
-        <div id="randomBody"></div>
       </div>
-    </form>
+    </postForm>
   );
 }
 
