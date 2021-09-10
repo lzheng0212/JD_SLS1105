@@ -55,12 +55,17 @@ function NavigationBar() {
             FAQ
           </p>
         </element>
+        <element className="tab">
+          <p>
+            <a href='/adminLogin' style={{color: '#bdbdbd', textDecoration:'none'}}>Admin</a>
+          </p>
+        </element>
       </div>
       <div className='orgRoulette'>
         <element className="tab">
           <p>
-          <a href='/aboutUs' style={{color: '#bdbdbd', textDecoration:'none'}}>About Us</a>
-              </p>
+            <a href='/aboutUs' style={{color: '#bdbdbd', textDecoration:'none'}}>About Us</a>
+          </p>
         </element>
         <element className="donateButton-container">
           {button && <Button buttonStyle='btn--round' buttonSize="btn--large" path='/donate'>Donate</Button>}

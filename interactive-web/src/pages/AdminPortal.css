@@ -1,0 +1,18 @@
+.portal_h1 {
+    position: absolute;
+    padding-left: 10%;
+    padding-right: 10%;
+    top: 12%;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex: 4;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    justify-content: left;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 15%;
+}

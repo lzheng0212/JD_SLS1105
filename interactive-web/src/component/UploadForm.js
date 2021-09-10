@@ -13,8 +13,6 @@ const UploadForm = () => {
     const [cat, setCat] = useState("");
 
 
-
-
     const handleChange = (e) => {
         let selected = e.target.files[0];
 
@@ -36,41 +34,41 @@ const UploadForm = () => {
         setDesc("");
         setCat("");
         setFile(null);
-      };
+    };
 
-      const [button, setButton] = useState(true);
-      const showButton = () => {
-          if (window.innerWidth <= 960) {
-              setButton(false);
-          } else {
-              setButton(true);
-          }
-      };
-  
-      useEffect(() => {
-          showButton();
-      }, []);
-    
+    const [button, setButton] = useState(true);
+    const showButton = () => {
+        if (window.innerWidth <= 960) {
+            setButton(false);
+        } else {
+            setButton(true);
+        }
+    };
+
+    useEffect(() => {
+        showButton();
+    }, []);
+
 
 
 
     return (
         <form>
 
-            <h3 style={{marginTop: '5px'}}>Title</h3>
+            <h3 style={{ marginTop: '5px' }}>Title</h3>
             <input
                 placeholder='Title'
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
             />
-            <h3 style={{marginTop: '30px'}}>Category</h3>
+            <h3 style={{ marginTop: '30px' }}>Category</h3>
             <input
                 placeholder='Category'
                 value={cat}
                 onChange={(e) => setCat(e.target.value)}
             />
 
-           <h3 style={{marginTop: '30px'}}>Description</h3>
+            <h3 style={{ marginTop: '30px' }}>Description</h3>
             <textarea
                 placeholder='Decription of your post'
                 value={desc}
@@ -84,10 +82,10 @@ const UploadForm = () => {
                 {error && <div className='error'> {error} </div>}
                 {file && <div> {file.name} </div>}
                 {file && <ProgressBar file={file} setFile={setFile}
-                title={title} desc={desc} cat={cat}>
-                    </ProgressBar>}
+                    title={title} desc={desc} cat={cat}>
+                </ProgressBar>}
             </div>
-            { button && <Button onClick={handleSubmit} buttonStyle='btn--primary' buttonSize="btn--large">Submit</Button>}
+            {button && <Button onClick={handleSubmit} buttonStyle='btn--primary' buttonSize="btn--large">Submit</Button>}
 
 
         </form>

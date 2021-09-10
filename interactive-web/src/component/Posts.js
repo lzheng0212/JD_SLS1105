@@ -20,7 +20,8 @@ function Posts() {
         showButton();
     }, []);
 
-    const { docs } = useFirestore('posts');
+    const { docs } = useFirestore('schools');
+    console.log(1);
     console.log(docs);
 
 
@@ -32,7 +33,7 @@ function Posts() {
                     <PostItem
                     src={doc.url}
                     title={doc.postTitle}
-                    description={doc.postDesc}
+                    description={doc.desc}
                     date={doc.createdAt}
                     label={doc.postCategory}
                     path='/specificPost'
