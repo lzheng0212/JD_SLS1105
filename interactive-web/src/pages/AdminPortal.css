@@ -6,13 +6,18 @@
 }
 
 .button-wrapper {
-    display: flex;
-    flex-direction: row;
+    position: relative;
+    top: 10px;
+    left: 120px;
+
+    display: inline-block;
+    flex-direction: column;
     flex: 4;
     flex-wrap: wrap;
     align-items:flex-start;
     justify-content: left;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 15%;
+    padding-left: 10px;
+    padding-right: 0%;
+    padding-top: 12%;
 }
+
