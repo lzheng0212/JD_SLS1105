@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import NavigationBar from './component/NavigationBar';
 import Home from './pages/Home';
 import PostSection from './pages/postSection';
-import React, { useState, useEffect } from "react";
+import React from "react";
 import aboutUsPage from './pages/aboutUsPage';
 import FullCalendarPage from './pages/FullCalendarPage';
 import CreatePostPage from './pages/CreatePostPage';
