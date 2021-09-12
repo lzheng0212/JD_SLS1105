@@ -8,6 +8,7 @@ import PostSearchContainer from "../component/postComponents/postSearchContainer
 import PostMoreButton from "../component/postComponents/PostMoreButton";
 import { Button } from "../component/Button";
 import { projectFirestore } from "../firebase/config";
+import { Link } from "react-router-dom";
 
 // Resources: https://github.com/zenoamaro/react-quill
 // License is also in the link above for react-quill
@@ -22,6 +23,7 @@ function DeletePostPage() {
   // }, [])
   const { docs } = useFirestore("posts");
 
+  const onEdit = () => {};
   return (
     <>
       <div className="container">
@@ -40,17 +42,16 @@ function DeletePostPage() {
                 <PostItem
                   src={doc.coverImage}
                   title={doc.title}
-                  content={doc.content}
+                  author={doc.author}
+                  description={doc.content}
                   date={doc.createdAt}
                   label={doc.postCategory}
-                  author={doc.author}
                   path="/specificPost"
                 />
                 <Button
                   buttonStyle="btn--round"
                   buttonSize="btn--small"
                   onClick={() => {
-                    console.log(doc);
                     const res = projectFirestore
                       .collection("posts")
                       .doc(doc.PostId)
@@ -59,18 +60,24 @@ function DeletePostPage() {
                 >
                   DELETE
                 </Button>
-                <Button
-                  buttonStyle="btn--primary"
-                  buttonSize="btn--small"
-                  onClick={() => {
-                    console.log(doc);
-                    const res = projectFirestore
-                      .collection("posts")
-                      .doc(doc.PostId)
-                      .delete();
-                  }}
-                >
-                  EDIT
+                <Button buttonStyle="btn--primary" buttonSize="btn--small">
+                  <Link
+                    style={{ color: "white", textDecoration: "none" }}
+                    to={{
+                      pathname: "./create",
+                      state: {
+                        update: true,
+                        postID: doc.PostId,
+                        src: doc.coverImage,
+                        title: doc.title,
+                        content: doc.content,
+                        label: doc.postCategory,
+                        author: doc.author,
+                      },
+                    }}
+                  >
+                    EDIT
+                  </Link>
                 </Button>
               </div>
             ))}

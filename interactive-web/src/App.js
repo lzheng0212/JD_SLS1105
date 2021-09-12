@@ -14,7 +14,6 @@ import CreatePostPage from "./pages/CreatePostPage";
 import SpecificPost from "./pages/specifcPost";
 import AdminLoginPage from "./pages/AdminLoginPage";
 import AdminPortal from "./pages/AdminPortal";
-
 import DeletePostPage from "./pages/DeletePostPage";
 
 function App() {

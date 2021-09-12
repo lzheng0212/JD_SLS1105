@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./CreatePostPage.css";
 
 import ReactQuill, { Quill } from "react-quill";
@@ -6,6 +6,8 @@ import "react-quill/dist/quill.snow.css";
 
 import { Button } from "../component/Button";
 import ProgressBar from "../component/ProgressBar";
+
+import { useLocation } from "react-router";
 
 import {
   projectStorage,
@@ -20,7 +22,6 @@ function CreatePostPage() {
   const [content, setContent] = useState("");
   const editorChange = (value) => {
     setContent(value);
-    console.log("content after: " + content);
   };
 
   const modules = {
@@ -45,10 +46,17 @@ function CreatePostPage() {
   ];
 
   const [fileURL, setFileURL] = useState(null);
+  const updateData = useLocation().state;
+  const update = updateData.update;
+  const postID = update ? updateData.postID : null;
+
   const sendPost = async (e) => {
     const postTitle = document.getElementById("postTitle").value;
     const authorName = document.getElementById("postAuthor").value;
     console.log(fileURL);
+    if (update && fileURL === null) {
+      setFileURL(updateData.src);
+    }
     var data = {
       author: authorName,
       createdAt: timestamp(),
@@ -63,7 +71,11 @@ function CreatePostPage() {
     setContent("");
     setFile(null);
     setFileURL(null);
-    projectFirestore.collection("posts").add(data);
+    if (!update) {
+      projectFirestore.collection("posts").add(data);
+    } else {
+      projectFirestore.collection("posts").doc(postID).update(data);
+    }
   };
 
   const [file, setFile] = useState(null);
@@ -101,8 +113,18 @@ function CreatePostPage() {
     }
   };
 
+  // useEffect(() => {
+  //   let ed = new Quill(".ql-editor", {
+  //     modules: {
+  //       toolbar: modules,
+  //     },
+  //     theme: "snow",
+  //   });
+  //   ed.setContents(update ? updateData.content : "");
+  // });
+
   return (
-    <postForm>
+    <post-form>
       <h3>Title</h3>
       <input
         placeholder="Title"
@@ -110,6 +132,7 @@ function CreatePostPage() {
         id="postTitle"
         name="postTitle"
         style={{ width: "50%", alignSelf: "center" }}
+        defaultValue={update ? updateData.title : ""}
       />
       <h3 style={{ marginTop: "30px" }}>Author</h3>
       <input
@@ -118,6 +141,7 @@ function CreatePostPage() {
         id="postAuthor"
         name="postAuthor"
         style={{ width: "30%", alignSelf: "center" }}
+        defaultValue={update ? updateData.author : ""}
       />
 
       <h3 style={{ marginTop: "30px" }}>Cover Image</h3>
@@ -134,22 +158,41 @@ function CreatePostPage() {
         <ReactQuill
           placeholder="Write blog..."
           theme="snow"
+          defaultValue={update ? updateData.content : ""}
           value={content}
           modules={modules}
           formats={formats}
           onChange={editorChange}
         />
         <div style={{ marginTop: "30px" }}>
-          <Button
+          {update && (
+            <Button
+              buttonStyle="btn--primary"
+              buttonSize="btn--large"
+              onClick={sendPost}
+            >
+              Update
+            </Button>
+          )}
+          {!update && (
+            <Button
+              buttonStyle="btn--primary"
+              buttonSize="btn--large"
+              onClick={sendPost}
+            >
+              Post
+            </Button>
+          )}
+          {/* <Button
             buttonStyle="btn--primary"
             buttonSize="btn--large"
             onClick={sendPost}
           >
             Post
-          </Button>
+          </Button> */}
         </div>
       </div>
-    </postForm>
+    </post-form>
   );
 }
 
