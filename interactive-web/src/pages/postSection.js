@@ -6,10 +6,11 @@ import "../component/Posts.css";
 import useFirestore from "../hooks/useFirestore";
 import PostSearchContainer from "../component/postComponents/postSearchContainer";
 import PostMoreButton from "../component/postComponents/PostMoreButton";
+import { projectFirestore } from "../firebase/config";
 
 export default function PostSection() {
   const [button, setButton] = useState(true);
-  //const [docs, setDocs] = useState();
+  // const [docs, setDocs] = useState([]);
   const showButton = () => {
     if (window.innerWidth <= 960) {
       setButton(false);
@@ -23,10 +24,13 @@ export default function PostSection() {
   }, []);
 
   // useEffect(() => {
-  //     projectFirestore.collection("posts").get().then((snapshot) => {
-  //         setDocs(snapshot.docs)
-  //     })
-  // }, [])
+  //   projectFirestore
+  //     .collection("posts")
+  //     .get()
+  //     .then((snapshot) => {
+  //       setDocs(snapshot.docs);
+  //     });
+  // }, []);
   const { docs } = useFirestore("posts");
 
   return (
@@ -39,6 +43,7 @@ export default function PostSection() {
               <PostItem
                 src={doc.coverImage}
                 title={doc.title}
+                author={doc.author}
                 description={doc.content}
                 date={doc.createdAt}
                 label={doc.postCategory}

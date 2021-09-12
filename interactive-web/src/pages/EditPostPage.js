@@ -16,7 +16,7 @@ import {
 // Resources: https://github.com/zenoamaro/react-quill
 // License is also in the link above for react-quill
 
-function CreatePostPage() {
+function EditPostPage() {
   const [content, setContent] = useState("");
   const editorChange = (value) => {
     setContent(value);
@@ -153,4 +153,4 @@ function CreatePostPage() {
   );
 }
 
-export default CreatePostPage;
+export default EditPostPage;

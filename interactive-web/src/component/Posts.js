@@ -1,57 +1,56 @@
-import React, { useState, useEffect } from 'react';
-import './Posts.css';
-import PostItem from './PostItem';
+import React, { useState, useEffect } from "react";
+import "./Posts.css";
+import PostItem from "./PostItem";
 
-import { Button } from './Button';
-import useFirestore from '../hooks/useFirestore';
-
+import { Button } from "./Button";
+import useFirestore from "../hooks/useFirestore";
 
 function Posts() {
+  const [button, setButton] = useState(true);
+  const showButton = () => {
+    if (window.innerWidth <= 960) {
+      setButton(false);
+    } else {
+      setButton(true);
+    }
+  };
+  useEffect(() => {
+    showButton();
+  }, []);
 
-    const [button, setButton] = useState(true);
-    const showButton = () => {
-        if (window.innerWidth <= 960) {
-            setButton(false);
-        } else {
-            setButton(true);
-        }
-    };
-    useEffect(() => {
-        showButton();
-    }, []);
+  const { docs } = useFirestore("posts");
+  console.log(1);
+  console.log(docs);
 
-    const { docs } = useFirestore('schools');
-    console.log(1);
-    console.log(docs);
+  return (
+    <div className="posts">
+      <h1>Latest Posts</h1>
+      <div className="posts__container">
+        {docs &&
+          docs.map((doc) => (
+            <PostItem
+              src={doc.coverImage}
+              title={doc.title}
+              author={doc.author}
+              description={doc.content}
+              date={doc.createdAt}
+              label={doc.postCategory}
+              path="/specificPost"
+            />
+          ))}
+      </div>
 
+      <div className="posts__button">
+        {button && (
+          <Button buttonStyle="btn--black" buttonSize="btn--large" path="/post">
+            Read More Posts
+          </Button>
+        )}
+      </div>
 
-    return (
-        <div className='posts'>
-            <h1>Latest Posts</h1>
-            <div className='posts__container'>
-                { docs && docs.map(doc => (
-                    <PostItem
-                    src={doc.url}
-                    title={doc.postTitle}
-                    description={doc.desc}
-                    date={doc.createdAt}
-                    label={doc.postCategory}
-                    path='/specificPost'
-                />
-                ))}
-                
-            </div>
-
-
-            <div className='posts__button'>
-                {button && <Button buttonStyle='btn--black' buttonSize="btn--large" path='/post'>Read More Posts</Button>}
-            </div>
-
-            <div className='posts__line'></div>
-
-
-        </div>
-    );
+      <div className="posts__line"></div>
+    </div>
+  );
 }
 
 export default Posts;
