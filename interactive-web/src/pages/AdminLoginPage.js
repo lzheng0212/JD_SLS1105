@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './AdminLoginPage.css'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import {projectAuth} from '../firebase/config';
 import AdminPortal from './AdminPortal';
@@ -27,7 +28,7 @@ function AdminLoginPage() {
         document.getElementById("error").innerHTML = errorMessage
         });
     }
-
+    
     return (
         <>
             <div class = "admin-center">

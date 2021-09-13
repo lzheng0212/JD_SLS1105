@@ -1,6 +1,7 @@
 import "./AdminPortal.css";
 import CreatePostButton from "../component/postComponents/createPostButton";
 import { Button } from "../component/Button";
+import {projectAuth} from '../firebase/config';
 import Countvisitor from "../component/postComponents/visitorCuntor";
 
 function AdminPortal() {
@@ -32,8 +33,8 @@ function AdminPortal() {
           Manage Old Posts
         </Button>
 
-        <Button buttonStyle="btn--primary" buttonSize="btn--huge">
-          XXXXX
+        <Button buttonStyle="btn--primary" buttonSize="btn--huge" onclick={projectAuth.signOut()} path="./adminLogin">
+          Sign out
         </Button>
 
         <Button buttonStyle="btn--primary" buttonSize="btn--huge">

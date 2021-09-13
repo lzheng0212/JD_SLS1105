@@ -57,3 +57,10 @@
   right: 100px;
   border-radius: 6px;
 }
+
+.adminButton-container {
+  position: fixed;
+  top: 5px;
+  left: 750px;
+  border-radius: 6px;
+}
