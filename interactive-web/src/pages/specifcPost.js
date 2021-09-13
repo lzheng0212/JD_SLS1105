@@ -4,6 +4,7 @@ import Footer from "../component/Footer";
 import "./specificPost.css";
 import ReactHtmlParser from "react-html-parser";
 import { useLocation } from "react-router-dom";
+import Quill from "quill";
 
 //rfc
 //Collection on database must have a field named "createdAt"
@@ -32,6 +33,8 @@ export default function SpecifcPost() {
   console.log(data);
   const [docs, setDocs] = useState();
   const [loaded, setLoaded] = useState(false);
+
+
   useEffect(() => {
     projectFirestore
       .collection("testPost")
@@ -40,7 +43,19 @@ export default function SpecifcPost() {
         setDocs(snapshot.docs);
         setLoaded(true);
       });
-  }, []);
+  
+    if (loaded) {
+      let quill = new Quill('#quillPostContent', {
+        modules: {
+          toolbar: false,
+        },
+        theme: "snow",
+      });
+      console.log(data)
+      let postContent = JSON.parse(data.description)
+      quill.setContents(postContent)
+    }
+  }, [loaded]);
 
   if (!loaded) {
     return (
@@ -50,6 +65,7 @@ export default function SpecifcPost() {
         <br></br>
         <br></br>
         <p>LOADING</p>
+        {/* <div id="quillPostContent"></div> */}
       </>
     );
   } else {
@@ -64,8 +80,7 @@ export default function SpecifcPost() {
       <p id="specificPostBody"></p>
       <p>{data.title}</p>
       <p>{data.author}</p>
-      <img src={data.src}></img>
-      {/* <p>{ReactHtmlParser(docs[0].data().content)}</p> */}
+      <div id="quillPostContent"></div>
       <Footer />
     </>
   );

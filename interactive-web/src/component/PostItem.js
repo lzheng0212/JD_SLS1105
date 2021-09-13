@@ -18,9 +18,11 @@ function PostItem(props) {
             <h5 id="postContent" className="posts__item__title">
               {props.title}
             </h5>
-            <h5 className="posts__item__text">
+            {/* commenting out the line below because we dont have a dedicated description for post yet
+            currently it is taking the content of the post as the description which is wrong so im commenting it out */}
+            {/* <h5 className="posts__item__text">
               {ReactHtmlParser(props.description)}
-            </h5>
+            </h5> */}
             <h5 className="posts__item__text">{props.date}</h5>
           </div>
         </Link>

@@ -8,6 +8,7 @@ import { Button } from "../component/Button";
 import ProgressBar from "../component/ProgressBar";
 
 import { useLocation } from "react-router";
+import ReactHtmlParser from "react-html-parser";
 
 import {
   projectStorage,
@@ -19,10 +20,6 @@ import {
 // License is also in the link above for react-quill
 
 function CreatePostPage() {
-  const [content, setContent] = useState("");
-  const editorChange = (value) => {
-    setContent(value);
-  };
 
   const modules = {
     toolbar: [
@@ -49,7 +46,7 @@ function CreatePostPage() {
   const updateData = useLocation().state;
   const update = updateData.update;
   const postID = update ? updateData.postID : null;
-
+  const [quill, setQuill] = useState(null)
   const sendPost = async (e) => {
     const postTitle = document.getElementById("postTitle").value;
     const authorName = document.getElementById("postAuthor").value;
@@ -63,12 +60,11 @@ function CreatePostPage() {
       postCategory: "Quill Editor",
       title: postTitle,
       coverImage: fileURL,
-      content: content,
+      content: JSON.stringify(quill.getContents()),
     };
     console.log(data);
     document.getElementById("postAuthor").value = "";
     document.getElementById("postTitle").value = "";
-    setContent("");
     setFile(null);
     setFileURL(null);
     if (!update) {
@@ -112,16 +108,22 @@ function CreatePostPage() {
       setError("Please select an image file of format (png or jpeg)");
     }
   };
-
-  // useEffect(() => {
-  //   let ed = new Quill(".ql-editor", {
-  //     modules: {
-  //       toolbar: modules,
-  //     },
-  //     theme: "snow",
-  //   });
-  //   ed.setContents(update ? updateData.content : "");
-  // });
+  
+  useEffect(() => {
+      let quill = new Quill(".ql-editor", {
+      modules: {
+        toolbar: modules.toolbar,
+      },
+      placeholder: "Write your text!",
+      theme: "snow",
+    });
+    
+    setQuill(quill)
+    if (update) {
+      let data = JSON.parse(updateData.content)
+      quill.setContents(data)
+    }
+  }, []);
 
   return (
     <post-form>
@@ -154,16 +156,8 @@ function CreatePostPage() {
         {file && <div> {file.name} </div>}
         {file && <ProgressBar progress={progress}></ProgressBar>}
       </div>
-      <div class="ql-editor" id="editor-container">
-        <ReactQuill
-          placeholder="Write blog..."
-          theme="snow"
-          defaultValue={update ? updateData.content : ""}
-          value={content}
-          modules={modules}
-          formats={formats}
-          onChange={editorChange}
-        />
+      <div className="ql-editor" id="editor-container"></div>
+      <div>
         <div style={{ marginTop: "30px" }}>
           {update && (
             <Button
@@ -183,13 +177,6 @@ function CreatePostPage() {
               Post
             </Button>
           )}
-          {/* <Button
-            buttonStyle="btn--primary"
-            buttonSize="btn--large"
-            onClick={sendPost}
-          >
-            Post
-          </Button> */}
         </div>
       </div>
     </post-form>
