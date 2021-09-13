@@ -8,7 +8,6 @@ import { Button } from "../component/Button";
 import ProgressBar from "../component/ProgressBar";
 
 import { useLocation } from "react-router";
-import ReactHtmlParser from "react-html-parser";
 
 import {
   projectStorage,
@@ -27,9 +26,11 @@ function CreatePostPage() {
       ["bold", "italic", "underline", "strike", "blockquote"],
       [{ indent: "-1" }, { indent: "+1" }],
       ["link", "image"],
+      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
       ["clean"],
     ],
   };
+  
   const formats = [
     "header",
     "bold",
