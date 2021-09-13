@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { projectFirestore } from "../firebase/config";
 import Footer from "../component/Footer";
 import "./specificPost.css";
-import ReactHtmlParser from "react-html-parser";
 import { useLocation } from "react-router-dom";
 import Quill from "quill";
 
@@ -65,11 +64,8 @@ export default function SpecifcPost() {
         <br></br>
         <br></br>
         <p>LOADING</p>
-        {/* <div id="quillPostContent"></div> */}
       </>
     );
-  } else {
-    console.log(docs[0].data());
   }
   return (
     <>
