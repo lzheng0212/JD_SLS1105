@@ -49,6 +49,7 @@ export default function SpecifcPost() {
           toolbar: false,
         },
         theme: "snow",
+        readOnly: true
       });
       console.log(data)
       let postContent = JSON.parse(data.description)
