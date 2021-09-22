@@ -26,9 +26,9 @@ function NavigationBar() {
   const checkStatus = async (e) => {
     projectAuth.onAuthStateChanged(function(user) {
       if (user) {
-        window.location.assign('/adminPortal') //need to revise
+        window.location.assign('/adminPortal') //need to revise  if user loged in
       } else {
-        window.location.assign('/adminLogin') //need to revise
+        window.location.assign('/adminLogin') //need to revise   if not
       }
     });
   }

@@ -33,7 +33,7 @@ function AdminPortal() {
           Manage Old Posts
         </Button>
 
-        <Button buttonStyle="btn--primary" buttonSize="btn--huge" onclick={projectAuth.signOut()} path="./adminLogin">
+        <Button buttonStyle="btn--primary" buttonSize="btn--huge" onclick={async (e) => projectAuth.signOut()} path="./adminLogin">
           Sign out
         </Button>
 
