@@ -95,3 +95,8 @@
   color: #ffffff;
   transition: 250ms;
 }
+
+.btn--category {
+  border-radius: 15%;
+  background-color: goldenrod;
+}

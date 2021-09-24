@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./PostItem.css";
-import ReactHtmlParser from "react-html-parser";
 
 function PostItem(props) {
   return (

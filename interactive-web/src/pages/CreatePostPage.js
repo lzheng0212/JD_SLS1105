@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./CreatePostPage.css";
-
 import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
-
 import { Button } from "../component/Button";
 import ProgressBar from "../component/ProgressBar";
-
+import { reactQuillToolbarModules as toolbarModules } from "../component/ReactQuillModules"
 import { useLocation } from "react-router";
 
 import {
@@ -14,40 +12,36 @@ import {
   projectFirestore,
   timestamp,
 } from "../firebase/config";
+import CategoryContainer from "../component/postComponents/CategoryContainer";
 
 // Resources: https://github.com/zenoamaro/react-quill
 // License is also in the link above for react-quill
 
 function CreatePostPage() {
 
-  const modules = {
-    toolbar: [
-      [{ header: [1, 2, false] }],
-      ["bold", "italic", "underline", "strike", "blockquote"],
-      [{ indent: "-1" }, { indent: "+1" }],
-      ["link", "image"],
-      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-      ["clean"],
-    ],
-  };
-  
-  const formats = [
-    "header",
-    "bold",
-    "italic",
-    "underline",
-    "strike",
-    "blockquote",
-    "indent",
-    "link",
-    "image",
-  ];
-
   const [fileURL, setFileURL] = useState(null);
   const updateData = useLocation().state;
+  console.log(updateData)
   const update = updateData.update;
   const postID = update ? updateData.postID : null;
   const [quill, setQuill] = useState(null)
+  const [selectedCategories, setCategory] = useState([])
+
+  const categories = ["cate1", "cate2", "cate3", "cate4"]
+  const addToCategoryList = (categoryName) => {
+      if (!selectedCategories.includes(categoryName)) {
+        setCategory([...selectedCategories, categoryName])
+      }
+  }
+
+  const removeFromCategoryList = (categoryName) => {
+      if (selectedCategories.includes(categoryName)) {
+        const index = selectedCategories.indexOf(categoryName)
+        selectedCategories.splice(index, 1)
+        setCategory([...selectedCategories])
+      }
+  } 
+
   const sendPost = async (e) => {
     const postTitle = document.getElementById("postTitle").value;
     const authorName = document.getElementById("postAuthor").value;
@@ -62,6 +56,7 @@ function CreatePostPage() {
       title: postTitle,
       coverImage: fileURL,
       content: JSON.stringify(quill.getContents()),
+      categories: selectedCategories,
     };
     console.log(data);
     document.getElementById("postAuthor").value = "";
@@ -113,7 +108,7 @@ function CreatePostPage() {
   useEffect(() => {
       let quill = new Quill(".ql-editor", {
       modules: {
-        toolbar: modules.toolbar,
+        toolbar: toolbarModules.toolbar,
       },
       placeholder: "Write your text!",
       theme: "snow",
@@ -123,6 +118,8 @@ function CreatePostPage() {
     if (update) {
       let data = JSON.parse(updateData.content)
       quill.setContents(data)
+      setCategory([...updateData.categories])
+      setFileURL(updateData.coverImageURL)
     }
   }, []);
 
@@ -152,6 +149,8 @@ function CreatePostPage() {
         <input type="file" onChange={handleChange} />
         <span>+</span>
       </label>
+      <CategoryContainer categoryList={categories} callBackFunc={addToCategoryList}/>
+      <CategoryContainer categoryList={selectedCategories} callBackFunc={removeFromCategoryList}/>
       <div className="output">
         {error && <div className="error"> {error} </div>}
         {file && <div> {file.name} </div>}

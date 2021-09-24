@@ -1,0 +1,4 @@
+.category--container {
+    border: solid 1px black;
+    overflow-y: scroll;
+}

@@ -22,6 +22,7 @@ function DeletePostPage() {
   //     })
   // }, [])
   const { docs } = useFirestore("posts");
+  // console.log(docs)
 
   const onEdit = () => {};
   return (
@@ -73,6 +74,8 @@ function DeletePostPage() {
                         content: doc.content,
                         label: doc.postCategory,
                         author: doc.author,
+                        categories: doc.categories,
+                        coverImageURL: doc.coverImage
                       },
                     }}
                   >
