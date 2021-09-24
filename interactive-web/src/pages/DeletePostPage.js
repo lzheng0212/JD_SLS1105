@@ -22,7 +22,6 @@ function DeletePostPage() {
   //     })
   // }, [])
   const { docs } = useFirestore("posts");
-  // console.log(docs)
 
   const onEdit = () => {};
   return (

@@ -12,6 +12,7 @@ import SpecificPost from "./pages/specifcPost";
 import AdminLoginPage from "./pages/AdminLoginPage";
 import AdminPortal from "./pages/AdminPortal";
 import DeletePostPage from "./pages/DeletePostPage";
+import ManageCategoriesPage from "./pages/ManageCategoriesPage";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/manage" exact component={DeletePostPage} />
           <Route path="/create" exact component={CreatePostPage} />
           <Route path="/specificPost" exact component={SpecificPost} />
+          <Route path="/manage/categories" exact component={ManageCategoriesPage} />
         </Switch>
       </Router>
     </>

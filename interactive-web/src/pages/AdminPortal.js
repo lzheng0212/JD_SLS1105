@@ -32,13 +32,13 @@ function AdminPortal() {
         >
           Manage Old Posts
         </Button>
-
+        
+        <Button buttonStyle="btn--primary" buttonSize="btn--huge" path="/manage/categories">
+          Manage Categories
+        </Button>
+        
         <Button buttonStyle="btn--primary" buttonSize="btn--huge" onclick={async (e) => projectAuth.signOut()} path="./adminLogin">
           Sign out
-        </Button>
-
-        <Button buttonStyle="btn--primary" buttonSize="btn--huge">
-          XXX
         </Button>
       </div>
 

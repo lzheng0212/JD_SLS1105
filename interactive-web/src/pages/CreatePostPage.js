@@ -21,7 +21,6 @@ function CreatePostPage() {
 
   const [fileURL, setFileURL] = useState(null);
   const updateData = useLocation().state;
-  console.log(updateData)
   const update = updateData.update;
   const postID = update ? updateData.postID : null;
   const [quill, setQuill] = useState(null)
