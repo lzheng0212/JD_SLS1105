@@ -7,7 +7,7 @@ function CategoryIcon(props) {
       <li className="categoryIcon" style={{ display: "flex" }}>
         <span>{props.categoryName}</span><div onClick={() => {
           props.callBackFunc(props.categoryName)
-        }}>&nbsp; {props.icon}</div>
+        }}>&nbsp;{props.icon}</div>
       </li>
     </div>
   );

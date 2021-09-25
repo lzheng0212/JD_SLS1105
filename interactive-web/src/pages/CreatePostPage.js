@@ -156,8 +156,10 @@ function CreatePostPage() {
         <input type="file" onChange={handleChange} />
         <span>+</span>
       </label>
+      <h3>Available Categories</h3>
       <CategoryContainer icon="+" categoryList={availableCategories} callBackFunc={addToCategoryList} />
-      <CategoryContainer icon="x" categoryList={selectedCategories} callBackFunc={removeFromCategoryList} />
+      {selectedCategories.length != 0 && (<><h3>Selected Categories</h3>
+        <CategoryContainer icon="x" categoryList={selectedCategories} callBackFunc={removeFromCategoryList} /></>)}
       <div className="output">
         {error && <div className="error"> {error} </div>}
         {file && <div> {file.name} </div>}
