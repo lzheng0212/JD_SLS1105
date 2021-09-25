@@ -25,21 +25,21 @@ function CreatePostPage() {
   const postID = update ? updateData.postID : null;
   const [quill, setQuill] = useState(null)
   const [selectedCategories, setCategory] = useState([])
+  const [availableCategories, setAvailableCategories] = useState([])
 
-  const categories = ["cate1", "cate2", "cate3", "cate4"]
   const addToCategoryList = (categoryName) => {
-      if (!selectedCategories.includes(categoryName)) {
-        setCategory([...selectedCategories, categoryName])
-      }
+    if (!selectedCategories.includes(categoryName)) {
+      setCategory([...selectedCategories, categoryName])
+    }
   }
 
   const removeFromCategoryList = (categoryName) => {
-      if (selectedCategories.includes(categoryName)) {
-        const index = selectedCategories.indexOf(categoryName)
-        selectedCategories.splice(index, 1)
-        setCategory([...selectedCategories])
-      }
-  } 
+    if (selectedCategories.includes(categoryName)) {
+      const index = selectedCategories.indexOf(categoryName)
+      selectedCategories.splice(index, 1)
+      setCategory([...selectedCategories])
+    }
+  }
 
   const sendPost = async (e) => {
     const postTitle = document.getElementById("postTitle").value;
@@ -103,16 +103,24 @@ function CreatePostPage() {
       setError("Please select an image file of format (png or jpeg)");
     }
   };
-  
+
   useEffect(() => {
-      let quill = new Quill(".ql-editor", {
+    projectFirestore
+      .collection("categories")
+      .get()
+      .then((snapshot) => {
+        snapshot.docs.forEach(doc => {
+          setAvailableCategories([...doc.data().CategoryList])
+        });
+      });
+    let quill = new Quill(".ql-editor", {
       modules: {
         toolbar: toolbarModules.toolbar,
       },
       placeholder: "Write your text!",
       theme: "snow",
     });
-    
+
     setQuill(quill)
     if (update) {
       let data = JSON.parse(updateData.content)
@@ -148,8 +156,8 @@ function CreatePostPage() {
         <input type="file" onChange={handleChange} />
         <span>+</span>
       </label>
-      <CategoryContainer categoryList={categories} callBackFunc={addToCategoryList}/>
-      <CategoryContainer categoryList={selectedCategories} callBackFunc={removeFromCategoryList}/>
+      <CategoryContainer icon="+" categoryList={availableCategories} callBackFunc={addToCategoryList} />
+      <CategoryContainer icon="x" categoryList={selectedCategories} callBackFunc={removeFromCategoryList} />
       <div className="output">
         {error && <div className="error"> {error} </div>}
         {file && <div> {file.name} </div>}

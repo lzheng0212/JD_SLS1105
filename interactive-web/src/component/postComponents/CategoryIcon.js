@@ -1,14 +1,14 @@
 import React from "react";
-import { Button } from "../Button";
+import "./CategoryIcon.css";
 
 function CategoryIcon(props) {
   return (
     <div className="create_post-container">
-      <Button buttonStyle="btn--category" buttonSize="btn--medium" onClick={() => {
-        props.callBackFunc(props.categoryName)
-      }}>
-        {props.categoryName}
-      </Button>
+      <li className="categoryIcon" style={{ display: "flex" }}>
+        <span>{props.categoryName}</span><div onClick={() => {
+          props.callBackFunc(props.categoryName)
+        }}>&nbsp; {props.icon}</div>
+      </li>
     </div>
   );
 }
