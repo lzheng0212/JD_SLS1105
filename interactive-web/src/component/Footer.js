@@ -51,7 +51,9 @@ function Footer() {
                     
                 </element>
             </element>
-            <element className = "list">
+
+
+
                 <element className = "title">
                     <element className = "text">
                         <element className = "linklist">
@@ -77,26 +79,28 @@ function Footer() {
                     </element>
                     </element>
                 </element>
-            </element>
-        </element>
-       
-                <element className = "title">
                     <element className = "text">
-                        <element className = "linklist">
-                            <div className = "contact">
-                                <li><svg width="30" height="39" viewBox="0 0 31 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <element className = "contact">
+                                <div className="contactContainer" style={{width:"300px"}}>
+                                    <svg width="30" height="39" viewBox="0 0 31 39" padding-bottom="30" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M14.5163 37.9768C14.8407 38.2085 15.2293 38.333 15.6279 38.333C16.0266 38.333 16.4152 38.2085 16.7396 37.9768C17.3223 37.5648 31.0169 27.6767 30.9613 15.3333C30.9613 6.87892 24.0824 0 15.6279 0C7.17352 0 0.294602 6.87892 0.294602 15.3238C0.239019 27.6767 13.9336 37.5648 14.5163 37.9768ZM15.6279 3.83333C21.9702 3.83333 27.1279 8.99108 27.1279 15.3429C27.1682 23.8491 18.7176 31.487 15.6279 33.9921C12.5402 31.4851 4.08769 23.8453 4.12794 15.3333C4.12794 8.99108 9.28568 3.83333 15.6279 3.83333Z" fill="white"/>
- </svg> <text id="text1" >666 Anyplace Ave, Atlanta, Ga</text>
-                                </li>
-                                <li><svg width="22" height="34" viewBox="0 0 22 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+ </svg> 
+
+                                        <text id="text1" >666 Anyplace Ave, Atlanta, Ga</text>
+                                </div>
+                                <div className = "contactContainer">
+                                    <svg width="30" height="39" viewBox="0 0 22 34" padding-bottom="30" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M16.6278 0.958008H4.96118C2.54035 0.958008 0.586182 2.91217 0.586182 5.33301V28.6663C0.586182 31.0872 2.54035 33.0413 4.96118 33.0413H16.6278C19.0487 33.0413 21.0028 31.0872 21.0028 28.6663V5.33301C21.0028 2.91217 19.0487 0.958008 16.6278 0.958008ZM13.7112 30.1247H7.87785V28.6663H13.7112V30.1247ZM18.4508 25.7497H3.13827V5.33301H18.4508V25.7497Z" fill="white"/>
 </svg> 
-<text id="text1" >(123)456-7890</text>
-                                </li>
-                            </div>
+                                    
+                                    <text id="text1" >(123)456-7890</text>
+                                </div>
+                            </element>
                         </element>
-                    </element>
-                </element>
+
+        </element>
+       
+                
     </header>
   );
 }

@@ -115,12 +115,29 @@
     float: left;
 }
 .contact {
-    position: relative;
-    padding-top: 0px;
-    padding-left: 730px;
+    display: flex;
+    
+    flex-direction: column;
+    padding-top: 40px;
+    padding-left: 100px;
     padding-bottom: 10px;
-    float: left;
+    padding-right: 100px;
+    flex-basis: 300px;
 
+
+}
+.block .contactContainer li{
+    display: flex;
+    flex-direction: row;
+    flex-basis: 500px;
+    align-items: center;
+    position: static;
+    /* width: 70px; */
+    height: 24px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    margin-bottom: 30px;
 }
 
 
@@ -200,12 +217,14 @@ left: 0%;
 right: 48.32%;
 top: 23.91%;
 bottom: 25.91%;
-
+width: 80px;
 font-family: Montserrat;
 font-style: normal;
 font-weight: 500;
 font-size: 16x;
 line-height: 24px;
+padding-top: 30px;
+padding-left: 15px;
 /* identical to box height, or 150% */
 letter-spacing: 0.2px;
 
@@ -214,10 +233,6 @@ letter-spacing: 0.2px;
 color: #FFFFFF;
 
 
-/* Inside Auto Layout */
 
-flex: none;
-order: 1;
-flex-grow: 0;
-margin: 130px 100px;
+
 }
