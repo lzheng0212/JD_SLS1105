@@ -1,4 +1,14 @@
 .category--container {
     border: solid 1px black;
     overflow-y: scroll;
+    display: flex;
+
+
+}
+.S_category--container {
+    border: solid 1px gainsboro;
+    overflow-y: scroll;
+    display: flex;
+    background-color: gainsboro;
+
 }

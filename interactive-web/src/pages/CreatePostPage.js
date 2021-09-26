@@ -13,6 +13,7 @@ import {
   timestamp,
 } from "../firebase/config";
 import CategoryContainer from "../component/postComponents/CategoryContainer";
+import CategoryContainer_S from "../component/postComponents/CategoryContainer_S";
 
 // Resources: https://github.com/zenoamaro/react-quill
 // License is also in the link above for react-quill
@@ -132,22 +133,22 @@ function CreatePostPage() {
 
   return (
     <post-form>
-      <h3>Title</h3>
+      <div className = "title-author">
       <input
         placeholder="Title"
         type="text"
         id="postTitle"
         name="postTitle"
-        style={{ width: "50%", alignSelf: "center" }}
+        style={{ width: "50%", alignContent: "center" }}
         defaultValue={update ? updateData.title : ""}
       />
-      <h3 style={{ marginTop: "30px" }}>Author</h3>
+       <br></br>
       <input
         placeholder="Author"
         type="text"
         id="postAuthor"
         name="postAuthor"
-        style={{ width: "30%", alignSelf: "center" }}
+        style={{ width: "50%", alignContent: "center" }}
         defaultValue={update ? updateData.author : ""}
       />
 
@@ -156,10 +157,11 @@ function CreatePostPage() {
         <input type="file" onChange={handleChange} />
         <span>+</span>
       </label>
+      </div>
       <h3>Available Categories</h3>
-      <CategoryContainer icon="+" categoryList={availableCategories} callBackFunc={addToCategoryList} />
+      <CategoryContainer  id="availableCategories"icon="+" categoryList={availableCategories} callBackFunc={addToCategoryList} available = {true}/>
       {selectedCategories.length != 0 && (<><h3>Selected Categories</h3>
-        <CategoryContainer icon="x" categoryList={selectedCategories} callBackFunc={removeFromCategoryList} /></>)}
+        <CategoryContainer_S icon="x" categoryList={selectedCategories} callBackFunc={removeFromCategoryList} /></>)}
       <div className="output">
         {error && <div className="error"> {error} </div>}
         {file && <div> {file.name} </div>}

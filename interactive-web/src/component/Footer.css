@@ -126,6 +126,9 @@
 
 
 }
+.block .contactContainer {
+    width: 300px;
+}
 .block .contactContainer li{
     display: flex;
     flex-direction: row;
