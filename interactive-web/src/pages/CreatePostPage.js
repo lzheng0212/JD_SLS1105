@@ -6,7 +6,7 @@ import { Button } from "../component/Button";
 import ProgressBar from "../component/ProgressBar";
 import { reactQuillToolbarModules as toolbarModules } from "../component/ReactQuillModules"
 import { useLocation } from "react-router";
-
+import Footer from "../component/Footer";
 import {
   projectStorage,
   projectFirestore,
@@ -188,7 +188,10 @@ function CreatePostPage() {
           )}
         </div>
       </div>
+      <Footer />
     </post-form>
+    
+    
   );
 }
 

@@ -109,6 +109,21 @@
 
  
 }
+.logos {
+    padding-top: 65px;
+    padding-left: 50px;
+    float: left;
+}
+.contact {
+    position: relative;
+    padding-top: 0px;
+    padding-left: 730px;
+    padding-bottom: 10px;
+    float: left;
+
+}
+
+
 
 .linklist .linkbox {
     display: flex;
@@ -164,4 +179,45 @@
     opacity:1;
   }
 
+.img {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    z-index: 50;
+  }
+#twitter {
+    left: 9.37%;
+    right: 9.37%;
+    top: 16.99%;
+    bottom: 16.99%;
+}
+#text1 {
+/* 666 Anyplace Ave, Atlanta, Ga */
 
+
+position: relative;
+left: 0%;
+right: 48.32%;
+top: 23.91%;
+bottom: 25.91%;
+
+font-family: Montserrat;
+font-style: normal;
+font-weight: 500;
+font-size: 16x;
+line-height: 24px;
+/* identical to box height, or 150% */
+letter-spacing: 0.2px;
+
+/* light text */
+
+color: #FFFFFF;
+
+
+/* Inside Auto Layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+margin: 130px 100px;
+}
