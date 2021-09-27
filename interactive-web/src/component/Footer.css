@@ -7,6 +7,9 @@
     align-items: left;
 }
 
+.rc-footer h2 {
+    font-size: 22px;
+}
 
 /* row block */
 .footer .block{

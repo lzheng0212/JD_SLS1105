@@ -22,7 +22,7 @@ function FooterComponent() {
         items: [
           {
             title: 'Home',
-            url: '/home'
+            url: '/home',
           },
           {
             title: 'Map',
@@ -38,9 +38,40 @@ function FooterComponent() {
           },
         ]
       },
+      {
+        title: 'Resources',
+        description: 'Resources',
+        items: [
+          {
+            title: 'FAQ'
+          },
+          {
+            title: 'Events',
+            url: '/events'
+          },
+          {
+            title: 'Posts',
+            url: '/post'
+          }
+        ]
+      },
+      {
+        title: 'About',
+        description: 'About',
+        items: [
+          {
+            title: 'About Us'
+          },
+          {
+            title: 'Contact Us'
+          }
+
+        ]
+      }
       
     ]}
     bottom= "Made with ❤️ by Team 1105"
+    style= {{textAlign: 'left', fontSize: '16px'}}
   />
 //     <header className = "footer">
 //         <element className = "block">
