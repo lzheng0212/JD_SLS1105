@@ -1,7 +1,7 @@
 // import React from 'react'
 import './aboutUsPage.css';
 import stuffImage from '../assets/stuffImage.png';
-import Footer from '../component/Footer';
+import FooterComponent from '../component/FooterComponent';
 
 export default function PostSection() {
 
@@ -83,7 +83,7 @@ export default function PostSection() {
                 <h3>Telephone: 404-555-8888</h3>
                 <h3>Telephone: 404-555-8888</h3>
             </div>
-            <Footer/>
+            <FooterComponent/>
         </>
     );
 }

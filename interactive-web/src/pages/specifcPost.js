@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Footer from "../component/Footer";
+import FooterComponent from "../component/FooterComponent";
 import "./specificPost.css";
 import { useLocation } from "react-router-dom";
 import Quill from "quill";
@@ -33,7 +33,7 @@ export default function SpecifcPost() {
       <p>{data.title}</p>
       <p>{data.author}</p>
       <div id="quillPostContent"></div>
-      <Footer />
+      <FooterComponent />
     </>
   );
 }

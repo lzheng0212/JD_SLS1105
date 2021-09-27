@@ -1,6 +1,6 @@
 import '../App.css';
 import WelcomeSection from '../component/WelcomeSection';
-import Footer from '../component/Footer';
+import FooterComponent from '../component/FooterComponent';
 import WelcomeSub from '../component/WelcomeSub';
 import Posts from '../component/Posts';
 import WelcomeBottom from '../component/WelcomBottom';
@@ -16,7 +16,7 @@ function Home() {
                 <Posts />
                 <WelcomeBottom />
             </div>
-            <Footer />
+            <FooterComponent />
         </>
     );
 }

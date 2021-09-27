@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./postStyle.css";
-import Footer from "../component/Footer";
+import FooterComponent from "../component/FooterComponent";
 import PostItem from "../component/PostItem";
 import "../component/Posts.css";
 import useFirestore from "../hooks/useFirestore";
@@ -85,7 +85,7 @@ function DeletePostPage() {
             ))}
         </div>
         <PostMoreButton />
-        <Footer />
+        <FooterComponent />
       </div>
     </>
   );
