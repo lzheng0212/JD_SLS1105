@@ -5,7 +5,7 @@ import "./CategoryContainer.css"
 function CategoryContainer(props) {
   const categoryList = props.categoryList
   return (
-    <div className="category--container">
+    <div className={props.background? "S_category--container" : "category--container"}>
       {categoryList && categoryList.map((category) => (
         <CategoryIcon icon={props.icon} categoryName={category} callBackFunc={props.callBackFunc} />
       ))}

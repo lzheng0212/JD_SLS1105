@@ -13,7 +13,7 @@ import {
   timestamp,
 } from "../firebase/config";
 import CategoryContainer from "../component/postComponents/CategoryContainer";
-import CategoryContainer_S from "../component/postComponents/CategoryContainer_S";
+
 
 // Resources: https://github.com/zenoamaro/react-quill
 // License is also in the link above for react-quill
@@ -132,6 +132,7 @@ function CreatePostPage() {
   }, []);
 
   return (
+    <div>
     <post-form>
       <div className = "title-author">
       <input
@@ -139,7 +140,7 @@ function CreatePostPage() {
         type="text"
         id="postTitle"
         name="postTitle"
-        style={{ width: "50%", alignContent: "center" }}
+        style={{ width: "100%" }}
         defaultValue={update ? updateData.title : ""}
       />
        <br></br>
@@ -148,30 +149,36 @@ function CreatePostPage() {
         type="text"
         id="postAuthor"
         name="postAuthor"
-        style={{ width: "50%", alignContent: "center" }}
+        style={{ width: "100%"}}
         defaultValue={update ? updateData.author : ""}
       />
-
-      <h3 style={{ marginTop: "30px" }}>Cover Image</h3>
-      <label>
-        <input type="file" onChange={handleChange} />
-        <span>+</span>
-      </label>
+        <div id="coverImage">
+          <div>
+            <text style={{ paddingRight:"10px" }} id="coverImgText">Cover Image:   </text>
+          </div>
+        <div>
+        <label>
+          <input type="file" onChange={handleChange} />
+          <span>+</span>
+        </label>
+        </div>
+        </div>
       </div>
       <h3>Available Categories</h3>
-      <CategoryContainer  id="availableCategories"icon="+" categoryList={availableCategories} callBackFunc={addToCategoryList} available = {true}/>
+      <CategoryContainer  id="availableCategories"icon="+" categoryList={availableCategories} callBackFunc={addToCategoryList} background = {true}/>
       {selectedCategories.length != 0 && (<><h3>Selected Categories</h3>
-        <CategoryContainer_S icon="x" categoryList={selectedCategories} callBackFunc={removeFromCategoryList} /></>)}
+        <CategoryContainer icon="x" categoryList={selectedCategories} callBackFunc={removeFromCategoryList} /></>)}
       <div className="output">
         {error && <div className="error"> {error} </div>}
         {file && <div> {file.name} </div>}
         {file && <ProgressBar progress={progress}></ProgressBar>}
       </div>
       <div className="ql-editor" id="editor-container"></div>
-      <div>
-        <div style={{ marginTop: "30px" }}>
+      <div >
+        <div style={{ marginTop: "30px", paddingLeft: "850px" }}>
           {update && (
             <Button
+              style={{ paddingLeft: "300px" }}
               buttonStyle="btn--primary"
               buttonSize="btn--large"
               onClick={sendPost}
@@ -181,6 +188,7 @@ function CreatePostPage() {
           )}
           {!update && (
             <Button
+              style={{ paddingLeft: "300px" }}
               buttonStyle="btn--primary"
               buttonSize="btn--large"
               onClick={sendPost}
@@ -190,10 +198,9 @@ function CreatePostPage() {
           )}
         </div>
       </div>
-      <Footer />
     </post-form>
-    
-    
+    <Footer/>
+    </div>
   );
 }
 

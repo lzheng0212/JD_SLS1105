@@ -1,5 +1,5 @@
 .category--container {
-    border: solid 1px black;
+    border:none;
     overflow-y: scroll;
     display: flex;
 
@@ -10,5 +10,10 @@
     overflow-y: scroll;
     display: flex;
     background-color: gainsboro;
+    fill: gainsboro;
 
+}
+#coverImage{
+    padding-left: 100px;
+    padding-right: 100px;
 }
