@@ -1,3 +1,9 @@
 .rc-footer h2 {
     font-size: 22px;
 }
+
+@media only screen and (max-width: 767.99px) {
+    .rc-footer-column {
+        text-align: center;
+    }
+}

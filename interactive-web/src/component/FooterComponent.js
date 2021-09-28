@@ -9,6 +9,7 @@ function FooterComponent() {
       {
         title: 'Fingertipe',
         description: 'Fingertipe',
+        textAlign: 'left',
         items: [
           {
             title: 'Home',
@@ -59,7 +60,7 @@ function FooterComponent() {
       }
     ]}
     bottom= "Made with ❤️ by Team 1105"
-    style= {{textAlign: 'left', fontSize: '16px'}}
+    style= {{textAlign: 'inherit', fontSize: '16px', overflow: 'auto'}}
   />
   );
 }
