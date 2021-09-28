@@ -1,6 +1,7 @@
 import Footer from 'rc-footer';
 import 'rc-footer/assets/index.css';
 import './Footer.css';
+import {TwitterOutlined, MobileOutlined, LinkedinOutlined, EnvironmentOutlined, FacebookOutlined} from '@ant-design/icons'
 
 function FooterComponent() {
   return (
@@ -55,6 +56,29 @@ function FooterComponent() {
           },
           {
             title: 'Contact Us'
+          }
+        ]
+      },
+      {
+        title: '',
+        description: '',
+        items: [
+          {
+            icon: <MobileOutlined/>,
+            title: '404-123-4567',
+            style: {}
+          },
+          {
+            icon: <EnvironmentOutlined />,
+            title: '666 Great St NW, Atlanta GA 30660'
+          },
+          {
+            title: <div className='icon-grid'>
+              <TwitterOutlined/>
+              <FacebookOutlined style={{marginLeft: '12px'}}/>
+              <LinkedinOutlined style={{marginLeft: '12px'}}/>
+            </div>
+            
           }
         ]
       }
