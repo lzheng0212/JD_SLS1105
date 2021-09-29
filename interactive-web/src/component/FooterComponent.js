@@ -1,9 +1,24 @@
 import Footer from 'rc-footer';
 import 'rc-footer/assets/index.css';
+import "antd/dist/antd.css";
+import { Button } from 'antd';
 import './Footer.css';
+import {projectAuth} from '../firebase/config';
 import {TwitterOutlined, MobileOutlined, LinkedinOutlined, EnvironmentOutlined, FacebookOutlined} from '@ant-design/icons'
 
 function FooterComponent() {
+  
+  
+  const checkStatus = async (e) => {
+    projectAuth.onAuthStateChanged(function(user) {
+      if (user) {
+        window.location.assign('/adminPortal') //need to revise  if user loged in
+      } else {
+        window.location.assign('/adminLogin') //need to revise   if not
+      }
+    });
+  }
+
   return (
     <Footer
     columns={[
@@ -58,8 +73,8 @@ function FooterComponent() {
             title: 'Contact Us'
           },
           {
-            title: 'Login',
-            url: '/adminlogin'
+            title:      
+            <a onClick={checkStatus}>Admin</a>,
           }
         ]
       },
