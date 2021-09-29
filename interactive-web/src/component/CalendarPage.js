@@ -5,6 +5,7 @@ import { Button } from './Button';
 import './CalendarPage.css';
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css';
+import { Content } from 'antd/lib/layout/layout';
 
 const CalendarPage = () => {
 
@@ -22,7 +23,7 @@ const CalendarPage = () => {
     }, []);
 
     return (
-        <>
+        <Content>
             <div className="calendar">
                 <Calendar />
             </div>
@@ -96,7 +97,7 @@ const CalendarPage = () => {
                 </div>
             </div>
 
-        </>
+        </Content>
     )
 }
 

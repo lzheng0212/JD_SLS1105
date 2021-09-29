@@ -13,10 +13,14 @@ import AdminLoginPage from "./pages/AdminLoginPage";
 import AdminPortal from "./pages/AdminPortal";
 import DeletePostPage from "./pages/DeletePostPage";
 import ManageCategoriesPage from "./pages/ManageCategoriesPage";
+import { Layout } from 'antd';
+import "antd/dist/antd.css";
+import { Content } from "antd/lib/layout/layout";
+
 
 function App() {
   return (
-    <>
+    <Layout> 
       <Router>
         <NavigationBar />
         <Switch>
@@ -34,7 +38,7 @@ function App() {
           <Route path="/manage/categories" exact component={ManageCategoriesPage} />
         </Switch>
       </Router>
-    </>
+    </Layout>
   );
 }
 

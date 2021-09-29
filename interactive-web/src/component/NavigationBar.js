@@ -24,8 +24,8 @@ export default function NavigationBar() {
           <Menu mode = {"horizontal"}
               theme='dark'>
             <Menu.Item key="post">
-              <a href="/home" rel="noopener noreferrer">
-                Home
+              <a href="/post" rel="noopener noreferrer">
+                Posts
               </a>
             </Menu.Item>
             <Menu.Item key="map">

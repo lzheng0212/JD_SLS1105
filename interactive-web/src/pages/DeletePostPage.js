@@ -9,6 +9,7 @@ import PostMoreButton from "../component/postComponents/PostMoreButton";
 import { Button } from "../component/Button";
 import { projectFirestore } from "../firebase/config";
 import { Link } from "react-router-dom";
+import { Content } from "antd/lib/layout/layout";
 
 // Resources: https://github.com/zenoamaro/react-quill
 // License is also in the link above for react-quill
@@ -25,7 +26,7 @@ function DeletePostPage() {
 
   const onEdit = () => {};
   return (
-    <>
+    <Content>
       <div className="container">
         <PostSearchContainer />
         <div className="post-container">
@@ -87,7 +88,7 @@ function DeletePostPage() {
         <PostMoreButton />
         <FooterComponent />
       </div>
-    </>
+    </Content>
   );
 }
 

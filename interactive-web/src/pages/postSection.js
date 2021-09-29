@@ -7,6 +7,7 @@ import useFirestore from "../hooks/useFirestore";
 import PostSearchContainer from "../component/postComponents/postSearchContainer";
 import PostMoreButton from "../component/postComponents/PostMoreButton";
 import { projectFirestore } from "../firebase/config";
+import { Content } from "antd/lib/layout/layout";
 
 export default function PostSection() {
   const [button, setButton] = useState(true);
@@ -34,7 +35,7 @@ export default function PostSection() {
   const { docs } = useFirestore("posts");
 
   return (
-    <>
+    <Content >
       <div className="container">
         <PostSearchContainer />
         <div className="post-container">
@@ -54,6 +55,6 @@ export default function PostSection() {
         <PostMoreButton />
         <FooterComponent />
       </div>
-    </>
+    </Content>
   );
 }

@@ -4,18 +4,22 @@ import FooterComponent from '../component/FooterComponent';
 import WelcomeSub from '../component/WelcomeSub';
 import Posts from '../component/Posts';
 import WelcomeBottom from '../component/WelcomBottom';
+import { Content } from 'antd/lib/layout/layout';
 
 
 
 function Home() {
     return (
-        <> 
-            <div className='home'>
-                <WelcomeSection />
-                <WelcomeSub />
-                <Posts />
-                <WelcomeBottom />
-            </div>
+        <>
+            <Content> 
+                <div className='home'>
+                    <WelcomeSection />
+                    <WelcomeSub />
+                    <Posts />
+                    <WelcomeBottom />
+                </div>
+                
+            </Content>
             <FooterComponent />
         </>
     );
