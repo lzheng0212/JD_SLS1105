@@ -6,24 +6,12 @@ import { BlockOutlined } from '@ant-design/icons';
 import './NavigationBar.css';
 import './Logo.css';
 
-import {projectAuth} from '../firebase/config';
 import { Header } from 'antd/lib/layout/layout';
 
-const { SubMenu } = Menu;
+//const { SubMenu } = Menu;
 
 export default function NavigationBar() {
 
-  const checkStatus = async (e) => {
-    projectAuth.onAuthStateChanged(function(user) {
-      if (user) {
-        window.location.assign('/adminPortal') //need to revise  if user loged in
-      } else {
-        window.location.assign('/adminLogin') //need to revise   if not
-      }
-    });
-  }
-
-  
   return (
     <Header style = {{backgroundColor: '#1a3133'}}>
       <Row justify="start" align="center" gutter="0px" style={{height: '64px'}} >  

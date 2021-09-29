@@ -139,10 +139,21 @@
   .ant-menu-submenu-placement-bottomLeft {
     /* ant-d try to override this when width < 550px with left = 425px*/
     left: 0px !important;
-    
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .ant-menu-submenu-popup {
+    position: absolute;
+    width: min-content;
+     /* ant-d try to override this when width < 550px with left = 425px*/
+  }
+  .ant-menu-submenu-placement-bottomLeft {
+    /* ant-d try to override this when width < 550px with left = 425px*/
+    right: 10% !important;
+    left: auto !important;
+  }
+}
 /* .ant-menu-submenu-popup {
   position: absolute;
   right: 0px;

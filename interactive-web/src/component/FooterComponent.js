@@ -1,7 +1,6 @@
 import Footer from 'rc-footer';
 import 'rc-footer/assets/index.css';
 import "antd/dist/antd.css";
-import { Button } from 'antd';
 import './Footer.css';
 import {projectAuth} from '../firebase/config';
 import {TwitterOutlined, MobileOutlined, LinkedinOutlined, EnvironmentOutlined, FacebookOutlined} from '@ant-design/icons'
@@ -67,7 +66,8 @@ function FooterComponent() {
         description: 'About',
         items: [
           {
-            title: 'About Us'
+            title: 'About Us',
+            url: '/aboutUS'
           },
           {
             title: 'Contact Us'
