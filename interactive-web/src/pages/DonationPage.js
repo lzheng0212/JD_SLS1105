@@ -9,10 +9,8 @@ function DonationPageComponent() {
     return (
         <>
         <div className = "donation">
-            <NavigationBar></NavigationBar>
             <DonationHeader></DonationHeader>
             <DonationGrid></DonationGrid>
-            
             
         </div>
         <FooterComponent/>

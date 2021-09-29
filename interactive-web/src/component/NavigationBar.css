@@ -1,5 +1,5 @@
 /* Navigation C */
-.navigationBar {
+/* .navigationBar {
   z-index: 10;
   position: fixed;
   width: 100%;
@@ -8,22 +8,22 @@
   left: 0px;
   top: 0px;
   align-items: center;
-}
+} */
 
 /* tabs */
-.tabRoulette {
+/* .tabRoulette {
   position: fixed;
   display: flex;
   flex-direction: row;
   width: 100%;
   left: 260px;
   top: 20px;
-}
+} */
 
-.tab {
+/* .tab {
   position: flex;
   width: 100px;
-  /* height: 60px; */
+  height: 60px; 
 
   font-family: Montserrat;
   font-style: normal;
@@ -33,34 +33,120 @@
   display: inline-block;
   align-items: center;
   text-align: center;
-  /* Gray 4 */
-  color: #bdbdbd;
-}
 
-.orgRoulette {
+  color: #bdbdbd;
+} */
+
+/* .orgRoulette {
   position: fixed;
   width: 100px;
   right: 300px;
   top: 20px;
-}
+} */
 /* Rectangle 2 */
 
-.donateButton-container {
+/* .donateButton-container {
   /* Donate */
 
   /* Donate Button */
 
-  position: fixed;
+  /* position: fixed;
   width: 150px;
   height: 50px;
   top: 5px;
   right: 100px;
   border-radius: 6px;
-}
+} */ 
 
-.adminButton-container {
+/* .adminButton-container {
   position: fixed;
   top: 5px;
   left: 750px;
   border-radius: 6px;
+} */
+
+/* NEW */
+
+.ant-menu,.ant-menu-sub,.ant-menu-inline{
+  color: #bdbdbd;
+  background: #1a3133 !important;
 }
+
+
+.ant-menu-horizontal .ant-menu-item {
+  min-width: 64px;
+  height: 64px;
+  padding-right: 12px;
+  padding-left: 12px;
+  line-height: 64px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.ant-menu-vertical .ant-menu-sub .ant-menu-item {
+  height: 40px;
+  line-height: 40px;
+}
+
+.ant-menu-sub {
+  min-width: 64px;
+  text-align: center;
+  font-size: 16px;
+  color: #bdbdbd;
+  background-color: #1a3133 !important;
+}
+
+.ant-menu-item a {
+  color: #bdbdbd
+}
+
+.ant-menu-item-selected {
+  background-color: #234144 !important;
+  color: #fff !important;
+}
+
+.ant-menu-item-active {
+  background-color: #234144 !important;
+  color: #fff !important
+}
+
+.ant-menu-submenu-active {
+  background-color: #234144 !important;
+  color: #fff !important;
+ }
+
+.ant-row .ant-column .anticon {
+  line-height: 64px;
+}
+
+.anticon svg {
+  align-self: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .menugrid {
+      position: absolute;
+      width: 64px;
+      right: 0px;
+  }
+
+  .ant-menu-submenu-popup {
+    position: absolute;
+    width: 100%;
+     /* ant-d try to override this when width < 550px with left = 425px*/
+  }
+
+  .ant-menu-submenu-placement-bottomLeft {
+    /* ant-d try to override this when width < 550px with left = 425px*/
+    left: 0px !important;
+    
+  }
+}
+
+/* .ant-menu-submenu-popup {
+  position: absolute;
+  right: 0px;
+  line-height: 40px;
+  text-align: center;
+} */
+

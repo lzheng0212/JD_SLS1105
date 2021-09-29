@@ -56,6 +56,10 @@ function FooterComponent() {
           },
           {
             title: 'Contact Us'
+          },
+          {
+            title: 'Login',
+            url: '/adminlogin'
           }
         ]
       },
@@ -66,11 +70,12 @@ function FooterComponent() {
           {
             icon: <MobileOutlined/>,
             title: '404-123-4567',
-            style: {}
+            style: {color: 'white'}
           },
           {
-            icon: <EnvironmentOutlined />,
-            title: '666 Great St NW, Atlanta GA 30660'
+            icon: <EnvironmentOutlined/>,
+            title: '666 Great St NW, Atlanta GA 30660',
+            style: {color: 'white'}
           },
           {
             title: <div className='icon-grid'>
@@ -79,7 +84,8 @@ function FooterComponent() {
               <LinkedinOutlined style={{marginLeft: '12px'}}/>
             </div>
             
-          }
+          },
+
         ]
       }
     ]}
