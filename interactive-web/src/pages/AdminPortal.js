@@ -89,8 +89,8 @@ function AdminPortal() {
         <Layout>
           <Sider breakpoint="lg"
           collapsedWidth="64"
-          style = {{backgroundColor: '#091111', position: 'fixed', height: '100vh', marginTop: '64px'}} collapsible >
-              <Menu defaultSelectedKeys={['0']} mode="inline" theme='dark' style={{backgroundColor: '#091111'}}>
+          style = {{backgroundColor: '#091111', position: 'fixed', height: '100vh', marginTop: '64px', zIndex: '8'}} collapsible >
+              <Menu defaultSelectedKeys={['0']} mode="inline" theme='dark' style={{backgroundColor: '#091111', zIndex: '8'}}>
                 <Menu.Item key="0" icon={<DashboardOutlined />}>
                   <a href="/adminportal"> Dashboard </a>
                 </Menu.Item>   
