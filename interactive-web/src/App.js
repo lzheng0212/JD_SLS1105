@@ -1,7 +1,6 @@
 import "./App.css";
 import DonationPage from "./pages/DonationPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import NavigationBar from "./component/NavigationBar";
 import Home from "./pages/Home";
 import PostSection from "./pages/postSection";
 import React from "react";
@@ -15,14 +14,12 @@ import DeletePostPage from "./pages/DeletePostPage";
 import ManageCategoriesPage from "./pages/ManageCategoriesPage";
 import { Layout } from 'antd';
 import "antd/dist/antd.css";
-import { Content } from "antd/lib/layout/layout";
+import FooterComponent from "./component/FooterComponent";
 
 
 function App() {
   return (
-    <Layout> 
       <Router>
-        <NavigationBar />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/home" exact component={Home} />
@@ -30,15 +27,14 @@ function App() {
           <Route path="/donate" exact component={DonationPage} />
           <Route path="/aboutUs" exact component={aboutUsPage} />
           <Route path="/adminLogin" exact component={AdminLoginPage} />
-          <Route path="/adminPortal" exact component={AdminPortal} />
+          <Route path="/adminportal" exact component={AdminPortal} />
           <Route path="/events" exact component={FullCalendarPage} />
-          <Route path="/manage" exact component={DeletePostPage} />
+          {/* <Route path="/manage" exact component={DeletePostPage} />
           <Route path="/create" exact component={CreatePostPage} />
           <Route path="/specificPost" exact component={SpecificPost} />
-          <Route path="/manage/categories" exact component={ManageCategoriesPage} />
+          <Route path="/manage/categories" exact component={ManageCategoriesPage} /> */}
         </Switch>
       </Router>
-    </Layout>
   );
 }
 

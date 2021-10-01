@@ -8,6 +8,8 @@ import PostSearchContainer from "../component/postComponents/postSearchContainer
 import PostMoreButton from "../component/postComponents/PostMoreButton";
 import { projectFirestore } from "../firebase/config";
 import { Content } from "antd/lib/layout/layout";
+import { Layout } from "antd";
+import NavigationBar from "../component/NavigationBar";
 
 export default function PostSection() {
   const [button, setButton] = useState(true);
@@ -35,26 +37,30 @@ export default function PostSection() {
   const { docs } = useFirestore("posts");
 
   return (
-    <Content >
-      <div className="container">
-        <PostSearchContainer />
-        <div className="post-container">
-          {docs &&
-            docs.map((doc) => (
-              <PostItem
-                src={doc.coverImage}
-                title={doc.title}
-                author={doc.author}
-                description={doc.content}
-                date={doc.createdAt}
-                label={doc.postCategory}
-                path="/specificPost"
-              />
-            ))}
+    <Layout>
+      <NavigationBar/>
+      <Content >
+        <div className="container">
+          <PostSearchContainer />
+          <div className="post-container">
+            {docs &&
+              docs.map((doc) => (
+                <PostItem
+                  src={doc.coverImage}
+                  title={doc.title}
+                  author={doc.author}
+                  description={doc.content}
+                  date={doc.createdAt}
+                  label={doc.postCategory}
+                  path="/specificPost"
+                />
+              ))}
+          </div>
+          <PostMoreButton />
         </div>
-        <PostMoreButton />
-        <FooterComponent />
-      </div>
-    </Content>
+      </Content>
+      <FooterComponent/>
+    </Layout>
+    
   );
 }

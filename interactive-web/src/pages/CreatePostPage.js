@@ -199,7 +199,6 @@ function CreatePostPage() {
         </div>
       </div>
     </post-form>
-    <FooterComponent/>
     </div>
   );
 }

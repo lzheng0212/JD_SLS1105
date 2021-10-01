@@ -1,5 +1,5 @@
 .admin-h1 {
-    color: green;
+    color: #234144;
 }
 .admin-Container {
     padding: 15px;
@@ -20,4 +20,29 @@
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+}
+
+
+.login-form {
+    max-width: 300px;
+}
+
+.login-form-forgot {
+    float: right;
+}
+
+.ant-col-rtl .login-form-forgot {
+    float: left;
+}
+
+.login-form-button {
+    width: 100%;
+}
+
+.ant-input-affix-wrapper-focused {
+    border-color: #234144;
+}
+
+.ant-input-affix-wrapper:hover {
+    border-color: #234144 !important;
 }

@@ -10,6 +10,8 @@ import { Button } from "../component/Button";
 import { projectFirestore } from "../firebase/config";
 import { Link } from "react-router-dom";
 import { Content } from "antd/lib/layout/layout";
+import { Layout } from "antd";
+import NavigationBar from "../component/NavigationBar";
 
 // Resources: https://github.com/zenoamaro/react-quill
 // License is also in the link above for react-quill
@@ -26,69 +28,70 @@ function DeletePostPage() {
 
   const onEdit = () => {};
   return (
-    <Content>
-      <div className="container">
-        <PostSearchContainer />
-        <div className="post-container">
-          {docs &&
-            docs.map((doc) => (
-              <div
-                style={{
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  alignSelf: "center",
-                }}
-              >
-                <PostItem
-                  src={doc.coverImage}
-                  title={doc.title}
-                  author={doc.author}
-                  description={doc.content}
-                  date={doc.createdAt}
-                  label={doc.postCategory}
-                  path="/specificPost"
-                />
-                <Button
-                  buttonStyle="btn--round"
-                  buttonSize="btn--small"
-                  onClick={() => {
-                    const res = projectFirestore
-                      .collection("posts")
-                      .doc(doc.PostId)
-                      .delete();
+    <Layout>
+      <Content>
+        <div className="container">
+          <PostSearchContainer />
+          <div className="post-container">
+            {docs &&
+              docs.map((doc) => (
+                <div
+                  style={{
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    alignSelf: "center",
                   }}
                 >
-                  DELETE
-                </Button>
-                <Button buttonStyle="btn--primary" buttonSize="btn--small">
-                  <Link
-                    style={{ color: "white", textDecoration: "none" }}
-                    to={{
-                      pathname: "./create",
-                      state: {
-                        update: true,
-                        postID: doc.PostId,
-                        src: doc.coverImage,
-                        title: doc.title,
-                        content: doc.content,
-                        label: doc.postCategory,
-                        author: doc.author,
-                        categories: doc.categories,
-                        coverImageURL: doc.coverImage
-                      },
+                  <PostItem
+                    src={doc.coverImage}
+                    title={doc.title}
+                    author={doc.author}
+                    description={doc.content}
+                    date={doc.createdAt}
+                    label={doc.postCategory}
+                    path="/specificPost"
+                  />
+                  <Button
+                    buttonStyle="btn--round"
+                    buttonSize="btn--small"
+                    onClick={() => {
+                      const res = projectFirestore
+                        .collection("posts")
+                        .doc(doc.PostId)
+                        .delete();
                     }}
                   >
-                    EDIT
-                  </Link>
-                </Button>
-              </div>
-            ))}
+                    DELETE
+                  </Button>
+                  <Button buttonStyle="btn--primary" buttonSize="btn--small">
+                    <Link
+                      style={{ color: "white", textDecoration: "none" }}
+                      to={{
+                        pathname: "./create",
+                        state: {
+                          update: true,
+                          postID: doc.PostId,
+                          src: doc.coverImage,
+                          title: doc.title,
+                          content: doc.content,
+                          label: doc.postCategory,
+                          author: doc.author,
+                          categories: doc.categories,
+                          coverImageURL: doc.coverImage
+                        },
+                      }}
+                    >
+                      EDIT
+                    </Link>
+                  </Button>
+                </div>
+              ))}
+          </div>
+          <PostMoreButton />
         </div>
-        <PostMoreButton />
-        <FooterComponent />
-      </div>
-    </Content>
+      </Content>
+    </Layout>
   );
 }
 
