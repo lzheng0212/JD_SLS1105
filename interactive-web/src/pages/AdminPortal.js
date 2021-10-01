@@ -112,9 +112,12 @@ function AdminPortal() {
               </Menu>
           </Sider>
           <Layout>
-              <Route path='/adminportal/create' exact component={CreatePostPage}></Route>
-              <Route path='/adminportal/deletepostpage' exact component={DeletePostPage}></Route>
-              <Route path='/adminportal/managecategoriespage' exact component={ManageCategoriesPage}></Route>
+              <Content>
+                <Route path='/adminportal/create' exact component={CreatePostPage}></Route>
+                <Route path='/adminportal/deletepostpage' exact component={DeletePostPage}></Route>
+                <Route path='/adminportal/managecategoriespage' exact component={ManageCategoriesPage}></Route>
+              </Content>
+              
           </Layout>
         </Layout>
       </Router>

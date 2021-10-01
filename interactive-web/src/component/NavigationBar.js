@@ -53,11 +53,11 @@ export default function NavigationBar() {
                 Donate
               </a>
             </Menu.Item>
-            <Menu.Item key="admin">
+            {/* <Menu.Item key="admin">
               <a href="/adminportal" rel="noopener noreferrer">
                 Admin
               </a>
-            </Menu.Item>
+            </Menu.Item> */}
           </Menu>
         </Col>
       </Row>
