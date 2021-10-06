@@ -12,10 +12,11 @@ import { useState } from 'react'
 import {
   EditOutlined,
   DashboardOutlined,
-  FolderOutlined,
+  CalendarOutlined,
   ExportOutlined,
   OrderedListOutlined,
-  FileAddOutlined
+  FileAddOutlined,
+  CommentOutlined
 } from '@ant-design/icons';
 import { Layout, Menu} from "antd";
 import FooterComponent from "../component/FooterComponent";
@@ -103,10 +104,13 @@ function AdminPortal() {
                 <Menu.Item key="3" icon={<OrderedListOutlined />}>
                 <Link to="/adminportal/managecategoriespage">  Manage Catagories </Link>
                 </Menu.Item>
-                <Menu.Item key="4" icon={<FolderOutlined />}>
-                  Files
+                <Menu.Item key="4" icon={<CalendarOutlined />}>
+                  Events
                 </Menu.Item>
-                <Menu.Item key="5" icon={<ExportOutlined />}>
+                <Menu.Item key="5" icon={<CommentOutlined />}> 
+                  Questions
+                </Menu.Item>
+                <Menu.Item key="7" icon={<ExportOutlined />}>
                   <a onclick={async (e) => projectAuth.signOut()} href="/adminLogin"> Logout </a>
                 </Menu.Item>
               </Menu>
