@@ -96,7 +96,7 @@ function AdminPortal() {
                   <a href="/adminportal"> Dashboard </a>
                 </Menu.Item>   
                 <Menu.Item key="1" icon={<FileAddOutlined />}>
-                  <Link to="/adminportal/create"> Create Post </Link>
+                  <Link to="/adminportal/create"> New Post </Link>
                 </Menu.Item>
                 <Menu.Item key="2" icon={<EditOutlined />}>
                   <Link to="/adminportal/deletepostpage"> Manage Posts </Link>
@@ -105,10 +105,10 @@ function AdminPortal() {
                 <Link to="/adminportal/managecategoriespage">  Manage Catagories </Link>
                 </Menu.Item>
                 <Menu.Item key="4" icon={<CalendarOutlined />}>
-                  Events
+                  Manage Events
                 </Menu.Item>
                 <Menu.Item key="5" icon={<CommentOutlined />}> 
-                  Questions
+                  Questions Review
                 </Menu.Item>
                 <Menu.Item key="7" icon={<ExportOutlined />}>
                   <a onclick={async (e) => projectAuth.signOut()} href="/adminLogin"> Logout </a>
