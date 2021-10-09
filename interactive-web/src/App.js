@@ -19,22 +19,24 @@ import FooterComponent from "./component/FooterComponent";
 
 function App() {
   return (
-      <Router>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/home" exact component={Home} />
-          <Route path="/post" exact component={PostSection} />
-          <Route path="/donate" exact component={DonationPage} />
-          <Route path="/aboutUs" exact component={aboutUsPage} />
-          <Route path="/adminLogin" exact component={AdminLoginPage} />
-          <Route path="/adminportal" exact component={AdminPortal} />
-          <Route path="/events" exact component={FullCalendarPage} />
-          {/* <Route path="/manage" exact component={DeletePostPage} />
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/home" exact component={Home} />
+        <Route path="/post" exact component={PostSection} />
+        <Route path="/donate" exact component={DonationPage} />
+        <Route path="/aboutUs" exact component={aboutUsPage} />
+        <Route path="/adminLogin" exact component={AdminLoginPage} />
+        <Route path="/adminportal" exact component={AdminPortal} />
+        <Route path="/events" exact component={FullCalendarPage} />
+        <Route path="/specificPost" exact component={SpecificPost} />
+
+        {/* <Route path="/manage" exact component={DeletePostPage} />
           <Route path="/create" exact component={CreatePostPage} />
           <Route path="/specificPost" exact component={SpecificPost} />
           <Route path="/manage/categories" exact component={ManageCategoriesPage} /> */}
-        </Switch>
-      </Router>
+      </Switch>
+    </Router>
   );
 }
 

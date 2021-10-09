@@ -19,8 +19,6 @@ function Posts() {
   }, []);
 
   const { docs } = useFirestore("posts");
-  console.log(1);
-  console.log(docs);
 
   return (
     <div className="posts">
