@@ -22,7 +22,7 @@ function PostItem(props) {
             {/* <h5 className="posts__item__text">
               {ReactHtmlParser(props.description)}
             </h5> */}
-            <h5 className="posts__item__text">{props.date}</h5>
+            <h5 className="posts__item__text">{props.author}</h5>
           </div>
         </Link>
       </li>

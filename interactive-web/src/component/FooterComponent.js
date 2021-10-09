@@ -8,15 +8,14 @@ import {TwitterOutlined, MobileOutlined, LinkedinOutlined, EnvironmentOutlined, 
 function FooterComponent() {
   
   
-  const checkStatus = async (e) => {
-    projectAuth.onAuthStateChanged(function(user) {
-      if (user) {
-        window.location.assign('/adminPortal') //need to revise  if user loged in
-      } else {
-        window.location.assign('/adminLogin') //need to revise   if not
-      }
-    });
+  const checkStatus = () => {
+    if (projectAuth.currentUser) {
+      window.location.assign('/adminPortal') //need to revise  if user loged in
+    } else {
+      window.location.assign('/adminLogin') //need to revise   if not
+    }
   }
+
 
   return (
     <Footer

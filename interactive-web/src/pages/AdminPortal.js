@@ -27,6 +27,10 @@ const { Header, Content, Sider } = Layout;
 
 function AdminPortal() {
   const [state, setState] = useState('start');
+  const signOut = () => {
+    projectAuth.signOut();
+    alert("signed Out!");
+  }
   return (
     // <div>
     //   <h1 className="portal_h1">Admin Portal</h1>
@@ -111,7 +115,7 @@ function AdminPortal() {
                   Questions Review
                 </Menu.Item>
                 <Menu.Item key="7" icon={<ExportOutlined />}>
-                  <a onclick={async (e) => projectAuth.signOut()} href="/adminLogin"> Logout </a>
+                  <a onClick={signOut} href="/adminLogin"> Logout </a>
                 </Menu.Item>
               </Menu>
           </Sider>
