@@ -1,0 +1,47 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+.body {
+    font-size: 1.6rem;
+    font-family: "Source Sans Pro", sans-serif;
+    color: #383838;
+    background: url('../assets/welcome.png') center center/cover no-repeat;
+  }
+.timeline {
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+    align-items: center;
+}
+.carousel-container {
+   position: relative;
+   align-self: center;
+   padding: 5%;
+}
+.detail-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    font-family: "Source Sans Pro", sans-serif;
+}
+.detail-container .title {
+    font-size: 75px;
+    font-weight: bold;
+    line-height: 150%;
+    padding-bottom: 15px;
+    color: #383838;
+}
+.detail-container .date {
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 200%;
+    line-height: 1.6;
+    color: #383838;
+    
+}
+.detail-container .content {
+    font-size: large;
+    font-weight: normal;
+    line-height: 200%;
+    padding-top: 15px;
+    color: #9b9999;
+    
+}

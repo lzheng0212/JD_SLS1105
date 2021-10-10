@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster");
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+body {
+  font-family: "Lobster";
+}
+
+#carousel {
+  position: relative;
+  align-self: center;
+  height: 200px;
+  width: 810px;
+  margin: auto;
+
+}
+
+.arrow {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(68, 138, 62);
+  text-align: center;
+  font-size: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  color: #228291;
+  line-height: 30px;
+  margin-top: 85px;
+  z-index: 1000;
+}
+
+.arrow-right {
+  left: 780px;
+}
+
+.item {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  transition: height 1s, width 1s, left 1s, margin-top 1s, line-height 1s, background-color 1s;
+}
+
+.level-2 {
+  height: 150px;
+  width: 110px;
+  line-height: 150px;
+  background-color: rgb(142, 151, 117);
+  left: 650px;
+  margin-top: 25px;
+}
+
+.level-1 {
+  height: 180px;
+  width: 130px;
+  line-height: 180px;
+  background-color: rgb(74, 80, 61);
+  left: 500px;
+  margin-top: 10px;
+}
+
+.level0 {
+  height: 200px;
+  width: 150px;
+  line-height: 200px;
+  background-color:rgb(226, 143, 131);
+  left: 330px;
+}
+
+.level1 {
+  height: 180px;
+  width: 130px;
+  line-height: 180px;
+  background-color: rgb(74, 80, 61);
+  margin-top: 10px;
+  left: 180px;
+}
+
+.level2 {
+  height: 150px;
+  width: 110px;
+  line-height: 150px;
+  background-color:rgb(142, 151, 117);
+  margin-top: 25px;
+  left: 50px;
+}
+
+.left-enter {
+  opacity: 0;
+  left: -60px;
+  height: 120px;
+  width: 90px;
+  line-height: 120px;
+  margin-top: 40px;
+}
+
+.left-enter.left-enter-active {
+  opacity: 1;
+  left: 50px;
+  height: 150px;
+  width: 110px;
+  line-height: 150px;
+  margin-top: 25px;
+  transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s, line-height 1s;
+}
+
+.left-leave {
+  opacity: 1;
+  left: 650px;
+  height: 150px;
+  width: 110px;
+  line-height: 150px;
+  margin-top: 25px;
+}
+
+.left-leave.left-leave-active {
+  left: 780px;
+  opacity: 0;
+  height: 120px;
+  line-height: 120px;
+  margin-top: 40px;
+  width: 90px;
+  transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s, line-height 1s;
+}
+
+.right-enter {
+  opacity: 0;
+  left: 760px;
+  height: 120px;
+  width: 90px;
+  line-height: 120px;
+  margin-top: 40px;
+}
+
+.right-enter.right-enter-active {
+  left: 650px;
+  opacity: 1;
+  height: 150px;
+  margin-top: 25px;
+  line-height: 150px;
+  width: 110px;
+  transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s, line-height 1s;
+}
+
+.right-leave {
+  left: 50px;
+  height: 150px;
+  opacity: 1;
+  margin-top: 25px;
+  line-height: 150px;
+  width: 110px;
+}
+
+.right-leave.right-leave-active {
+  left: -60px;
+  opacity: 0;
+  height: 120px;
+  width: 90px;
+  line-height: 120px;
+  margin-top: 40px;
+  transition: left 1s, opacity 1s, height 1s, width 1s, margin-top 1s, line-height 1s;
+}
+
+.noselect {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
+  align-items: center;
+}
+.carousel-container {
+ position: relative;
+ align-self: center;
+ padding: 5%;
+}
+.detail-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.detail-container .title {
+  font-size: 75px;
+  font-weight: bold;
+  line-height: 150%;
+  padding-bottom: 15px;
+  color: #383838;
+}
+.detail-container .date {
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 200%;
+  line-height: 1.6;
+  color: #383838;
+  
+}
+.detail-container .content {
+  font-size: large;
+  font-weight: normal;
+  line-height: 200%;
+  padding-top: 15px;
+  color: #9b9999;
+  
+}

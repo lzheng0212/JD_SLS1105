@@ -40,7 +40,7 @@ export default function PostSection() {
     <Layout>
       <NavigationBar/>
       <Content >
-        <div className="container">
+        <div className="container" style={ {marginTop: "10px"}}>
           <PostSearchContainer />
           <div className="post-container">
             {docs &&

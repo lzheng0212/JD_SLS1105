@@ -10,6 +10,7 @@ import CreatePostPage from "./pages/CreatePostPage";
 import SpecificPost from "./pages/specifcPost";
 import AdminLoginPage from "./pages/AdminLoginPage";
 import AdminPortal from "./pages/AdminPortal";
+import TimelinePage from "./pages/TimelinePage";
 import DeletePostPage from "./pages/DeletePostPage";
 import ManageCategoriesPage from "./pages/ManageCategoriesPage";
 import { Layout } from 'antd';
@@ -29,6 +30,7 @@ function App() {
           <Route path="/adminLogin" exact component={AdminLoginPage} />
           <Route path="/adminportal" exact component={AdminPortal} />
           <Route path="/events" exact component={FullCalendarPage} />
+          <Route path="/timeline" exact component={TimelinePage} />
           {/* <Route path="/manage" exact component={DeletePostPage} />
           <Route path="/create" exact component={CreatePostPage} />
           <Route path="/specificPost" exact component={SpecificPost} />
