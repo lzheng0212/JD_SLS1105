@@ -50,31 +50,13 @@ function MapPage() {
             g.attr("transform", "translate(-80,0)")
             .attr("scale", 0.25) //useless
     });
-
-    // d3.json('newstorelocations.json', function (locations){
-    //   console.log('stores', locations);
-    //   console.log('stores');
-
-    //   svg.selectAll('circle')
-    //           .data(locations)
-    //           .enter()
-    //           .append('circle')
-    //           .attr('cx', function(d) {return d.lon})
-    //           .attr('cy', function(d) {return d.lat})
-    //           .attr('r', 4)
-    //          .on("mouseover", function(b){
-    //              console.log("binish", b)
-    //              d3.select(this).style("fill", "red").append('text')
-    //              .text("hi");
-    //          })
-    //          .on("mouseout", function(){d3.select(this).style("fill", "blue");
-    //          });
-
-    // });
     
     // geo data of each state https://gist.github.com/meiqimichelle/7727723 
-    var marks = [{long: -85, lat: 42},{long: -86, lat: 38},{long: -90, lat: 33},
-      {long: -107, lat: 31}, {long: -126, lat: 35}];
+    var marks = [{long: -85, lat: 42, text:"Loc: Harrisburg, PA\nInstitueName:XXX\nProgram:XXXXX"},
+    {long: -86, lat: 38, text:"Loc: Richmond, VA\nInstitueName:XXX\nProgram:XXXXX"},
+    {long: -90, lat: 33, text:"Loc: Atlanta, GA\nInstitueName:XXX\nProgram:XXXXX"},
+      {long: -107, lat: 31, text:"Loc: Austin, TX\nInstitueName:XXX\nProgram:XXXXX"}, 
+      {long: -126, lat: 35, text:"Loc: Sacramento, CA\nInstitueName:XXX\nProgram:XXXXX"}];
     
     svg.selectAll("circle")
     .data(marks)
@@ -85,7 +67,8 @@ function MapPage() {
     .attr('r','6px')
     .style('fill', 'red')
     .on("mouseover", handleMouseOver)
-    .on("mouseout", handleMouseOut);
+    .on("mouseout", handleMouseOut)
+    .on("click", handleMouseClick)
 
     // svg.selectAll(".mark")
     // .data(marks)
@@ -103,17 +86,47 @@ function MapPage() {
     // svg
     // .call(zoom);
 
+    function handleMouseClick() {
+      const dummyText = "[Location]\nProgramName: XXX     Date: 2020-10-12\nDescription: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy\ntext ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not\n only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. hahahahha"
+      const detailsArr = dummyText.split("\n")
+      const fountSize = [30, 18, 12, 12, 12, 12, 12]
+      for (let i = 0; i < detailsArr.length; i++) {
+        svg.append("text")
+        .attr("x", 120)
+        .attr("y", 480+25*i)
+        .attr("width", 800)
+        .attr("font-family", "sans-serif")
+        .attr("font-size", fountSize[i] + "px")
+        .attr("fill", "black")
+        .text(detailsArr[i]);
+      }
+    }
+
     function handleMouseOver(d, i) { 
       d3.select(this).attr('r','12px')
       .style('fill', 'orange')
 
-      svg.append("text")
-      .attr("id", "t" + d.x + "-" + d.y)
-      .attr("x", d.x - 1)
-      .attr("y", d.y-1)
-      .text(function() {
-        return "2021";  // Value of the text
-      });
+      const x = projection([i.long, i.lat])[0]
+      const y = projection([i.long, i.lat])[1]
+
+      svg.append('rect')
+      .attr('x', x)
+      .attr('y', y)
+      .attr('width', 115)
+      .attr('height', 50)
+      .attr('stroke', 'black')
+      .attr('fill', 'white');
+
+      const lineArr = i.text.split("\n")
+      for (let i = 0; i < lineArr.length; i++) {
+        svg.append("text")
+        .attr("x", x+5)
+        .attr("y", y+15+i*15)
+        .attr("font-family", "sans-serif")
+        .attr("font-size", "12px")
+        .attr("fill", "black")
+        .text(lineArr[i]);
+      }
     }
 
     function handleMouseOut(d, i) {
@@ -125,6 +138,7 @@ function MapPage() {
       // var curr = d3.select("#t" + d.x + "-" + d.y)
       // curr.remove(); 
       d3.selectAll("text").remove();
+      d3.selectAll("rect").remove();
     }
 
     function reset() {
@@ -163,6 +177,9 @@ function MapPage() {
     <Layout>
         <NavigationBar/>
         <Content>
+            <div id="mapHeader">
+              <h1>Map Of Our Involvements</h1>
+            </div>
             <div className = "Map">
                 <svg ref = {svgRef}></svg>
             </div>

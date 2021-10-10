@@ -3,3 +3,9 @@
 	left: 100;
 	position:'absolute'
 } */
+
+#mapHeader {
+	color: black;
+	display: none;
+	padding: 50px;
+}
