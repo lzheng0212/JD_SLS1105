@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./PostItem.css";
-
 function PostItem(props) {
   return (
     <div>
@@ -22,7 +21,7 @@ function PostItem(props) {
             {/* <h5 className="posts__item__text">
               {ReactHtmlParser(props.description)}
             </h5> */}
-            <h5 className="posts__item__text">{props.date}</h5>
+            <h5 className="posts__item__text">{props.author}</h5>
           </div>
         </Link>
       </li>

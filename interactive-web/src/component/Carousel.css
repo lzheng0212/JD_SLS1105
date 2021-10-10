@@ -1,8 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lobster");
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
-body {
-  font-family: "Lobster";
-}
 
 #carousel {
   position: relative;

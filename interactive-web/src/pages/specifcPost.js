@@ -15,20 +15,20 @@ export default function SpecifcPost() {
   const data = useLocation().state.props;
 
   useEffect(() => {
-      let quill = new Quill('#quillPostContent', {
-        modules: {
-          toolbar: false,
-        },
-        theme: "snow",
-        readOnly: true
-      });
-      let postContent = JSON.parse(data.description)
-      quill.setContents(postContent)
+    let quill = new Quill('#quillPostContent', {
+      modules: {
+        toolbar: false,
+      },
+      theme: "snow",
+      readOnly: true
+    });
+    let postContent = JSON.parse(data.description)
+    quill.setContents(postContent)
   }, []);
 
   return (
     <Layout>
-      <NavigationBar/>
+      <NavigationBar />
       <Content>
         <br></br>
         <br></br>
@@ -39,7 +39,6 @@ export default function SpecifcPost() {
         <p>{data.author}</p>
         <div id="quillPostContent"></div>
       </Content>
-
       <FooterComponent />
     </Layout>
   );

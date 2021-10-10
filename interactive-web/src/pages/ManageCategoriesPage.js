@@ -44,13 +44,11 @@ function ManageCategoriesPage() {
     }, []);
 
     return (
-        <>
-            <br />
-            <br />
-            <br />
+        <div style={{display: "flex", margin: "7%", flexDirection: "column", alignItems: "center"}}>
+
             <h1>Category List</h1>
 
-            <div className="manage--categories--form--container">
+            <div className="manage--categories--form--container" style={{marginTop: "2%", marginBottom: "3%"}}>
                 <form id="add-category-form">
                     <input type="text" name="name" placeholder="Category name" />
                     <button type="button" onClick={() => {
@@ -64,7 +62,7 @@ function ManageCategoriesPage() {
             <div className="manage--categories--container">
                 <CategoryContainer icon="x" categoryList={availableCategories} callBackFunc={removeFromCategoryList} />
             </div>
-        </>
+        </div>
     );
 }
 
