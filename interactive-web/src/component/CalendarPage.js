@@ -9,28 +9,112 @@ import { Content } from 'antd/lib/layout/layout';
 import { Layout } from 'antd';
 import NavigationBar from './NavigationBar';
 import FooterComponent from './FooterComponent';
+import CreateCalendarEvent from './CreateCalendarEventContainer';
+import { projectFirestore } from '../firebase/config';
 
 const CalendarPage = () => {
 
-    const [button, setButton] = useState(true);
-    const showButton = () => {
-        if (window.innerWidth <= 960) {
-            setButton(false);
-        } else {
-            setButton(true);
-        }
-    };
+    let [date, setDate] = useState(new Date())
 
-    useEffect(() => {
-        showButton();
-    }, []);
+    const newDateCalenderEvent = (newDate) => {
+        setDate(newDate)
+    }
+
+    const nextMonth = () => {
+        const newDate = new Date(date.getFullYear(), date.getMonth() + 1)
+        setDate(newDate)
+    }
+
+    const prevMonth = () => {
+        const newDate = new Date(date.getFullYear(), date.getMonth() - 1)
+        setDate(newDate)
+    }
+
+    const query = {
+        "december": {
+            "1": {
+                "events": {
+                    "random": "test",
+                    "eventDescription": "this is an event description placeHolder",
+                    "eventTitle": "Event Title",
+                    "eventCategories": ["string of categories", "cate2"],
+                    "eventTime": "time",
+                    "eventLocation": "location"
+                }
+            }
+        }
+    }
+
+    //query firebase with the events
+    const addEventToFirebase = () => {
+        projectFirestore.collection("Events").doc("1999").set({
+            "december": {
+                "1": {
+                    "events": {
+                        "random": "test",
+                        "eventDescription": "this is an event description placeHolder",
+                        "eventTitle": "Event Title",
+                        "eventCategories": ["string of categories", "cate2"],
+                        "eventTime": "time",
+                        "eventLocation": "location"
+                    }
+                }
+            }
+        })
+    }
+
+    const psudoEventQuery = {
+        "years": {
+            "2020": {
+                "december": {
+                    "1": {
+                        "events": [
+                            {
+                                "random": "test",
+                                "eventDescription": "this is an event description placeHolder",
+                                "eventTitle": "Event Title",
+                                "eventCategories": ["string of categories", "cate2"],
+                                "eventTime": "time",
+                                "eventLocation": "location"
+                            },
+                            {
+                                "random": "test",
+                                "eventDescription": "this is an event description placeHolder",
+                                "eventTitle": "Event Title",
+                                "eventCategories": ["string of categories", "cate2"],
+                                "eventTime": "time",
+                                "eventLocation": "location"
+                            },
+                        ]
+                    }
+                }
+            },
+            "2021": {
+                "december": {
+                    "1": {
+                        "events": {
+                            "random": "test",
+                            "eventDescription": "this is an event description placeHolder",
+                            "eventTitle": "Event Title",
+                            "eventCategories": ["string of categories", "cate2"]
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    const { years: { 2020: { december: { 1: { events } } } } } = psudoEventQuery;
+    console.log(events.length)
+
+    console.log(psudoEventQuery)
 
     return (
         <Layout>
-            <NavigationBar/>
+            <NavigationBar />
             <Content>
                 <div className="calendar">
-                    <Calendar />
+                    <Calendar onChange={newDateCalenderEvent} value={date} />
                 </div>
                 <div className='event-cont'>
                     <div className="header">
@@ -39,29 +123,16 @@ const CalendarPage = () => {
 
                     <div className="shadowbox">
                         <div className="rectangle" />
-                        <h5 style={{ marginBottom: '10px', marginTop: '10px', fontSize: '18px' }}>Showing events in March 2021, from today onwards</h5>
+                        <h5 style={{ marginBottom: '10px', marginTop: '10px', fontSize: '18px' }}>Showing events from {date.toDateString()}, onwards.</h5>
                         <div className='btn-container'>
-                            <ind>{button && <Button buttonStyle='btn--primary' buttonSize="btn--small"><Link to='/' style={{ color: 'white', textDecoration: 'none' }}>Previous Month</Link></Button>}</ind>
-                            <ind>{button && <Button buttonStyle='btn--primary' buttonSize="btn--small"><Link to='/' style={{ color: 'white', textDecoration: 'none' }}>Next Month</Link></Button>}</ind>
+                            <ind><Button onClick={prevMonth} buttonStyle='btn--primary' buttonSize="btn--small">Previous Month</Button></ind>
+                            <ind><Button onClick={nextMonth} buttonStyle='btn--primary' buttonSize="btn--small">Next Month</Button></ind>
                         </div>
-
                     </div>
 
-                    <div>
-                        <div className="headingStyle"> Friday, March 19, 2021</div>
-                        <h2 style={subtitleS}>This is an event place holder</h2>
-                        <div style={{ marginLeft: 10 }}> Category: Educational</div>
-                        <div style={lineS}></div>
+                    <CreateCalendarEvent date="randomDate" description="hello random description" categories="educational" />
 
-                        <h2 style={subtitleS}>This is an event place holder</h2>
-                        <div style={{ marginLeft: 10 }}> Category: Educational</div>
-                        <div style={lineS}></div>
-
-                        <h2 style={subtitleS}>This is an event place holder</h2>
-                        <div style={{ marginLeft: 10 }}> Category: Educational</div>
-                    </div>
-
-                    <div>
+                    {/* <div>
                         <div className="headingStyle"> Monday, March 22, 2021</div>
                         <h2 style={subtitleS}>This is an event place holder</h2>
                         <div style={{ marginLeft: 10 }}> Category: Educational</div>
@@ -91,19 +162,11 @@ const CalendarPage = () => {
 
                         <h2 style={subtitleS}>This is an event place holder</h2>
                         <div style={{ marginLeft: 10, marginBottom: 50 }}> Category: Educational</div>
-                    </div>
-
-                    <div className="shadowbox" style={{marginBottom:'4%'}}>
-                        <div className="rectangle"/>
-                        <div className='btn-container'>
-                        <ind>{button && <Button buttonStyle='btn--primary' buttonSize="btn--small"><Link to='/' style={{ color: 'white', textDecoration: 'none' }}>Previous Month</Link></Button>}</ind>
-                            <ind>{button && <Button buttonStyle='btn--primary' buttonSize="btn--small"><Link to='/' style={{ color: 'white', textDecoration: 'none' }}>Next Month</Link></Button>}</ind>
-                        </div>
-                    </div>
+                    </div> */}
                 </div>
 
             </Content>
-        <FooterComponent/>
+            <FooterComponent />
         </Layout>
     )
 }
