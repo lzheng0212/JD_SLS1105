@@ -33,86 +33,87 @@ const CalendarPage = () => {
     }
 
     //query firebase with the events
-    const addEventToFirebase = () => {
-        projectFirestore.collection("Events").doc("2021").set({
-            "11": {
-                "events": [
-                    {
-                        "description": "this is an event description placeHolder",
-                        "title": "Event Title",
-                        "categories": ["string of categories", "cate2"],
-                        "time": "time",
-                        "dayOfTheMonth": "6",
-                        "location": "location"
-                    },
-                    {
-                        "description": "this is an event description placeHolder",
-                        "title": "Event Title",
-                        "categories": ["string of categories", "cate2"],
-                        "time": "time",
-                        "dayOfTheMonth": "5",
-                        "location": "location"
-                    },
-                    {
-                        "description": "this is an event description placeHolder",
-                        "title": "Event Title",
-                        "categories": ["string of categories", "cate2"],
-                        "time": "time",
-                        "dayOfTheMonth": "6",
-                        "location": "location"
-                    },
-                    {
-                        "description": "this is an event description placeHolder",
-                        "title": "Event Title",
-                        "categories": ["string of categories", "cate2"],
-                        "time": "time",
-                        "dayOfTheMonth": "6",
-                        "location": "location"
-                    },
-                ]
-            },
-            "10": {
-                "events": [
-                    {
-                        "description": "this is an event description placeHolder",
-                        "title": "Event Title",
-                        "categories": ["string of categories", "cate2"],
-                        "time": "time",
-                        "dayOfTheMonth": "11",
-                        "location": "location"
-                    },
-                    {
-                        "description": "this is an event description placeHolder",
-                        "title": "Event Title",
-                        "categories": ["string of categories", "cate2"],
-                        "time": "time",
-                        "dayOfTheMonth": "21",
-                        "location": "location"
-                    },
-                ]
-            },
-            "6": {
-                "events": [
-                    {
-                        "description": "this is an event description placeHolder",
-                        "title": "Event Title",
-                        "categories": ["string of categories", "cate2"],
-                        "time": "time",
-                        "dayOfTheMonth": "15",
-                        "location": "location"
-                    },
-                    {
-                        "description": "this is an event description placeHolder",
-                        "title": "Event Title",
-                        "categories": ["string of categories", "cate2"],
-                        "time": "time",
-                        "dayOfTheMonth": "20",
-                        "location": "location"
-                    },
-                ]
-            }
-        })
-    }
+    //remove this comment after this sprint. This is here for an example of how to add calendar events to firestore
+    // const addEventToFirebase = () => {
+    //     projectFirestore.collection("Events").doc("2021").set({
+    //         "11": {
+    //             "events": [
+    //                 {
+    //                     "description": "this is an event description placeHolder",
+    //                     "title": "Event Title",
+    //                     "categories": ["string of categories", "cate2"],
+    //                     "time": "time",
+    //                     "dayOfTheMonth": "6",
+    //                     "location": "location"
+    //                 },
+    //                 {
+    //                     "description": "this is an event description placeHolder",
+    //                     "title": "Event Title",
+    //                     "categories": ["string of categories", "cate2"],
+    //                     "time": "time",
+    //                     "dayOfTheMonth": "5",
+    //                     "location": "location"
+    //                 },
+    //                 {
+    //                     "description": "this is an event description placeHolder",
+    //                     "title": "Event Title",
+    //                     "categories": ["string of categories", "cate2"],
+    //                     "time": "time",
+    //                     "dayOfTheMonth": "6",
+    //                     "location": "location"
+    //                 },
+    //                 {
+    //                     "description": "this is an event description placeHolder",
+    //                     "title": "Event Title",
+    //                     "categories": ["string of categories", "cate2"],
+    //                     "time": "time",
+    //                     "dayOfTheMonth": "6",
+    //                     "location": "location"
+    //                 },
+    //             ]
+    //         },
+    //         "10": {
+    //             "events": [
+    //                 {
+    //                     "description": "this is an event description placeHolder",
+    //                     "title": "Event Title",
+    //                     "categories": ["string of categories", "cate2"],
+    //                     "time": "time",
+    //                     "dayOfTheMonth": "11",
+    //                     "location": "location"
+    //                 },
+    //                 {
+    //                     "description": "this is an event description placeHolder",
+    //                     "title": "Event Title",
+    //                     "categories": ["string of categories", "cate2"],
+    //                     "time": "time",
+    //                     "dayOfTheMonth": "21",
+    //                     "location": "location"
+    //                 },
+    //             ]
+    //         },
+    //         "6": {
+    //             "events": [
+    //                 {
+    //                     "description": "this is an event description placeHolder",
+    //                     "title": "Event Title",
+    //                     "categories": ["string of categories", "cate2"],
+    //                     "time": "time",
+    //                     "dayOfTheMonth": "15",
+    //                     "location": "location"
+    //                 },
+    //                 {
+    //                     "description": "this is an event description placeHolder",
+    //                     "title": "Event Title",
+    //                     "categories": ["string of categories", "cate2"],
+    //                     "time": "time",
+    //                     "dayOfTheMonth": "20",
+    //                     "location": "location"
+    //                 },
+    //             ]
+    //         }
+    //     })
+    // }
 
     useEffect(() => {
         projectFirestore.collection("Events").get().then(
@@ -154,7 +155,7 @@ const CalendarPage = () => {
                         <h5 style={{ marginBottom: '10px', marginTop: '10px', fontSize: '18px' }}>Showing events on {`${date.toLocaleDateString("en-US", { month: 'long'})} ${date.getFullYear()}`}</h5>
                         <div className='btn-container'>
                             <ind><Button onClick={prevMonth} buttonStyle='btn--primary' buttonSize="btn--small">Previous Month</Button></ind>
-                            <ind><Button onClick={addEventToFirebase} buttonStyle='btn--primary' buttonSize="btn--small">Next Month</Button></ind>
+                            <ind><Button onClick={nextMonth} buttonStyle='btn--primary' buttonSize="btn--small">Next Month</Button></ind>
                         </div>
                     </div>
                     <div>
