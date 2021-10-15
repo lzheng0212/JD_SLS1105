@@ -19,10 +19,7 @@ const CalendarPage = () => {
     let [eventsMap, setEventsMap] = useState(new Map())
 
     const newDateCalenderEvent = (newDate, event) => {
-        console.log("hello")
         setDate(newDate)
-        console.log(newDate)
-        console.log(eventsMap)
     }
 
     const nextMonth = () => {
