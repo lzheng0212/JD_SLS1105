@@ -17,24 +17,33 @@ const lineS = {
 }
 
 function CreateCalendarEventContainer(props) {
-    console.log(props)
-    let dd = new Date(Number(props.year), Number(props.date.month), 1)
-    console.log(dd.toString())
+    //Event container holds the jsx code for our event calendar formatting
     let eventContainer = []
 
     const createEventContainer = () => {
-        console.log(props.date.daysArray)
-        props.date.daysArray.forEach((day, index) => {
-            // console.log(day)
-            const newDate = new Date(Number(props.year), Number(props.date.month), Number(day.day))
+        const eventsForTheMonth = props.date.eventsArray
+        
+        //sorts the events in this month increasing order
+        eventsForTheMonth.sort(function(a, b) {
+            return a.dayOfTheMonth - b.dayOfTheMonth
+        })
+        
+        //goes through the events in this month and groups events that are on the same day
+        for (let i = 0; i < eventsForTheMonth.length; i++) {
+            const event = eventsForTheMonth[i]
+            const newDate = new Date(Number(props.year), Number(props.date.month), Number(event.dayOfTheMonth))
             eventContainer.push(<div className="headingStyle">{newDate.toDateString()}</div>)
-            day.eventsArray.forEach((calendarEvent, index) => {
-                addEventToContainer(calendarEvent, newDate)
-            })
-        });
+            addEventToContainer(event, newDate)
+            while ((i+1) < eventsForTheMonth.length && Number(eventsForTheMonth[i+1].dayOfTheMonth) === Number(event.dayOfTheMonth)) {
+                console.log(Number(eventsForTheMonth[i+1].dayOfTheMonth) === Number(event.dayOfTheMonth))
+                addEventToContainer(eventsForTheMonth[i+1], newDate)
+                i = i + 1
+            }
+        }
         return eventContainer
     }
 
+    //adds either the header jsx or event jsx to the eventConatiner 
     const addEventToContainer = (calendarEvent, date) => {
         eventContainer.push( 
             <div className="singleCalendarEvent">
@@ -51,18 +60,6 @@ function CreateCalendarEventContainer(props) {
         <div>
             {createEventContainer()}
         </div>
-        //     {/* <div className="headingStyle"> {dd.toDateString()}</div>
-        //     <h2 style={subtitleS}>This is an event place holder</h2>
-        //     <div style={{ marginLeft: 10 }}> Category: Educational</div>
-        //     <div style={lineS}></div>
-
-        //     <h2 style={subtitleS}>This is an event place holder</h2>
-        //     <div style={{ marginLeft: 10 }}> Category: Educational</div>
-        //     <div style={lineS}></div>
-
-        //     <h2 style={subtitleS}>This is an event place holder</h2>
-        //     <div style={{ marginLeft: 10 }}> Category: Educational</div> */}
-        // </div>
     );
 }
 
