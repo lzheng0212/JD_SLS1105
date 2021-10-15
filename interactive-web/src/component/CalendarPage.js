@@ -11,13 +11,27 @@ import NavigationBar from './NavigationBar';
 import FooterComponent from './FooterComponent';
 import CreateCalendarEvent from './CreateCalendarEventContainer';
 import { projectFirestore } from '../firebase/config';
+import { Day, Month, SingleEvent } from '../objects/CalendarObjects';
 
 const CalendarPage = () => {
 
     let [date, setDate] = useState(new Date())
+    let [yearsMap, setYearsMap] = useState()
 
     const newDateCalenderEvent = (newDate) => {
         setDate(newDate)
+        console.log(yearsMap)
+        yearsMap.get("2000").map((month) => {
+            console.log(month)
+            console.log(date.getMonth())
+            if (Number(month.month) > date.getMonth()) {
+                console.log("yes")
+            } else {
+                console.log("no")
+            }
+        })
+        console.log(date.getMonth())
+        console.log(yearsMap.get(date.getFullYear().toString()))
     }
 
     const nextMonth = () => {
@@ -47,17 +61,111 @@ const CalendarPage = () => {
 
     //query firebase with the events
     const addEventToFirebase = () => {
-        projectFirestore.collection("Events").doc("1999").set({
-            "december": {
+        projectFirestore.collection("Events").doc("2000").set({
+            "11": {
                 "1": {
-                    "events": {
-                        "random": "test",
-                        "eventDescription": "this is an event description placeHolder",
-                        "eventTitle": "Event Title",
-                        "eventCategories": ["string of categories", "cate2"],
-                        "eventTime": "time",
-                        "eventLocation": "location"
-                    }
+                    "events": [
+                        {
+                            "random": "test",
+                            "eventDescription": "this is an event description placeHolder",
+                            "eventTitle": "Event Title",
+                            "eventCategories": ["string of categories", "cate2"],
+                            "eventTime": "time",
+                            "eventLocation": "location"
+                        },
+                        {
+                            "random": "test",
+                            "eventDescription": "this is an event description placeHolder",
+                            "eventTitle": "Event Title",
+                            "eventCategories": ["string of categories", "cate2"],
+                            "eventTime": "time",
+                            "eventLocation": "location"
+                        },
+                    ]
+                },
+                "2": {
+                    "events": [
+                        {
+                            "random": "test",
+                            "eventDescription": "this is an event description placeHolder",
+                            "eventTitle": "Event Title",
+                            "eventCategories": ["string of categories", "cate2"],
+                            "eventTime": "time",
+                            "eventLocation": "location"
+                        },
+                        {
+                            "random": "test",
+                            "eventDescription": "this is an event description placeHolder",
+                            "eventTitle": "Event Title",
+                            "eventCategories": ["string of categories", "cate2"],
+                            "eventTime": "time",
+                            "eventLocation": "location"
+                        },
+                    ]
+                },
+                "3": {
+                    "events": [
+                        {
+                            "random": "test",
+                            "eventDescription": "this is an event description placeHolder",
+                            "eventTitle": "Event Title",
+                            "eventCategories": ["string of categories", "cate2"],
+                            "eventTime": "time",
+                            "eventLocation": "location"
+                        },
+                        {
+                            "random": "test",
+                            "eventDescription": "this is an event description placeHolder",
+                            "eventTitle": "Event Title",
+                            "eventCategories": ["string of categories", "cate2"],
+                            "eventTime": "time",
+                            "eventLocation": "location"
+                        },
+                    ]
+                }
+            },
+            "10": {
+                "1": {
+                    "events": [
+                        {
+                            "random": "test",
+                            "eventDescription": "this is an event description placeHolder",
+                            "eventTitle": "Event Title",
+                            "eventCategories": ["string of categories", "cate2"],
+                            "eventTime": "time",
+                            "eventLocation": "location"
+                        },
+                        {
+                            "random": "test",
+                            "eventDescription": "this is an event description placeHolder",
+                            "eventTitle": "Event Title",
+                            "eventCategories": ["string of categories", "cate2"],
+                            "eventTime": "time",
+                            "eventLocation": "location"
+                        },
+                    ]
+                }
+            },
+            "6": {
+                "1": {
+                    "events": [
+                        {
+                            "random": "test",
+                            "eventDescription": "this is an event description placeHolder",
+                            "eventTitle": "Event Title",
+                            "eventCategories": ["string of categories", "cate2"],
+                            "eventTime": "time",
+                            "eventLocation": "location"
+                        },
+                        {
+                            "random": "test",
+                            "eventDescription": "this is an event description placeHolder",
+                            "eventTitle": "Event Title",
+                            "eventCategories": ["string of categories", "cate2"],
+                            "eventTime": "time",
+                            "eventLocation": "location"
+                        },
+                    ]
                 }
             }
         })
@@ -105,9 +213,33 @@ const CalendarPage = () => {
     }
 
     const { years: { 2020: { december: { 1: { events } } } } } = psudoEventQuery;
-    console.log(events.length)
+    // console.log(events.length)
 
-    console.log(psudoEventQuery)
+    // console.log(psudoEventQuery)
+    useEffect(() => {
+        const yearsMap = new Map();
+        const dataEvents = projectFirestore.collection("Events").get().then(
+            snapshot => {
+                snapshot.forEach(doc => {
+                    const year = doc.id
+                    const monthsArray = []
+                    for (let [month, value] of Object.entries(doc.data())) {
+                        const newMonth = new Month(month)
+                        for (let [day, events] of Object.entries(value)) {
+                            const newDay = new Day(day)
+                            for (let [eventIndex, eventValue] of Object.entries(events.events)) {
+                                newDay.addEvent(new SingleEvent(eventValue.eventCategories, eventValue.eventDescription, eventValue.eventLocation, eventValue.eventTime, eventValue.eventTitle));
+                            }
+                            newMonth.addDays(newDay)
+                        }
+                        monthsArray.push(newMonth)
+                    }
+                    yearsMap.set(year, monthsArray)
+                })
+            }
+        )
+        setYearsMap(yearsMap)
+    }, [])
 
     return (
         <Layout>
@@ -123,14 +255,26 @@ const CalendarPage = () => {
 
                     <div className="shadowbox">
                         <div className="rectangle" />
-                        <h5 style={{ marginBottom: '10px', marginTop: '10px', fontSize: '18px' }}>Showing events from {date.toDateString()}, onwards.</h5>
+                        <h5 style={{ marginBottom: '10px', marginTop: '10px', fontSize: '18px' }}>Showing events on {date.toDateString()}</h5>
                         <div className='btn-container'>
                             <ind><Button onClick={prevMonth} buttonStyle='btn--primary' buttonSize="btn--small">Previous Month</Button></ind>
                             <ind><Button onClick={nextMonth} buttonStyle='btn--primary' buttonSize="btn--small">Next Month</Button></ind>
                         </div>
                     </div>
+                    <div>
+                        {yearsMap && yearsMap.has(date.getFullYear().toString()) && yearsMap.get(date.getFullYear().toString()).map((month) => {
+                            if (Number(month.month) >= date.getMonth()) {
+                                return (
+                                    <CreateCalendarEvent date="randomDate" description="hello random description" categories="educational" />
+                                )
+                            } else {
+                                console.log("noppeee")
+                            }
+                        })}
+                    </div>
 
-                    <CreateCalendarEvent date="randomDate" description="hello random description" categories="educational" />
+
+                    {/* <CreateCalendarEvent date="randomDate" description="hello random description" categories="educational" /> */}
 
                     {/* <div>
                         <div className="headingStyle"> Monday, March 22, 2021</div>
