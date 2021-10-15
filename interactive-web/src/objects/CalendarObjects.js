@@ -1,7 +1,3 @@
-export function Events() {
-
-}
-
 export function Month(month) {
     this.month = month
     this.daysArray = []
@@ -18,10 +14,10 @@ export function Day(day) {
     }
 }
 
-export function SingleEvent(eventCategorgies, eventDescription, eventLocation, eventTime, eventTitle) {
-    this.eventCategorgies = eventCategorgies
-    this.eventDescription = eventDescription
-    this.eventLocation = eventLocation
-    this.eventTime = eventTime
-    this.eventTitle = eventTitle
+export function SingleEvent(eventCategories, eventDescription, eventLocation, eventTime, eventTitle) {
+    this.categories = eventCategories
+    this.description = eventDescription
+    this.location = eventLocation
+    this.time = eventTime
+    this.title = eventTitle
 }

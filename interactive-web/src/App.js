@@ -16,6 +16,7 @@ import DeletePostPage from "./pages/DeletePostPage";
 import ManageCategoriesPage from "./pages/ManageCategoriesPage";
 import { Layout } from 'antd';
 import "antd/dist/antd.css";
+import SpecificEvent from "./pages/SpecificEvent";
 import FooterComponent from "./component/FooterComponent";
 
 
@@ -34,6 +35,7 @@ function App() {
         <Route path="/events" exact component={FullCalendarPage} />
         <Route path="/specificPost" exact component={SpecificPost} />
         <Route path="/timeline" exact component={TimelinePage} />
+        <Route path="/specificEvent" exact component={SpecificEvent} />
 
         {/* <Route path="/manage" exact component={DeletePostPage} />
           <Route path="/create" exact component={CreatePostPage} />

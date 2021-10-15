@@ -16,22 +16,10 @@ import { Day, Month, SingleEvent } from '../objects/CalendarObjects';
 const CalendarPage = () => {
 
     let [date, setDate] = useState(new Date())
-    let [yearsMap, setYearsMap] = useState()
+    let [eventsMap, setEventsMap] = useState(new Map())
 
     const newDateCalenderEvent = (newDate) => {
         setDate(newDate)
-        console.log(yearsMap)
-        yearsMap.get("2000").map((month) => {
-            console.log(month)
-            console.log(date.getMonth())
-            if (Number(month.month) > date.getMonth()) {
-                console.log("yes")
-            } else {
-                console.log("no")
-            }
-        })
-        console.log(date.getMonth())
-        console.log(yearsMap.get(date.getFullYear().toString()))
     }
 
     const nextMonth = () => {
@@ -61,65 +49,52 @@ const CalendarPage = () => {
 
     //query firebase with the events
     const addEventToFirebase = () => {
-        projectFirestore.collection("Events").doc("2000").set({
+        projectFirestore.collection("Events").doc("2021").set({
             "11": {
                 "1": {
                     "events": [
                         {
-                            "random": "test",
-                            "eventDescription": "this is an event description placeHolder",
-                            "eventTitle": "Event Title",
-                            "eventCategories": ["string of categories", "cate2"],
-                            "eventTime": "time",
-                            "eventLocation": "location"
+                            "description": "this is an event description placeHolder",
+                            "title": "Event Title",
+                            "categories": ["string of categories", "cate2"],
+                            "time": "time",
+                            "location": "location"
                         },
                         {
-                            "random": "test",
-                            "eventDescription": "this is an event description placeHolder",
-                            "eventTitle": "Event Title",
-                            "eventCategories": ["string of categories", "cate2"],
-                            "eventTime": "time",
-                            "eventLocation": "location"
+                            "description": "this is an event description placeHolder",
+                            "title": "Event Title",
+                            "categories": ["string of categories", "cate2"],
+                            "time": "time",
+                            "location": "location"
                         },
                     ]
                 },
                 "2": {
                     "events": [
                         {
-                            "random": "test",
-                            "eventDescription": "this is an event description placeHolder",
-                            "eventTitle": "Event Title",
-                            "eventCategories": ["string of categories", "cate2"],
-                            "eventTime": "time",
-                            "eventLocation": "location"
-                        },
-                        {
-                            "random": "test",
-                            "eventDescription": "this is an event description placeHolder",
-                            "eventTitle": "Event Title",
-                            "eventCategories": ["string of categories", "cate2"],
-                            "eventTime": "time",
-                            "eventLocation": "location"
-                        },
+                            "description": "this is an event description placeHolder",
+                            "title": "Event Title",
+                            "categories": ["string of categories", "cate2"],
+                            "time": "time",
+                            "location": "location"
+                        }
                     ]
                 },
                 "3": {
                     "events": [
                         {
-                            "random": "test",
-                            "eventDescription": "this is an event description placeHolder",
-                            "eventTitle": "Event Title",
-                            "eventCategories": ["string of categories", "cate2"],
-                            "eventTime": "time",
-                            "eventLocation": "location"
+                            "description": "this is an event description placeHolder",
+                            "title": "Event Title",
+                            "categories": ["string of categories", "cate2"],
+                            "time": "time",
+                            "location": "location"
                         },
                         {
-                            "random": "test",
-                            "eventDescription": "this is an event description placeHolder",
-                            "eventTitle": "Event Title",
-                            "eventCategories": ["string of categories", "cate2"],
-                            "eventTime": "time",
-                            "eventLocation": "location"
+                            "description": "this is an event description placeHolder",
+                            "title": "Event Title",
+                            "categories": ["string of categories", "cate2"],
+                            "time": "time",
+                            "location": "location"
                         },
                     ]
                 }
@@ -128,20 +103,18 @@ const CalendarPage = () => {
                 "1": {
                     "events": [
                         {
-                            "random": "test",
-                            "eventDescription": "this is an event description placeHolder",
-                            "eventTitle": "Event Title",
-                            "eventCategories": ["string of categories", "cate2"],
-                            "eventTime": "time",
-                            "eventLocation": "location"
+                            "description": "this is an event description placeHolder",
+                            "title": "Event Title",
+                            "categories": ["string of categories", "cate2"],
+                            "time": "time",
+                            "location": "location"
                         },
                         {
-                            "random": "test",
-                            "eventDescription": "this is an event description placeHolder",
-                            "eventTitle": "Event Title",
-                            "eventCategories": ["string of categories", "cate2"],
-                            "eventTime": "time",
-                            "eventLocation": "location"
+                            "description": "this is an event description placeHolder",
+                            "title": "Event Title",
+                            "categories": ["string of categories", "cate2"],
+                            "time": "time",
+                            "location": "location"
                         },
                     ]
                 }
@@ -150,20 +123,18 @@ const CalendarPage = () => {
                 "1": {
                     "events": [
                         {
-                            "random": "test",
-                            "eventDescription": "this is an event description placeHolder",
-                            "eventTitle": "Event Title",
-                            "eventCategories": ["string of categories", "cate2"],
-                            "eventTime": "time",
-                            "eventLocation": "location"
+                            "description": "this is an event description placeHolder",
+                            "title": "Event Title",
+                            "categories": ["string of categories", "cate2"],
+                            "time": "time",
+                            "location": "location"
                         },
                         {
-                            "random": "test",
-                            "eventDescription": "this is an event description placeHolder",
-                            "eventTitle": "Event Title",
-                            "eventCategories": ["string of categories", "cate2"],
-                            "eventTime": "time",
-                            "eventLocation": "location"
+                            "description": "this is an event description placeHolder",
+                            "title": "Event Title",
+                            "categories": ["string of categories", "cate2"],
+                            "time": "time",
+                            "location": "location"
                         },
                     ]
                 }
@@ -212,13 +183,8 @@ const CalendarPage = () => {
         }
     }
 
-    const { years: { 2020: { december: { 1: { events } } } } } = psudoEventQuery;
-    // console.log(events.length)
-
-    // console.log(psudoEventQuery)
     useEffect(() => {
-        const yearsMap = new Map();
-        const dataEvents = projectFirestore.collection("Events").get().then(
+        projectFirestore.collection("Events").get().then(
             snapshot => {
                 snapshot.forEach(doc => {
                     const year = doc.id
@@ -228,17 +194,16 @@ const CalendarPage = () => {
                         for (let [day, events] of Object.entries(value)) {
                             const newDay = new Day(day)
                             for (let [eventIndex, eventValue] of Object.entries(events.events)) {
-                                newDay.addEvent(new SingleEvent(eventValue.eventCategories, eventValue.eventDescription, eventValue.eventLocation, eventValue.eventTime, eventValue.eventTitle));
+                                newDay.addEvent(new SingleEvent(eventValue.categories, eventValue.description, eventValue.location, eventValue.time, eventValue.title));
                             }
                             newMonth.addDays(newDay)
                         }
                         monthsArray.push(newMonth)
                     }
-                    yearsMap.set(year, monthsArray)
+                    setEventsMap((prevMap) => new Map(prevMap).set(year, monthsArray))
                 })
             }
         )
-        setYearsMap(yearsMap)
     }, [])
 
     return (
@@ -262,10 +227,10 @@ const CalendarPage = () => {
                         </div>
                     </div>
                     <div>
-                        {yearsMap && yearsMap.has(date.getFullYear().toString()) && yearsMap.get(date.getFullYear().toString()).map((month) => {
+                        {eventsMap.size !== 0 && eventsMap.has(date.getFullYear().toString()) && eventsMap.get(date.getFullYear().toString()).map((month) => {
                             if (Number(month.month) >= date.getMonth()) {
                                 return (
-                                    <CreateCalendarEvent date="randomDate" description="hello random description" categories="educational" />
+                                    <CreateCalendarEvent date={month} year={date.getFullYear().toString()}/>
                                 )
                             } else {
                                 console.log("noppeee")
