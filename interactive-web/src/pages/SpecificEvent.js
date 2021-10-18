@@ -33,7 +33,7 @@ export default function SpecificEvent() {
           style={{minHeight: "64vh"}}
         > 
          
-        {event.categories && <>
+        {event.categories && event.categories.length > 0 && <>
           <span style={{ marginRight: 8 }}>Categories:</span>
           {event.categories.map((category) => (
           <Tag color={colorList[event.categories.indexOf(category) + seed % colorList.length]}> {category} </Tag>

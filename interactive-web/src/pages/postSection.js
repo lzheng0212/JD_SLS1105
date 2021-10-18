@@ -79,6 +79,7 @@ export default function PostSection() {
                   description={doc.content}
                   date={doc.createdAt}
                   label={doc.postCategory}
+                  categories = {doc.categories}
                   path="/specificPost"
                 />
               ))}
