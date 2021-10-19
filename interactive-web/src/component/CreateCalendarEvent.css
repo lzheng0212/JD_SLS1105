@@ -4,5 +4,5 @@
     padding: 15px 0px 0px 0px;
 }
 .singleCalendarEvent {
-    display: inline-block;
+    width: fit-content;
 }
