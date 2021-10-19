@@ -7,17 +7,12 @@ import MapPage from "./pages/MapPage";
 import React from "react";
 import aboutUsPage from "./pages/aboutUsPage";
 import FullCalendarPage from "./pages/FullCalendarPage";
-import CreatePostPage from "./pages/CreatePostPage";
 import SpecificPost from "./pages/specifcPost";
 import AdminLoginPage from "./pages/AdminLoginPage";
 import AdminPortal from "./pages/AdminPortal";
 import TimelinePage from "./pages/TimelinePage";
-import DeletePostPage from "./pages/DeletePostPage";
-import ManageCategoriesPage from "./pages/ManageCategoriesPage";
-import { Layout } from 'antd';
 import "antd/dist/antd.css";
 import SpecificEvent from "./pages/SpecificEvent";
-import FooterComponent from "./component/FooterComponent";
 
 
 function App() {
@@ -36,11 +31,6 @@ function App() {
         <Route path="/specificPost" exact component={SpecificPost} />
         <Route path="/timeline" exact component={TimelinePage} />
         <Route path="/specificEvent" exact component={SpecificEvent} />
-
-        {/* <Route path="/manage" exact component={DeletePostPage} />
-          <Route path="/create" exact component={CreatePostPage} />
-          <Route path="/specificPost" exact component={SpecificPost} />
-          <Route path="/manage/categories" exact component={ManageCategoriesPage} /> */}
       </Switch>
     </Router>
   );
