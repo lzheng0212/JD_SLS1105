@@ -12,11 +12,14 @@ import FooterComponent from './FooterComponent';
 import CreateCalendarEvent from './CreateCalendarEventContainer';
 import { projectFirestore } from '../firebase/config';
 import { Day, Month, SingleEvent } from '../objects/CalendarObjects';
+import { isEmptyStatement } from '@babel/types';
 
 const CalendarPage = () => {
 
     let [date, setDate] = useState(new Date())
     let [eventsMap, setEventsMap] = useState(new Map())
+
+    let eventsArray = []
 
     const newDateCalenderEvent = (newDate, event) => {
         setDate(newDate)
@@ -152,7 +155,7 @@ const CalendarPage = () => {
 
                     <div className="shadowbox">
                         <div className="rectangle" />
-                        <h5 style={{ marginBottom: '10px', marginTop: '10px', fontSize: '18px' }}>Showing events on {`${date.toLocaleDateString("en-US", { month: 'long'})} ${date.getFullYear()}`}</h5>
+                        <h5 style={{ marginBottom: '10px', marginTop: '10px', fontSize: '18px' }}>Showing events on {`${date.toLocaleDateString("en-US", { month: 'long' })} ${date.getFullYear()}`}</h5>
                         <div className='btn-container'>
                             <ind><Button onClick={prevMonth} buttonStyle='btn--primary' buttonSize="btn--small">Previous Month</Button></ind>
                             <ind><Button onClick={nextMonth} buttonStyle='btn--primary' buttonSize="btn--small">Next Month</Button></ind>
@@ -161,17 +164,19 @@ const CalendarPage = () => {
                     <div>
                         {eventsMap.size !== 0 && eventsMap.has(date.getFullYear().toString()) && eventsMap.get(date.getFullYear().toString()).map((month) => {
                             if (Number(month.month) === date.getMonth()) {
-                                return (
-                                    <CreateCalendarEvent date={month} year={date.getFullYear().toString()}/>
-                                )
+                                eventsArray.push(<CreateCalendarEvent date={month} year={date.getFullYear().toString()} />)
                             }
                         })}
+                        {/* if eventsArray is not empty then show the events else show a div block so the page isnt squished */}
+                        {eventsArray.length > 0 && eventsArray}
+                        {eventsArray.length === 0 &&
+                            <div style={{ height: "500px" }} />
+                        }
                     </div>
                 </div>
-
             </Content>
             <FooterComponent />
-        </Layout>
+        </Layout >
     )
 }
 
