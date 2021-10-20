@@ -3,7 +3,7 @@ import FooterComponent from "../component/FooterComponent";
 import "./specificPost.css";
 import { useLocation } from "react-router-dom";
 import Quill from "quill";
-import { Layout, PageHeader, Button, Tag, Empty, Divider, Typography } from "antd";
+import { Layout, PageHeader, Button, Tag, Empty, Divider, Typography , Row, Col} from "antd";
 import NavigationBar from "../component/NavigationBar";
 import { Content } from "antd/lib/layout/layout";
 
@@ -33,48 +33,53 @@ export default function SpecifcPost() {
     <Layout>
       <NavigationBar />
       <Content style={{padding: '24px', paddingBottom: '0px'}}>
-        <PageHeader
-            ghost={false}
-            onBack={() => window.history.back()}
-            title={data.title}
-            subTitle={data.date}
-            // extra={[
-            //   <Button key="2">Operation</Button>,
-            //   <Button key="1" type="primary">
-            //     Primary Operation
-            //   </Button>,
-            // ]}
-            style={{minHeight: "64vh"}}
-          > 
-          {data.author && 
-            <span style={{ marginRight: 8}}>Author: {data.author} </span>
-          }
+        <Row justify="center"> 
+              <Col xs={22} sm={20} md={16} lg={15} xl={15} xxl={15}>
+                <PageHeader
+                    ghost={false}
+                    onBack={() => window.history.back()}
+                    title={data.title}
+                    subTitle={data.date}
+                    // extra={[
+                    //   <Button key="2">Operation</Button>,
+                    //   <Button key="1" type="primary">
+                    //     Primary Operation
+                    //   </Button>,
+                    // ]}
+                    style={{minHeight: "64vh"}}
+                  > 
+                  {data.author && 
+                    <span style={{ marginRight: 8}}>Author: {data.author} </span>
+                  }
 
-          {data.categories && data.categories.length > 0 && <>
-            <span style={{ marginRight: 8 }}>Categories:</span>
+                  {data.categories && data.categories.length > 0 && <>
+                    <span style={{ marginRight: 8 }}>Categories:</span>
 
-            {data.categories.map((category) => (
-            <Tag color={colorList[data.categories.indexOf(category) + seed % colorList.length]}> {category} </Tag>
-          ))}
-          </>}
+                    {data.categories.map((category) => (
+                    <Tag color={colorList[data.categories.indexOf(category) + seed % colorList.length]}> {category} </Tag>
+                  ))}
+                  </>}
 
-          {!data.description || data.description.length <= 0 &&
-            <Empty style={{paddingTop: "12vh", paddingBottom: "12vh"}}/> 
-          }
+                  {!data.description || data.description.length <= 0 &&
+                    <Empty style={{paddingTop: "12vh", paddingBottom: "12vh"}}/> 
+                  }
 
-          
-          {data.description && data.description.length > 0 &&
-          <>
-            <Divider/>
-            <div id="quillPostContent"></div>
-            {/* <Typography> 
-              <Title level={2}> {data.title} </Title>
-              <Text>{doc.root.innerHTML}</Text>
-            </Typography> */}
-          </>
-          }
+                  
+                  {data.description && data.description.length > 0 &&
+                  <>
+                    <Divider/>
+                    <div id="quillPostContent"></div>
+                    {/* <Typography> 
+                      <Title level={2}> {data.title} </Title>
+                      <Text>{doc.root.innerHTML}</Text>
+                    </Typography> */}
+                  </>
+                  }
 
-        </PageHeader>
+                </PageHeader>
+              </Col>
+        </Row>
+        
 
         {/* <br></br>
         <br></br>

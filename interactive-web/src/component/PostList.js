@@ -15,8 +15,7 @@ export default function PostList(props) {
     );
 
     const colorList = ["magenta", "red", "volcano", "orange", "gold", "lime", "green", "cyan", "blue", "geekblue", "purple"];
-    const seed = Math.floor(Math.random() * 10);
-
+    var seed = Math.floor(Math.random() * 10);
     return (
         <List
             itemLayout="vertical"
