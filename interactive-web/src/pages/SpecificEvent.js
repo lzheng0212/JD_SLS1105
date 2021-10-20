@@ -24,13 +24,6 @@ export default function SpecificEvent() {
                 ghost={false}
                 onBack={() => window.history.back()}
                 title={date.toDateString()}
-                // subTitle="This is a subtitle"
-                extra={[
-                  <Button key="2">Operation</Button>,
-                  <Button key="1" type="primary">
-                    Primary Operation
-                  </Button>,
-                ]}
                 style={{minHeight: "64vh"}}
               > 
               
@@ -49,8 +42,11 @@ export default function SpecificEvent() {
                 <>
                   <Divider/>
                   <Typography> 
-                    <Title level={2}> Hello </Title>
-                    <Text>{event.description}</Text>
+                    <Text strong> Date: {date.toDateString()} <p/></Text>
+                    <Text strong> Time: {event.time} <p/></Text>
+                    <Text strong> Location: {event.location} <p/></Text>
+                    <Text strong> Description: <p/></Text>
+                    <Text> {event.description}</Text>
                   </Typography>
                 </>
               }
@@ -58,13 +54,6 @@ export default function SpecificEvent() {
               </PageHeader>
             </Col>
           </Row>
-        
-{/*         
-        <p id="specificPostBody"></p>
-        <p>{date.toDateString()}</p>
-        <p>{event.categories.join(", ")}</p>
-        <p>HELLO</p>
-        <p>{event.description}</p> */}
       </Content>
       <FooterComponent />
     </Layout>
