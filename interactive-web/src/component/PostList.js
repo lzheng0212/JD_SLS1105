@@ -3,8 +3,6 @@ import { List, Avatar, Space, Tag, Image, Col } from 'antd';
 import { Link } from "react-router-dom";
 import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
 import "./PostList.css";
-import PostItem from "./PostItem";
-import { Column } from "rc-table";
 
 export default function PostList(props) {
     const IconText = ({ icon, text }) => (
@@ -24,7 +22,7 @@ export default function PostList(props) {
             onChange: page => {
                 console.log(page);
             },
-            pageSize: 10,
+            pageSize: 5,
             }}
             dataSource={props.list}
             style={{padding: '24px', backgroundColor: 'white'}}
@@ -44,6 +42,7 @@ export default function PostList(props) {
                             src={item.coverImage}
                             placeholder={true}
                             height={182}
+                            style={{zIndex: 0}}
                         />
                     }
                 >   
@@ -75,16 +74,7 @@ export default function PostList(props) {
                     </>}
 
                 </List.Item>
-            //     <PostItem
-            //     src={item.coverImage}
-            //     title={item.title}
-            //     author={item.author}
-            //     description={item.content}
-            //     date={item.createdAt}
-            //     label={item.postCategory}
-            //     categories = {item.categories}
-            //     path="/specificPost"
-            //   />
+
             )}
         />
     )

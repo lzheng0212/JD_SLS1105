@@ -1,6 +1,6 @@
 
 
-.container {
+/* .container {
   width: 100%;
   display: block;
   margin-top: 60px;
@@ -8,7 +8,7 @@
   align-items: center;
   object-fit: contain;
   z-index: -1;
-}
+} */
 .opening-container {
   background: url('../assets/greenField.jpg') center center/cover no-repeat;
   display: flex;
@@ -83,5 +83,13 @@ button:focus {
   display: block;
   width: 100%;
   
+}
+
+.ant-input-affix-wrapper-focused {
+  border-color: #234144;
+}
+
+.ant-input-affix-wrapper:hover {
+  border-color: #234144 !important;
 }
 
