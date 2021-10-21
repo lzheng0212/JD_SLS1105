@@ -2,23 +2,20 @@ import React, { useState, useEffect } from "react";
 import { Col, Radio, Row } from 'antd';
 import "./postStyle.css";
 import FooterComponent from "../component/FooterComponent";
-import PostItem from "../component/PostItem";
 import "../component/Posts.css";
 import useFirestore from "../hooks/useFirestore";
-
-import PostSearchContainer from "../component/postComponents/postSearchContainer";
-import PostMoreButton from "../component/postComponents/PostMoreButton";
-import { projectFirestore } from "../firebase/config";
 import { Content } from "antd/lib/layout/layout";
 import { Layout, Input, Space } from "antd";
 import NavigationBar from "../component/NavigationBar";
-import { Button } from '../component/Button';
 import PostList from "../component/PostList";
 
 var docs;
+
 export default function PostSection() {
+
   const [button, setButton] = useState(true);
   const { Search } = Input;
+
   const showButton = () => {
     if (window.innerWidth <= 960) {
       setButton(false);
@@ -26,9 +23,11 @@ export default function PostSection() {
       setButton(true);
     }
   };
+
   useEffect(() => {
     showButton();
   }, []);
+
   const [value, setValue] = React.useState(1);
     const [filterValue, setFilter] = React.useState(1);
     const [keyword, setKey] = React.useState("");
@@ -41,15 +40,6 @@ export default function PostSection() {
         document.getElementById("input").value = "";
       }
 
-  // useEffect(() => {
-  //   projectFirestore
-  //     .collection("posts")
-  //     .get()
-  //     .then((snapshot) => {
-  //       setDocs(snapshot.docs);
-  //     })
-  // }, []);
-  //({docs} = useFirestore("posts", filterValue, keyword));
   ({docs} = useFirestore("posts", filterValue, keyword));
 
   return (
@@ -76,9 +66,6 @@ export default function PostSection() {
               <PostList list={docs}/>
             </Col>
           </Row>
-          
-          {/* <PostMoreButton /> */}
-        {/* </div> */}
       </Content>
       <FooterComponent/>
     </Layout>
