@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { List, Avatar, Space, Tag, Image, Col, Button } from 'antd';
+import { List, Avatar, Space, Tag, Image, Col, Button, Row } from 'antd';
 import { Link } from "react-router-dom";
 import { projectFirestore } from "../firebase/config";
 import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
@@ -16,7 +16,7 @@ export default function PostList(props) {
 
     const colorList = ["magenta", "red", "volcano", "orange", "gold", "lime", "green", "cyan", "blue", "geekblue", "purple"];
     var seed = Math.floor(Math.random() * 10);
-    
+
     if (props.admin) {
         return (
             <List
@@ -35,68 +35,111 @@ export default function PostList(props) {
                     <List.Item
                         key={item.title}
                         extra={
-                            <> 
-                                <Space>
-                                    <Button>
-                                        <Link
-                                            to={{ pathname: "./create", state:
-                                                {   
-                                                    update: true,
-                                                    postID: item.PostId,
-                                                    src: item.coverImage,
-                                                    title: item.title,
-                                                    content: item.content,
-                                                    label: item.postCategory,
-                                                    author: item.author,
-                                                    categories: item.categories,
-                                                    coverImageURL: item.coverImage
-                                                } 
-                                            }}
-                                        >
-                                            Edit
-                                        </Link> 
-                                    </Button>
-                                    <Button type="primary" danger 
-                                        onClick={() => {
-                                            const res = projectFirestore
-                                            .collection("posts")
-                                            .doc(item.PostId)
-                                            .delete();
-                                    }}>
-                                        DELETE
-                                    </Button>
-                                    <Image
-                                        width={160}
-                                        alt={item.title}
-                                        src={item.coverImage}
-                                        placeholder={true}
-                                        height={120}
-                                        style={{zIndex: 0}}
-                                    />
-                                </Space>
+                            <Space style={{marginLeft: '-8px'}}> 
                                 
-                            </>
+                                 <Row justify="end" align='middle' gutter={8}>
+                                    <Col xs={0} sm={0} md={0} lg={12}> 
+                                        <Button style={{width: '80px'}}>
+                                            <Link
+                                                to={{ pathname: "./create", state:
+                                                    {   
+                                                        update: true,
+                                                        postID: item.PostId,
+                                                        src: item.coverImage,
+                                                        title: item.title,
+                                                        content: item.content,
+                                                        label: item.postCategory,
+                                                        author: item.author,
+                                                        categories: item.categories,
+                                                        coverImageURL: item.coverImage
+                                                    } 
+                                                }}
+                                            >
+                                                Edit
+                                            </Link> 
+                                        </Button>
+                                    </Col>
+                                    <Col xs={0} sm={0} md={0} lg={12}>
+                                        <Button type="primary" danger style={{width: '80px'}}
+                                            onClick={() => {
+                                                const res = projectFirestore
+                                                .collection("posts")
+                                                .doc(item.PostId)
+                                                .delete();
+                                        }}>
+                                            DELETE
+                                        </Button>
+                                    </Col>
+                                
+                                </Row>
+                        
+                                <Image
+                                    width={180}
+                                    alt={item.title}
+                                    src={item.coverImage}
+                                    placeholder={true}
+                                    height={135}
+                                    style={{zIndex: 0}}
+                                />
+
+                            </Space>
                         }
                     >   
-
-                        <List.Item.Meta
-                            title={<a>{item.title}</a>}
-                            description={
-                            <>
-                                <span> Author: </span>{item.author} 
-                                {item.categories && item.categories.length > 0 && 
-                                <>  
-                                    <p/>
-                                    <span > Categories: </span>
-                                    {item.categories.map((category) => (
-                                    <Tag color={colorList[item.categories.indexOf(category) + seed % colorList.length]}> {category} </Tag>
-                                    ))}
-                                </>}
+                       
+                    <List.Item.Meta
+                        title={<a>{item.title}</a>}
+                        description={
+                        <>
+                            <span> Author: </span>{item.author} 
+                            {item.categories && item.categories.length > 0 && 
+                            <>  
                                 <p/>
-                                <span> Last Updated: </span>{item.createdAt} 
-                            </>
-                            }
-                        />
+                                <span > Categories: </span>
+                                {item.categories.map((category) => (
+                                <Tag color={colorList[item.categories.indexOf(category) + seed % colorList.length]}> {category} </Tag>
+                                ))}
+                            </>}
+                            <p/>
+                            <span> Last Updated: </span>{item.createdAt} 
+                        </>
+                        }
+                    />
+
+                    <Row justify="start" align='middle' gutter={8}>
+                        <Col lg={0} xl={0} xxl={0}> 
+                            <Button style={{width: '80px'}}>
+                                <Link
+                                    to={{ pathname: "./create", state:
+                                        {   
+                                            update: true,
+                                            postID: item.PostId,
+                                            src: item.coverImage,
+                                            title: item.title,
+                                            content: item.content,
+                                            label: item.postCategory,
+                                            author: item.author,
+                                            categories: item.categories,
+                                            coverImageURL: item.coverImage
+                                        } 
+                                    }}
+                                >
+                                    Edit
+                                </Link> 
+                            </Button>
+                        </Col>
+                        <Col xs={12} sm={12} md={12} lg={0} xl={0} xxl={0}>
+                            <Button type="primary" danger style={{alignItems:'center'}}
+                                onClick={() => {
+                                    const res = projectFirestore
+                                    .collection("posts")
+                                    .doc(item.PostId)
+                                    .delete();
+                            }}>
+                                DELETE
+                            </Button>
+                        </Col>
+                    </Row>
+                        
 
                     </List.Item>
     
