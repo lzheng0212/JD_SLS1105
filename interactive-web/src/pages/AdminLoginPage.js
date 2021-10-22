@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './AdminLoginPage.css'
-import { Form, Input, Button, Checkbox, Row, Col, message} from 'antd';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Form, Input, Button, Checkbox, Row, Col} from 'antd';
 import {projectAuth} from '../firebase/config';
+import AdminPortal from './AdminPortal';
 import { Layout } from 'antd';
 import NavigationBar from '../component/NavigationBar';
 import { Content } from 'antd/lib/layout/layout';
@@ -21,17 +23,15 @@ function AdminLoginPage() {
         const user = userCredential.user;
         console.log("You have signed in")
         console.log(email, password)
-        message.success('Login Successfully!');
-        //document.getElementById("error").innerHTML = "You have signed in"
-        setTimeout(() => window.location.assign('/adminPortal'), 1000);//need to revise
+        document.getElementById("error").innerHTML = "You have signed in"
+        window.location.assign('/adminportal') //need to revise
         // ...
         })
         .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage)
-        message.error('Login failed. Please check your username and password.');
-        //document.getElementById("error").innerHTML = errorMessage
+        document.getElementById("error").innerHTML = errorMessage
         });
     }
 
@@ -47,6 +47,23 @@ function AdminLoginPage() {
        <Layout>
            <NavigationBar/>
            <Content>
+                {/* <div class = "admin-center">
+                    <h1 class = "admin-h1">Admin login</h1>
+                    <b>Enter admin email and password</b>
+                    <br/><br/>
+                    <div class = "admin-container">
+                        <div>
+                            <label for="email" class = "admin-label">email</label>
+                            <input type="text" id="adminEmail" name="adminEmail" class = "admin-label"></input>
+                        </div>
+                        <div>
+                            <label for="password" class = "admin-label">password</label>
+                            <input type="password" id="adminPassword" name="adminPassword" class = "admin-label"></input>
+                        </div>
+                        <button class = "admin-button" onClick={login}>Login</button>
+                        <p id = "error"></p>
+                    </div>
+                </div> */}
             <Row  style = {{minHeight:"100vh"}} justify="space-around" align="middle">
                 <Col span={24} align="middle">
                     <Form
@@ -94,6 +111,15 @@ function AdminLoginPage() {
                             id="adminPassword"
                             />
                         </Form.Item>
+                        {/* <Form.Item>
+                            <Form.Item name="remember" valuePropName="checked" noStyle>
+                            <Checkbox>Remember me</Checkbox>
+                            </Form.Item>
+
+                            <a className="login-form-forgot" href="">
+                            Forgot password
+                            </a>
+                        </Form.Item> */}
 
                         <Form.Item>
                             <Button type="primary" htmlType="submit" className="login-form-button" onClick={login} style={{backgroundColor: "#234144", borderColor: "#1a3133"}}>
