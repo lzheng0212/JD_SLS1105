@@ -13,6 +13,9 @@ import {
   timestamp,
 } from "../firebase/config";
 import CategoryContainer from "../component/postComponents/CategoryContainer";
+import {message} from 'antd';
+
+
 
 
 // Resources: https://github.com/zenoamaro/react-quill
@@ -27,6 +30,14 @@ function CreatePostPage() {
   const [quill, setQuill] = useState(null)
   const [selectedCategories, setCategory] = useState([])
   const [availableCategories, setAvailableCategories] = useState([])
+
+  const successPost = () => {
+    message.success('Post Successfully!');
+  };
+
+  const successUpdate = () => {
+    message.success('Update Successfully!');
+  };
 
   const addToCategoryList = (categoryName) => {
     if (!selectedCategories.includes(categoryName)) {
@@ -65,8 +76,10 @@ function CreatePostPage() {
     setFileURL(null);
     if (!update) {
       projectFirestore.collection("posts").add(data);
+      successPost();
     } else {
       projectFirestore.collection("posts").doc(postID).update(data);
+      successUpdate();
     }
   };
 

@@ -1,13 +1,11 @@
 import "./AdminPortal.css";
-import CreatePostButton from "../component/postComponents/createPostButton";
-import { Button } from "../component/Button";
 import { projectAuth } from '../firebase/config';
 import Countvisitor from "../component/postComponents/visitorCuntor";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ManageCategoriesPage from "./ManageCategoriesPage";
 import CreatePostPage from "./CreatePostPage";
 import DeletePostPage from "./DeletePostPage";
-import SpecifcPost from "./specifcPost";
+
 
 
 import { useState } from 'react'
@@ -20,7 +18,7 @@ import {
   FileAddOutlined,
   CommentOutlined
 } from '@ant-design/icons';
-import { Layout, Menu } from "antd";
+import { Layout, Menu, message } from "antd";
 import FooterComponent from "../component/FooterComponent";
 import NavigationBar from "../component/NavigationBar";
 
@@ -31,7 +29,8 @@ function AdminPortal() {
   const [state, setState] = useState('start');
   const signOut = () => {
     projectAuth.signOut();
-    alert("signed Out!");
+    message.success("Signed out!");
+    setTimeout(() => window.location.assign('/adminLogin'), 1000);
   }
   return (
     <Layout style={{ minHeight: '100vh' }}>
@@ -61,7 +60,7 @@ function AdminPortal() {
                   Questions Review
                 </Menu.Item>
                 <Menu.Item key="7" icon={<ExportOutlined />}>
-                  <a onClick={signOut} href="/adminLogin"> Logout </a>
+                  <a onClick={signOut}> Logout </a>
                 </Menu.Item>
               </Menu>
             </Sider>

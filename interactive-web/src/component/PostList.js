@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { List, Popconfirm, Space, Tag, Image, Col, Button, Row, Input, Radio } from 'antd';
+import { List, Popconfirm, Space, Tag, Image, Col, Button, Row, Input, Radio, message } from 'antd';
 import { Link } from "react-router-dom";
 import { projectFirestore } from "../firebase/config";
 import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
@@ -14,6 +14,10 @@ export default function PostList(props) {
     const [value, setValue] = React.useState(1);
     const [filterValue, setFilter] = React.useState(1);
     const [keyword, setKey] = React.useState("");
+
+    const successDel = () => {
+        message.success('Successfully delete the psot!');
+    };
 
     const onChange = e => {
         setValue(e.target.value);
@@ -108,6 +112,7 @@ export default function PostList(props) {
                                             .collection("posts")
                                             .doc(item.PostId)
                                             .delete();
+                                            successDel();
                                         }}
                                         onVisibleChange={() => console.log('Post deleted')}
                                         >
@@ -184,6 +189,7 @@ export default function PostList(props) {
                                 .collection("posts")
                                 .doc(item.PostId)
                                 .delete();
+                                successDel();
                             }}
                             onVisibleChange={() => console.log('Post deleted')}
                             >
