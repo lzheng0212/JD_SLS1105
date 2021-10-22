@@ -9,7 +9,6 @@ import CreatePostPage from "./CreatePostPage";
 import DeletePostPage from "./DeletePostPage";
 import SpecifcPost from "./specifcPost";
 
-
 import { useState } from 'react'
 import {
   EditOutlined,
