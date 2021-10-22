@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { List, Avatar, Space, Tag, Image, Col, Button, Row, Input, Radio } from 'antd';
+import { List, Popconfirm, Space, Tag, Image, Col, Button, Row, Input, Radio } from 'antd';
 import { Link } from "react-router-dom";
 import { projectFirestore } from "../firebase/config";
 import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
@@ -99,15 +99,23 @@ export default function PostList(props) {
                                         </Button>
                                     </Col>
                                     <Col xs={0} sm={0} md={0} lg={12}>
-                                        <Button type="primary" danger style={{width: '80px'}}
-                                            onClick={() => {
-                                                const res = projectFirestore
-                                                .collection("posts")
-                                                .doc(item.PostId)
-                                                .delete();
-                                        }}>
-                                            DELETE
-                                        </Button>
+                                        <Popconfirm
+                                        cancelButtonProps={{type: 'primary'}}
+                                        okType={{type: 'default'}}
+                                        title="Are you sure to delete this post?"
+                                        onConfirm={() => {
+                                            const res = projectFirestore
+                                            .collection("posts")
+                                            .doc(item.PostId)
+                                            .delete();
+                                        }}
+                                        onVisibleChange={() => console.log('Post deleted')}
+                                        >
+                                            <Button type="primary" danger style={{width: '80px'}}>
+                                                DELETE
+                                            </Button>
+                                        </Popconfirm>
+                                        
                                     </Col>
                                 
                                 </Row>
@@ -167,15 +175,22 @@ export default function PostList(props) {
                             </Button>
                         </Col>
                         <Col xs={12} sm={12} md={12} lg={0} xl={0} xxl={0}>
-                            <Button type="primary" danger style={{alignItems:'center'}}
-                                onClick={() => {
-                                    const res = projectFirestore
-                                    .collection("posts")
-                                    .doc(item.PostId)
-                                    .delete();
-                            }}>
-                                DELETE
-                            </Button>
+                            <Popconfirm
+                            cancelButtonProps={{type: 'primary'}}
+                            okType={{type: 'default'}}
+                            title="Are you sure to delete this post?"
+                            onConfirm={() => {
+                                const res = projectFirestore
+                                .collection("posts")
+                                .doc(item.PostId)
+                                .delete();
+                            }}
+                            onVisibleChange={() => console.log('Post deleted')}
+                            >
+                                <Button type="primary" danger style={{width: '80px'}}>
+                                    DELETE
+                                </Button>
+                            </Popconfirm>
                         </Col>
                     </Row>
                         
