@@ -8,7 +8,6 @@ import ManageCategoriesPage from "./ManageCategoriesPage";
 import CreatePostPage from "./CreatePostPage";
 import DeletePostPage from "./DeletePostPage";
 import SpecifcPost from "./specifcPost";
-import ManageEventsPage from "./ManageEventsPage";
 
 
 import { useState } from 'react'
@@ -58,7 +57,7 @@ function AdminPortal() {
                 <Link to="/adminportal/managecategoriespage">  Manage Catagories </Link>
               </Menu.Item>
               <Menu.Item key="4" icon={<CalendarOutlined />}>
-                <Link to="/adminportal/manageeventspage"> Manage Events </Link>
+                Manage Events
               </Menu.Item>
               <Menu.Item key="5" icon={<CommentOutlined />}>
                 Questions Review
@@ -73,7 +72,6 @@ function AdminPortal() {
               <Route path='/adminportal/create' exact component={CreatePostPage}></Route>
               <Route path='/adminportal/deletepostpage' exact component={DeletePostPage}></Route>
               <Route path='/adminportal/managecategoriespage' exact component={ManageCategoriesPage}></Route>
-              <Route path='/adminportal/manageeventspage' exact component={ManageEventsPage}></Route>
             </Content>
           </Layout>
         </Layout>
