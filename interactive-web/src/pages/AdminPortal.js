@@ -66,7 +66,7 @@ function AdminPortal() {
             </Sider>
         
             <Layout style={{ padding: '24px 24px 24px'}}>
-              <Content >
+              <Content style={{backgroundColor: 'white'}}>
                 <Route path='/adminportal/create' exact component={CreatePostPage}></Route>
                 <Route path='/adminportal/deletepostpage' exact component={DeletePostPage}></Route>
                 <Route path='/adminportal/managecategoriespage' exact component={ManageCategoriesPage}></Route>
