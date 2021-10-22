@@ -1,18 +1,17 @@
 import React from "react";
 import CategoryIcon from "./CategoryIcon";
 import "./CategoryContainer.css"
+import { Space } from 'antd';
 
 function CategoryContainer(props) {
   const categoryList = props.categoryList
   return (
-    <div className={props.background? "S_category--container" : "category--container"}>
-      {categoryList && categoryList.map((category) => (
+    <Space wrap>
+       {categoryList && categoryList.map((category) => (
         <CategoryIcon icon={props.icon} categoryName={category} callBackFunc={props.callBackFunc} />
       ))}
-    </div>
+    </Space>
   );
 }
-
-
 
 export default CategoryContainer;
