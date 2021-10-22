@@ -20,7 +20,7 @@ function DeletePostPage() {
   return (
     <Row justify="center"> 
       <Col xs={22} sm={20} md={16} lg={15} xl={15} xxl={15}>
-        <PostList admin={true} list={docs}/>
+        <PostList admin={true}/>
       </Col>
     </Row>
     

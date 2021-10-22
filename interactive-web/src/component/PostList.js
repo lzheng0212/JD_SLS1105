@@ -1,11 +1,49 @@
 import React, { useState, useEffect } from "react";
-import { List, Avatar, Space, Tag, Image, Col, Button, Row } from 'antd';
+import { List, Avatar, Space, Tag, Image, Col, Button, Row, Input, Radio } from 'antd';
 import { Link } from "react-router-dom";
 import { projectFirestore } from "../firebase/config";
 import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
 import "./PostList.css";
+import useFirestore from "../hooks/useFirestore";
 
 export default function PostList(props) {
+
+    var docs;
+
+    const { Search } = Input;
+    const [value, setValue] = React.useState(1);
+    const [filterValue, setFilter] = React.useState(1);
+    const [keyword, setKey] = React.useState("");
+
+    const onChange = e => {
+        setValue(e.target.value);
+        setFilter(e.target.value);
+    };
+
+    const search = () => {
+        setKey(document.getElementById("input").value);
+        document.getElementById("input").value = "";
+    }
+
+    const search_component = () => (
+        <Row md={{justify: 'center'}} style={{padding: "24px"}}> 
+            <Col xs={24} sm={20} md={18} lg={14} xl={12} xxl={10}>
+                <Search
+                    placeholder="Search for a post"
+                    id='input'
+                    enterButton="Search"
+                    size="large"
+                    onSearch={search}
+                />
+                <Radio.Group onChange={onChange} value={value}>
+                    <Radio value={1}>Title</Radio>
+                    <Radio value={2}>Author</Radio>
+                </Radio.Group>  
+            </Col>
+        </Row>
+    );
+
+  ({docs} = useFirestore("posts", filterValue, keyword));
     
     const IconText = ({ icon, text }) => (
         <Space>
@@ -22,13 +60,14 @@ export default function PostList(props) {
             <List
                 itemLayout="vertical"
                 size="large"
+                header= {search_component()}
                 pagination={{
                 onChange: page => {
                     console.log(page);
                 },
                 pageSize: 5,
                 }}
-                dataSource={props.list}
+                dataSource={docs}
                 style={{padding: '12px 24px 24px', backgroundColor: 'white'}}
                 // bordered="true"
                 renderItem={item => (
@@ -151,13 +190,14 @@ export default function PostList(props) {
             <List
                 itemLayout="vertical"
                 size="large"
+                header= {search_component()}
                 pagination={{
                 onChange: page => {
                     console.log(page);
                 },
                 pageSize: 5,
                 }}
-                dataSource={props.list}
+                dataSource={docs}
                 style={{padding: '12px 24px 24px', backgroundColor: 'white'}}
                 // bordered="true"
                 renderItem={item => (

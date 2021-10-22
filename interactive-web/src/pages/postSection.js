@@ -16,54 +16,39 @@ export default function PostSection() {
   const [button, setButton] = useState(true);
   const { Search } = Input;
 
-  const showButton = () => {
-    if (window.innerWidth <= 960) {
-      setButton(false);
-    } else {
-      setButton(true);
-    }
-  };
+  // const showButton = () => {
+  //   if (window.innerWidth <= 960) {
+  //     setButton(false);
+  //   } else {
+  //     setButton(true);
+  //   }
+  // };
 
-  useEffect(() => {
-    showButton();
-  }, []);
+  // useEffect(() => {
+  //   showButton();
+  // }, []);
 
-  const [value, setValue] = React.useState(1);
-    const [filterValue, setFilter] = React.useState(1);
-    const [keyword, setKey] = React.useState("");
-    const onChange = e => {
-        setValue(e.target.value);
-        setFilter(e.target.value);
-      };
-    const search = () => {
-        setKey(document.getElementById("input").value);
-        document.getElementById("input").value = "";
-      }
+  // const [value, setValue] = React.useState(1);
+  // const [filterValue, setFilter] = React.useState(1);
+  // const [keyword, setKey] = React.useState("");
+  // const onChange = e => {
+  //     setValue(e.target.value);
+  //     setFilter(e.target.value);
+  //   };
+  // const search = () => {
+  //     setKey(document.getElementById("input").value);
+  //     document.getElementById("input").value = "";
+  //   }
 
-  ({docs} = useFirestore("posts", filterValue, keyword));
+  // ({docs} = useFirestore("posts", filterValue, keyword));
 
   return (
     <Layout>
       <NavigationBar/>
       <Content style={{padding: '24px', paddingBottom: '0px'}}>
-          <Row justify="center" style={{padding: "24px"}}> 
-            <Col xs={20} sm={18} md={16} lg={12} xl={12} xxl={12}>
-              <Search
-                placeholder="Search for a post"
-                id='input'
-                enterButton="Search"
-                size="large"
-                onSearch={search}
-              />
-              <Radio.Group onChange={onChange} value={value}>
-                <Radio value={1}>Title</Radio>
-                <Radio value={2}>Author</Radio>
-              </Radio.Group>  
-            </Col>
-          </Row>
           <Row justify="center"> 
             <Col xs={22} sm={20} md={16} lg={15} xl={15} xxl={15}>
-              <PostList list={docs}/>
+              <PostList/>
             </Col>
           </Row>
       </Content>
