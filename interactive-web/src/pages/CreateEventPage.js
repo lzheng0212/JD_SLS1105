@@ -21,7 +21,7 @@ import {message} from 'antd';
 // Resources: https://github.com/zenoamaro/react-quill
 // License is also in the link above for react-quill
 
-function CreateEventPage() {
+function CreatePostPage() {
 
   const [fileURL, setFileURL] = useState(null);
   const updateData = useLocation().state;
@@ -216,4 +216,4 @@ function CreateEventPage() {
   );
 }
 
-export default CreateEventPage;
+export default CreatePostPage;

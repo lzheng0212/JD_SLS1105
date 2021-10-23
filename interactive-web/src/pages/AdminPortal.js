@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ManageCategoriesPage from "./ManageCategoriesPage";
 import CreatePostPage from "./CreatePostPage";
 import DeletePostPage from "./DeletePostPage";
+import ManageEventsPage from "./ManageEventsPage";
 
 
 
@@ -55,6 +56,7 @@ function AdminPortal() {
                 </Menu.Item>
                 <Menu.Item key="4" icon={<CalendarOutlined />}>
                   Manage Events
+                  <Link to="/adminportal/manageeventspage">  Manage Catagories </Link>
                 </Menu.Item>
                 <Menu.Item key="5" icon={<CommentOutlined />}>
                   Questions Review
@@ -70,6 +72,7 @@ function AdminPortal() {
                 <Route path='/adminportal/create' exact component={CreatePostPage}></Route>
                 <Route path='/adminportal/deletepostpage' exact component={DeletePostPage}></Route>
                 <Route path='/adminportal/managecategoriespage' exact component={ManageCategoriesPage}></Route>
+                <Route path='/adminportal/manageeventspage' exact component={ManageEventsPage}></Route>
               </Content>
             </Layout>
           </Router>
