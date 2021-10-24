@@ -22,6 +22,7 @@ import {
 import { Layout, Menu, message } from "antd";
 import FooterComponent from "../component/FooterComponent";
 import NavigationBar from "../component/NavigationBar";
+import CreateEventPage from "./CreateEventPage";
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
@@ -54,11 +55,13 @@ function AdminPortal() {
                 <Menu.Item key="3" icon={<OrderedListOutlined />}>
                   <Link to="/adminportal/managecategoriespage">  Manage Catagories </Link>
                 </Menu.Item>
-                <Menu.Item key="4" icon={<CalendarOutlined />}>
-                  Manage Events
-                  <Link to="/adminportal/manageeventspage">  Manage Catagories </Link>
+                <Menu.Item key="4" icon={<FileAddOutlined />}>
+                  <Link to={{ pathname: "/adminportal/create/event", state: { update: false } }}> New Event </Link>
                 </Menu.Item>
-                <Menu.Item key="5" icon={<CommentOutlined />}>
+                <Menu.Item key="5" icon={<CalendarOutlined />}>
+                  <Link to="/adminportal/manageeventspage">  Manage Events </Link>
+                </Menu.Item>
+                <Menu.Item key="6" icon={<CommentOutlined />}>
                   Questions Review
                 </Menu.Item>
                 <Menu.Item key="7" icon={<ExportOutlined />}>
@@ -70,6 +73,7 @@ function AdminPortal() {
             <Layout style={{ padding: '24px 24px 24px'}}>
               <Content style={{backgroundColor: 'white'}}>
                 <Route path='/adminportal/create' exact component={CreatePostPage}></Route>
+                <Route path='/adminportal/create/event' exact component={CreateEventPage}></Route>
                 <Route path='/adminportal/deletepostpage' exact component={DeletePostPage}></Route>
                 <Route path='/adminportal/managecategoriespage' exact component={ManageCategoriesPage}></Route>
                 <Route path='/adminportal/manageeventspage' exact component={ManageEventsPage}></Route>

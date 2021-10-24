@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "./CreatePostPage.css";
+import "./CreateEventPage.css"
 import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { Button } from "../component/Button";
-import ProgressBar from "../component/ProgressBar";
 import { reactQuillToolbarModules as toolbarModules } from "../component/ReactQuillModules"
 import { useLocation } from "react-router";
+import DatePicker from "react-datepicker";
 import FooterComponent from "../component/FooterComponent";
 import {
   projectStorage,
@@ -14,6 +14,7 @@ import {
 } from "../firebase/config";
 import CategoryContainer from "../component/postComponents/CategoryContainer";
 import {message} from 'antd';
+import "react-datepicker/dist/react-datepicker.css";
 
 
 
@@ -21,18 +22,19 @@ import {message} from 'antd';
 // Resources: https://github.com/zenoamaro/react-quill
 // License is also in the link above for react-quill
 
-function CreatePostPage() {
+function CreateEventPage() {
 
   const [fileURL, setFileURL] = useState(null);
   const updateData = useLocation().state;
   const update = updateData.update;
-  const postID = update ? updateData.postID : null;
   const [quill, setQuill] = useState(null)
   const [selectedCategories, setCategory] = useState([])
   const [availableCategories, setAvailableCategories] = useState([])
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
 
-  const successPost = () => {
-    message.success('Post Successfully!');
+  const successEvent = () => {
+    message.success('Create Successfully!');
   };
 
   const successUpdate = () => {
@@ -53,70 +55,65 @@ function CreatePostPage() {
     }
   }
 
-  const sendPost = async (e) => {
-    const postTitle = document.getElementById("postTitle").value;
-    const authorName = document.getElementById("postAuthor").value;
-    console.log(fileURL);
-    if (update && fileURL === null) {
-      setFileURL(updateData.src);
-    }
+  const sendEvent = async (e) => {
+    const eventTitle = document.getElementById("eventTitle").value;
+    const location = document.getElementById("eventLocation").value;
+    const month = String(startDate.getUTCMonth() + 1);
+    const year = String(startDate.getUTCFullYear());
+
     var data = {
-      author: authorName,
-      createdAt: timestamp(),
-      postCategory: "Quill Editor",
-      title: postTitle,
-      coverImage: fileURL,
+      location: location,
+      title: eventTitle,
       content: JSON.stringify(quill.getContents()),
       categories: selectedCategories,
+      startTime: Date.parse(startDate),
+      endTime: Date.parse(endDate)
     };
+
     console.log(data);
-    document.getElementById("postAuthor").value = "";
-    document.getElementById("postTitle").value = "";
+    document.getElementById("eventLocation").value = "";
+    document.getElementById("eventTitle").value = "";
+    setStartDate(new Date());
+    setEndDate(new Date());
     setFile(null);
     setFileURL(null);
     if (!update) {
-      projectFirestore.collection("posts").add(data);
-      successPost();
+      const docRef = projectFirestore.collection("Events").doc(year);
+      const doc = await docRef.get();
+      const docData = doc.data();
+      if (docData[month] === undefined) {
+        const events = {events: [data,]};
+        await docRef.update({
+          [month]: events
+        });
+      } else {
+        const events = docData[month].events;
+        const updatedEvents = {events: [...events, data]};
+        await docRef.update({
+          [month]: updatedEvents
+        })
+      }
+      successEvent();
     } else {
-      projectFirestore.collection("posts").doc(postID).update(data);
+      const docRef = projectFirestore.collection("Events").doc(year);
+      const doc = await docRef.get();
+      const docData = doc.data();
+      const events = docData[month].events;
+      const updatedEvents = events.map(event => {
+        if (event.title !== eventTitle) {
+          return event;
+        } else {
+          return data;
+        }
+      })
+      await docRef.update({
+        [month]: {events: updatedEvents}
+      })
       successUpdate();
     }
   };
 
   const [file, setFile] = useState(null);
-  const [error, setError] = useState(null);
-  const [progress, setProgress] = useState(0);
-
-  const handleChange = async (e) => {
-    let selected = e.target.files[0];
-
-    const types = ["image/png", "image/jpeg"];
-
-    if (selected && types.includes(selected.type)) {
-      setFile(selected);
-      setError("");
-      const storageRef = projectStorage.ref();
-      const fileRef = storageRef.child(selected.name);
-      fileRef.put(selected).on(
-        "state_changed",
-        (snap) => {
-          let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
-          setProgress(percentage);
-        },
-        (err) => {
-          setError(err);
-        },
-        async () => {
-          const url = await fileRef.getDownloadURL();
-          setFileURL(url);
-        }
-      );
-      setFileURL(fileRef.getDownloadURL());
-    } else {
-      setFile(null);
-      setError("Please select an image file of format (png or jpeg)");
-    }
-  };
 
   useEffect(() => {
     projectFirestore
@@ -131,7 +128,7 @@ function CreatePostPage() {
       modules: {
         toolbar: toolbarModules.toolbar,
       },
-      placeholder: "Write your text!",
+      placeholder: "Event Desrcription!",
       theme: "snow",
     });
 
@@ -140,51 +137,59 @@ function CreatePostPage() {
       let data = JSON.parse(updateData.content)
       quill.setContents(data)
       setCategory([...updateData.categories])
-      setFileURL(updateData.coverImageURL)
+      setStartDate(new Date(updateData.startTime));
+      setEndDate(new Date(updateData.endTime));
     }
   }, []);
 
   return (
     <div>
     <post-form>
-      <div className = "title-author">
+      <div className = "title-event">
       <input
         placeholder="Title"
         type="text"
-        id="postTitle"
-        name="postTitle"
+        id="eventTitle"
+        name="eventTitle"
         style={{ width: "100%" }}
         defaultValue={update ? updateData.title : ""}
       />
        <br></br>
       <input
-        placeholder="Author"
+        placeholder="Location"
         type="text"
-        id="postAuthor"
-        name="postAuthor"
+        id="eventLocation"
+        name="eventLocation"
         style={{ width: "100%"}}
-        defaultValue={update ? updateData.author : ""}
+        defaultValue={update ? updateData.location : ""}
       />
-        <div id="coverImage">
-          <div>
-            <text style={{ paddingRight:"10px" }} id="coverImgText">Cover Image:   </text>
-          </div>
-        <div>
-        <label>
-          <input type="file" onChange={handleChange} />
-          <span>+</span>
-        </label>
+      </div>
+      <div className="time-event">
+        <div className="start-date">
+          <h3>Start Date</h3>
+          <DatePicker 
+            selected={startDate} 
+            onChange={(date) => setStartDate(date)} 
+            showTimeSelect 
+            dateFormat="Pp"
+          />
         </div>
+        <div className="end-date">
+          <h3>End Date</h3>
+          <DatePicker 
+            selected={endDate} 
+            onChange={(date) => setEndDate(date)} 
+            showTimeSelect 
+            dateFormat="Pp"
+          />
         </div>
       </div>
       <h3>Available Categories</h3>
       <CategoryContainer  id="availableCategories"icon="+" categoryList={availableCategories} callBackFunc={addToCategoryList} background = {true}/>
-      {selectedCategories.length != 0 && (<><h3>Selected Categories</h3>
+      {selectedCategories.length !== 0 && (<><h3>Selected Categories</h3>
         <CategoryContainer icon="x" categoryList={selectedCategories} callBackFunc={removeFromCategoryList} /></>)}
       <div className="output">
-        {error && <div className="error"> {error} </div>}
         {file && <div> {file.name} </div>}
-        {file && <ProgressBar progress={progress}></ProgressBar>}
       </div>
       <div className="ql-editor" id="editor-container"></div>
       <div >
@@ -194,7 +199,7 @@ function CreatePostPage() {
               style={{ paddingLeft: "300px" }}
               buttonStyle="btn--primary"
               buttonSize="btn--large"
-              onClick={sendPost}
+              onClick={sendEvent}
             >
               Update
             </Button>
@@ -204,9 +209,9 @@ function CreatePostPage() {
               style={{ paddingLeft: "300px" }}
               buttonStyle="btn--primary"
               buttonSize="btn--large"
-              onClick={sendPost}
+              onClick={sendEvent}
             >
-              Post
+              Create
             </Button>
           )}
         </div>
@@ -216,4 +221,4 @@ function CreatePostPage() {
   );
 }
 
-export default CreatePostPage;
+export default CreateEventPage;

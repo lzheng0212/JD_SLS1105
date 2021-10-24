@@ -6,11 +6,11 @@ export function Month(month) {
     }
 }
 
-export function SingleEvent(eventCategories, eventDescription, eventLocation, eventTime, eventTitle, eventDayOfTheMonth) {
+export function SingleEvent(eventCategories, eventDescription, eventLocation, eventTitle, startTime, endTime) {
     this.categories = eventCategories
     this.description = eventDescription
     this.location = eventLocation
-    this.time = eventTime
+    this.startTime = startTime
+    this.endTime = endTime
     this.title = eventTitle
-    this.dayOfTheMonth = eventDayOfTheMonth
 }
