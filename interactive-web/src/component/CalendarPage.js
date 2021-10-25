@@ -130,7 +130,7 @@ const CalendarPage = () => {
                         for (let [indexOfEvent, event] of Object.entries(eventArray.events)) {
                             console.log(indexOfEvent)
                             console.log(event)
-                            newMonth.addEvent(new SingleEvent(event.categories, event.description, event.location, event.time, event.title, event.dayOfTheMonth))
+                            newMonth.addEvent(new SingleEvent(event.categories, event.content, event.location, event.title, event.startTime, event.endTime))
                             console.log(newMonth.eventsArray)
                         }
                         monthsArray.push(newMonth)

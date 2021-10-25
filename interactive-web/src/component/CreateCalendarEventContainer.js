@@ -26,22 +26,32 @@ function CreateCalendarEventContainer(props) {
 
         //sorts the events in this month increasing order
         eventsForTheMonth.sort(function (a, b) {
-            return a.dayOfTheMonth - b.dayOfTheMonth
+            return a.startTime - b.endTime
         })
 
         //goes through the events in this month and groups events that are on the same day
         for (let i = 0; i < eventsForTheMonth.length; i++) {
             const event = eventsForTheMonth[i]
-            const newDate = new Date(Number(props.year), Number(props.date.month), Number(event.dayOfTheMonth))
+            console.log(event)
+            const newDate = new Date(event.startTime)
             eventContainer.push(<div className="headingStyle">{newDate.toDateString()}</div>)
             addEventToContainer(event, newDate)
-            while ((i + 1) < eventsForTheMonth.length && Number(eventsForTheMonth[i + 1].dayOfTheMonth) === Number(event.dayOfTheMonth)) {
+            while (findEventsOccuringOnTheSameDay(i, eventsForTheMonth, newDate.getDate())) {
                 console.log(Number(eventsForTheMonth[i + 1].dayOfTheMonth) === Number(event.dayOfTheMonth))
                 addEventToContainer(eventsForTheMonth[i + 1], newDate)
                 i = i + 1
             }
         }
         return eventContainer
+    }
+
+    const findEventsOccuringOnTheSameDay = (index, eventsForTheMonth, currDay) => {
+        if ((index + 1) < eventsForTheMonth.length) {
+            const nextDate = new Date(eventsForTheMonth[index + 1].startTime)
+            return nextDate.getDate() === currDay
+        } else {
+            return false
+        }
     }
 
     //adds either the header jsx or event jsx to the eventConatiner 
