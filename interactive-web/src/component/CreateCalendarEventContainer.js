@@ -37,8 +37,8 @@ function CreateCalendarEventContainer(props) {
             eventContainer.push(<div className="headingStyle">{newDate.toDateString()}</div>)
             addEventToContainer(event, newDate)
             while (findEventsOccuringOnTheSameDay(i, eventsForTheMonth, newDate.getDate())) {
-                console.log(Number(eventsForTheMonth[i + 1].dayOfTheMonth) === Number(event.dayOfTheMonth))
-                addEventToContainer(eventsForTheMonth[i + 1], newDate)
+                const dateForNextEvent = new Date(eventsForTheMonth[i + 1].startTime)
+                addEventToContainer(eventsForTheMonth[i + 1], dateForNextEvent)
                 i = i + 1
             }
         }
