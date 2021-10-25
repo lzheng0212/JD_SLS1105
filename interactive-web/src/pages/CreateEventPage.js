@@ -81,9 +81,9 @@ function CreateEventPage() {
       const docRef = projectFirestore.collection("Events").doc(year);
       const doc = await docRef.get();
       const docData = doc.data();
-      if (docData[month] === undefined) {
+      if (doc.get(month) === undefined) {
         const events = {events: [data,]};
-        await docRef.update({
+        await docRef.set({
           [month]: events
         });
       } else {
