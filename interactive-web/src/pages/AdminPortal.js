@@ -1,13 +1,9 @@
 import "./AdminPortal.css";
-import CreatePostButton from "../component/postComponents/createPostButton";
-import { Button } from "../component/Button";
 import { projectAuth } from '../firebase/config';
-import Countvisitor from "../component/postComponents/visitorCuntor";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ManageCategoriesPage from "./ManageCategoriesPage";
 import CreatePostPage from "./CreatePostPage";
 import DeletePostPage from "./DeletePostPage";
-import SpecifcPost from "./specifcPost";
 import ManageEventsPage from "./ManageEventsPage";
 
 
@@ -22,8 +18,7 @@ import {
   FileAddOutlined,
   CommentOutlined
 } from '@ant-design/icons';
-import { Layout, Menu } from "antd";
-import FooterComponent from "../component/FooterComponent";
+import { Layout, Menu, message } from "antd";
 import NavigationBar from "../component/NavigationBar";
 import CreateEventPage from "./CreateEventPage";
 
@@ -34,14 +29,12 @@ function AdminPortal() {
   const [state, setState] = useState('start');
   const signOut = () => {
     projectAuth.signOut();
-    alert("signed Out!");
+    message.success("Signed out!");
+    setTimeout(() => window.location.assign('/adminLogin'), 1000);
   }
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      <div style={{ position: 'fixed', width: '100%', zIndex: '1' }}>
-        <NavigationBar />
-      </div>
-      <Router>
+        <NavigationBar/>
         <Layout>
           <Router>
             <Sider breakpoint="lg"
@@ -86,7 +79,6 @@ function AdminPortal() {
             </Layout>
           </Router>
         </Layout>
-      </Router>
     </Layout>
 
   );
