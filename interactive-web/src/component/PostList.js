@@ -16,7 +16,7 @@ export default function PostList(props) {
     const [keyword, setKey] = React.useState("");
 
     const successDel = () => {
-        message.success('Successfully delete the psot!');
+        message.success('Successfully delete the post!');
     };
 
     const onChange = e => {

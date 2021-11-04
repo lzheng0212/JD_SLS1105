@@ -34,10 +34,6 @@ export default function EventList(props) {
         }) 
     }, [])
 
-    const successDel = () => {
-        message.success('Successfully delete the psot!');
-    };
-
     const onChange = e => {
         setValue(e.target.value);
         setFilter(e.target.value);
