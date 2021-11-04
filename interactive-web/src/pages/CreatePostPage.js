@@ -66,15 +66,20 @@ function CreatePostPage() {
   const sendPost = async (e) => {
     const postTitle = document.getElementById("postTitle").value;
     const authorName = document.getElementById("postAuthor").value;
+    const upperCaseAuthorName = authorName.toUpperCase().split(" ")
+    const postTitleUpperCase = postTitle.toUpperCase().split(" ")
+    console.log(upperCaseAuthorName)
     console.log(fileURL);
     if (update && fileURL === null) {
       setFileURL(updateData.src);
     }
     var data = {
       author: authorName,
+      authorToUpper: upperCaseAuthorName,
       createdAt: timestamp(),
       postCategory: "Quill Editor",
       title: postTitle,
+      titleToUpper: postTitleUpperCase,
       coverImage: fileURL,
       content: JSON.stringify(quill.getContents()),
       categories: selectedCategories,
