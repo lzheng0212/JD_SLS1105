@@ -6,7 +6,7 @@ import "./PostItem.css";
 function PostItem(props) {
   const { Meta } = Card;
   return (
-    <li className="posts__item">
+    // <li className="posts__item">
       <Link
         className="posts__item__link"
         to={{ pathname: "/specificPost", state: { props } }}
@@ -32,7 +32,7 @@ function PostItem(props) {
           </div>
         </Card>
       </Link>
-    </li>
+    // </li>
 
 
   );
