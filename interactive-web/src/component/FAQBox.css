@@ -1,0 +1,32 @@
+.FAQQuestionContainer {
+    display: flex;
+    background-color: rgba(194, 194, 194, 0.267);
+    padding: 15px 30px 0 30px;
+    border-left: 15px solid rgb(248, 84, 84);
+    overflow-wrap: break-word;
+    padding-left: 10px;
+    margin-left: 0;
+}
+
+.FAQQuestionContainer p {
+    color: rgb(248, 84, 84);;
+    font-size: 50px;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.FAQAnswerContainer {
+    display: flex;
+    background-color: rgb(255, 249, 249);
+    border-left: 15px solid rgba(128, 128, 128, 0.384);
+    padding: 15px 30px 0 30px;
+    overflow-wrap: break-word;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    margin-left: 0;
+}
+
+.FAQAnswerContainer p {
+    color: rgba(128, 128, 128, 0.384);;
+    font-size: 50px;
+}

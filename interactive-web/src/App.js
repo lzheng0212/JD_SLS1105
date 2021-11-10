@@ -13,6 +13,7 @@ import AdminPortal from "./pages/AdminPortal";
 import TimelinePage from "./pages/TimelinePage";
 import "antd/dist/antd.css";
 import SpecificEvent from "./pages/SpecificEvent";
+import FAQPage from "./pages/FAQPage";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/post" exact component={PostSection} />
         <Route path="/donate" exact component={DonationPage} />
         <Route path="/aboutUs" exact component={aboutUsPage} />
+        <Route path="/FAQPage" exact component={FAQPage} />
         <Route path="/adminLogin" exact component={AdminLoginPage} />
         <Route path="/adminportal" exact component={AdminPortal} />
         <Route path="/map" exact component={MapPage} />
