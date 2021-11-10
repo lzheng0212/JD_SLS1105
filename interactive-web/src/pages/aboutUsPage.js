@@ -83,6 +83,8 @@ export default function PostSection() {
                         <Title level={4} style={{textAlign: "center"}}> Tel: 404-124-4567 </Title>
                         <Title level={4} style={{textAlign: "center"}}> Tel: 404-124-4567 </Title>
                         <Title level={4} style={{textAlign: "center"}}> Tel: 404-123-4567 </Title>
+                        <br/>
+                        <br/>
                     </Col>
                 </Row>
             </Content>
