@@ -1,9 +1,10 @@
-img {
-    object-fit:cover;
-    width: 100%;
-    height: auto;
-    position: fixed;
-    z-index: -1;
+.home-container {
+    margin-top: 88px;
+    margin-bottom: 124px;
+}
+
+.home-title {
+    margin-bottom: 56px;
 }
 
 .welcome-container {
@@ -17,14 +18,10 @@ img {
     z-index: -1;
 }
 
-.welcome-container > h1 {
+.welcome-header {
     /* Institute of Education and Regenerative Communities */
-    width: 1194px;
-    height: 408.11px;
-    margin-top: 185px;
-    margin-left: -300px;;
-
-
+    width:100%;
+    min-height: 64vh;
     font-family: Marcellus;
     font-style: normal;
     font-weight: normal;
@@ -39,4 +36,3 @@ img {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 }
-

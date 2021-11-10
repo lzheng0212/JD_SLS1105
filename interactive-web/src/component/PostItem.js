@@ -5,6 +5,7 @@ import "./PostItem.css";
 
 function PostItem(props) {
   const { Meta } = Card;
+  var width = {width: props.width}
   return (
     // <li className="posts__item">
       <Link
@@ -12,7 +13,7 @@ function PostItem(props) {
         to={{ pathname: "/specificPost", state: { props } }}
       >
         <Card
-          style={{ width: 240 }}
+          style={{width: '240px'}}
           cover={
             <figure className="posts__item__pic-wrap" data-category={props.label}>
               <img className="posts__item__img" alt="Post" src={props.src} />
@@ -27,6 +28,9 @@ function PostItem(props) {
           />
 
           <div>
+            <br />
+            <br />
+            <br />
             <br />
             <span>2021-01-01</span>
           </div>
