@@ -2,7 +2,7 @@ import './Home.css';
 import FooterComponent from '../component/FooterComponent';
 import WelcomeBottom from '../component/WelcomBottom';
 import { Content } from 'antd/lib/layout/layout';
-import { Layout, Row, Col, Divider, Typography } from 'antd';
+import { Layout, Row, Col, Divider, Typography, Button } from 'antd';
 import NavigationBar from '../component/NavigationBar';
 import PostCardList from '../component/PostCardList';
 import { BlockOutlined } from '@ant-design/icons';
@@ -31,7 +31,11 @@ function Home() {
                             {/* <WelcomeSub /> */}
                             <div className="home-container">
                                 <div className="home-title">
-                                    <Title level={2}> Features </Title>
+                                    <Title level={2}> Features 
+                                        <div className="home-extra">
+                                            <a href="./aboutUS" style={{alignContent: 'end'}}>Our Story</a>
+                                        </div>
+                                    </Title>
                                 </div>
                                 <p style={{fontSize: '20px', lineHeight: '40px', textAlign: 'justify'}}> 
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
@@ -45,20 +49,32 @@ function Home() {
                             </div>
                             <div className="home-container">
                                 <div className="home-title">
-                                    <Title level={2}> Recent Articles </Title>
+                                    <Title level={2}> Recent Articles 
+                                        <div className="home-extra">
+                                            <a href="./post" style={{alignContent: 'end'}}>Read More</a>
+                                        </div>
+                                    </Title>
                                 </div>
                                 <PostCardList length={4} />
                             </div>
                             <div className="home-container">
                                 <div className="home-title">
-                                    <Title level={2}> Activities </Title>
+                                    <Title level={2}> Activities 
+                                        <div className="home-extra">
+                                            <a href="./events" style={{alignContent: 'end'}}>Read More</a>
+                                        </div>
+                                    </Title>
                                 </div>
                                 <EventList atHome={'True'} length={4}/>
                                 {/* <WelcomeBottom /> */}
                             </div>
                             <div className="home-container">
                                 <div className="home-title">
-                                    <Title level={2}> Our Progress </Title>
+                                    <Title level={2}> Our Progress 
+                                        <div className="home-extra">
+                                            <a href="./map" style={{alignContent: 'end'}}>Full Map</a>
+                                        </div>
+                                    </Title>
                                 </div>
                                 <InteractiveMap/>
                             </div>

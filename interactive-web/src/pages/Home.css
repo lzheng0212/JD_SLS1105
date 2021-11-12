@@ -7,6 +7,13 @@
     margin-bottom: 56px;
 }
 
+.home-extra {
+    float: right;
+    padding-top: 12px;
+    font-weight: 200;
+    font-size: 20px;
+}
+
 .welcome-container {
     background: url('../assets/welcome.png') center center/cover no-repeat;
     height: 64vh;
