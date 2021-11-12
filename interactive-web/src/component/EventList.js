@@ -213,6 +213,52 @@ export default function EventList(props) {
                 )}
             />
         )
+    } else if (props.atHome) {
+        return (
+            <List
+                itemLayout="vertical"
+                size="small"
+                dataSource={events.slice(0,props.length)}
+                // style={{padding: '12px 24px 24px', backgroundColor: 'white'}}
+                bordered="true"
+                renderItem={item => (
+                    <List.Item
+                        key={item.title}
+                    >   
+                        <Link
+                            to={{ pathname: "/specificPost", state: {
+                                props: 
+                                {src: item.coverImage,
+                                title: item.title,
+                                author: item.author,
+                                description: item.content,
+                                date: item.createdAt,
+                                label: item.postCategory,
+                                categories : item.categories,
+                                path: "/specificPost"
+                            } }}}
+                        > 
+                            <List.Item.Meta
+                                title={<a>{item.title}</a>}
+                                description={
+                                    <>
+                                        {/* {item.categories && item.categories.length > 0 && 
+                                        <>  
+                                            {item.categories.map((category) => (
+                                            <Tag color={colorList[item.categories.indexOf(category) + seed % colorList.length]}> {category} </Tag>
+                                            ))}
+                                        </>} */}
+                                        {/* <br/> */}
+                                        <span> Date: TBA</span><br/>
+                                        <span> Location: </span>{item.location} 
+                                    </>
+                                    }
+                            />
+                        </Link>  
+                    </List.Item>
+                )}
+            />
+        );
     } else {
         return (
             <List
