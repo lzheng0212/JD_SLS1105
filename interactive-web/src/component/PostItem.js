@@ -13,7 +13,6 @@ function PostItem(props) {
         to={{ pathname: "/specificPost", state: { props } }}
       >
         <Card
-          style={{width: '240px'}}
           cover={
             <figure className="posts__item__pic-wrap" data-category={props.label}>
               <img className="posts__item__img" alt="Post" src={props.src} />
