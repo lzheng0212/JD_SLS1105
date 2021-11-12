@@ -214,12 +214,12 @@ function CreatePostPage() {
           </Form.Item>
           <Form.Item labelAlign="right">
           {update && (
-            <Button type="primary" htmlType="submit" style={{backgroundColor: "#234144", borderColor: "#1a3133"}}>
+            <Button type="primary" htmlType="submit" style={{backgroundColor: "#234144", borderColor: "#1a3133"}} onClick={sendPost}>
               Update
             </Button>
           )}
           {!update && (
-            <Button type="primary" htmlType="submit" style={{backgroundColor: "#234144", borderColor: "#1a3133"}}>
+            <Button type="primary" htmlType="submit" style={{backgroundColor: "#234144", borderColor: "#1a3133"}} onClick={sendPost}>
               Post
             </Button>
           )}
