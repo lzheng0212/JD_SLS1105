@@ -36,7 +36,7 @@ export default function FAQPage() {
                     <div class="contactUs">
                         <h2>More Questions? Please Contact Us.</h2>
                         <Button>
-                            <Link to={{ pathname: "./contactUs" }}>
+                            <Link className="contactUsButtonLink" to={{ pathname: "./contactUs" }}>
                                 Contact Us
                             </Link>
                         </Button>
