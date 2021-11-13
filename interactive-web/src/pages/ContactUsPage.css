@@ -1,0 +1,64 @@
+.ContactUsPageHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.ContactUsImageAndFormContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.ContactUsImageAndFormContainer Button {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ContactUsInputFormRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 100px;
+}
+
+.ContactUsInputFormRight input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ContactUsInputFormRight textarea {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ContactUsForm {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 30px 10px 30px;
+    width: 400px;
+}
+
+.ContactUsForm::placeholder {
+    color: rgb(197, 196, 196);
+}
+
+.ContactUsFormQuestionField {
+    height: 100px;
+}
+
+.ContactUsImageLeft img {
+    width: 400px;
+    height: auto;
+} 
+
+.ContactUsPageHeader h1 {
+    margin-top: 50px;
+    font-weight: 400;
+    color:rgb(54, 54, 54);
+    font-family: Arial, Helvetica, sans-serif;
+}

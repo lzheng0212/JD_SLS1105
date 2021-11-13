@@ -5,6 +5,8 @@ import NavigationBar from '../component/NavigationBar';
 import { Content } from 'antd/lib/layout/layout';
 import FAQBox from '../component/FAQBox';
 import './FAQPage.css';
+import { Button } from "../component/Button";
+import { Link } from "react-router-dom";
 
 export default function FAQPage() {
     // query firebase for faq questions. For each it will pass the Q and A to the FAQBox.
@@ -22,7 +24,11 @@ export default function FAQPage() {
                     <hr class="horizontalLine"></hr>
                     <div class="contactUs">
                         <h2>More Questions? Please Contact Us.</h2>
-                        <h3>(Button later)</h3>
+                        <Button>
+                            <Link to={{ pathname: "./contactUs" }}>
+                                Contact Us
+                            </Link>
+                        </Button>
                     </div>
                 </div>
             </Content>

@@ -14,7 +14,7 @@ import TimelinePage from "./pages/TimelinePage";
 import "antd/dist/antd.css";
 import SpecificEvent from "./pages/SpecificEvent";
 import FAQPage from "./pages/FAQPage";
-
+import ContactUsPage from "./pages/ContactUsPage";
 
 function App() {
   return (
@@ -33,6 +33,7 @@ function App() {
         <Route path="/specificPost" exact component={SpecificPost} />
         <Route path="/timeline" exact component={TimelinePage} />
         <Route path="/specificEvent" exact component={SpecificEvent} />
+        <Route path="/contactUs" exact component={ContactUsPage} />
       </Switch>
     </Router>
   );
