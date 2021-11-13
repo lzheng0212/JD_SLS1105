@@ -159,7 +159,6 @@ function CreatePostPage() {
     }
   }, []);
 
-  const fileList = [];
   return (
     <Row style = {{minHeight:"100vh"}} justify="center" align="middle"> 
       <Col xs={22} sm={20} md={16} lg={15} xl={15} xxl={15} align="middle">
@@ -198,16 +197,13 @@ function CreatePostPage() {
             />
           </Form.Item>
           <Form.Item label="Cover Image" name="coverImage">
-            <Upload
-              // action={handleChange}
-              name='file'
-              listType="picture"
-              defaultFileList={[...fileList]}
-              maxCount={1}
-              customRequest={handleChange}
-            >
-              <Button icon={<UploadOutlined />}>Upload</Button>
-            </Upload>
+            <input type="file"  onChange={handleChange} style={{float: 'left'}}/>
+          </Form.Item>
+          <Form.Item>
+            <p>Available Categories</p>
+            <CategoryContainer  id="availableCategories"icon="+" categoryList={availableCategories} callBackFunc={addToCategoryList} background = {true}/>
+            {selectedCategories.length != 0 && (<><p>Selected Categories</p>
+              <CategoryContainer icon="x" categoryList={selectedCategories} callBackFunc={removeFromCategoryList} /></>)}
           </Form.Item>
           <Form.Item>
             <div className="ql-editor" id="editor-container"></div>
