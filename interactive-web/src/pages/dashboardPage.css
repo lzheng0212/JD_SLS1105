@@ -1,0 +1,30 @@
+
+.App {
+    text-align: center;
+  }
+  
+.clock {
+    background: url('../assets/apple_basket.jpg') center center/cover no-repeat;
+    min-height: 60vh;
+    padding-top: 20px;
+    justify-content: center;
+}
+#welcomeText {
+    font-family: Marcellus;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 70px;
+    line-height: 70px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.015em;
+    padding-top: 0px;
+  
+    color: #cddae9;
+  }
+
+#clock_position {
+    padding-top: 400px;
+    padding-left: 50px;
+}

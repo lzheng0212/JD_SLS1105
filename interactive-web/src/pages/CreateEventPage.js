@@ -58,13 +58,16 @@ function CreateEventPage() {
   const sendEvent = async (e) => {
     const eventTitle = document.getElementById("eventTitle").value;
     const location = document.getElementById("eventLocation").value;
+    const description = document.getElementById("eventDescription").value;
     const month = String(startDate.getUTCMonth() + 1);
     const year = String(startDate.getUTCFullYear());
+
 
     var data = {
       location: location,
       title: eventTitle,
-      content: JSON.stringify(quill.getContents()),
+      /*content: JSON.stringify(quill.getContents()),*/
+      content: description,
       categories: selectedCategories,
       startTime: Date.parse(startDate),
       endTime: Date.parse(endDate)
@@ -73,6 +76,7 @@ function CreateEventPage() {
     console.log(data);
     document.getElementById("eventLocation").value = "";
     document.getElementById("eventTitle").value = "";
+    document.getElementById("eventDescription").value = "";
     setStartDate(new Date());
     setEndDate(new Date());
     setFile(null);
@@ -134,8 +138,8 @@ function CreateEventPage() {
 
     setQuill(quill)
     if (update) {
-      let data = JSON.parse(updateData.content)
-      quill.setContents(data)
+      let data = updateData.content
+      document.getElementById("eventDescription").value = data;
       setCategory([...updateData.categories])
       setStartDate(new Date(updateData.startTime));
       setEndDate(new Date(updateData.endTime));
@@ -147,7 +151,7 @@ function CreateEventPage() {
     <post-form>
       <div className = "title-event">
       <input
-        placeholder="Title"
+        placeholder="Event Title"
         type="text"
         id="eventTitle"
         name="eventTitle"
@@ -191,7 +195,17 @@ function CreateEventPage() {
       <div className="output">
         {file && <div> {file.name} </div>}
       </div>
-      <div className="ql-editor" id="editor-container"></div>
+      
+      <div className = "title-event">
+        <input
+          placeholder="Event description"
+          type="text"
+          id="eventDescription"
+          name="eventDescription"
+          style={{ width: "100%"}}
+          defaultValue={update ? updateData.location : ""}
+        />
+      </div>
       <div >
         <div style={{ marginTop: "30px", paddingLeft: "850px" }}>
           {update && (

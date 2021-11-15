@@ -5,6 +5,7 @@ import ManageCategoriesPage from "./ManageCategoriesPage";
 import CreatePostPage from "./CreatePostPage";
 import DeletePostPage from "./DeletePostPage";
 import ManageEventsPage from "./ManageEventsPage";
+import dashboardPage from "./dashboardPage";
 
 
 
@@ -42,7 +43,7 @@ function AdminPortal() {
               style={{ backgroundColor: '#091111', overflow: 'auto', left: 0}} collapsible >
               <Menu defaultSelectedKeys={['0']} mode="inline" theme='dark' style={{ backgroundColor: '#091111'}}>
                 <Menu.Item key="0" icon={<DashboardOutlined />}>
-                  <a href="/adminportal"> Dashboard </a>
+                  <Link to="/adminportal/dashboard">  Dashboard </Link>
                 </Menu.Item>
                 <Menu.Item key="1" icon={<FileAddOutlined />}>
                   <Link to={{ pathname: "/adminportal/create", state: { update: false } }}> New Post </Link>
@@ -70,11 +71,13 @@ function AdminPortal() {
         
             <Layout style={{ padding: '24px 24px 24px'}}>
               <Content style={{backgroundColor: 'white'}}>
+                <Route path='/adminportal/dashboard' exact component={dashboardPage}></Route>
                 <Route path='/adminportal/create' exact component={CreatePostPage}></Route>
                 <Route path='/adminportal/create/event' exact component={CreateEventPage}></Route>
                 <Route path='/adminportal/deletepostpage' exact component={DeletePostPage}></Route>
                 <Route path='/adminportal/managecategoriespage' exact component={ManageCategoriesPage}></Route>
                 <Route path='/adminportal/manageeventspage' exact component={ManageEventsPage}></Route>
+                <Route path='/adminportal/' exact component={dashboardPage}></Route>
               </Content>
             </Layout>
           </Router>
