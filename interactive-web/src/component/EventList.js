@@ -230,7 +230,8 @@ export default function EventList(props) {
                     >   
                         <Link
                             to={{ pathname: "/specificEvent", state: {
-                                event: 
+
+                                calendarEvent: 
                                 { 
                                     categories : item.categories,
                                     description : item.content,
