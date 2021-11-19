@@ -15,6 +15,9 @@ export default function EventList(props) {
     const [filterValue, setFilter] = React.useState(1);
     const [keyword, setKey] = React.useState("");
     const [events, setEvents] = React.useState([]);
+    useEffect(() => {
+        console.log(events);
+    }, [events])
 
 
     useEffect(() => {
@@ -226,17 +229,16 @@ export default function EventList(props) {
                         key={item.title}
                     >   
                         <Link
-                            to={{ pathname: "/specificPost", state: {
-                                props: 
-                                {src: item.coverImage,
-                                title: item.title,
-                                author: item.author,
-                                description: item.content,
-                                date: item.createdAt,
-                                label: item.postCategory,
-                                categories : item.categories,
-                                path: "/specificPost"
-                            } }}}
+                            to={{ pathname: "/specificEvent", state: {
+                                event: 
+                                { 
+                                    categories : item.categories,
+                                    description : item.content,
+                                    location : item.location,
+                                    title : item.titletle
+                                },
+                                date: new Date(item.startTime)
+                            }}}
                         > 
                             <List.Item.Meta
                                 title={<a>{item.title}</a>}
@@ -249,8 +251,9 @@ export default function EventList(props) {
                                             ))}
                                         </>} */}
                                         {/* <br/> */}
-                                        <span> Date: TBA</span><br/>
-                                        <span> Location: </span>{item.location} 
+                                        <span> Date: {new Date(item.startTime).toDateString()}</span><br/>
+                                        <span> Location: {item.location} </span> <br/>
+                                        <span> Cat:{item.categories} </span>
                                     </>
                                     }
                             />
