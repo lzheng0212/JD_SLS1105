@@ -254,7 +254,6 @@ export default function EventList(props) {
                                         {/* <br/> */}
                                         <span> Date: {new Date(item.startTime).toDateString()}</span><br/>
                                         <span> Location: {item.location} </span> <br/>
-                                        <span> Cat:{item.categories} </span>
                                     </>
                                     }
                             />
