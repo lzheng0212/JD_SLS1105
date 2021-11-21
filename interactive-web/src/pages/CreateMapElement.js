@@ -33,8 +33,8 @@ function CreateMapElement() {
       const programName = document.getElementById("programName").value;
       const programLocation = document.getElementById("programLocation").value;
       const programDescription = document.getElementById("programDescription").value;
-      const month = String(date.getUTCMonth() + 1);
-      const year = String(date.getUTCFullYear());
+      // const month = String(date.getUTCMonth() + 1);
+      // const year = String(date.getUTCFullYear());
 
       var data = {
         title: programName,
@@ -50,40 +50,8 @@ function CreateMapElement() {
       setFileURL(null);
       setDate(new Date());
 
-      if (!update) {
-        const docRef = projectFirestore.collection("map").doc(year);
-        const doc = await docRef.get();
-        const docData = doc.data();
-        if (doc.get(month) === undefined) {
-          const events = {events: [data,]};
-          await docRef.update({
-            [month]: events
-          }); 
-        } else {
-          const events = docData[month].events;
-          const updatedEvents = {events: [...events, data]};
-          await docRef.update({
-            [month]: updatedEvents
-          })
-        }
-        successEvent();
-      } else { 
-        const docRef = projectFirestore.collection("Events").doc(year);
-        const doc = await docRef.get();
-        const docData = doc.data();
-        const events = docData[month].events;
-        const updatedEvents = events.map(program => {
-          if (program.programName !== programName) {
-            return program;
-          } else {
-            return data;
-          }
-        })
-        await docRef.update({
-          [month]: {events: updatedEvents}
-        })
-        successUpdate();
-      }
+      projectFirestore.collection("map").doc(programName).set(data);
+      successEvent();
     };
   
     const [file, setFile] = useState(null);

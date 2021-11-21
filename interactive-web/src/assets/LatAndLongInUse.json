@@ -1,0 +1,45 @@
+{
+    "AK":
+    {
+        "state":"Alaska",
+        "latitude":61.3850,
+        "longitude":-152.2683
+    },
+    "AL":
+    {
+        "state":"Alabama",
+        "latitude":32.7990,
+        "longitude":-86.8073
+    },
+    "AR":
+    {
+        "state":"Arkansas",
+        "latitude":34.9513,
+        "longitude":-92.3809
+    },
+    "AZ":
+    {
+        "state":"Arizona",
+        "latitude":33.7712,
+        "longitude":-111.3877
+    },
+    "CA":
+    {
+        "state":"California",
+        "latitude":36.1700,
+        "longitude":-119.7462
+    },
+    "CO":
+    {
+        "state":"Colorado",
+        "latitude":39.0646,
+        "longitude":-105.3272
+    },
+    "GA":
+    {
+        "state":"Georgia",
+        "latitude":32.9866,
+        "longitude":-83.6487
+    }
+
+}
