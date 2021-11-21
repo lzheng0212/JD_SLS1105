@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import './AdminLoginPage.css'
 import { Form, Input, Button, Checkbox, Row, Col, message} from 'antd';
-import {projectAuth} from '../firebase/config';
+import {projectAuth} from '../../firebase/config';
 import { Layout } from 'antd';
-import NavigationBar from '../component/NavigationBar';
+import NavigationBar from '../../component/NavigationBar';
 import { Content } from 'antd/lib/layout/layout';
-import FooterComponent from '../component/FooterComponent';
+import FooterComponent from '../../component/FooterComponent';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { BlockOutlined } from '@ant-design/icons';
 

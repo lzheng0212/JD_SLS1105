@@ -1,21 +1,12 @@
 import React, { useState, useEffect } from "react";
-import "./postStyle.css";
-import "../component/Posts.css";
-import useFirestore from "../hooks/useFirestore";
-// import PostSearchContainer from "../component/postComponents/postSearchContainer";
-// import PostMoreButton from "../component/postComponents/PostMoreButton";
-// import { Button } from "../component/Button";
-// import { projectFirestore } from "../firebase/config";
-// import { Link } from "react-router-dom";
+import "../../component/Posts.css";
 import { Row, Col } from "antd";
-import PostList from "../component/PostList";
+import PostList from "../../component/ListViews/PostList";
 
 // Resources: https://github.com/zenoamaro/react-quill
 // License is also in the link above for react-quill
 
 function DeletePostPage() {
-
-  const { docs } = useFirestore("posts");
 
   return (
     <Row justify="center"> 

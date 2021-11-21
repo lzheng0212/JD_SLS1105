@@ -6,7 +6,7 @@ import { Layout, Row, Col, Divider, Typography, Button } from 'antd';
 import NavigationBar from '../component/NavigationBar';
 import PostCardList from '../component/PostCardList';
 import { BlockOutlined } from '@ant-design/icons';
-import EventList from '../component/EventList';
+import EventList from '../component/ListViews/EventList';
 import InteractiveMap from '../component/InteractiveMap';
 
 function Home() {

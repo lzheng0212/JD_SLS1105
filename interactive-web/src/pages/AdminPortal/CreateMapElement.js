@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "./CreateMapElement.css"
 import "react-quill/dist/quill.snow.css";
-import { Button } from "../component/Button";
+import { Button } from "../../component/Button";
 import { useLocation } from "react-router";
 import DatePicker from "react-datepicker";
-import FooterComponent from "../component/FooterComponent";
 import {
   projectStorage,
   projectFirestore,
   timestamp,
-} from "../firebase/config";
+} from "../../firebase/config";
 import {message} from 'antd';
 import "react-datepicker/dist/react-datepicker.css";
 

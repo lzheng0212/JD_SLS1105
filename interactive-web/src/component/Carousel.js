@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { CSSTransitionGroup } from "react-transition-group"
 import './Carousel.css'
 import CarouselItem from './CarouselItem';
+import Quill from "quill";
 
 
 export default class Carousel extends React.Component {
@@ -51,6 +52,7 @@ export default class Carousel extends React.Component {
             direction: 'right'
         })
     }
+
     
     render() {
         return(
@@ -69,10 +71,10 @@ export default class Carousel extends React.Component {
                     <div className="title">
                     {this.state.items[this.state.active].title}
                     </div>
-                    <div className="date">
-                    {this.state.items[this.state.active].date}
+                    <div className="date" style={{alignSelf: 'flex-start'}}>
+                    {this.state.items[this.state.active].date.toString()}
                     </div>
-                    <div className="content">
+                    <div className="content" >
                     {this.state.items[this.state.active].content}                    
                     </div>
                 </div>

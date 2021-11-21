@@ -1,12 +1,13 @@
 import "./AdminPortal.css";
-import { projectAuth } from '../firebase/config';
+import { projectAuth } from '../../firebase/config';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ManageCategoriesPage from "./ManageCategoriesPage";
 import CreatePostPage from "./CreatePostPage";
 import DeletePostPage from "./DeletePostPage";
 import ManageEventsPage from "./ManageEventsPage";
-import dashboardPage from "./dashboardPage";
+import dashboardPage from "../dashboardPage";
 import QuestionReviewPage from "./QuestionReviewPage";
+import ManageTimelinePage from "./ManageTimelinePage";
 
 
 
@@ -21,9 +22,10 @@ import {
   CommentOutlined
 } from '@ant-design/icons';
 import { Layout, Menu, message } from "antd";
-import NavigationBar from "../component/NavigationBar";
+import NavigationBar from "../../component/NavigationBar";
 import CreateEventPage from "./CreateEventPage";
 import CreateMapElement from "./CreateMapElement";
+import AddTimelineEventPage from "./AddTimelineEventPage";
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
@@ -59,16 +61,22 @@ function AdminPortal() {
                 <Menu.Item key="4" icon={<FileAddOutlined />}>
                   <Link to={{ pathname: "/adminportal/create/event", state: { update: false } }}> New Event </Link>
                 </Menu.Item>
-                <Menu.Item key="4" icon={<FileAddOutlined />}>
+                <Menu.Item key="5" icon={<FileAddOutlined />}>
                   <Link to={{ pathname: "/adminportal/manageMap", state: { update: false } }}> Manage Map  </Link>
                 </Menu.Item>
-                <Menu.Item key="5" icon={<CalendarOutlined />}>
+                <Menu.Item key="6" icon={<CalendarOutlined />}>
                   <Link to="/adminportal/manageeventspage">  Manage Events </Link>
                 </Menu.Item>
-                <Menu.Item key="6" icon={<CommentOutlined />}>
+                <Menu.Item key="7" icon={<CommentOutlined />}>
                   <Link to="/adminportal/questionReviewPage"> Questions Review </Link>
                 </Menu.Item>
-                <Menu.Item key="7" icon={<ExportOutlined />}>
+                <Menu.Item key="8" icon={<CalendarOutlined />}>
+                <Link to="/adminportal/addtimelineeventpage">  New Timeline event </Link>
+                </Menu.Item>
+                <Menu.Item key="9" icon={<CalendarOutlined />}>
+                <Link to="/adminportal/managetimeline">  Manage Timeline </Link>
+                </Menu.Item>
+                <Menu.Item key="10" icon={<ExportOutlined />}>
                   <a onClick={signOut}> Logout </a>
                 </Menu.Item>
               </Menu>
@@ -85,6 +93,8 @@ function AdminPortal() {
                 <Route path='/adminportal/manageeventspage' exact component={ManageEventsPage}></Route>
                 <Route path='/adminportal/questionReviewPage' exact component={QuestionReviewPage}></Route>
                 <Route path='/adminportal/' exact component={dashboardPage}></Route>
+                <Route path='/adminportal/addtimelineeventpage' exact component={AddTimelineEventPage}></Route>
+                <Route path='/adminportal/managetimeline' exact component={ManageTimelinePage}></Route>
               </Content>
             </Layout>
           </Router>

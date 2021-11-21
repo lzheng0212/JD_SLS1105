@@ -2,17 +2,16 @@ import React, { useState, useEffect } from "react";
 import "./CreateEventPage.css"
 import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import { Button } from "../component/Button";
-import { reactQuillToolbarModules as toolbarModules } from "../component/ReactQuillModules"
+import { Button } from "../../component/Button";
+import { reactQuillToolbarModules as toolbarModules } from "../../component/ReactQuillModules"
 import { useLocation } from "react-router";
 import DatePicker from "react-datepicker";
-import FooterComponent from "../component/FooterComponent";
 import {
   projectStorage,
   projectFirestore,
   timestamp,
-} from "../firebase/config";
-import CategoryContainer from "../component/postComponents/CategoryContainer";
+} from "../../firebase/config";
+import CategoryContainer from "../../component/postComponents/CategoryContainer";
 import {message} from 'antd';
 import "react-datepicker/dist/react-datepicker.css";
 

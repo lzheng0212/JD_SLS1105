@@ -6,7 +6,7 @@ import "../component/Posts.css";
 import { Content } from "antd/lib/layout/layout";
 import { Layout, Input} from "antd";
 import NavigationBar from "../component/NavigationBar";
-import PostList from "../component/PostList";
+import PostList from "../component/ListViews/PostList";
 
 export default function PostSection() {
 

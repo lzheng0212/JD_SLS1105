@@ -1,20 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "./CreatePostPage.css";
-import ReactQuill, { Quill } from "react-quill";
+import { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
-// import { Button } from "../component/Button";
-import ProgressBar from "../component/ProgressBar";
-import { reactQuillToolbarModules as toolbarModules } from "../component/ReactQuillModules"
+import { reactQuillToolbarModules as toolbarModules } from "../../component/ReactQuillModules"
 import { useLocation } from "react-router";
-import FooterComponent from "../component/FooterComponent";
 import {
   projectStorage,
   projectFirestore,
   timestamp,
-} from "../firebase/config";
-import CategoryContainer from "../component/postComponents/CategoryContainer";
+} from "../../firebase/config";
+import CategoryContainer from "../../component/postComponents/CategoryContainer";
 import { Form, Input, Button, Select, message, Row, Col, Upload } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
 
 
 

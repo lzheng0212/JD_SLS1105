@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { List, Popconfirm, Space, Col, Button, Row, Layout, message} from 'antd';
-import { projectFirestore } from "../firebase/config";
+import { projectFirestore } from "../../firebase/config";
 import "./PostList.css";
 
 export default function QuestionReviewList() {

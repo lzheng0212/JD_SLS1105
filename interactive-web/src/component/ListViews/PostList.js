@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { List, Popconfirm, Space, Tag, Image, Col, Button, Row, Input, Radio, message } from 'antd';
 import { Link } from "react-router-dom";
-import { projectFirestore } from "../firebase/config";
+import { projectFirestore } from "../../firebase/config";
 import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
 import "./PostList.css";
-import useFirestore from "../hooks/useFirestore";
+import useFirestore from "../../hooks/useFirestore";
 
-export default function EventList(props) {
+export default function PostList(props) {
 
     var docs;
 
@@ -14,28 +14,10 @@ export default function EventList(props) {
     const [value, setValue] = React.useState(1);
     const [filterValue, setFilter] = React.useState(1);
     const [keyword, setKey] = React.useState("");
-    const [events, setEvents] = React.useState([]);
-    useEffect(() => {
-        console.log(events);
-    }, [events])
 
-
-    useEffect(() => {
-        let temp = [];
-
-        projectFirestore.collection("Events").get().then(snapshot => {
-            snapshot.forEach((docRef) => {
-                const docData = docRef.data();
-                for (let i = 0; i <= 12; i++) {
-                    const month = String(i);
-                    if (docData[month] !== undefined) {
-                        temp = [...temp, ...docData[month].events];
-                        setEvents(temp);
-                    }
-                }
-            })
-        }) 
-    }, [])
+    const successDel = () => {
+        message.success('Successfully delete the post!');
+    };
 
     const onChange = e => {
         setValue(e.target.value);
@@ -51,7 +33,7 @@ export default function EventList(props) {
         <Row md={{justify: 'center'}} style={{padding: "24px"}}> 
             <Col xs={24} sm={20} md={18} lg={14} xl={12} xxl={10}>
                 <Search
-                    placeholder="Search for an event"
+                    placeholder="Search for a post"
                     id='input'
                     enterButton="Search"
                     size="large"
@@ -65,26 +47,8 @@ export default function EventList(props) {
         </Row>
     );
 
-    const deleteEvent = async (item) => {
-        const startDate = new Date(item.startTime);
-        const month = String(startDate.getUTCMonth() + 1);
-        const year = String(startDate.getUTCFullYear());
-        const title = item.title;
-
-        const docRef = projectFirestore.collection("Events").doc(year);
-        const doc = await docRef.get();
-        const docData = doc.data();
-        const eventsInDB = docData[month].events;
-
-        const updatedEventsInDB = eventsInDB.filter((event) => event.title !== title);
-        await docRef.update({
-            [month]: {events: updatedEventsInDB}
-        })
-
-        const updatedEvents = events.filter(event => event.title !== title);
-        setEvents(updatedEvents);
-    }
-
+  ({docs} = useFirestore("posts", filterValue, keyword));
+    
     const IconText = ({ icon, text }) => (
         <Space>
             {React.createElement(icon)}
@@ -107,7 +71,7 @@ export default function EventList(props) {
                 },
                 pageSize: 5,
                 }}
-                dataSource={events}
+                dataSource={docs}
                 style={{padding: '12px 24px 24px', backgroundColor: 'white'}}
                 // bordered="true"
                 renderItem={item => (
@@ -120,15 +84,17 @@ export default function EventList(props) {
                                     <Col xs={0} sm={0} md={0} lg={12}> 
                                         <Button style={{width: '80px'}}>
                                             <Link
-                                                to={{ pathname: "./create/event", state:
+                                                to={{ pathname: "./create", state:
                                                     {   
                                                         update: true,
+                                                        postID: item.PostId,
+                                                        src: item.coverImage,
                                                         title: item.title,
                                                         content: item.content,
+                                                        label: item.postCategory,
+                                                        author: item.author,
                                                         categories: item.categories,
-                                                        startTime: item.startTime,
-                                                        endTime: item.endTime,
-                                                        location: item.location,
+                                                        coverImageURL: item.coverImage
                                                     } 
                                                 }}
                                             >
@@ -140,9 +106,15 @@ export default function EventList(props) {
                                         <Popconfirm
                                         cancelButtonProps={{type: 'primary'}}
                                         okType={{type: 'default'}}
-                                        title="Are you sure to delete this event?"
-                                        onConfirm={() => deleteEvent(item)}
-                                        onVisibleChange={() => console.log('Event deleted')}
+                                        title="Are you sure to delete this post?"
+                                        onConfirm={() => {
+                                            const res = projectFirestore
+                                            .collection("posts")
+                                            .doc(item.PostId)
+                                            .delete();
+                                            successDel();
+                                        }}
+                                        onVisibleChange={() => console.log('Post deleted')}
                                         >
                                             <Button type="primary" danger style={{width: '80px'}}>
                                                 DELETE
@@ -152,6 +124,16 @@ export default function EventList(props) {
                                     </Col>
                                 
                                 </Row>
+                        
+                                <Image
+                                    width={180}
+                                    alt={item.title}
+                                    src={item.coverImage}
+                                    placeholder={true}
+                                    height={135}
+                                    style={{zIndex: 0}}
+                                />
+
                             </Space>
                         }
                     >   
@@ -160,7 +142,7 @@ export default function EventList(props) {
                         title={<a>{item.title}</a>}
                         description={
                         <>
-                            <span> Location: </span>{item.location} 
+                            <span> Author: </span>{item.author} 
                             {item.categories && item.categories.length > 0 && 
                             <>  
                                 <p/>
@@ -170,6 +152,7 @@ export default function EventList(props) {
                                 ))}
                             </>}
                             <p/>
+                            <span> Last Updated: </span>{item.createdAt} 
                         </>
                         }
                     />
@@ -178,15 +161,17 @@ export default function EventList(props) {
                         <Col lg={0} xl={0} xxl={0}> 
                             <Button style={{width: '80px'}}>
                                 <Link
-                                    to={{ pathname: "./create/event", state:
+                                    to={{ pathname: "./create", state:
                                         {   
                                             update: true,
+                                            postID: item.PostId,
+                                            src: item.coverImage,
                                             title: item.title,
                                             content: item.content,
+                                            label: item.postCategory,
+                                            author: item.author,
                                             categories: item.categories,
-                                            startTime: item.startTime,
-                                            endTime: item.endTime,
-                                            location: item.location,
+                                            coverImageURL: item.coverImage
                                         } 
                                     }}
                                 >
@@ -195,12 +180,17 @@ export default function EventList(props) {
                             </Button>
                         </Col>
                         <Col xs={12} sm={12} md={12} lg={0} xl={0} xxl={0}>
-                            
                             <Popconfirm
                             cancelButtonProps={{type: 'primary'}}
                             okType={{type: 'default'}}
-                            title="Are you sure to delete this event?"
-                            onConfirm={() => deleteEvent(item)}
+                            title="Are you sure to delete this post?"
+                            onConfirm={() => {
+                                const res = projectFirestore
+                                .collection("posts")
+                                .doc(item.PostId)
+                                .delete();
+                                successDel();
+                            }}
                             onVisibleChange={() => console.log('Post deleted')}
                             >
                                 <Button type="primary" danger style={{width: '80px'}}>
@@ -216,52 +206,6 @@ export default function EventList(props) {
                 )}
             />
         )
-    } else if (props.atHome) {
-        return (
-            <List
-                itemLayout="vertical"
-                size="small"
-                dataSource={events.slice(0,props.length)}
-                // style={{padding: '12px 24px 24px', backgroundColor: 'white'}}
-                bordered="true"
-                renderItem={item => (
-                    <List.Item
-                        key={item.title}
-                    >   
-                        <Link
-                            to={{ pathname: "/specificEvent", state: {
-
-                                calendarEvent: 
-                                { 
-                                    categories : item.categories,
-                                    description : item.content,
-                                    location : item.location,
-                                    title : item.titletle
-                                },
-                                date: new Date(item.startTime)
-                            }}}
-                        > 
-                            <List.Item.Meta
-                                title={<a>{item.title}</a>}
-                                description={
-                                    <>
-                                        {/* {item.categories && item.categories.length > 0 && 
-                                        <>  
-                                            {item.categories.map((category) => (
-                                            <Tag color={colorList[item.categories.indexOf(category) + seed % colorList.length]}> {category} </Tag>
-                                            ))}
-                                        </>} */}
-                                        {/* <br/> */}
-                                        <span> Date: {new Date(item.startTime).toDateString()}</span><br/>
-                                        <span> Location: {item.location} </span> <br/>
-                                    </>
-                                    }
-                            />
-                        </Link>  
-                    </List.Item>
-                )}
-            />
-        );
     } else {
         return (
             <List
@@ -274,7 +218,7 @@ export default function EventList(props) {
                 },
                 pageSize: 5,
                 }}
-                dataSource={events}
+                dataSource={docs}
                 style={{padding: '12px 24px 24px', backgroundColor: 'white'}}
                 // bordered="true"
                 renderItem={item => (
@@ -284,6 +228,17 @@ export default function EventList(props) {
                         <IconText icon={StarOutlined} text="156" key="list-vertical-star-o" />,
                         <IconText icon={LikeOutlined} text="156" key="list-vertical-like-o" />,
                         ]}
+                        extra={
+                            <Image
+                                width={280}
+                                alt={item.title}
+                                src={item.coverImage}
+                                placeholder={true}
+                                height={200}
+                                style = {{position: "relative"}}
+                                style={{zIndex: 0}}
+                            />
+                        }
                     >   
                         <Link
                             to={{ pathname: "/specificPost", state: {
@@ -310,7 +265,9 @@ export default function EventList(props) {
                                         </>}
                                         <br/>
                                         <br/>
-                                        <span> Location: </span>{item.location} 
+                                        <span> Author: </span>{item.author} 
+                                        <p/>
+                                        <span> Last Updated: </span>{item.createdAt} 
                                     </>
                                     }
                             />

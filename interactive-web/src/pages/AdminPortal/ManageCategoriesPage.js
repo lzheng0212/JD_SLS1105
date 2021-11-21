@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { projectFirestore } from "../firebase/config";
-import CategoryContainer from "../component/postComponents/CategoryContainer";
+import { projectFirestore } from "../../firebase/config";
+import CategoryContainer from "../../component/postComponents/CategoryContainer";
 import { Row, Col } from 'antd';
 
 function ManageCategoriesPage() {
