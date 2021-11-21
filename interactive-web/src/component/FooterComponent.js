@@ -70,7 +70,8 @@ function FooterComponent() {
               url: '/aboutUS'
             },
             {
-              title: 'Contact Us'
+              title: 'Contact Us',
+              url: '/contactUs'
             },
             {
               title:

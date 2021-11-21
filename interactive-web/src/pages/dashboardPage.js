@@ -6,7 +6,7 @@ function dashboardPage() {
         <div className="App">
         <div className="clock">
         <label id = 'welcomeText'>
-            Welcome to the admin portal! The current time is:
+            Welcome to the admin portal!
         </label>
 
           <Clock id = 'clock_position' />

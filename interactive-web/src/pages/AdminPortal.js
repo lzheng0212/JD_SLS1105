@@ -6,6 +6,7 @@ import CreatePostPage from "./CreatePostPage";
 import DeletePostPage from "./DeletePostPage";
 import ManageEventsPage from "./ManageEventsPage";
 import dashboardPage from "./dashboardPage";
+import QuestionReviewPage from "./QuestionReviewPage";
 
 
 
@@ -65,7 +66,7 @@ function AdminPortal() {
                   <Link to="/adminportal/manageeventspage">  Manage Events </Link>
                 </Menu.Item>
                 <Menu.Item key="6" icon={<CommentOutlined />}>
-                  Questions Review
+                  <Link to="/adminportal/questionReviewPage"> Questions Review </Link>
                 </Menu.Item>
                 <Menu.Item key="7" icon={<ExportOutlined />}>
                   <a onClick={signOut}> Logout </a>
@@ -82,6 +83,7 @@ function AdminPortal() {
                 <Route path='/adminportal/manageMap' exact component={CreateMapElement}></Route>
                 <Route path='/adminportal/managecategoriespage' exact component={ManageCategoriesPage}></Route>
                 <Route path='/adminportal/manageeventspage' exact component={ManageEventsPage}></Route>
+                <Route path='/adminportal/questionReviewPage' exact component={QuestionReviewPage}></Route>
                 <Route path='/adminportal/' exact component={dashboardPage}></Route>
               </Content>
             </Layout>

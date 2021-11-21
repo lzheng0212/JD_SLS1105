@@ -38,7 +38,8 @@ export default function ContactUsPage() {
             email: emailField,
             question: questionField
         };
-        projectFirestore.collection("CustomerQuestions").add(data);
+        const docref = projectFirestore.collection("CustomerQuestions").doc(emailField);
+        docref.set(data);
         message.success('Question sent!');
     }
 
