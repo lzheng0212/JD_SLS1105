@@ -22,6 +22,7 @@ import {
 import { Layout, Menu, message } from "antd";
 import NavigationBar from "../component/NavigationBar";
 import CreateEventPage from "./CreateEventPage";
+import CreateMapElement from "./CreateMapElement";
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
@@ -57,6 +58,9 @@ function AdminPortal() {
                 <Menu.Item key="4" icon={<FileAddOutlined />}>
                   <Link to={{ pathname: "/adminportal/create/event", state: { update: false } }}> New Event </Link>
                 </Menu.Item>
+                <Menu.Item key="4" icon={<FileAddOutlined />}>
+                  <Link to={{ pathname: "/adminportal/manageMap", state: { update: false } }}> Manage Map  </Link>
+                </Menu.Item>
                 <Menu.Item key="5" icon={<CalendarOutlined />}>
                   <Link to="/adminportal/manageeventspage">  Manage Events </Link>
                 </Menu.Item>
@@ -75,6 +79,7 @@ function AdminPortal() {
                 <Route path='/adminportal/create' exact component={CreatePostPage}></Route>
                 <Route path='/adminportal/create/event' exact component={CreateEventPage}></Route>
                 <Route path='/adminportal/deletepostpage' exact component={DeletePostPage}></Route>
+                <Route path='/adminportal/manageMap' exact component={CreateMapElement}></Route>
                 <Route path='/adminportal/managecategoriespage' exact component={ManageCategoriesPage}></Route>
                 <Route path='/adminportal/manageeventspage' exact component={ManageEventsPage}></Route>
                 <Route path='/adminportal/' exact component={dashboardPage}></Route>

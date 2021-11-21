@@ -87,7 +87,7 @@ function CreateEventPage() {
       const docData = doc.data();
       if (doc.get(month) === undefined) {
         const events = {events: [data,]};
-        await docRef.set({
+        await docRef.update({
           [month]: events
         });
       } else {

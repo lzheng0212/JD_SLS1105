@@ -1,0 +1,87 @@
+:root {
+    --primary: #0d3821;
+    --error: #ff4a4a;
+  }
+  
+  post-form {
+    margin: 30px auto 10px;
+    padding-top: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 1000px;
+    
+  }
+  post-form label input {
+    height: 0;
+    width: 0;
+    opacity: 0;
+  }
+  post-form label {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--primary);
+    background-color: rgb(144, 185, 108);
+    border-radius: 50%;
+    margin: 10px auto;
+    line-height: 30px;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+  }
+  post-form label:hover {
+    background: var(--primary);
+    color: white;
+    cursor: pointer;
+  }
+  .output {
+    height: 60px;
+    font-size: 0.8rem;
+  }
+  .error {
+    color: var(--error);
+  }
+  .program input[type=text]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    align-self: flex-start;
+    flex-direction: column;
+  }
+
+  .date {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: space-evenly;
+    display: flex;
+  }
+
+  .react-datepicker-wrapper {
+      align-self: flex-start;
+  }
+
+  #coverImage{
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+  
+  #coverImgText {
+    font-family: Marcellus;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.015em;
+  
+    color: #000000;
+  }
