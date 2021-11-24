@@ -58,10 +58,6 @@ const CalendarPage = () => {
         )
     }, [])
 
-    useEffect(() => {
-        console.log(eventsMap)
-    }, [eventsMap])
-
     return (
         <Layout>
             <NavigationBar />
