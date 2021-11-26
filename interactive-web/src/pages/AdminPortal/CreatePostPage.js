@@ -11,8 +11,8 @@ import {
 } from "../../firebase/config";
 import CategoryContainer from "../../component/postComponents/CategoryContainer";
 import { Form, Input, Button, Select, message, Row, Col, Upload } from 'antd';
-
-
+import ImageResize from "quill-image-resize-module--fix-imports-error"
+Quill.register('modules/imageResize', ImageResize);
 
 
 // Resources: https://github.com/zenoamaro/react-quill
@@ -29,7 +29,7 @@ function CreatePostPage() {
   const [availableCategories, setAvailableCategories] = useState([])
 
   const layout = {
-    labelCol: { span: 6},
+    labelCol: { span: 6 },
     wrapperCol: { span: 18 },
   };
 
@@ -141,6 +141,9 @@ function CreatePostPage() {
     let quill = new Quill(".ql-editor", {
       modules: {
         toolbar: toolbarModules.toolbar,
+        imageResize: {
+          modules: ['Resize', 'DisplaySize']
+        }
       },
       placeholder: "Write your text!",
       theme: "snow",
@@ -156,18 +159,18 @@ function CreatePostPage() {
   }, []);
 
   return (
-    <Row style = {{minHeight:"100vh"}} justify="center" align="middle"> 
+    <Row style={{ minHeight: "100vh" }} justify="center" align="middle">
       <Col xs={22} sm={20} md={16} lg={15} xl={15} xxl={15} align="middle">
-        <Form  style = {{minWidth: "100%"}}> 
-          <Form.Item 
+        <Form style={{ minWidth: "100%" }}>
+          <Form.Item
             name="title"
             rules={[
               {
-                  required: true,
-                  message: 'Please input your Title!',
+                required: true,
+                message: 'Please input your Title!',
               },
-              ]}
-            >
+            ]}
+          >
             <Input
               placeholder="Title"
               type="text"
@@ -177,12 +180,12 @@ function CreatePostPage() {
             />
           </Form.Item>
           <Form.Item name="author"
-             rules={[
+            rules={[
               {
-                  required: true,
-                  message: 'Please input the Author!',
+                required: true,
+                message: 'Please input the Author!',
               },
-              ]}
+            ]}
           >
             <Input
               placeholder="Author"
@@ -193,11 +196,11 @@ function CreatePostPage() {
             />
           </Form.Item>
           <Form.Item label="Cover Image" name="coverImage">
-            <input type="file"  onChange={handleChange} style={{float: 'left'}}/>
+            <input type="file" onChange={handleChange} style={{ float: 'left' }} />
           </Form.Item>
           <Form.Item>
             <p>Available Categories</p>
-            <CategoryContainer  id="availableCategories"icon="+" categoryList={availableCategories} callBackFunc={addToCategoryList} background = {true}/>
+            <CategoryContainer id="availableCategories" icon="+" categoryList={availableCategories} callBackFunc={addToCategoryList} background={true} />
             {selectedCategories.length != 0 && (<><p>Selected Categories</p>
               <CategoryContainer icon="x" categoryList={selectedCategories} callBackFunc={removeFromCategoryList} /></>)}
           </Form.Item>
@@ -205,16 +208,16 @@ function CreatePostPage() {
             <div className="ql-editor" id="editor-container"></div>
           </Form.Item>
           <Form.Item labelAlign="right">
-          {update && (
-            <Button type="primary" htmlType="submit" style={{backgroundColor: "#234144", borderColor: "#1a3133"}} onClick={sendPost}>
-              Update
-            </Button>
-          )}
-          {!update && (
-            <Button type="primary" htmlType="submit" style={{backgroundColor: "#234144", borderColor: "#1a3133"}} onClick={sendPost}>
-              Post
-            </Button>
-          )}
+            {update && (
+              <Button type="primary" htmlType="submit" style={{ backgroundColor: "#234144", borderColor: "#1a3133" }} onClick={sendPost}>
+                Update
+              </Button>
+            )}
+            {!update && (
+              <Button type="primary" htmlType="submit" style={{ backgroundColor: "#234144", borderColor: "#1a3133" }} onClick={sendPost}>
+                Post
+              </Button>
+            )}
           </Form.Item>
         </Form>
       </Col>
@@ -223,70 +226,3 @@ function CreatePostPage() {
 }
 
 export default CreatePostPage;
-
-{/* <post-form>
-  <div className = "title-author">
-    <input
-      placeholder="Title"
-      type="text"
-      id="postTitle"
-      name="postTitle"
-      style={{ width: "100%" }}
-      defaultValue={update ? updateData.title : ""}
-    />
-    <br></br>
-    <input
-      placeholder="Author"
-      type="text"
-      id="postAuthor"
-      name="postAuthor"
-      style={{ width: "100%"}}
-      defaultValue={update ? updateData.author : ""}
-    />
-    <div id="coverImage">
-      <div>
-        <text style={{ paddingRight:"10px" }} id="coverImgText">Cover Image:   </text>
-      </div>
-    <div>
-    <label>
-      <input type="file" onChange={handleChange} />
-      <span>+</span>
-    </label>
-    </div>
-    </div>
-  </div>
-  <h3>Available Categories</h3>
-  <CategoryContainer  id="availableCategories"icon="+" categoryList={availableCategories} callBackFunc={addToCategoryList} background = {true}/>
-  {selectedCategories.length != 0 && (<><h3>Selected Categories</h3>
-    <CategoryContainer icon="x" categoryList={selectedCategories} callBackFunc={removeFromCategoryList} /></>)}
-  <div className="output">
-    {error && <div className="error"> {error} </div>}
-    {file && <div> {file.name} </div>}
-    {file && <ProgressBar progress={progress}></ProgressBar>}
-  </div>
-  <div className="ql-editor" id="editor-container"></div>
-  <div >
-    <div style={{ marginTop: "30px", paddingLeft: "850px" }}>
-      {update && (
-        <Button
-          style={{ paddingLeft: "300px" }}
-          buttonStyle="btn--primary"
-          buttonSize="btn--large"
-          onClick={sendPost}
-        >
-          Update
-        </Button>
-      )}
-      {!update && (
-        <Button
-          style={{ paddingLeft: "300px" }}
-          buttonStyle="btn--primary"
-          buttonSize="btn--large"
-          onClick={sendPost}
-        >
-          Post
-        </Button>
-      )}
-    </div>
-  </div>
-</post-form> */}
