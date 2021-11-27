@@ -81,8 +81,9 @@ function CreatePostPage() {
       categories: selectedCategories,
     };
     console.log(data);
-    document.getElementById("postAuthor").value = "";
-    document.getElementById("postTitle").value = "";
+    document.getElementById("postAuthor").value = '';
+    document.getElementById("postTitle").value = '';
+    quill.setContents("")
     setFile(null);
     setFileURL(null);
     if (!update) {
