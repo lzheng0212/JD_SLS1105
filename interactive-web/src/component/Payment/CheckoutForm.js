@@ -1,12 +1,13 @@
-import { useState } from "react";
-import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
-import styled from "@emotion/styled";
-import axios from "axios";
+/* eslint-disable react/prop-types */
+import React, { useState } from 'react'
+import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
+import styled from '@emotion/styled'
+import axios from 'axios'
 
-import Row from "./prebuilt/Row";
-import BillingDetailsFields from "./prebuilt/BillingDetailsFields";
-import SubmitButton from "./prebuilt/SubmitButton";
-import CheckoutError from "./prebuilt/CheckoutError";
+import Row from './prebuilt/Row'
+import BillingDetailsFields from './prebuilt/BillingDetailsFields'
+import SubmitButton from './prebuilt/SubmitButton'
+import CheckoutError from './prebuilt/CheckoutError'
 
 const CardElementContainer = styled.div`
   height: 40px;
@@ -16,25 +17,25 @@ const CardElementContainer = styled.div`
     width: 100%;
     padding: 15px;
   }
-`;
+`
 
 const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
-  const [isProcessing, setProcessingTo] = useState(false);
-  const [checkoutError, setCheckoutError] = useState();
+  const [isProcessing, setProcessingTo] = useState(false)
+  const [checkoutError, setCheckoutError] = useState()
 
-  const stripe = useStripe();
-  const elements = useElements();
+  const stripe = useStripe()
+  const elements = useElements()
 
   // TIP
   // use the cardElements onChange prop to add a handler
   // for setting any errors:
 
   const handleCardDetailsChange = ev => {
-    ev.error ? setCheckoutError(ev.error.message) : setCheckoutError();
-  };
+    ev.error ? setCheckoutError(ev.error.message) : setCheckoutError()
+  }
 
   const handleFormSubmit = async ev => {
-    ev.preventDefault();
+    ev.preventDefault()
 
     const billingDetails = {
       name: ev.target.name.value,
@@ -45,43 +46,43 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
         state: ev.target.state.value,
         postal_code: ev.target.zip.value
       }
-    };
+    }
 
-    setProcessingTo(true);
+    setProcessingTo(true)
 
-    const cardElement = elements.getElement("card");
+    const cardElement = elements.getElement('card')
 
     try {
-      const { data: clientSecret } = await axios.post("http://localhost:4000/payment", {
+      const { data: clientSecret } = await axios.post('http://localhost:4000/payment', {
         amount: price * 100
-      });
+      })
 
       const paymentMethodReq = await stripe.createPaymentMethod({
-        type: "card",
+        type: 'card',
         card: cardElement,
         billing_details: billingDetails
-      });
+      })
 
       if (paymentMethodReq.error) {
-        setCheckoutError(paymentMethodReq.error.message);
-        setProcessingTo(false);
-        return;
+        setCheckoutError(paymentMethodReq.error.message)
+        setProcessingTo(false)
+        return
       }
 
       const { error } = await stripe.confirmCardPayment(clientSecret, {
         payment_method: paymentMethodReq.paymentMethod.id
-      });
+      })
 
       if (error) {
-        setCheckoutError(error.message);
-        setProcessingTo(false);
-        return;
+        setCheckoutError(error.message)
+        setProcessingTo(false)
+        return
       }
-      onSuccessfulCheckout();
+      onSuccessfulCheckout()
     } catch (err) {
-      setCheckoutError(err.message);
+      setCheckoutError(err.message)
     }
-  };
+  }
 
   // Learning
   // A common ask/bug that users run into is:
@@ -97,27 +98,27 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
 
   const iframeStyles = {
     base: {
-      color: "#fff",
-      fontSize: "16px",
-      iconColor: "#fff",
-      "::placeholder": {
-        color: "#87bbfd"
+      color: '#fff',
+      fontSize: '16px',
+      iconColor: '#fff',
+      '::placeholder': {
+        color: '#87bbfd'
       }
     },
     invalid: {
-      iconColor: "#FFC7EE",
-      color: "#FFC7EE"
+      iconColor: '#FFC7EE',
+      color: '#FFC7EE'
     },
     complete: {
-      iconColor: "#cbf4c9"
+      iconColor: '#cbf4c9'
     }
-  };
+  }
 
   const cardElementOpts = {
-    iconStyle: "solid",
+    iconStyle: 'solid',
     style: iframeStyles,
     hidePostalCode: true
-  };
+  }
 
   return (
     <form onSubmit={handleFormSubmit}>
@@ -136,11 +137,11 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
       <Row>
         {/* TIP always disable your submit button while processing payments */}
         <SubmitButton disabled={isProcessing || !stripe}>
-          {isProcessing ? "Processing..." : `Pay $${price}`}
+          {isProcessing ? 'Processing...' : `Pay $${price}`}
         </SubmitButton>
       </Row>
     </form>
-  );
-};
+  )
+}
 
-export default CheckoutForm;
+export default CheckoutForm

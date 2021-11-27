@@ -1,23 +1,23 @@
-import "./App.css";
-import DonationPage from "./pages/DonationPage";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import PostSection from "./pages/postSection";
-import MapPage from "./pages/MapPage";
-import React from "react";
-import aboutUsPage from "./pages/aboutUsPage";
-import FullCalendarPage from "./pages/FullCalendarPage";
-import SpecificPost from "./pages/specifcPost";
-import AdminLoginPage from "./pages/AdminPortal/AdminLoginPage";
-import AdminPortal from "./pages/AdminPortal/AdminPortal";
-import TimelinePage from "./pages/TimelinePage";
-import "antd/dist/antd.css";
-import SpecificEvent from "./pages/SpecificEvent";
-import FAQPage from "./pages/FAQPage";
-import ContactUsPage from "./pages/ContactUsPage";
-import StripeContainer from "./component/Payment/StripeContainer";
+import './App.css'
+import DonationPage from './pages/DonationPage'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import PostSection from './pages/postSection'
+import MapPage from './pages/MapPage'
+import React from 'react'
+import aboutUsPage from './pages/aboutUsPage'
+import FullCalendarPage from './pages/FullCalendarPage'
+import SpecificPost from './pages/specifcPost'
+import AdminLoginPage from './pages/AdminPortal/AdminLoginPage'
+import AdminPortal from './pages/AdminPortal/AdminPortal'
+import TimelinePage from './pages/TimelinePage'
+import 'antd/dist/antd.css'
+import SpecificEvent from './pages/SpecificEvent'
+import FAQPage from './pages/FAQPage'
+import ContactUsPage from './pages/ContactUsPage'
+import StripeContainer from './component/Payment/StripeContainer'
 
-function App() {
+function App () {
   return (
     <Router>
       <Switch>
@@ -38,7 +38,7 @@ function App() {
         <Route path="/contactUs" exact component={ContactUsPage} />
       </Switch>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App

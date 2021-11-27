@@ -1,9 +1,0 @@
-:root{
-    --primary: #0d3821;
-    --error: #ff4a4a;
-  }
-.progress-bar{
-    height: 5px;
-    background: var(--primary);
-    margin-top: 20px;
-  }

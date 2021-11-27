@@ -1,8 +1,9 @@
-import React from "react";
-import './FAQBox.css';
+/* eslint-disable react/prop-types */
+import React from 'react'
+import './FAQBox.css'
 
-function FAQBox(props) {
-    return (
+function FAQBox (props) {
+  return (
         <div className="FAQContainer">
             <div className="FAQQuestionContainer">
                 <p>Q.</p>
@@ -13,7 +14,7 @@ function FAQBox(props) {
                 <span>{props.faqAnswer}</span>
             </div>
         </div >
-    );
+  )
 }
 
-export default FAQBox;
+export default FAQBox

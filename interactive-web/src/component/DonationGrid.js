@@ -1,35 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 
-import { Button } from './Button';
-import './DonationGrid.css';
-import { Link } from "react-router-dom";
-import StripeContainer from './Payment/StripeContainer';
+import { Button } from './Button'
+import './DonationGrid.css'
+import StripeContainer from './Payment/StripeContainer'
 
-function DonationGrid() {
-    const [button, setButton] = useState(true);
-    const [pay, setPay] = useState(false);
-    const [price, setPrice] = useState(0);
-    const showButton = () => {
-        if (window.innerWidth <= 960) {
-            setButton(false);
-        } else {
-            setButton(true);
-        }
-    };
-
-    useEffect(() => {
-        showButton();
-    }, []);
-
-    const donate = (num) => {
-        return (
-            <div className='payment'>
-                
-            {pay && <StripeContainer price = {num} />}
-            </div>
-        )
+function DonationGrid () {
+  const [button, setButton] = useState(true)
+  const [price, setPrice] = useState(0)
+  const showButton = () => {
+    if (window.innerWidth <= 960) {
+      setButton(false)
+    } else {
+      setButton(true)
     }
-    return (
+  }
+
+  useEffect(() => {
+    showButton()
+  }, [])
+
+  return (
         <>
         <div className='Body'>
             <div className="Header1">
@@ -51,7 +41,7 @@ function DonationGrid() {
                 Select a Amount
                 </p>
             </div>
-           
+
             <div className='Donationbutton-wrapper'>
                 <btn2>{button && <Button buttonStyle='btn--circle' buttonSize="btn--huge" onClick={() => setPrice(50)}>
                         $50
@@ -69,19 +59,17 @@ function DonationGrid() {
                         $1000
                 </Button>}</btn2>
 
-                
             </div>
 
             <div className='payment'>
-                
+
             <StripeContainer price = {price} />
             </div>
-            
+
         </div>
-        
-        
+
         </>
-    );
+  )
 }
 
-export default DonationGrid;
+export default DonationGrid

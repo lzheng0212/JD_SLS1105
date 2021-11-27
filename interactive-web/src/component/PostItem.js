@@ -1,16 +1,16 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Card, Avatar } from 'antd';
-import "./PostItem.css";
+/* eslint-disable react/prop-types */
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { Card } from 'antd'
+import './PostItem.css'
 
-function PostItem(props) {
-  const { Meta } = Card;
-  var width = {width: props.width}
+function PostItem (props) {
+  const { Meta } = Card
   return (
-    // <li className="posts__item">
+  // <li className="posts__item">
       <Link
         className="posts__item__link"
-        to={{ pathname: "/specificPost", state: { props } }}
+        to={{ pathname: '/specificPost', state: { props } }}
       >
         <Card
           cover={
@@ -35,10 +35,9 @@ function PostItem(props) {
           </div>
         </Card>
       </Link>
-    // </li>
+  // </li>
 
-
-  );
+  )
 }
 
-export default PostItem;
+export default PostItem

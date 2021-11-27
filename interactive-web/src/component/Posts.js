@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from "react";
-import "./Posts.css";
-import PostItem from "./PostItem";
+import React, { useState, useEffect } from 'react'
+import './Posts.css'
+import PostItem from './PostItem'
 
-import { Button } from "./Button";
-import useFirestore from "../hooks/useFirestore";
+import { Button } from './Button'
+import useFirestore from '../hooks/useFirestore'
 
-function Posts() {
-  const [button, setButton] = useState(true);
+function Posts () {
+  const [button, setButton] = useState(true)
   const showButton = () => {
     if (window.innerWidth <= 960) {
-      setButton(false);
+      setButton(false)
     } else {
-      setButton(true);
+      setButton(true)
     }
-  };
+  }
   useEffect(() => {
-    showButton();
-  }, []);
+    showButton()
+  }, [])
 
-  const { docs } = useFirestore("posts");
+  const { docs } = useFirestore('posts')
 
   return (
     <div className="posts">
@@ -27,6 +27,7 @@ function Posts() {
         {docs &&
           docs.map((doc) => (
             <PostItem
+            key={doc.createdAt}
               src={doc.coverImage}
               title={doc.title}
               author={doc.author}
@@ -48,7 +49,7 @@ function Posts() {
 
       <div className="posts__line"></div>
     </div>
-  );
+  )
 }
 
-export default Posts;
+export default Posts

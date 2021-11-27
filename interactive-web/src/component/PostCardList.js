@@ -1,14 +1,16 @@
-import useFirestore from "../hooks/useFirestore";
-import PostItem from "./PostItem";
-import {Space, Col, Row} from 'antd'
+/* eslint-disable react/prop-types */
+import React from 'react'
+import useFirestore from '../hooks/useFirestore'
+import PostItem from './PostItem'
+import { Col, Row } from 'antd'
 
-export default function PostCardList(props) {
-    const { docs } = useFirestore("posts");
-    return(
+export default function PostCardList (props) {
+  const { docs } = useFirestore('posts')
+  return (
         <Row gutter={[16, 24]} justify='center'>
             {docs &&
                 docs.slice(0, props.length).map((doc) => (
-                <Col id='col' xs={48 / props.length} sm={48 / props.length} md={48 / props.length} lg={48 / props.length} xl={24 / props.length} xxl={24 / props.length}>
+                <Col key={doc} id='col' xs={48 / props.length} sm={48 / props.length} md={48 / props.length} lg={48 / props.length} xl={24 / props.length} xxl={24 / props.length}>
                     <PostItem
                         src={doc.coverImage}
                         title={doc.title}
@@ -19,7 +21,7 @@ export default function PostCardList(props) {
                         path="/specificPost"
                     />
                 </Col>
-            ))}
+                ))}
         </Row>
-    );
+  )
 }

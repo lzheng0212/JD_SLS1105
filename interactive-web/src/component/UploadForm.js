@@ -1,58 +1,51 @@
-import React, { useState, useEffect } from 'react';
-import ProgressBar from '../component/ProgressBar';
-import './UploadForm.css';
-import { projectFirestore, timestamp, projectStorage } from '../firebase/config';
-import { Button } from './Button';
+import React, { useState, useEffect } from 'react'
+import ProgressBar from '../component/ProgressBar'
+import './UploadForm.css'
+import { Button } from './Button'
 
 const UploadForm = () => {
+  const [file, setFile] = useState(null)
+  const [error, setError] = useState(null)
+  const [title, setTitle] = useState('')
+  const [desc, setDesc] = useState('')
+  const [cat, setCat] = useState('')
 
-    const [file, setFile] = useState(null);
-    const [error, setError] = useState(null);
-    const [title, setTitle] = useState("");
-    const [desc, setDesc] = useState("");
-    const [cat, setCat] = useState("");
+  const handleChange = (e) => {
+    const selected = e.target.files[0]
 
+    const types = ['image/png', 'image/jpeg']
 
-    const handleChange = (e) => {
-        let selected = e.target.files[0];
-
-        const types = ['image/png', 'image/jpeg'];
-
-        if (selected && types.includes(selected.type)) {
-            setFile(selected);
-            setError('');
-        } else {
-            setFile(null);
-            setError('Please select an image file of format (png or jpeg)');
-        }
-
+    if (selected && types.includes(selected.type)) {
+      setFile(selected)
+      setError('')
+    } else {
+      setFile(null)
+      setError('Please select an image file of format (png or jpeg)')
     }
-    const handleSubmit = (e) => {
-        e.preventDefault();
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault()
 
-        setTitle("");
-        setDesc("");
-        setCat("");
-        setFile(null);
-    };
+    setTitle('')
+    setDesc('')
+    setCat('')
+    setFile(null)
+  }
 
-    const [button, setButton] = useState(true);
-    const showButton = () => {
-        if (window.innerWidth <= 960) {
-            setButton(false);
-        } else {
-            setButton(true);
-        }
-    };
+  const [button, setButton] = useState(true)
+  const showButton = () => {
+    if (window.innerWidth <= 960) {
+      setButton(false)
+    } else {
+      setButton(true)
+    }
+  }
 
-    useEffect(() => {
-        showButton();
-    }, []);
+  useEffect(() => {
+    showButton()
+  }, [])
 
-
-
-
-    return (
+  return (
         <form>
 
             <h3 style={{ marginTop: '5px' }}>Title</h3>
@@ -87,9 +80,8 @@ const UploadForm = () => {
             </div>
             {button && <Button onClick={handleSubmit} buttonStyle='btn--primary' buttonSize="btn--large">Submit</Button>}
 
-
         </form>
-    )
+  )
 }
 
-export default UploadForm;
+export default UploadForm

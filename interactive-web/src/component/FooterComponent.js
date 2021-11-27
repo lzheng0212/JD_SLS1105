@@ -1,21 +1,19 @@
-import Footer from 'rc-footer';
-import 'rc-footer/assets/index.css';
-import "antd/dist/antd.css";
-import './Footer.css';
-import { projectAuth } from '../firebase/config';
+import React from 'react'
+import Footer from 'rc-footer'
+import 'rc-footer/assets/index.css'
+import 'antd/dist/antd.css'
+import './Footer.css'
+import { projectAuth } from '../firebase/config'
 import { TwitterOutlined, MobileOutlined, LinkedinOutlined, EnvironmentOutlined, FacebookOutlined } from '@ant-design/icons'
 
-function FooterComponent() {
-
-
+function FooterComponent () {
   const checkStatus = () => {
     if (projectAuth.currentUser) {
-      window.location.assign('/adminPortal') //need to revise  if user loged in
+      window.location.assign('/adminPortal') // need to revise  if user loged in
     } else {
-      window.location.assign('/adminLogin') //need to revise   if not
+      window.location.assign('/adminLogin') // need to revise   if not
     }
   }
-
 
   return (
     <Footer
@@ -27,7 +25,7 @@ function FooterComponent() {
           items: [
             {
               title: 'Home',
-              url: '/home',
+              url: '/home'
             },
             {
               title: 'Map',
@@ -40,7 +38,7 @@ function FooterComponent() {
             {
               title: 'Donate',
               url: '/donate'
-            },
+            }
           ]
         },
         {
@@ -75,7 +73,7 @@ function FooterComponent() {
             },
             {
               title:
-                <a onClick={checkStatus}>Admin</a>,
+                <a onClick={checkStatus}>Admin</a>
             }
           ]
         },
@@ -100,7 +98,7 @@ function FooterComponent() {
                 <LinkedinOutlined style={{ marginLeft: '12px' }} />
               </div>
 
-            },
+            }
 
           ]
         }
@@ -108,7 +106,7 @@ function FooterComponent() {
       bottom="Made with ❤️ by Team 1105"
       style={{ textAlign: 'inherit', fontSize: '16px', overflow: 'auto' }}
     />
-  );
+  )
 }
 
-export default FooterComponent;
+export default FooterComponent

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import Clock from '../component/Clock';
-import './dashboardPage.css';
-function dashboardPage() {
-    return (
+import React from 'react'
+import Clock from '../component/Clock'
+import './dashboardPage.css'
+function dashboardPage () {
+  return (
         <div className="App">
         <div className="clock">
         <label id = 'welcomeText'>
@@ -12,7 +12,6 @@ function dashboardPage() {
           <Clock id = 'clock_position' />
         </div>
       </div>
-    );
+  )
 }
-export default dashboardPage;
-  
+export default dashboardPage
