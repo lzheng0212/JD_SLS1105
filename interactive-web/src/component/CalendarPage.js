@@ -81,7 +81,8 @@ const CalendarPage = () => {
                     <div>
                         {/* this looks to see if there are any events for the selected month */}
                         {eventsMap.size !== 0 && eventsMap.has(date.getFullYear().toString()) && eventsMap.get(date.getFullYear().toString()).map((month) => {
-                            if (Number(month.month) === date.getMonth() + 1) {
+                            // month number representation: 0 - 11.
+                            if (Number(month.month) - 1 === date.getMonth()) {
                                 eventsArray.push(<CreateCalendarEvent date={month} year={date.getFullYear().toString()} />)
                             }
                         })}
