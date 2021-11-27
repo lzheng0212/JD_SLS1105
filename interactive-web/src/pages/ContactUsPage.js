@@ -6,8 +6,9 @@ import { Content } from 'antd/lib/layout/layout';
 import './ContactUsPage.css';
 import emailPhoto from '../assets/emailPhoto.png';
 import { Button } from "../component/Button";
-import { projectFirestore } from "../firebase/config";
+import { projectFirestore, timestamp } from "../firebase/config";
 import { message } from 'antd';
+
 
 export default function ContactUsPage() {
 
@@ -36,7 +37,8 @@ export default function ContactUsPage() {
         var data = {
             name: nameField,
             email: emailField,
-            question: questionField
+            question: questionField,
+            createdAt: timestamp()
         };
         const docref = projectFirestore.collection("CustomerQuestions").doc(emailField);
         docref.set(data);

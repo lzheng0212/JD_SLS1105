@@ -29,7 +29,7 @@
     color: #000000;
     
 }
-.button-wrapper {
+.Donationbutton-wrapper {
     display: flex;
     flex-direction: row;
     flex: 1;
@@ -52,7 +52,9 @@ btn2 {
 }
 
 .payment {
-    display: flex;
+    display: block;
+    width: 50%;
     padding: 150px;
+
 }
 

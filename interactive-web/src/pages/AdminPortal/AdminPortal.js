@@ -61,22 +61,23 @@ function AdminPortal() {
                 <Menu.Item key="4" icon={<FileAddOutlined />}>
                   <Link to={{ pathname: "/adminportal/create/event", state: { update: false } }}> New Event </Link>
                 </Menu.Item>
-                <Menu.Item key="5" icon={<FileAddOutlined />}>
-                  <Link to={{ pathname: "/adminportal/manageMap", state: { update: false } }}> Manage Map  </Link>
-                </Menu.Item>
-                <Menu.Item key="6" icon={<CalendarOutlined />}>
+                
+                <Menu.Item key="5" icon={<CalendarOutlined />}>
                   <Link to="/adminportal/manageeventspage">  Manage Events </Link>
+                </Menu.Item>
+                <Menu.Item key="6" icon={<FileAddOutlined />}>
+                  <Link to={{ pathname: "/adminportal/manageMap", state: { update: false } }}> Manage Map  </Link>
                 </Menu.Item>
                 <Menu.Item key="7" icon={<CommentOutlined />}>
                   <Link to="/adminportal/questionReviewPage"> Questions Review </Link>
                 </Menu.Item>
-                <Menu.Item key="8" icon={<CalendarOutlined />}>
+                {/* <Menu.Item key="8" icon={<CalendarOutlined />}>
                 <Link to="/adminportal/addtimelineeventpage">  New Timeline event </Link>
-                </Menu.Item>
-                <Menu.Item key="9" icon={<CalendarOutlined />}>
+                </Menu.Item> */}
+                <Menu.Item key="8" icon={<CalendarOutlined />}>
                 <Link to="/adminportal/managetimeline">  Manage Timeline </Link>
                 </Menu.Item>
-                <Menu.Item key="10" icon={<ExportOutlined />}>
+                <Menu.Item key="9" icon={<ExportOutlined />}>
                   <a onClick={signOut}> Logout </a>
                 </Menu.Item>
               </Menu>

@@ -15,6 +15,7 @@ import "antd/dist/antd.css";
 import SpecificEvent from "./pages/SpecificEvent";
 import FAQPage from "./pages/FAQPage";
 import ContactUsPage from "./pages/ContactUsPage";
+import StripeContainer from "./component/Payment/StripeContainer";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/home" exact component={Home} />
         <Route path="/post" exact component={PostSection} />
         <Route path="/donate" exact component={DonationPage} />
+        <Route path="/donatePayment" exact component={StripeContainer} />
         <Route path="/aboutUs" exact component={aboutUsPage} />
         <Route path="/FAQPage" exact component={FAQPage} />
         <Route path="/adminLogin" exact component={AdminLoginPage} />

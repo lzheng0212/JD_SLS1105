@@ -4,6 +4,7 @@ import { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { Button } from "../../component/Button";
 import { useLocation } from "react-router";
+import { Form, Input, Select, message, Row, Col, Upload } from 'antd';
 
 import { reactQuillToolbarModules as toolbarModules } from "../../component/ReactQuillModules"
 import {
@@ -27,6 +28,12 @@ function AddTimelineEventPage() {
   
   const id = update ? updateData.id : null;
 
+  const successEvent = () => {
+    message.success('Create Successfully!');
+  };
+  const successUpdate = () => {
+    message.success('Update Successfully!');
+  };
 
   const sendTimeline = async (e) => {
     const timelineTitle = document.getElementById("timelineTitle").value;
@@ -43,8 +50,15 @@ function AddTimelineEventPage() {
     quill.setText(" ")
     quill.placeholder = "Write your text!"
     
-    projectFirestore.collection("timeline").add(data);
+    
     setStartDate(new Date())
+    if (update) {
+      projectFirestore.collection("timeline").doc(id).update(data);
+      successUpdate();
+    } else {
+      projectFirestore.collection("timeline").add(data);
+      successEvent();
+    }
    
   };
 

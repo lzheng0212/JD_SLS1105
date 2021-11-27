@@ -6,7 +6,7 @@ import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
 import "./PostList.css";
 import { format } from "date-fns";
 
-export default function EventList(props) {
+export default function TimelineList(props) {
 
     const [items, setItems] = React.useState([]);
 
@@ -55,7 +55,6 @@ export default function EventList(props) {
             <List
                 itemLayout="vertical"
                 size="large"
-                // header= {createTimeline()}
                 pagination={{
                 onChange: page => {
                     console.log(page);
@@ -124,15 +123,6 @@ export default function EventList(props) {
                             <span> {`${item.content.substring(0, 230)}...`}</span>
                             </p>
                             
-                            {/* {item.categories && item.categories.length > 0 && 
-                            <>  
-                                <p/>
-                                <span > Categories: </span>
-                                {item.categories.map((category) => (
-                                <Tag color={colorList[item.categories.indexOf(category) + seed % colorList.length]}> {category} </Tag>
-                                ))}
-                            </>} */}
-                            {/* <p/> */}
                         </>
                         }
                     />

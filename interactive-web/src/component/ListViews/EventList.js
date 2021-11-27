@@ -160,6 +160,9 @@ export default function EventList(props) {
                         description={
                         <>
                             <span> Location: </span>{item.location} 
+                            <p>
+                                <span>Date: {new Date(item.startTime).toDateString()} </span>
+                            </p>
                             {item.categories && item.categories.length > 0 && 
                             <>  
                                 <p/>

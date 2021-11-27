@@ -7,7 +7,7 @@ export default function QuestionReviewList() {
     const [events, setEvents] = React.useState([]);
 
     useEffect(() => {
-        projectFirestore.collection("CustomerQuestions").onSnapshot((snap) => {
+        projectFirestore.collection("CustomerQuestions").orderBy("createdAt", "desc").onSnapshot((snap) => {
             let documents = [];
             snap.forEach((doc) => {
                 documents.push(doc.data())

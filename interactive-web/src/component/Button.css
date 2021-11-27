@@ -51,10 +51,11 @@
 }
 
 .btn--donate {
-  width: 275px;
-  height: 191px;
+  width: 170px;
+  height: 140px;
   color: #242424;
-
+  align-items: center;
+  justify-content: center;
   opacity: 0.8;
   background-color: rgba(157, 176, 148, 0.73);
   border-radius: 20px;
