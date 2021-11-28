@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react'
-import { projectFirestore } from '../firebase/config'
+import { useEffect, useState } from 'react'
+
+import { projectFirestore } from './config'
 
 const useFirestore = (collection, filterValue = 0, keyword = '') => {
   console.log('parameter', filterValue, keyword)

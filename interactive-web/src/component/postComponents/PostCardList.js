@@ -3,7 +3,7 @@ import { Col, Row } from 'antd'
 import PostItem from './PostItem'
 /* eslint-disable react/prop-types */
 import React from 'react'
-import useFirestore from '../../hooks/useFirestore'
+import useFirestore from '../../firebase/useFirestore'
 
 export default function PostCardList (props) {
   const { docs } = useFirestore('posts')
