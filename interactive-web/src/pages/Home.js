@@ -6,7 +6,7 @@ import { BlockOutlined } from '@ant-design/icons'
 import { Content } from 'antd/lib/layout/layout'
 import EventList from '../component/ListViews/EventList'
 import FooterComponent from '../component/FooterComponent'
-import InteractiveMap from '../component/InteractiveMap'
+import MapList from '../component/ListViews/MapList'
 import NavigationBar from '../component/NavigationBar'
 import PostCardList from '../component/postComponents/PostCardList'
 import React from 'react'
@@ -78,7 +78,7 @@ function Home () {
                                         </div>
                                     </Title>
                                 </div>
-                                <InteractiveMap/>
+                                <MapList atHome={'True'} length={4}/>
                             </div>
 
                         </Col>

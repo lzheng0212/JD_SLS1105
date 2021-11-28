@@ -29,7 +29,7 @@ const useFirestore = (collection, filterValue = 0, keyword = '') => {
     } else if (filterValue === 2 && keyword.length !== 0) {
       const unsub2 = projectFirestore
         .collection(collection)
-        .where('authorToUpper', '>=', keyword.toUpperCase()).where('authorToUpper', '<=', keyword.toUpperCase() + '\uf8ff')
+        .where('authorToUpper', 'array-contains', keyword.toUpperCase())
         .orderBy('authorToUpper', 'desc')
         .limit(6)
         .onSnapshot((snap) => {
