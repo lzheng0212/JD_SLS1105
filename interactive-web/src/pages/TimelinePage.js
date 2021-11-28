@@ -1,13 +1,13 @@
-import React, { } from 'react'
-import FooterComponent from '../component/FooterComponent'
-import '../component/Posts.css'
-import Carousel from '../component/Carousel'
+import '../component/postComponents/Posts.css'
+import './TimelinePage.css'
+
+import Carousel from '../component/TimelineComponents/Carousel'
 import { Content } from 'antd/lib/layout/layout'
+import FooterComponent from '../component/FooterComponent'
 import { Layout } from 'antd'
 import NavigationBar from '../component/NavigationBar'
-import './TimelinePage.css'
+import React, { } from 'react'
 import { format } from 'date-fns'
-
 import {
   projectFirestore
 } from '../firebase/config'

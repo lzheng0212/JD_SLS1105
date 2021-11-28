@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react'
-
-import { Button } from './Button'
 import './CalendarPage.css'
-import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
+
+import { Month, SingleEvent } from './CalendarObjects'
+import React, { useEffect, useState } from 'react'
+
+import { Button } from '../Button'
+import Calendar from 'react-calendar'
 import { Content } from 'antd/lib/layout/layout'
-import { Layout } from 'antd'
-import NavigationBar from './NavigationBar'
-import FooterComponent from './FooterComponent'
 import CreateCalendarEvent from './CreateCalendarEventContainer'
-import { projectFirestore } from '../firebase/config'
-import { Month, SingleEvent } from '../objects/CalendarObjects'
+import FooterComponent from '../FooterComponent'
+import { Layout } from 'antd'
+import NavigationBar from '../NavigationBar'
+import { projectFirestore } from '../../firebase/config'
 
 const CalendarPage = () => {
   const [date, setDate] = useState(new Date())

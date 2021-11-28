@@ -1,7 +1,8 @@
-import React from 'react'
-import '../../component/Posts.css'
-import { Row, Col } from 'antd'
+import '../../component/postComponents/Posts.css'
 
+import { Col, Row } from 'antd'
+
+import React from 'react'
 import TimelineList from '../../component/ListViews/TimelineList'
 
 // Resources: https://github.com/zenoamaro/react-quill

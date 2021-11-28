@@ -1,13 +1,15 @@
 import './Home.css'
-import React from 'react'
-import FooterComponent from '../component/FooterComponent'
-import { Content } from 'antd/lib/layout/layout'
-import { Layout, Row, Col, Typography } from 'antd'
-import NavigationBar from '../component/NavigationBar'
-import PostCardList from '../component/PostCardList'
+
+import { Col, Layout, Row, Typography } from 'antd'
+
 import { BlockOutlined } from '@ant-design/icons'
+import { Content } from 'antd/lib/layout/layout'
 import EventList from '../component/ListViews/EventList'
+import FooterComponent from '../component/FooterComponent'
 import InteractiveMap from '../component/InteractiveMap'
+import NavigationBar from '../component/NavigationBar'
+import PostCardList from '../component/postComponents/PostCardList'
+import React from 'react'
 
 function Home () {
   const { Title } = Typography

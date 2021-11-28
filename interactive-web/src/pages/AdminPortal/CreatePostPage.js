@@ -26,6 +26,9 @@ function CreatePostPage () {
   const [quill, setQuill] = useState(null)
   const [selectedCategories, setCategory] = useState([])
   const [availableCategories, setAvailableCategories] = useState([])
+  const [file, setFile] = useState(null)
+  const [error, setError] = useState(null)
+  const [progress, setProgress] = useState(0)
 
   const successPost = () => {
     message.success('Post Successfully!')
@@ -54,8 +57,8 @@ function CreatePostPage () {
     const authorName = document.getElementById('postAuthor').value
     const upperCaseAuthorName = authorName.toUpperCase().split(' ')
     const postTitleUpperCase = postTitle.toUpperCase().split(' ')
-    console.log(upperCaseAuthorName)
-    console.log(fileURL)
+    // console.log(upperCaseAuthorName)
+    // console.log(fileURL)
     if (update && fileURL === null) {
       setFileURL(updateData.src)
     }
@@ -84,10 +87,6 @@ function CreatePostPage () {
       successUpdate()
     }
   }
-
-  const [file, setFile] = useState(null)
-  const [error, setError] = useState(null)
-  const [progress, setProgress] = useState(0)
 
   const handleChange = async (e) => {
     const selected = e.target.files[0]

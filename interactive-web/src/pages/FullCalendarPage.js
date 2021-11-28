@@ -1,5 +1,6 @@
 import '../App.css'
-import CalendarPage from '../component/CalendarPage'
+
+import CalendarPage from '../component/CalendarComponents/CalendarPage'
 import React from 'react'
 
 function FullCalendarPage () {

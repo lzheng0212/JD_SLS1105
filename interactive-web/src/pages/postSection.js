@@ -1,12 +1,13 @@
-import React from 'react'
-import { Col, Row, Layout } from 'antd'
 import './postStyle.css'
-import FooterComponent from '../component/FooterComponent'
-import '../component/Posts.css'
-import { Content } from 'antd/lib/layout/layout'
+import '../component/postComponents/Posts.css'
 
+import { Col, Layout, Row } from 'antd'
+
+import { Content } from 'antd/lib/layout/layout'
+import FooterComponent from '../component/FooterComponent'
 import NavigationBar from '../component/NavigationBar'
 import PostList from '../component/ListViews/PostList'
+import React from 'react'
 
 export default function PostSection () {
   return (

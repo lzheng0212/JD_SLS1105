@@ -1,8 +1,9 @@
-import React from 'react'
-import '../../component/Posts.css'
-import { Row, Col } from 'antd'
+import '../../component/postComponents/Posts.css'
+
+import { Col, Row } from 'antd'
 
 import QuestionReviewList from '../../component/ListViews/QuestionReviewList'
+import React from 'react'
 
 // Resources: https://github.com/zenoamaro/react-quill
 // License is also in the link above for react-quill
