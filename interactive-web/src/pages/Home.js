@@ -7,7 +7,7 @@ import NavigationBar from '../component/NavigationBar'
 import PostCardList from '../component/PostCardList'
 import { BlockOutlined } from '@ant-design/icons'
 import EventList from '../component/ListViews/EventList'
-import InteractiveMap from '../component/InteractiveMap'
+import MapList from '../component/ListViews/MapList'
 
 function Home () {
   const { Title } = Typography
@@ -76,7 +76,7 @@ function Home () {
                                         </div>
                                     </Title>
                                 </div>
-                                <InteractiveMap/>
+                                <MapList atHome={'True'} length={4}/>
                             </div>
 
                         </Col>
