@@ -79,7 +79,7 @@ function AdminPortal () {
               </Menu>
             </Sider>
 
-            <Layout style={{ padding: '24px 24px 24px' }}>
+            <Layout>
               <Content style={{ backgroundColor: 'white' }}>
                 <Route path='/adminportal/dashboard' exact component={dashboardPage}></Route>
                 <Route path='/adminportal/create' exact component={CreatePostPage}></Route>
