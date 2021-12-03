@@ -1,6 +1,7 @@
 import './PostList.css'
 
 import { Button, Col, Image, Input, List, Popconfirm, Radio, Row, Space, Tag, message } from 'antd'
+
 import { Link } from 'react-router-dom'
 /* eslint-disable react/prop-types */
 /* eslint-disable prefer-const */
@@ -50,6 +51,7 @@ export default function PostList (props) {
 
   ({ docs } = useFirestore('posts', filterValue, keyword))
 
+  console.log(docs)
   const colorList = ['magenta', 'red', 'volcano', 'orange', 'gold', 'lime', 'green', 'cyan', 'blue', 'geekblue', 'purple']
   const seed = Math.floor(Math.random() * 10)
 
@@ -148,7 +150,7 @@ export default function PostList (props) {
                                 ))}
                             </>}
                             <p/>
-                            <span> Last Updated: </span>{item.createdAt}
+                            {/* <span> Last Updated: </span>{item.createdAt} */}
                         </>
                         }
                     />
@@ -264,7 +266,7 @@ export default function PostList (props) {
                                         <br/>
                                         <span> Author: </span>{item.author}
                                         <p/>
-                                        <span> Last Updated: </span>{item.createdAt}
+                                        {/* <span> Last Updated: </span>{item.createdAt} */}
                                     </>
                                     }
                             />
