@@ -66,7 +66,7 @@ Our product is an informative and interactive website that provides a way for fa
 All sections can be **_expanded_** to **read more**!
 ## 🌟  Post <a id="post"></a>
 <details>
-  <summary>The Post tab enables our client to post any informational & educational materials, blogs or news to the website. The users can click on any post to view the full text. _(click to read more)_</summary>
+  <summary>The Post tab enables our client to post any informational & educational materials, blogs or news to the website. The users can click on any post to view the full text. (click to read more)</summary>
   
   <img src="https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/post.png?raw=true">
 </details>
@@ -76,7 +76,7 @@ All sections can be **_expanded_** to **read more**!
 ## 🌟  Event <a id="event"></a>
 <details>
   <summary>
-The Event page consists of a calendar that will display the events in the selected month. Users can use the buttons to navigate through months or use the month picker on the right to pick a month. _(click to read more)_
+The Event page consists of a calendar that will display the events in the selected month. Users can use the buttons to navigate through months or use the month picker on the right to pick a month. (click to read more)
   </summary>
   
   <img src="https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/calendar.png?raw=true">
@@ -93,7 +93,7 @@ When clicking on a specific event, the event details will be shown.
 
 ## 🌟  Timeline <a id="timeline"></a>
 <details>
-  <summary>The timeline will display the important events in descending time order. The important events can be of the organizations, or milestone in local agriculture, and etc... _(click to read more)_</summary>
+  <summary>The timeline will display the important events in descending time order. The important events can be of the organizations, or milestone in local agriculture, and etc... (click to read more)</summary>
   
 <img src="https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/timeline.png?raw=true">
 
@@ -106,7 +106,7 @@ The timeline events are displayed in a carousel style. By designing it not in a 
 
 ## 🌟  Map <a id="map"></a>
 <details>
-<summary>The map page displays the organization's influence or footprint at the location pined. By hovering over the pin, you will see some details about the location. _(click to read more)_</summary>
+<summary>The map page displays the organization's influence or footprint at the location pined. By hovering over the pin, you will see some details about the location. (click to read more)</summary>
 
 <img src="https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/map.png?raw=true">
 
@@ -117,7 +117,8 @@ The timeline events are displayed in a carousel style. By designing it not in a 
 ## 🌟  Donation <a id="donation"></a>
 
 <details>
-<summary>The website is for a non-profit organization, donations will greatly help the organization with expense and planning of events. _(click to read more)_</summary>
+<summary>The website is for a non-profit organization, donations will greatly help the organization with expense and planning of events. 
+  (click to read more)</summary>
 
 <img src="https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/donation.png?raw=true">
   
@@ -130,7 +131,7 @@ The timeline events are displayed in a carousel style. By designing it not in a 
 
 ## 🌟  FAQ <a id="faq"></a>
 <details>
-<summary> The FAQ section provides the users with common questions from people and answers from the organization. Users can also contact the organization through the form on the website to ask questions. _(click to read more)_</summary>
+<summary> The FAQ section provides the users with common questions from people and answers from the organization. Users can also contact the organization through the form on the website to ask questions. (click to read more)</summary>
 
 <img src="https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/faq.png?raw=true">
   
@@ -146,7 +147,7 @@ The timeline events are displayed in a carousel style. By designing it not in a 
 ## 🌟  Admin Portal <a id="admin"></a>
 
 <details>
-<summary> The admin portal is only for admin of the website. Through the portal, they can create/edit/delete posts, calendar events, timeline and map; as well as browsing quetsions from users, and post FAQ to the website. _(click to read more)_</summary>
+<summary> The admin portal is only for admin of the website. Through the portal, they can create/edit/delete posts, calendar events, timeline and map; as well as browsing quetsions from users, and post FAQ to the website. (click to read more)</summary>
   
 <img src="https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/EditPost.gif?raw=true">
   
