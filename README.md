@@ -35,15 +35,26 @@ Lidan Zheng
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 # 🧐 Project philosophy <a id="projectPhilosophy"></a>
 
-> The Well app is a mental health and mindfulness app built on top of the science of positive psychology. The Well app is more than just another meditation or journaling app; it encourages you to enhance and reflect on your day with structured, guided activities.
-> 
-> There are 5 daily tasks that the Well app asks you to complete each day: record 3 gratitudes, write a journal entry, perform 3 acts of kindness, exercise for 20 minutes, and meditate for 15 minutes.
-**Read more about the Well app on [the project homepage](https://projects.colegaw.in/well-app?utm_source=GitHub&utm_medium=readme&utm_campaign=well_app_readme).**
+We see the importance of being able to concentrate valuable information into a single area. By building a platform that allows the sharing of keystone information in upholding land fertility for future generations provided by The Institute of Education and Regenerative Communities to farmers; we can create a focal point of valuable information from our client to the farmers. 
+
+Alternatives to our solution could be a potential option, however, creating this project with the sole intention of providing educational programs to farmers, we are able to meet every need of our client that they desire. Using an open-source project could meet some aspects that our client needs but aren’t able to fully captivate their ideas. This is where we come in and build a website to fully materialize their ideas. By working with the client directly and understanding their vision, it allows us to satisfy their goals and adjust to any requirement they may have. 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 # 📒 Overview <a id="overview"></a>
 
-This project repository has [a great wiki](https://github.com/chroline/well_app/wiki) (currently WIP) that you should consider reading! It goes into detail about the project from a more technical aspect. If you are interested in learning more about the app itself, go ahead and check it out!
+### The Problem
+To introduce, educate small farmers, people who are interested in agriculture in regenerative landuse and connect farmers and organization in a convenient and efficient way.
+
+
+### The Solution
+An interactive website platform that supports and provides educational information about regenerative land-use program for intergenerational users.
+
+
+### Target Users
+Student participants, schools, farmers, landowners, land seekers, and funders.
+
+## Our Product
+Our product is an informative and interactive website that provides a way for farmers and people with interest about agricultural regenerative landuse. It is a non-profit, focusing on intergeneration interactive education for proper landuse.
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 
@@ -78,15 +89,14 @@ This project repository has [a great wiki](https://github.com/chroline/well_app/
 
 # 👨‍💻 Technical Wiki <a id="wiki"></a>
 
-Here's a brief high-level overview of the tech stack the Well app uses:
+Hey, glad to see you here! You must be interested in our technical stack. 
 
-- This project uses the [Flutter app development framework](https://flutter.dev/). Flutter is a cross-platform hybrid app development platform which allows us to use a single codebase for apps on mobile, desktop, and the web.
-- For persistent storage (database), the app uses the [Hive](https://hivedb.dev/) package which allows the app to create a custom storage schema and save it to a local database.
-- To send local push notifications, the app uses the [flutter_local_notifications](https://pub.dev/packages/flutter_local_notifications) package which supports Android, iOS, and macOS.
-  - 🚨 Currently, notifications aren't working on macOS. This is a known issue that we are working to resolve!
-- The app uses the font ["Work Sans"](https://fonts.google.com/specimen/Work+Sans) as its main font, and the design of the app adheres to the material design guidelines.
+Here's a brief high-level overview of the tech stack the website uses:
 
-For more information on the technologies that power the Well app, check out the [Tech Stack](https://github.com/chroline/well_app/wiki/Tech-Stack) page on our wiki.
+- This project uses the [React](https://reactjs.org/) for constructing user interface. React is a user interface library coded with JavaScript. It is a tool to build components of the website for displaying.
+- For persistent storage (database), the website uses the [Firebase](https://firebase.google.com/) which allows for user authentication and data transaction.
+
+For more information on the technologies that power this website, check out the [Wiki](https://github.com/lzheng0212/JD_SLS1105/wiki/Technical-Wiki) from this project.
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 
