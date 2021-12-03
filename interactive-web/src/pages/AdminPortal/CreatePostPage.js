@@ -1,18 +1,20 @@
-/* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from 'react'
 import './CreatePostPage.css'
-import { Quill } from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
-import { reactQuillToolbarModules as toolbarModules } from '../../component/ReactQuillModules'
-import { useLocation } from 'react-router'
+
+import { Button, Col, Form, Input, Row, message } from 'antd'
+/* eslint-disable no-unused-vars */
+import React, { useEffect, useState } from 'react'
 import {
-  projectStorage,
   projectFirestore,
+  projectStorage,
   timestamp
 } from '../../firebase/config'
+
 import CategoryContainer from '../../component/postComponents/CategoryContainer'
-import { Form, Input, Button, message, Row, Col } from 'antd'
 import ImageResize from 'quill-image-resize-module--fix-imports-error'
+import { Quill } from 'react-quill'
+import { reactQuillToolbarModules as toolbarModules } from '../../component/ReactQuillModules'
+import { useLocation } from 'react-router'
 Quill.register('modules/imageResize', ImageResize)
 
 // Resources: https://github.com/zenoamaro/react-quill
