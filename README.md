@@ -15,7 +15,7 @@ Lidan Zheng
 
 
 <!-- TABLE OF CONTENTS -->
-<h2 id="table-of-contents"> :book: Table of Contents</h2>
+<h2 id="table-of-contents"> 📖 Table of Contents</h2>
 
 <details open="open">
   <summary>Table of Contents</summary>
@@ -32,6 +32,7 @@ Lidan Zheng
         <li><a href="#faq"> ➤ Feature 6: FAQ </a></li>
         <li><a href="#admin"> ➤ Feature 7: Admin Portal </a></li>
          </ol>
+    </li>
     <li><a href="#wiki"> ➤ Technical Wiki</a></li>
   </ol>
 </details>
