@@ -82,7 +82,7 @@ The Event page consists of a calendar that will display the events in the select
   <img src="https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/calendar.png?raw=true">
 
   
-  <h2> Click on event </h2>
+  <h3> Click on event </h3>
 
 When clicking on a specific event, the event details will be shown.
 
@@ -98,7 +98,7 @@ When clicking on a specific event, the event details will be shown.
   
 <img src="https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/timeline.png?raw=true">
 
-  <h2> Design </h2>
+  <h3> Design </h3>
 The timeline events are displayed in a carousel style. By designing it not in a traditional timeline style, the users can view through all the timeline events in the order of time to learn more about the development of the organization.
   
 </details> 
@@ -123,7 +123,7 @@ The timeline events are displayed in a carousel style. By designing it not in a 
 
 <img src="https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/donation.png?raw=true">
   
-  <h2> Payment </h2>
+  <h3> Payment </h3>
   We are using Stripe to facilitate payments, and to ensure security. 
 
 </details> 
@@ -136,7 +136,7 @@ The timeline events are displayed in a carousel style. By designing it not in a 
 
 <img src="https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/faq.png?raw=true">
   
-  <h2> Contact Us </h2>
+  <h3> Contact Us </h3>
   The page contains the form to send to the organization.
   
 <img src="https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/contactus.png?raw=true">
