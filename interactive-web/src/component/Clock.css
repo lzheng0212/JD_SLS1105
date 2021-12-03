@@ -1,12 +1,20 @@
 .Time {
-    height: 1000px;
+    height: 800px;
     width: 800px;
     margin: auto;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Myriad Pro Regular';
+    font-family: cursive;
     color: white;
     font-size: 80px;
     }
+
+#timep {
+    font-family: cursive;
+    font-size: 100px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}

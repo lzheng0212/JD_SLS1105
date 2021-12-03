@@ -10,16 +10,17 @@
     justify-content: center;
 }
 #welcomeText {
-    font-family: Marcellus;
+    font-family: cursive;
     font-style: normal;
     font-weight: normal;
-    font-size: 70px;
+    font-size: 90px;
     line-height: 70px;
     display: flex;
     align-items: center;
     text-align: center;
     letter-spacing: -0.015em;
-    padding-top: 0px;
+    padding-top: 30px;
+    padding-left: 350px;
   
     color: #cddae9;
   }

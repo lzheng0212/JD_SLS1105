@@ -1,8 +1,6 @@
 import './PostList.css'
 
 import { Button, Col, Image, Input, List, Popconfirm, Radio, Row, Space, Tag, message } from 'antd'
-import { LikeOutlined, StarOutlined } from '@ant-design/icons'
-
 import { Link } from 'react-router-dom'
 /* eslint-disable react/prop-types */
 /* eslint-disable prefer-const */
@@ -51,13 +49,6 @@ export default function PostList (props) {
   );
 
   ({ docs } = useFirestore('posts', filterValue, keyword))
-
-  const IconText = ({ icon, text }) => (
-        <Space>
-            {React.createElement(icon)}
-            {text}
-        </Space>
-  )
 
   const colorList = ['magenta', 'red', 'volcano', 'orange', 'gold', 'lime', 'green', 'cyan', 'blue', 'geekblue', 'purple']
   const seed = Math.floor(Math.random() * 10)
@@ -230,10 +221,6 @@ export default function PostList (props) {
                 renderItem={item => (
                     <List.Item
                         key={item.title}
-                        actions={[
-                        <IconText icon={StarOutlined} text="156" key="list-vertical-star-o" />,
-                        <IconText icon={LikeOutlined} text="156" key="list-vertical-like-o" />
-                        ]}
                         extra={
                             <Image
                                 width={280}
