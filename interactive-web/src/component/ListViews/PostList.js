@@ -129,7 +129,7 @@ export default function PostList (props) {
                                     src={item.coverImage}
                                     placeholder={true}
                                     height={135}
-                                    style={{ zIndex: 0 }}
+                                    style={{ zIndex: 0, objectFit: 'cover' }}
                                 />
 
                             </Space>
@@ -230,7 +230,7 @@ export default function PostList (props) {
                                 src={item.coverImage}
                                 placeholder={true}
                                 height={200}
-                                style = {{ position: 'relative', zIndex: 0 }}
+                                style = {{ position: 'relative', zIndex: 0, objectFit: 'cover' }}
                             />
                         }
                     >
