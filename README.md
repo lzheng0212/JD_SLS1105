@@ -1,5 +1,6 @@
 <p align="center"> 
-  <img src="https://icons-for-free.com/iconfiles/png/512/ant+design+++outlined+icons+block-1324441552634165667.png" alt="Logo" width="80px" height="80px">
+  <img src="https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/main.png?raw=true">
+<!--   <img src="https://icons-for-free.com/iconfiles/png/512/ant+design+++outlined+icons+block-1324441552634165667.png" alt="Logo" width="80px" height="80px"> -->
 </p>
 <h1 align="center"> Institute of Education and Regenerative Communities </h1>
 <h3 align="center"> JIB - Team 1105 </h3>
@@ -21,13 +22,16 @@ Lidan Zheng
   <ol>
     <li><a href="#projectPhilosophy"> ➤ About The Project</a></li>
     <li><a href="#overview"> ➤ Overview</a></li>
-    <li><a href="#post"> ➤ Feature 1: Post </a></li>
-    <li><a href="#event"> ➤ Feature 2: Event </a></li>
-    <li><a href="#timeline"> ➤ Feature 3: Timeline </a></li>
-    <li><a href="#map"> ➤ Feature 4: Map </a></li>
-    <li><a href="#donation"> ➤ Feature 5: Donation </a></li>
-    <li><a href="#faq"> ➤ Feature 6: FAQ </a></li>
-    <li><a href="#admin"> ➤ Feature 7: Admin Portal </a></li>
+    <li><a href="#feature"> ➤ Features </a>
+       <ol>
+        <li><a href="#post"> ➤ Feature 1: Post </a></li>
+        <li><a href="#event"> ➤ Feature 2: Event </a></li>
+        <li><a href="#timeline"> ➤ Feature 3: Timeline </a></li>
+        <li><a href="#map"> ➤ Feature 4: Map </a></li>
+        <li><a href="#donation"> ➤ Feature 5: Donation </a></li>
+        <li><a href="#faq"> ➤ Feature 6: FAQ </a></li>
+        <li><a href="#admin"> ➤ Feature 7: Admin Portal </a></li>
+         </ol>
     <li><a href="#wiki"> ➤ Technical Wiki</a></li>
   </ol>
 </details>
@@ -57,32 +61,97 @@ Student participants, schools, farmers, landowners, land seekers, and funders.
 Our product is an informative and interactive website that provides a way for farmers and people with interest about agricultural regenerative landuse. It is a non-profit, focusing on intergeneration interactive education for proper landuse.
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
+# 📲 Features <a id="feature"></a>
+All sections can be **_expanded_** to **read more**!
+## 🌟  Post <a id="post"></a>
+<details>
+  <summary>The Post tab enables our client to post any informational & educational materials, blogs or news to the website. The users can click on any post to view the full text. </summary>
+  
+![Post](https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/post.png?raw=true)
+</details>
 
-# 🌟  Feature 1: Post <a id="post"></a>
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-# 🌟  Feature 2: Event <a id="event"></a>
+## 🌟  Event <a id="event"></a>
+<details>
+  <summary>
+The Event page consists of a calendar that will display the events in the selected month. Users can use the buttons to navigate through months or use the month picker on the right to pick a month.
+  </summary>
+  
+  ![calendar](https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/calendar.png?raw=true)
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+### Click on event
 
-# 🌟  Feature 3: Timeline <a id="timeline"></a>
+When clicking on a specific event, the event details will be shown.
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+![detail](https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/calendar-s.png?raw=true)
+  
+ </details>
 
-# 🌟  Feature 4: Map <a id="map"></a>
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-# 🌟  Feature 5: Donation <a id="donation"></a>
+## 🌟  Timeline <a id="timeline"></a>
+<details>
+  <summary>The timeline will display the important events in descending time order. The important events can be of the organizations, or milestone in local agriculture, and etc... </summary>
+  
+  ![timeline](https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/timeline.png?raw=true)
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+### Design
+The timeline events are displayed in a carousel style. By designing it not in a traditional timeline style, the users can view through all the timeline events in the order of time to learn more about the development of the organization.
+  
+</details> 
 
-# 🌟  Feature 6: FAQ <a id="faq"></a>
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-# 🌟  Feature 7: Admin Portal <a id="admin"></a>
+## 🌟  Map <a id="map"></a>
+<details>
+<summary>The map page displays the organization's influence or footprint at the location pined. By hovering over the pin, you will see some details about the location.</summary>
+
+![map](https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/map.png?raw=true)
+
+</details> 
+
+
+
+## 🌟  Donation <a id="donation"></a>
+
+<details>
+<summary>The website is for a non-profit organization, donations will greatly help the organization with expense and planning of events. </summary>
+
+![map](https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/map.png?raw=true)
+  
+  ### Payment
+  We are using Stripe to facilitate payments, and to ensure security. 
+
+</details> 
+
+
+
+## 🌟  FAQ <a id="faq"></a>
+<details>
+<summary> The FAQ section provides the users with common questions from people and answers from the organization. Users can also contact the organization through the form on the website to ask questions. </summary>
+
+![faq](https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/faq.png?raw=true)
+  
+  ### Contact Us
+  The page contains the form to send to the organization.
+  
+  ![contact](https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/contactus.png?raw=true)
+
+</details> 
+
+
+
+## 🌟  Admin Portal <a id="admin"></a>
+
+<details>
+<summary> The admin portal is only for admin of the website. Through the portal, they can create/edit/delete posts, calendar events, timeline and map; as well as browsing quetsions from users, and post FAQ to the website. </summary>
+  
+![Edit or Create Post](https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/EditPost.gif?raw=true "EditPost")
+  
+![admin](https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/admin.png?raw=true)
+</details> 
+
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
@@ -107,4 +176,4 @@ For more information on the technologies that power this website, check out the 
 
 <br />
 
-# 💛
+# 💛 Thank you!
