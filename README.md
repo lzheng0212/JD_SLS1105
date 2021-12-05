@@ -76,7 +76,7 @@ Our product is an informative and interactive website that provides a way for fa
   <li>Type "code ." into the terminal and Visual Studio Code should have opened with the project files</li>
   <li>Open the terminal in Visual Studio Code and type "npm install" to install all dependencies for the project</li>
   <li>Once the dependencies have installed you should be able to run the website on your local machine</li>
-  <li>Type "npm start" and the website should open with your browser</li>
+  <li>Type "npm start" in the Visual Studio code terminal and the website should open with your browser</li>
 </ol>
 
 
