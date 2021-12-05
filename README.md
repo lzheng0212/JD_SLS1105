@@ -63,8 +63,10 @@ Student participants, schools, farmers, landowners, land seekers, and funders.
 Our product is an informative and interactive website that provides a way for farmers and people with interest about agricultural regenerative landuse. It is a non-profit, focusing on intergeneration interactive education for proper landuse.
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 # 📒 Install Guilde <a id="install"></a>
-testing
-
+<ol>
+  <li>Install node.js</li>
+</ol>
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 # 📲 Features <a id="feature"></a>
 All sections can be **_expanded_** to **read more**!
 ## 🌟  Post <a id="post"></a>
