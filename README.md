@@ -22,6 +22,7 @@ Lidan Zheng
   <ol>
     <li><a href="#projectPhilosophy"> ➤ About The Project</a></li>
     <li><a href="#overview"> ➤ Overview</a></li>
+    <li><a href="#install"> ➤ Install Guide</a></li>
     <li><a href="#feature"> ➤ Features </a>
        <ol>
         <li><a href="#post"> ➤ Feature 1: Post </a></li>
@@ -31,7 +32,7 @@ Lidan Zheng
         <li><a href="#donation"> ➤ Feature 5: Donation </a></li>
         <li><a href="#faq"> ➤ Feature 6: FAQ </a></li>
         <li><a href="#admin"> ➤ Feature 7: Admin Portal </a></li>
-         </ol>
+       </ol>
     </li>
     <li><a href="#wiki"> ➤ Technical Wiki</a></li>
   </ol>
@@ -61,6 +62,8 @@ Student participants, schools, farmers, landowners, land seekers, and funders.
 ## Our Product
 Our product is an informative and interactive website that provides a way for farmers and people with interest about agricultural regenerative landuse. It is a non-profit, focusing on intergeneration interactive education for proper landuse.
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+# 📒 Install Guilde <a id="install"></a>
+testing
 
 # 📲 Features <a id="feature"></a>
 All sections can be **_expanded_** to **read more**!
