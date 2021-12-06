@@ -69,19 +69,31 @@ Our product is an informative and interactive website that provides a way for fa
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 # 📒 Install Guide<a id="install"></a>
 <ol>
-  <li>Install node.js at https://nodejs.org/en/</li>
-  <li>Install Visual Studio Code IDE at https://code.visualstudio.com/</li>
-  <li>Install git at https://git-scm.com/downloads</li>
-  <li>Create or locate a directory for the repository</li>
-  <li>Right click inside the directory and click "Git Bash Here" and a terminal will open</li>
-  <li>Clone the repository by typing the following "git clone https://github.com/lzheng0212/JD_SLS1105.git"</li>
+  <li>Pre-Requisities</li>
+  <ul>
+    <li>Install node.js at https://nodejs.org/en/</li>
+    <li>Install Visual Studio Code IDE at https://code.visualstudio.com/</li>
+    <li>Install git at https://git-scm.com/downloads</li>
+  </ul>
+  <li>Download</li>
+  <ol>
+    <li>Create or locate a directory for the repository</li>
+    <li>Right click inside the directory and click "Git Bash Here" and a terminal will open</li>
+    <li>Clone the repository by typing the following "git clone https://github.com/lzheng0212/JD_SLS1105.git"</li>
   <li>Now you should have a local copy of the project on your machine</li>
-  <li>Now on your local machine where you have a copy of the project navigate into JD_SLS1105 -> interactive-web directory</li>
+  </ol>
+  <li>Installing project dependencies</li>
+  <ol>
+    <li>Now on your local machine where you have a copy of the project navigate into JD_SLS1105 -> interactive-web directory</li>
   <li>Right click and click "Git Bash Here"</li>
   <li>Type "code ." into the terminal and Visual Studio Code should have opened with the project files</li>
   <li>Open the terminal in Visual Studio Code and type "npm install" to install all dependencies for the project</li>
   <li>Once the dependencies have installed you should be able to run the website on your local machine</li>
-  <li>Type "npm start" in the Visual Studio code terminal and the website should open with your browser</li>
+  </ol>
+  <li>Running Application</li>
+  <ol>
+    <li>Type "npm start" in the Visual Studio code terminal and the website should open with your browser</li>
+  </ol>
 </ol>
 
 
