@@ -23,15 +23,20 @@ Lidan Zheng
     <li><a href="#projectPhilosophy"> ➤ About The Project</a></li>
     <li><a href="#overview"> ➤ Overview</a></li>
     <li><a href="#install"> ➤ Install Guide</a></li>
-    <li><a href="#feature"> ➤ Features </a>
+    <li><a href="#feature"> ➤ Release 1.0 </a>
        <ol>
-        <li><a href="#post"> ➤ Feature 1: Post </a></li>
-        <li><a href="#event"> ➤ Feature 2: Event </a></li>
-        <li><a href="#timeline"> ➤ Feature 3: Timeline </a></li>
-        <li><a href="#map"> ➤ Feature 4: Map </a></li>
-        <li><a href="#donation"> ➤ Feature 5: Donation </a></li>
-        <li><a href="#faq"> ➤ Feature 6: FAQ </a></li>
-        <li><a href="#admin"> ➤ Feature 7: Admin Portal </a></li>
+        <li><a href="#feature"> ➤ Features </a></li>
+        <ol>
+          <li><a href="#post"> ➤ Feature 1: Post </a></li>
+          <li><a href="#event"> ➤ Feature 2: Event </a></li>
+          <li><a href="#timeline"> ➤ Feature 3: Timeline </a></li>
+          <li><a href="#map"> ➤ Feature 4: Map </a></li>
+          <li><a href="#donation"> ➤ Feature 5: Donation </a></li>
+          <li><a href="#faq"> ➤ Feature 6: FAQ </a></li>
+          <li><a href="#admin"> ➤ Feature 7: Admin Portal </a></li>
+        </ol>
+        <li><a href="#bugFixes"> ➤ Feature 7: Bug fixes </a></li>
+        <li><a href="#bugs"> ➤ Feature 7: Bugs </a></li>
        </ol>
     </li>
     <li><a href="#wiki"> ➤ Technical Wiki</a></li>
