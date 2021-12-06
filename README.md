@@ -35,8 +35,8 @@ Lidan Zheng
           <li><a href="#faq"> ➤ Feature 6: FAQ </a></li>
           <li><a href="#admin"> ➤ Feature 7: Admin Portal </a></li>
         </ol>
-        <li><a href="#bugFixes"> ➤ Feature 7: Bug fixes </a></li>
-        <li><a href="#bugs"> ➤ Feature 7: Bugs </a></li>
+        <li><a href="#bugFixes"> ➤ Bug fixes </a></li>
+        <li><a href="#bugs"> ➤ Bugs </a></li>
        </ol>
     </li>
     <li><a href="#wiki"> ➤ Technical Wiki</a></li>
@@ -177,6 +177,27 @@ The timeline events are displayed in a carousel style. By designing it not in a 
   
 <img src="https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/admin.png?raw=true">
 </details> 
+
+## 🌟  Bug Fixes <a id="bugFixes"></a>
+
+<details>
+  <summary>
+    <ul>
+      <li>Post with images inside the content area is resizable now.</li>
+    </ul>
+  </summary>
+</details> 
+  
+## 🌟  Bugs <a id="bugFixes"></a>
+
+<details>
+  <summary>
+    <ul>
+      <li>After creating a post or events the categories field remain while other fields are cleared.</li>
+      <li>If there are no post the footer moves too far up revealing blank space.</li>
+    </ul>
+  </summary>
+</details>  
 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
