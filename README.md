@@ -180,21 +180,16 @@ The timeline events are displayed in a carousel style. By designing it not in a 
 
 ## 🌟  Bug Fixes (Release 1.0) <a id="bugFixes"></a>
 
-<summary>
-  <ul>
-    <li>Post with images inside the content area is resizable now.</li>
-  </ul>
-</summary>
+<ul>
+  <li>Post with images inside the content area is resizable now.</li>
+</ul>
   
 ## 🌟  Bugs (Release 1.0) <a id="bugFixes"></a>
 
-<summary>
-  <ul>
-    <li>After creating a post or events the categories field remain while other fields are cleared.</li>
-    <li>If there are no post the footer moves too far up revealing blank space.</li>
-  </ul>
-</summary> 
-
+<ul>
+  <li>After creating a post or events the categories field remain while other fields are cleared.</li>
+  <li>If there are no post the footer moves too far up revealing blank space.</li>
+</ul>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
