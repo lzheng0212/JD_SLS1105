@@ -85,7 +85,7 @@ Our product is an informative and interactive website that provides a way for fa
 </ol>
 
 
-# 📲 Features <a id="feature"></a>
+# 📲 Features (Release 1.0) <a id="feature"></a>
 All sections can be **_expanded_** to **read more**!
 ## 🌟  Post <a id="post"></a>
 <details>
@@ -178,7 +178,7 @@ The timeline events are displayed in a carousel style. By designing it not in a 
 <img src="https://github.com/lzheng0212/JD_SLS1105/blob/main/GIF/admin.png?raw=true">
 </details> 
 
-## 🌟  Bug Fixes <a id="bugFixes"></a>
+## 🌟  Bug Fixes (Release 1.0) <a id="bugFixes"></a>
 
 <summary>
   <ul>
@@ -186,7 +186,7 @@ The timeline events are displayed in a carousel style. By designing it not in a 
   </ul>
 </summary>
   
-## 🌟  Bugs <a id="bugFixes"></a>
+## 🌟  Bugs (Release 1.0) <a id="bugFixes"></a>
 
 <summary>
   <ul>
